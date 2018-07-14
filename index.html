@@ -74,7 +74,7 @@
         isCategory: false,
         fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
         scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
-        search: true
+        search: false
     }
 </script>
 
@@ -108,13 +108,6 @@
 
         
 
-        
-            <form id="search-form">
-            <input type="text" id="local-search-input" name="q" placeholder="search..." class="search form-control" autocomplete="off" autocorrect="off" searchonload="false" />
-            <i class="fa fa-times" onclick="resetSearch()"></i>
-            </form>
-            <div id="local-search-result"></div>
-            <p class='no-result'>No results found <i class='fa fa-spinner fa-pulse'></i></p>
         
 
 
@@ -192,7 +185,7 @@
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/tags2/">tags2</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tags3/">tags3</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/测试/">测试</a></li></ul>
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/素数判定/">素数判定</a></li></ul>
                     </div>
                 </section>
                 
@@ -269,11 +262,11 @@
 </nav>
       <div class="body-wrap">
   
-    <article id="post-fir" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-Miller-Rabin算法（素数判定）" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2018/07/09/fir/" class="article-date">
-      <time datetime="2018-07-09T01:07:17.000Z" itemprop="datePublished">2018-07-09</time>
+      <a href="/2018/07/14/Miller-Rabin算法（素数判定）/" class="article-date">
+      <time datetime="2018-07-14T08:40:37.000Z" itemprop="datePublished">2018-07-14</time>
 </a>
 
 
@@ -288,7 +281,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/07/09/fir/">fir</a>
+      <a class="article-title" href="/2018/07/14/Miller-Rabin算法（素数判定）/">Miller_Rabin算法（素数判定）</a>
     </h1>
   
 
@@ -298,18 +291,8 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-              <h2 id="描述"><a href="#描述" class="headerlink" title="描述"></a>描述</h2><p>传送门：<a href="http://codeforces.com/contest/987/problem/A" target="_blank" rel="noopener">我是传送门</a></p>
-<blockquote>
-<p>You took a peek on Thanos wearing Infinity Gauntlet. In the Gauntlet there is a place for six Infinity Gems:</p>
-<ul>
-<li>the Power Gem of purple color, </li>
-<li>the Time Gem of green color, </li>
-<li>the Space Gem of blue color, </li>
-<li>the Soul Gem of orange color, </li>
-<li>the Reality Gem of red color, </li>
-<li>the Mind Gem of yellow color. </li>
-</ul>
-<p>Using colors of Gems you saw in the Gauntlet determine the names of absent Gems.</p>
+              <h2 id="作用"><a href="#作用" class="headerlink" title="作用"></a>作用</h2><blockquote>
+<p>单独判断一个大数是否素数。缺点他是一个不保证正确的算法，我们只能通过多次执行算法让这个错误的概率很小，不过幸运的是通常来看它的错误概率可以小到忽略不计。</p>
 </blockquote>
           
       
@@ -319,143 +302,19 @@
       
       
     <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/测试/">测试</a><a class="article-category-link" href="/categories/测试/cate2/">cate2</a><a class="article-category-link" href="/categories/测试/cate2/cate3/">cate3</a>
+    <a class="article-category-link" href="/categories/数论/">数论</a>
     </div>
 
 
       
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/tags2/">tags2</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/tags3/">tags3</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/测试/">测试</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/素数判定/">素数判定</a></li></ul>
     </div>
 
       
         <p class="article-more-link">
-          <a href="/2018/07/09/fir/#more">阅读全文 >></a>
+          <a href="/2018/07/14/Miller-Rabin算法（素数判定）/#more">阅读全文 >></a>
         </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-test" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2018/07/08/test/" class="article-date">
-      <time datetime="2018-07-08T15:05:53.000Z" itemprop="datePublished">2018-07-08</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/07/08/test/">test</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <p>12131212414e<br>123<br>2<br>12312</p>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-      
-        <p class="article-more-link">
-          <a href="/2018/07/08/test/#more">阅读全文 >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2018/07/08/hello-world/" class="article-date">
-      <time datetime="2018-07-08T15:02:39.431Z" itemprop="datePublished">2018-07-08</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/07/08/hello-world/">Hello World</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
       
       <div class="clearfix"></div>
     </div>
