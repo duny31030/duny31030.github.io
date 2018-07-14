@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+
+    <!--[if lt IE 9]>
+        <style>body {display: none; background: none !important} </style>
+        <meta http-equiv="Refresh" Content="0; url=//outdatedbrowser.com/" />
+    <![endif]-->
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="format-detection" content="telephone=no" />
+<meta name="author" content="杜宁元" />
+
+
+
+<meta name="description" content="Miller_Rabin算法（素数判定）作用 单独判断一个大数是否素数。缺点他是一个不保证正确的算法，我们只能通过多次执行算法让这个错误的概率很小，不过幸运的是通常来看它的错误概率可以小到忽略不计。">
+<meta name="keywords" content="素数">
+<meta property="og:type" content="article">
+<meta property="og:title" content="两个有关素数的算法">
+<meta property="og:url" content="https://duny31030.github.io/2018/07/14/两个有关素数的算法/index.html">
+<meta property="og:site_name" content="duny31030&#39;Blog">
+<meta property="og:description" content="Miller_Rabin算法（素数判定）作用 单独判断一个大数是否素数。缺点他是一个不保证正确的算法，我们只能通过多次执行算法让这个错误的概率很小，不过幸运的是通常来看它的错误概率可以小到忽略不计。">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://duny31030.github.io/Users/duningyuan/myblog/source/_posts/0001.png">
+<meta property="og:image" content="https://duny31030.github.io/Users/duningyuan/myblog/source/_posts/0002.png">
+<meta property="og:updated_time" content="2018-07-14T11:35:04.387Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="两个有关素数的算法">
+<meta name="twitter:description" content="Miller_Rabin算法（素数判定）作用 单独判断一个大数是否素数。缺点他是一个不保证正确的算法，我们只能通过多次执行算法让这个错误的概率很小，不过幸运的是通常来看它的错误概率可以小到忽略不计。">
+<meta name="twitter:image" content="https://duny31030.github.io/Users/duningyuan/myblog/source/_posts/0001.png">
+
+<link rel="apple-touch-icon" href= "/apple-touch-icon.png">
+
+
+    <link rel="alternate" href="/atom.xml" title="duny31030&#39;Blog" type="application/atom+xml">
+
+
+
+    <link rel="shortcut icon" href="/favicon.ico">
+
+
+
+    <link href="//cdn.bootcss.com/animate.css/3.5.1/animate.min.css" rel="stylesheet">
+
+
+
+    <link href="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet">
+
+
+
+    <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+    <link href="//cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-center-simple.css" rel="stylesheet">
+
+
+<link rel="stylesheet" href="/css/style.css">
+
+
+
+<link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+
+
+<title>两个有关素数的算法 | duny31030&#39;Blog</title>
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+
+<script>
+    var yiliaConfig = {
+        fancybox: true,
+        animate: true,
+        isHome: false,
+        isPost: true,
+        isArchive: false,
+        isTag: false,
+        isCategory: false,
+        fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
+        scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
+        search: false
+    }
+</script>
+
+
+    <script>
+        yiliaConfig.jquery_ui = [true, "//cdn.bootcss.com/jqueryui/1.10.4/jquery-ui.min.js", "//cdn.bootcss.com/jqueryui/1.10.4/css/jquery-ui.min.css"];
+    </script>
+
+
+
+    <script> yiliaConfig.rootUrl = "\/";</script>
+
+
+
+
+
+
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            <img src="/img/avatar.jpg" class="animated zoomIn">
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/">杜宁元</a></h1>
+        </hgroup>
+
+        
+
+        
+
+
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                        <li>关于我</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/">主页</a></li>
+                        
+                            <li><a href="/archives/">所有文章</a></li>
+                        
+                            <li><a href="/categories/">归档</a></li>
+                        
+                            <li><a href="/tags/">标签云</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" href="mailto:duny31030@126.com" title="Email"></a>
+                            
+                                <a class="fa 知乎" href="https://www.zhihu.com/people/du-zhu-yuan-68/activities" title="知乎"></a>
+                            
+                                <a class="fa 博客园" href="http://www.cnblogs.com/duny31030/" title="博客园"></a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/素数/">素数</a></li></ul>
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://hexo.io">Hexo</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://duny31030.github.com/">GitHub</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="http://moxfive.xyz/">MOxFIVE</a>
+                    
+                    </div>
+                </section>
+                
+
+                
+                
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">写BUG,我是专业的</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">杜宁元</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                <img src="/img/avatar.jpg" class="animated zoomIn">
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页">杜宁元</a></h1>
+            </hgroup>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/">主页</a></li>
+                
+                    <li><a href="/archives/">所有文章</a></li>
+                
+                    <li><a href="/categories/">归档</a></li>
+                
+                    <li><a href="/tags/">标签云</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" target="_blank" href="mailto:duny31030@126.com" title="Email"></a>
+                            
+                                <a class="fa 知乎" target="_blank" href="https://www.zhihu.com/people/du-zhu-yuan-68/activities" title="知乎"></a>
+                            
+                                <a class="fa 博客园" target="_blank" href="http://www.cnblogs.com/duny31030/" title="博客园"></a>
+                            
+                        </ul>
+            </nav>
+        </header>                
+    </div>
+    <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
+</nav>
+      <div class="body-wrap"><article id="post-两个有关素数的算法" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2018/07/14/两个有关素数的算法/" class="article-date">
+      <time datetime="2018-07-14T08:40:37.000Z" itemprop="datePublished">2018-07-14</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      两个有关素数的算法
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/数论/">数论</a>
+    </div>
+
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/素数/">素数</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h2 id="Miller-Rabin算法（素数判定）"><a href="#Miller-Rabin算法（素数判定）" class="headerlink" title="Miller_Rabin算法（素数判定）"></a>Miller_Rabin算法（素数判定）</h2><h3 id="作用"><a href="#作用" class="headerlink" title="作用"></a>作用</h3><blockquote>
+<p>单独判断一个大数是否素数。缺点他是一个不保证正确的算法，我们只能通过多次执行算法让这个错误的概率很小，不过幸运的是通常来看它的错误概率可以小到忽略不计。</p>
+</blockquote>
+<a id="more"></a>
+<h3 id="算法的理论基础"><a href="#算法的理论基础" class="headerlink" title="算法的理论基础"></a>算法的理论基础</h3><blockquote>
+<ol>
+<li>Fermat定理：若n是奇素数，a是任意正整数(1≤ a≤ n−1)，则 a^(n-1) ≡ 1 mod n。</li>
+<li>推演自Fermat定理, 如果n是一个奇素数，将n−1表示成2^s*r的形式，r是奇数，a与n是互素的任何随机整数，那么a^r ≡ 1 mod n或者对某个j (0 ≤ j≤ s−1, j∈Z) 等式a^(2jr) ≡ −1 mod n 成立。</li>
+</ol>
+</blockquote>
+<h3 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt; </span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt; </span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;  </span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cmath&gt;  </span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;  </span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;map&gt;  </span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"> </span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> times = <span class="number">20</span>;</span><br><span class="line"><span class="keyword">int</span> number = <span class="number">0</span>;</span><br><span class="line"> </span><br><span class="line"><span class="built_in">map</span>&lt;<span class="keyword">long</span> <span class="keyword">long</span>, <span class="keyword">int</span>&gt;m;</span><br><span class="line"><span class="function"><span class="keyword">long</span> <span class="keyword">long</span> <span class="title">Random</span><span class="params">( <span class="keyword">long</span> <span class="keyword">long</span> n )</span>			<span class="comment">//生成[ 0 , n ]的随机数</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">return</span> ((<span class="keyword">double</span>)rand( ) / RAND_MAX*n + <span class="number">0.5</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 快速乘法</span></span><br><span class="line"><span class="function"><span class="keyword">long</span> <span class="keyword">long</span> <span class="title">q_mul</span><span class="params">( <span class="keyword">long</span> <span class="keyword">long</span> a, <span class="keyword">long</span> <span class="keyword">long</span> b, <span class="keyword">long</span> <span class="keyword">long</span> mod )</span> <span class="comment">//快速计算 (a*b) % mod</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">long</span> <span class="keyword">long</span> ans = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">while</span>(b)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span>(b &amp; <span class="number">1</span>)</span><br><span class="line">		&#123;</span><br><span class="line">			b--;</span><br><span class="line">			ans =(ans + a)%mod;</span><br><span class="line">		&#125;</span><br><span class="line">		b /= <span class="number">2</span>;</span><br><span class="line">		a = (a + a) % mod;</span><br><span class="line"> </span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 快速幂运算</span></span><br><span class="line"><span class="function"><span class="keyword">long</span> <span class="keyword">long</span> <span class="title">q_pow</span><span class="params">( <span class="keyword">long</span> <span class="keyword">long</span> a, <span class="keyword">long</span> <span class="keyword">long</span> b, <span class="keyword">long</span> <span class="keyword">long</span> mod )</span> <span class="comment">//快速计算 (a^b) % mod</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">long</span> <span class="keyword">long</span> ans = <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">while</span>(b)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span>(b &amp; <span class="number">1</span>)</span><br><span class="line">		&#123;</span><br><span class="line">			ans = q_mul( ans, a, mod );</span><br><span class="line">		&#125;</span><br><span class="line">		b /= <span class="number">2</span>;</span><br><span class="line">		a = q_mul( a, a, mod );</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">witness</span><span class="params">( <span class="keyword">long</span> <span class="keyword">long</span> a, <span class="keyword">long</span> <span class="keyword">long</span> n )</span><span class="comment">//miller_rabin算法的精华</span></span></span><br><span class="line"><span class="function"></span>&#123;<span class="comment">//用检验算子a来检验n是不是素数</span></span><br><span class="line">	<span class="keyword">long</span> <span class="keyword">long</span> tem = n - <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">int</span> j = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">while</span>(tem % <span class="number">2</span> == <span class="number">0</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		tem /= <span class="number">2</span>;</span><br><span class="line">		j++;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">//将n-1拆分为a^r * s</span></span><br><span class="line"> </span><br><span class="line">	<span class="keyword">long</span> <span class="keyword">long</span> x = q_pow( a, tem, n ); <span class="comment">//得到a^r mod n</span></span><br><span class="line">	<span class="keyword">if</span>(x == <span class="number">1</span> || x == n - <span class="number">1</span>) <span class="keyword">return</span> <span class="literal">true</span>;	<span class="comment">//余数为1则为素数</span></span><br><span class="line">	<span class="keyword">while</span>(j--) <span class="comment">//否则试验条件2看是否有满足的 j</span></span><br><span class="line">	&#123;</span><br><span class="line">		x = q_mul( x, x, n );</span><br><span class="line">		<span class="keyword">if</span>(x == n - <span class="number">1</span>) <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">miller_rabin</span><span class="params">( ll n )</span>  <span class="comment">//检验n是否是素数</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"> </span><br><span class="line">	<span class="keyword">if</span>(n == <span class="number">2</span>)</span><br><span class="line">		<span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">	<span class="keyword">if</span>(n &lt; <span class="number">2</span> || n % <span class="number">2</span> == <span class="number">0</span>)</span><br><span class="line">		<span class="keyword">return</span> <span class="literal">false</span>;				<span class="comment">//如果是2则是素数，如果&lt;2或者是&gt;2的偶数则不是素数</span></span><br><span class="line"> </span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= times; i++)  <span class="comment">//做times次随机检验</span></span><br><span class="line">	&#123;</span><br><span class="line">		ll a = Random( n - <span class="number">2</span> ) + <span class="number">1</span>; <span class="comment">//得到随机检验算子 a</span></span><br><span class="line">		<span class="keyword">if</span>(!witness( a, n ))						<span class="comment">//用a检验n是否是素数</span></span><br><span class="line">			<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">( )</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	ll tar;</span><br><span class="line">	<span class="keyword">while</span>(<span class="built_in">cin</span> &gt;&gt; tar)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span>(miller_rabin( tar )	<span class="comment">//检验tar是不是素数</span></span><br><span class="line">			<span class="built_in">cout</span> &lt;&lt; <span class="string">"Yes, Prime!"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">		<span class="keyword">else</span></span><br><span class="line">			<span class="built_in">cout</span> &lt;&lt; <span class="string">"No, not prime.."</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="Pollard-rho算法"><a href="#Pollard-rho算法" class="headerlink" title="Pollard_rho算法"></a>Pollard_rho算法</h2><h3 id="作用-1"><a href="#作用-1" class="headerlink" title="作用"></a>作用</h3><blockquote>
+<p>求一个数的因子</p>
+</blockquote>
+<h3 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h3><blockquote>
+<p>设n为待分解的大整数，用某种方法生成a和b，计算p=gcd(a-b,n),直到p不为1或a,b出现循环时为止，若p=n，则说明n是一个素数，否则p为n的一个约数。</p>
+</blockquote>
+<h3 id="算法步骤"><a href="#算法步骤" class="headerlink" title="算法步骤"></a>算法步骤</h3><blockquote>
+<p>选取一个小的随机数x1，迭代生成x[i] = x[i-1]^2+c，一般取c=1，若序列出现循环则退出，计算p=gcd(x[i-1]-x[i],n)，若p=1则返回上一步继续迭代，否则跳出迭代过程。若p=n，则n为素数，否则p为n的一个约数，并递归分解p和n/p。</p>
+</blockquote>
+<blockquote>
+<p>可以在θ（sqrt(p)）的期望时间内找到n的一个小因子p。但对于因子很少，因子值很大的大整数n，该方法依然不是很有效。</p>
+</blockquote>
+<blockquote>
+<p>为了减少反复的次数，算法做了一些改进。该算法用数对(x0,x0)开始，并且用x(i+1)=f(xi) ，迭代计算(x1,x2),(x2,x4),(x3,x6)…(xi,x2i)。在每一次迭代中，我们都应用上述函数式运算(从第二步)第一次计算数对中的第一个元素，第二次计算数对中的第二个元素。</p>
+</blockquote>
+<h3 id="代码实现-1"><a href="#代码实现-1" class="headerlink" title="代码实现"></a>代码实现</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">ll <span class="title">Pollard_rho</span><span class="params">(ll n,ll c)</span><span class="comment">//Pollard_rho算法，找出n的因子</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    ll i=<span class="number">1</span>,j,k=<span class="number">2</span>,d,p;</span><br><span class="line">    ll x=rand()%n;</span><br><span class="line">    ll y=x;</span><br><span class="line">    <span class="keyword">while</span>(<span class="literal">true</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        i++;</span><br><span class="line">        x=(mul_mod(x,x,n)+c)%n;</span><br><span class="line">        <span class="keyword">if</span>(y==x) <span class="keyword">return</span> n;</span><br><span class="line">        <span class="keyword">if</span>(y&gt;x) p=y-x;</span><br><span class="line">        <span class="keyword">else</span> p=x-y;</span><br><span class="line">        d=gcd(p,n);</span><br><span class="line">        <span class="keyword">if</span>(d!=<span class="number">1</span>&amp;&amp;d!=n) <span class="keyword">return</span> d;</span><br><span class="line">        <span class="keyword">if</span>(i==k)</span><br><span class="line">        &#123;</span><br><span class="line">            y=x;</span><br><span class="line">            k+=k;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">find</span><span class="params">(ll n)</span><span class="comment">//找出n的所有因子</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(Miller_Rabin(n))</span><br><span class="line">    &#123;</span><br><span class="line">        f[t++]=n;<span class="comment">//保存所有因子</span></span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    ll p=n;</span><br><span class="line">    <span class="keyword">while</span>(p&gt;=n)p=Pollard_rho(p,rand()%(n<span class="number">-1</span>)+<span class="number">1</span>);<span class="comment">//由于p必定为合数，所以通过多次求解必定能求得答案</span></span><br><span class="line">    find(p);</span><br><span class="line">    find(n/p);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="因数个数求解公式"><a href="#因数个数求解公式" class="headerlink" title="因数个数求解公式"></a>因数个数求解公式</h2><blockquote>
+<p>对于任何一个自然数N，都可以分解质因子得到如下形式：<br><img src="/Users/duningyuan/myblog/source/_posts/0001.png" alt="0001">)<br>那么，N的因子的个数为：<br><img src="/Users/duningyuan/myblog/source/_posts/0002.png" alt="0002"><br>如N=100，分解质因子变形为：100=22∗52，N的因子的个数为：f(N)=f(100)=(1+2)∗(1+2)=9。</p>
+<p>即：1,2,4,5,10,20,25,50,100。</p>
+</blockquote>
+
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2018/07/14/两个有关素数的算法/">两个有关素数的算法</a></p>
+        <p><span>文章作者:</span><a href="/" title="回到主页">杜宁元</a></p>
+        <p><span>发布时间:</span>2018-07-14, 16:40:37</p>
+        <p><span>最后更新:</span>2018-07-14, 19:35:04</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2018/07/14/两个有关素数的算法/" title="两个有关素数的算法">https://duny31030.github.io/2018/07/14/两个有关素数的算法/</a>
+            <span class="copy-path" data-clipboard-text="原文: https://duny31030.github.io/2018/07/14/两个有关素数的算法/　　作者: 杜宁元" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+        <strong class="toc-title">文章目录</strong>
+        
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Miller-Rabin算法（素数判定）"><span class="toc-number">1.</span> <span class="toc-text">Miller_Rabin算法（素数判定）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#作用"><span class="toc-number">1.1.</span> <span class="toc-text">作用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#算法的理论基础"><span class="toc-number">1.2.</span> <span class="toc-text">算法的理论基础</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#代码实现"><span class="toc-number">1.3.</span> <span class="toc-text">代码实现</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Pollard-rho算法"><span class="toc-number">2.</span> <span class="toc-text">Pollard_rho算法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#作用-1"><span class="toc-number">2.1.</span> <span class="toc-text">作用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#原理"><span class="toc-number">2.2.</span> <span class="toc-text">原理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#算法步骤"><span class="toc-number">2.3.</span> <span class="toc-text">算法步骤</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#代码实现-1"><span class="toc-number">2.4.</span> <span class="toc-text">代码实现</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#因数个数求解公式"><span class="toc-number">3.</span> <span class="toc-text">因数个数求解公式</span></a></li></ol>
+        
+    </div>
+    <style>
+        .left-col .switch-btn,
+        .left-col .switch-area {
+            display: none;
+        }
+        .toc-level-3 i,
+        .toc-level-3 ol {
+            display: none !important;
+        }
+    </style>
+
+    <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+    <script>
+        yiliaConfig.toc = ["隐藏目录", "显示目录", !!"false"];
+    </script>
+
+
+
+    
+<div class="share">
+    
+        <div class="bdsharebuttonbox">
+            <a href="#" class="fa fa-twitter bds_twi" data-cmd="twi" title="分享到推特"></a>
+            <a href="#" class="fa fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+            <a href="#" class="fa fa-qq bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
+            <a href="#" class="fa fa-files-o bds_copy" data-cmd="copy" title="复制网址"></a>
+            <a href="#" class="fa fa fa-envelope-o bds_mail" data-cmd="mail" title="通过邮件分享"></a>
+            <a href="#" class="fa fa-weixin bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
+            <a href="#" class="fa fa-share-alt bds_more" data-cmd="more"></i></a>
+        </div>
+        <script>
+            window._bd_share_config={
+                "common":{"bdSnsKey":{},"bdText":"两个有关素数的算法　| duny31030'Blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+        </script>
+    
+
+    
+</div>
+
+
+
+
+
+
+
+    
+
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+        
+
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2018/07/14/两个有关素数的算法/">两个有关素数的算法</a></li></ul>
+
+
+
+
+    <script>
+        
+    </script>
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                <i class="fa fa-copyright"></i> 
+                2018 杜宁元
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank" title="快速、简洁且高效的博客框架">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="简而不减 Hexo 双栏博客主题  v3.5">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" title="本站到访数"><i class="fa fa-user" aria-hidden="true"></i><span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>| </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit"  title="本页阅读量"><i class="fa fa-eye animated infinite pulse" aria-hidden="true"></i><span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+    </div>
+    
+<script data-main="/js/main.js" src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var iPad = window.navigator.userAgent.indexOf('iPad');
+            if (iPad > -1 || $(".left-col").css("display") === "none") {
+                var bgColorList = ["#9db3f4", "#414141", "#e5a859", "#f5dfc6", "#c084a0", "#847e72", "#cd8390", "#996731"];
+                var bgColor = Math.ceil(Math.random() * (bgColorList.length - 1));
+                $("body").css({"background-color": bgColorList[bgColor], "background-size": "cover"});
+            }
+            else {
+                var backgroundnum = 5;
+                var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+                $("body").css({"background": backgroundimg, "background-attachment": "fixed", "background-size": "cover"});
+            }
+        })
+    </script>
+
+
+
+
+
+<div class="scroll" id="scroll">
+    <a href="#" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" onclick="load$hide();" title="查看评论"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="转到底部"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    // Open in New Window
+    
+        var oOpenInNew = {
+            
+            
+             post: ".article-entry a[href], .copyright a[href]", 
+            
+            
+            
+             archives: ".archive-article-title", 
+             miniArchives: "a.post-list-link", 
+            
+             friends: "#js-friends a", 
+             socail: ".social a" 
+        }
+        for (var x in oOpenInNew) {
+            $(oOpenInNew[x]).attr("target", "_blank");
+        }
+    
+</script>
+
+    <script>
+        var originTitle = document.title;
+        var titleTime;
+        document.addEventListener("visibilitychange", function() {
+            if (document.hidden) {
+                document.title = "(つェ⊂) 我藏好了哦~ " + originTitle;
+                clearTimeout(titleTime);
+            }
+            else {
+                document.title = "(*´∇｀*) 被你发现啦~ " + originTitle;
+                titleTime = setTimeout(function() {
+                    document.title = originTitle;
+                }, 2000);
+            }
+        })
+    </script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+  </div>
+</body>
+</html>
