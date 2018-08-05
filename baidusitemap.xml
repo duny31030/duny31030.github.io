@@ -5,14 +5,19 @@
     
   <url>
     <loc>http://www.duny31030.top/2018/08/05/KMP%E7%AE%97%E6%B3%95%E6%A8%A1%E6%9D%BF/</loc>
-    <lastmod>2018-08-05T13:32:05.055Z</lastmod>
+    <lastmod>2018-08-05T16:36:30.189Z</lastmod>
     <data>
         <display>
         <title>KMP算法模板</title>
         <pubTime>2018-08-05T08:04:00.000Z</pubTime>
         
+        <tag>模板</tag>
+         
          
            
+             
+              <breadCrumb title="KMP" url="http://www.duny31030.top/categories/KMP/"/>
+          
         </display>
     </data>
     </url>
@@ -20,7 +25,7 @@
     
   <url>
     <loc>http://www.duny31030.top/2018/07/28/2018%E6%9A%91%E5%81%87%E9%81%97%E7%95%99%E9%A2%98%E7%9B%AE/</loc>
-    <lastmod>2018-08-04T17:31:01.325Z</lastmod>
+    <lastmod>2018-08-05T16:35:02.196Z</lastmod>
     <data>
         <display>
         <title>2018暑假遗留题目</title>
@@ -69,9 +74,9 @@
         <title>线段树模板(含区间最大(小)值)</title>
         <pubTime>2018-07-23T15:11:01.000Z</pubTime>
         
-        <tag>线段树</tag>
-         
         <tag>模板</tag>
+         
+        <tag>线段树</tag>
          
          
            
