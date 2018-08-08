@@ -4,6 +4,50 @@
 
     
   <url>
+    <loc>http://www.duny31030.top/2018/08/08/%E6%89%A9%E5%B1%95KMP%E6%A8%A1%E6%9D%BF/</loc>
+    <lastmod>2018-08-08T06:39:09.536Z</lastmod>
+    <data>
+        <display>
+        <title>扩展KMP模板</title>
+        <pubTime>2018-08-08T06:28:35.000Z</pubTime>
+        
+        <tag>模板</tag>
+         
+        <tag>扩展KMP</tag>
+         
+         
+           
+             
+              <breadCrumb title="字符串" url="http://www.duny31030.top/categories/%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.duny31030.top/2018/08/05/KMP%E7%AE%97%E6%B3%95%E6%A8%A1%E6%9D%BF/</loc>
+    <lastmod>2018-08-08T06:39:03.941Z</lastmod>
+    <data>
+        <display>
+        <title>KMP算法模板</title>
+        <pubTime>2018-08-05T08:04:00.000Z</pubTime>
+        
+        <tag>KMP</tag>
+         
+        <tag>模板</tag>
+         
+         
+           
+             
+              <breadCrumb title="字符串" url="http://www.duny31030.top/categories/%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://www.duny31030.top/2018/07/28/2018%E6%9A%91%E5%81%87%E9%81%97%E7%95%99%E9%A2%98%E7%9B%AE/</loc>
     <lastmod>2018-08-07T11:50:04.012Z</lastmod>
     <data>
@@ -17,26 +61,6 @@
            
              
               <breadCrumb title="2018暑假" url="http://www.duny31030.top/categories/2018%E6%9A%91%E5%81%87/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.duny31030.top/2018/08/05/KMP%E7%AE%97%E6%B3%95%E6%A8%A1%E6%9D%BF/</loc>
-    <lastmod>2018-08-05T16:36:30.189Z</lastmod>
-    <data>
-        <display>
-        <title>KMP算法模板</title>
-        <pubTime>2018-08-05T08:04:00.000Z</pubTime>
-        
-        <tag>模板</tag>
-         
-         
-           
-             
-              <breadCrumb title="KMP" url="http://www.duny31030.top/categories/KMP/"/>
           
         </display>
     </data>
@@ -137,9 +161,9 @@
         <title>German Collegiate Programming Contest 2015  F. Divisions</title>
         <pubTime>2018-07-14T13:25:24.000Z</pubTime>
         
-        <tag>素数</tag>
-         
         <tag>大数</tag>
+         
+        <tag>素数</tag>
          
          
            

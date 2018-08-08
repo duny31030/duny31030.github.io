@@ -117,7 +117,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="模板,扩展KMP," />
 
 
 
@@ -128,16 +128,18 @@
 
 
 
-<meta name="description" content="只要站起比跌倒多一次">
-<meta property="og:type" content="website">
-<meta property="og:title" content="duny31030&#39;Blog">
-<meta property="og:url" content="http://www.duny31030.top/categories/KMP/index.html">
+<meta name="description" content="概述 参考资料:  刘雅琼PPT讲解kuangbin的博客  给出模板串A和子串B，长度分别为$lenA$和$lenB$，要求在线性时间内，对于每个$A[i]$$(0 &amp;lt;= i &amp;lt; lenA)$ 求出$A[i..lenA-1]$ 与B的最长公共前缀长度，记为$ex[i]$(或者说，$ex[i]$为满足$A[i..i+z-1]==B[0..z-1]$的最大的z值)。 扩展KMP可以用来解">
+<meta name="keywords" content="模板,扩展KMP">
+<meta property="og:type" content="article">
+<meta property="og:title" content="扩展KMP模板">
+<meta property="og:url" content="http://www.duny31030.top/2018/08/08/扩展KMP模板/index.html">
 <meta property="og:site_name" content="duny31030&#39;Blog">
-<meta property="og:description" content="只要站起比跌倒多一次">
+<meta property="og:description" content="概述 参考资料:  刘雅琼PPT讲解kuangbin的博客  给出模板串A和子串B，长度分别为$lenA$和$lenB$，要求在线性时间内，对于每个$A[i]$$(0 &amp;lt;= i &amp;lt; lenA)$ 求出$A[i..lenA-1]$ 与B的最长公共前缀长度，记为$ex[i]$(或者说，$ex[i]$为满足$A[i..i+z-1]==B[0..z-1]$的最大的z值)。 扩展KMP可以用来解">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-08-08T06:39:09.536Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="duny31030&#39;Blog">
-<meta name="twitter:description" content="只要站起比跌倒多一次">
+<meta name="twitter:title" content="扩展KMP模板">
+<meta name="twitter:description" content="概述 参考资料:  刘雅琼PPT讲解kuangbin的博客  给出模板串A和子串B，长度分别为$lenA$和$lenB$，要求在线性时间内，对于每个$A[i]$$(0 &amp;lt;= i &amp;lt; lenA)$ 求出$A[i..lenA-1]$ 与B的最长公共前缀长度，记为$ex[i]$(或者说，$ex[i]$为满足$A[i..i+z-1]==B[0..z-1]$的最大的z值)。 扩展KMP可以用来解">
 
 
 
@@ -167,7 +169,7 @@
 
 
 
-  <link rel="canonical" href="http://www.duny31030.top/categories/KMP/"/>
+  <link rel="canonical" href="http://www.duny31030.top/2018/08/08/扩展KMP模板/"/>
 
 
 <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
@@ -190,7 +192,7 @@ border-left-color: #1E92FB; /左边框颜色/
 
 
 
-  <title>分类: KMP | duny31030'Blog</title>
+  <title>扩展KMP模板 | duny31030'Blog</title>
   
 
 
@@ -209,7 +211,7 @@ border-left-color: #1E92FB; /左边框颜色/
     
   
 
-  <div class="container sidebar-position-left ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -313,55 +315,203 @@ border-left-color: #1E92FB; /左边框颜色/
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block category">
+  <div id="posts" class="posts-expand">
+    
 
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>KMP<small>分类</small>
-        </h1>
-      </div>
+  
 
-      
-        
+  
+  
+  
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.duny31030.top/2018/08/08/扩展KMP模板/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="杜宁元">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="duny31030'Blog">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/2018/08/05/KMP算法模板/" itemprop="url">
-              
-                <span itemprop="name">KMP算法模板</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">扩展KMP模板</h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-08-05T16:04:00+08:00"
-              content="2018-08-05" >
-          08-05
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-08T14:28:35+08:00">
+                2018-08-08
+              </time>
+            
 
-    </header>
-  </article>
+            
 
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/字符串/" itemprop="url" rel="index">
+                    <span itemprop="name">字符串</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2018/08/08/扩展KMP模板/" class="leancloud_visitors" data-flag-title="扩展KMP模板">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
+<p>参考资料:</p>
+<blockquote>
+<p><a href="http://wenku.baidu.com/view/8e9ebefb0242a8956bece4b3.html" target="_blank" rel="noopener">刘雅琼PPT讲解</a><br><a href="http://www.cnblogs.com/kuangbin/archive/2012/11/09/2763242.html" target="_blank" rel="noopener">kuangbin的博客</a></p>
+</blockquote>
+<p>给出模板串A和子串B，长度分别为$lenA$和$lenB$，要求在线性时间内，对于每个$A[i]$$(0 &lt;= i &lt; lenA)$</p>
+<p>求出$A[i..lenA-1]$ 与B的最长公共前缀长度，记为$ex[i]$(或者说，$ex[i]$为满足$A[i..i+z-1]==B[0..z-1]$的最大的z值)。</p>
+<p>扩展KMP可以用来解决很多字符串问题，如求一个字符串的最长回文子串和最长重复子串。</p>
+</blockquote>
+<a id="more"></a>
+<h2 id="1-头文件"><a href="#1-头文件" class="headerlink" title="(1)头文件"></a>(1)头文件</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> MAXN = <span class="number">2000010</span>;</span><br><span class="line"><span class="keyword">int</span> Next[MAXN];</span><br><span class="line"><span class="keyword">int</span> extend[MAXN];</span><br></pre></td></tr></table></figure>
+<h2 id="2-EXKMP"><a href="#2-EXKMP" class="headerlink" title="(2)EXKMP"></a>(2)EXKMP</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">EXKMP</span><span class="params">(<span class="keyword">char</span> s[],<span class="keyword">char</span> t[])</span>   <span class="comment">// s为主串 t为模板串</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> i,j,p,L;</span><br><span class="line">    <span class="keyword">int</span> lens = <span class="built_in">strlen</span>(s);</span><br><span class="line">    <span class="keyword">int</span> lent = <span class="built_in">strlen</span>(t);</span><br><span class="line">    Next[<span class="number">0</span>] = lent;</span><br><span class="line">    j = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span>(j+<span class="number">1</span> &lt; lent &amp;&amp; t[j] == t[j+<span class="number">1</span>])   j++;</span><br><span class="line">    Next[<span class="number">1</span>] = <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> a = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span>(i = <span class="number">2</span>;i &lt; lent;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        p = Next[a]+a<span class="number">-1</span>;</span><br><span class="line">        L = Next[i-a];</span><br><span class="line">        <span class="keyword">if</span>(i+L &lt; p+<span class="number">1</span>)</span><br><span class="line">            Next[i] = L;</span><br><span class="line">        <span class="keyword">else</span> </span><br><span class="line">        &#123;</span><br><span class="line">            j = max(<span class="number">0</span>,p-i+<span class="number">1</span>);</span><br><span class="line">            <span class="keyword">while</span>(i+j &lt; lent &amp;&amp; t[i+j] == t[j]) j++;</span><br><span class="line">            Next[i] = j;</span><br><span class="line">            a = i;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    j = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span>(j &lt; lens &amp;&amp; j &lt; lent &amp;&amp; s[j] == t[j]) j++;</span><br><span class="line">    extend[<span class="number">0</span>] = j;</span><br><span class="line">    a = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(i = <span class="number">1</span>;i &lt; lens;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        p = extend[a]+a<span class="number">-1</span>;</span><br><span class="line">        L = Next[i-a];</span><br><span class="line">        <span class="keyword">if</span>(L+i &lt; p+<span class="number">1</span>)</span><br><span class="line">            extend[i] = L;</span><br><span class="line">        <span class="keyword">else</span> </span><br><span class="line">        &#123;</span><br><span class="line">            j = max(<span class="number">0</span>,p-i+<span class="number">1</span>);</span><br><span class="line">            <span class="keyword">while</span>(i+j &lt; lens &amp;&amp; j &lt; lent &amp;&amp; s[i+j] == t[j]) j++;</span><br><span class="line">            extend[i] = j;</span><br><span class="line">            a = i;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h2><blockquote>
+<ul>
+<li>$extend[i]$表示原串以第$i$开始与模式串的前缀的最长匹配</li>
+</ul>
+</blockquote>
 
       
     </div>
+    
+    
+    
 
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/模板/" <i class="fa fa-tag"></i> 模板</a>
+          
+            <a href="/tags/扩展KMP/" <i class="fa fa-tag"></i> 扩展KMP</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/08/05/KMP算法模板/" rel="next" title="KMP算法模板">
+                <i class="fa fa-chevron-left"></i> KMP算法模板
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -369,6 +519,10 @@ border-left-color: #1E92FB; /左边框颜色/
 
 
           
+
+  
+
+
 
         </div>
         
@@ -389,8 +543,17 @@ border-left-color: #1E92FB; /左边框颜色/
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -409,7 +572,7 @@ border-left-color: #1E92FB; /左边框颜色/
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">8</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -431,7 +594,7 @@ border-left-color: #1E92FB; /左边框颜色/
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">9</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -454,6 +617,22 @@ border-left-color: #1E92FB; /左边框颜色/
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#概述"><span class="nav-number">1.</span> <span class="nav-text">概述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-头文件"><span class="nav-number">2.</span> <span class="nav-text">(1)头文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-EXKMP"><span class="nav-number">3.</span> <span class="nav-text">(2)EXKMP</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#补充"><span class="nav-number">4.</span> <span class="nav-text">补充</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -614,6 +793,10 @@ border-left-color: #1E92FB; /左边框颜色/
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
