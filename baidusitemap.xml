@@ -4,6 +4,28 @@
 
     
   <url>
+    <loc>http://www.duny31030.top/2018/07/23/%E7%BA%BF%E6%AE%B5%E6%A0%91%E6%A8%A1%E6%9D%BF-%E5%90%AB%E5%8C%BA%E9%97%B4%E6%9C%80%E5%A4%A7-%E5%B0%8F-%E5%80%BC/</loc>
+    <lastmod>2018-08-13T11:38:09.176Z</lastmod>
+    <data>
+        <display>
+        <title>线段树模板(含区间最大(小)值)</title>
+        <pubTime>2018-07-23T15:11:01.000Z</pubTime>
+        
+        <tag>模板</tag>
+         
+        <tag>线段树</tag>
+         
+         
+           
+             
+              <breadCrumb title="数据结构" url="http://www.duny31030.top/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://www.duny31030.top/2018/08/08/%E6%89%A9%E5%B1%95KMP%E6%A8%A1%E6%9D%BF/</loc>
     <lastmod>2018-08-08T06:39:09.536Z</lastmod>
     <data>
@@ -91,28 +113,6 @@
     
     
   <url>
-    <loc>http://www.duny31030.top/2018/07/23/%E7%BA%BF%E6%AE%B5%E6%A0%91%E6%A8%A1%E6%9D%BF-%E5%90%AB%E5%8C%BA%E9%97%B4%E6%9C%80%E5%A4%A7-%E5%B0%8F-%E5%80%BC/</loc>
-    <lastmod>2018-07-23T15:22:45.953Z</lastmod>
-    <data>
-        <display>
-        <title>线段树模板(含区间最大(小)值)</title>
-        <pubTime>2018-07-23T15:11:01.000Z</pubTime>
-        
-        <tag>模板</tag>
-         
-        <tag>线段树</tag>
-         
-         
-           
-             
-              <breadCrumb title="数据结构" url="http://www.duny31030.top/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://www.duny31030.top/2018/07/22/USACO18OPEN-Out-of-Sorts-G/</loc>
     <lastmod>2018-07-22T14:15:30.551Z</lastmod>
     <data>
@@ -161,9 +161,9 @@
         <title>German Collegiate Programming Contest 2015  F. Divisions</title>
         <pubTime>2018-07-14T13:25:24.000Z</pubTime>
         
-        <tag>大数</tag>
-         
         <tag>素数</tag>
+         
+        <tag>大数</tag>
          
          
            
