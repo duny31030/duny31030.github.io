@@ -1,3 +1,4 @@
+http://www.duny31030.top/2018/08/28/Manacher算法模板/
 http://www.duny31030.top/2018/08/27/字符串匹配-最大最小表示法模板/
 http://www.duny31030.top/2018/08/26/费马定理/
 http://www.duny31030.top/2018/08/24/JAVA大数模板/
@@ -7,4 +8,3 @@ http://www.duny31030.top/2018/08/05/KMP算法模板/
 http://www.duny31030.top/2018/07/28/2018暑假遗留题目/
 http://www.duny31030.top/2018/07/23/线段树模板-含区间最大-小-值/
 http://www.duny31030.top/2018/07/22/USACO18OPEN-Out-of-Sorts-G/
-http://www.duny31030.top/2018/07/15/重拾背包/
