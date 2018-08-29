@@ -1,3 +1,4 @@
+http://www.duny31030.top/2018/08/29/POJ2001-Shortest-Prefixes/
 http://www.duny31030.top/2018/08/29/HDU1251-统计难题/
 http://www.duny31030.top/2018/08/29/CODE-VS-4189-字典-字典树模板题/
 http://www.duny31030.top/2018/08/28/Manacher算法模板/
@@ -7,4 +8,3 @@ http://www.duny31030.top/2018/08/24/JAVA大数模板/
 http://www.duny31030.top/2018/08/22/线段树模板-结构体写法-/
 http://www.duny31030.top/2018/08/08/扩展KMP模板/
 http://www.duny31030.top/2018/08/05/KMP算法模板/
-http://www.duny31030.top/2018/07/28/2018暑假遗留题目/

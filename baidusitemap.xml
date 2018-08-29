@@ -4,15 +4,25 @@
 
     
   <url>
-    <loc>http://www.duny31030.top/2018/08/29/HDU1251-%E7%BB%9F%E8%AE%A1%E9%9A%BE%E9%A2%98/</loc>
-    <lastmod>2018-08-29T04:39:40.304Z</lastmod>
+    <loc>http://www.duny31030.top/2018/08/29/POJ2001-Shortest-Prefixes/</loc>
+    <lastmod>2018-08-29T07:18:26.299Z</lastmod>
     <data>
         <display>
-        <title>HDU1251 统计难题</title>
-        <pubTime>2018-08-29T04:35:54.000Z</pubTime>
+        <title>POJ2001 Shortest Prefixes</title>
+        <pubTime>2018-08-29T06:49:19.000Z</pubTime>
         
+        <tag>字典树</tag>
+         
+        <tag>模板题</tag>
+         
          
            
+             
+              <breadCrumb title="POJ" url="http://www.duny31030.top/categories/POJ/"/>
+          
+             
+              <breadCrumb title="字符串" url="http://www.duny31030.top/categories/POJ/%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
+          
         </display>
     </data>
     </url>
@@ -20,7 +30,7 @@
     
   <url>
     <loc>http://www.duny31030.top/2018/08/29/CODE-VS-4189-%E5%AD%97%E5%85%B8-%E5%AD%97%E5%85%B8%E6%A0%91%E6%A8%A1%E6%9D%BF%E9%A2%98/</loc>
-    <lastmod>2018-08-29T03:24:24.627Z</lastmod>
+    <lastmod>2018-08-29T06:50:45.593Z</lastmod>
     <data>
         <display>
         <title>CODE[VS]4189 字典 (字典树模板题)</title>
@@ -34,6 +44,34 @@
            
              
               <breadCrumb title="CODE[VS]" url="http://www.duny31030.top/categories/CODE-VS/"/>
+          
+             
+              <breadCrumb title="字符串" url="http://www.duny31030.top/categories/CODE-VS/%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.duny31030.top/2018/08/29/HDU1251-%E7%BB%9F%E8%AE%A1%E9%9A%BE%E9%A2%98/</loc>
+    <lastmod>2018-08-29T06:50:29.022Z</lastmod>
+    <data>
+        <display>
+        <title>HDU1251 统计难题</title>
+        <pubTime>2018-08-29T04:35:54.000Z</pubTime>
+        
+        <tag>字典树</tag>
+         
+        <tag>模板题</tag>
+         
+         
+           
+             
+              <breadCrumb title="HDU" url="http://www.duny31030.top/categories/HDU/"/>
+          
+             
+              <breadCrumb title="字符串" url="http://www.duny31030.top/categories/HDU/%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
           
         </display>
     </data>
