@@ -117,7 +117,7 @@
 
 
 
-  <meta name="keywords" content="模板,扩展KMP," />
+  <meta name="keywords" content="模板,Trie," />
 
 
 
@@ -128,18 +128,18 @@
 
 
 
-<meta name="description" content="概述 参考资料:  刘雅琼PPT讲解kuangbin的博客  给出模板串A和子串B，长度分别为$lenA$和$lenB$，要求在线性时间内，对于每个$A[i]$$(0 &amp;lt;= i &amp;lt; lenA)$ 求出$A[i..lenA-1]$ 与B的最长公共前缀长度，记为$ex[i]$(或者说，$ex[i]$为满足$A[i..i+z-1]==B[0..z-1]$的最大的z值)。 扩展KMP可以用来解">
-<meta name="keywords" content="模板,扩展KMP">
+<meta name="description" content="字典树预定义1234567891011121314const int N = 1e6+10;int tot = 1;struct node&amp;#123;    int son[26];    int cnt;   // 特殊标记    bool have;    node()    &amp;#123;        memset(son,0,sizeof son);        cnt = 0;">
+<meta name="keywords" content="模板,Trie">
 <meta property="og:type" content="article">
-<meta property="og:title" content="扩展KMP模板">
-<meta property="og:url" content="http://www.duny31030.top/2018/08/08/扩展KMP模板/index.html">
+<meta property="og:title" content="字典树模板">
+<meta property="og:url" content="http://www.duny31030.top/2018/08/31/字典树模板/index.html">
 <meta property="og:site_name" content="duny31030&#39;Blog">
-<meta property="og:description" content="概述 参考资料:  刘雅琼PPT讲解kuangbin的博客  给出模板串A和子串B，长度分别为$lenA$和$lenB$，要求在线性时间内，对于每个$A[i]$$(0 &amp;lt;= i &amp;lt; lenA)$ 求出$A[i..lenA-1]$ 与B的最长公共前缀长度，记为$ex[i]$(或者说，$ex[i]$为满足$A[i..i+z-1]==B[0..z-1]$的最大的z值)。 扩展KMP可以用来解">
+<meta property="og:description" content="字典树预定义1234567891011121314const int N = 1e6+10;int tot = 1;struct node&amp;#123;    int son[26];    int cnt;   // 特殊标记    bool have;    node()    &amp;#123;        memset(son,0,sizeof son);        cnt = 0;">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-08-28T02:45:34.234Z">
+<meta property="og:updated_time" content="2018-08-31T12:01:17.403Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="扩展KMP模板">
-<meta name="twitter:description" content="概述 参考资料:  刘雅琼PPT讲解kuangbin的博客  给出模板串A和子串B，长度分别为$lenA$和$lenB$，要求在线性时间内，对于每个$A[i]$$(0 &amp;lt;= i &amp;lt; lenA)$ 求出$A[i..lenA-1]$ 与B的最长公共前缀长度，记为$ex[i]$(或者说，$ex[i]$为满足$A[i..i+z-1]==B[0..z-1]$的最大的z值)。 扩展KMP可以用来解">
+<meta name="twitter:title" content="字典树模板">
+<meta name="twitter:description" content="字典树预定义1234567891011121314const int N = 1e6+10;int tot = 1;struct node&amp;#123;    int son[26];    int cnt;   // 特殊标记    bool have;    node()    &amp;#123;        memset(son,0,sizeof son);        cnt = 0;">
 
 
 
@@ -169,7 +169,7 @@
 
 
 
-  <link rel="canonical" href="http://www.duny31030.top/2018/08/08/扩展KMP模板/"/>
+  <link rel="canonical" href="http://www.duny31030.top/2018/08/31/字典树模板/"/>
 
 
 <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
@@ -192,7 +192,7 @@ border-left-color: #1E92FB; /左边框颜色/
 
 
 
-  <title>扩展KMP模板 | duny31030'Blog</title>
+  <title>字典树模板 | duny31030'Blog</title>
   
 
 
@@ -319,7 +319,7 @@ border-left-color: #1E92FB; /左边框颜色/
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.duny31030.top/2018/08/08/扩展KMP模板/">
+    <link itemprop="mainEntityOfPage" href="http://www.duny31030.top/2018/08/31/字典树模板/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="杜宁元">
@@ -336,7 +336,7 @@ border-left-color: #1E92FB; /左边框颜色/
 
         
         
-          <h1 class="post-title" itemprop="name headline">扩展KMP模板</h1>
+          <h1 class="post-title" itemprop="name headline">字典树模板</h1>
         
 
         <div class="post-meta">
@@ -348,8 +348,8 @@ border-left-color: #1E92FB; /左边框颜色/
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-08T14:28:35+08:00">
-                2018-08-08
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-31T17:18:37+08:00">
+                2018-08-31
               </time>
             
 
@@ -388,7 +388,7 @@ border-left-color: #1E92FB; /左边框颜色/
 
           
           
-             <span id="/2018/08/08/扩展KMP模板/" class="leancloud_visitors" data-flag-title="扩展KMP模板">
+             <span id="/2018/08/31/字典树模板/" class="leancloud_visitors" data-flag-title="字典树模板">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -424,27 +424,18 @@ border-left-color: #1E92FB; /左边框颜色/
       
 
       
-        <h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
-<p>参考资料:</p>
+        <h2 id="字典树"><a href="#字典树" class="headerlink" title="字典树"></a>字典树</h2><h3 id="预定义"><a href="#预定义" class="headerlink" title="预定义"></a>预定义</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">1e6</span>+<span class="number">10</span>;</span><br><span class="line"><span class="keyword">int</span> tot = <span class="number">1</span>;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">node</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="keyword">int</span> son[<span class="number">26</span>];</span><br><span class="line">    <span class="keyword">int</span> cnt;   <span class="comment">// 特殊标记</span></span><br><span class="line">    <span class="keyword">bool</span> have;</span><br><span class="line">    node()</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">memset</span>(son,<span class="number">0</span>,<span class="keyword">sizeof</span> son);</span><br><span class="line">        cnt = <span class="number">0</span>;</span><br><span class="line">        have = <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;trie[N];</span><br></pre></td></tr></table></figure>
+<h3 id="插入"><a href="#插入" class="headerlink" title="插入"></a>插入</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Insert</span><span class="params">(<span class="keyword">char</span> *s)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> len = <span class="built_in">strlen</span>(s);</span><br><span class="line">    <span class="keyword">int</span> u = <span class="number">0</span>,v;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>;i &lt; len;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        v = s[i]-<span class="string">'a'</span>;</span><br><span class="line">        <span class="keyword">if</span>(!trie[u].son[v])</span><br><span class="line">            trie[u].son[v] = tot++;</span><br><span class="line">        u = trie[u].son[v];</span><br><span class="line">    &#125;</span><br><span class="line">    trie[u].have = <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="查找"><a href="#查找" class="headerlink" title="查找"></a>查找</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">Find</span><span class="params">(<span class="keyword">char</span> *s)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> len = <span class="built_in">strlen</span>(s);</span><br><span class="line">    <span class="keyword">int</span> u = <span class="number">0</span>,v;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>;i &lt; len;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(!trie[u].son[v])</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        u = trie[u].son[v];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(!trie[u].have)   <span class="comment">// 没有这个单词</span></span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">if</span>(!trie[u].cnt)   <span class="comment">// 没被查询过</span></span><br><span class="line">    &#123;</span><br><span class="line">        trie[u].cnt++;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="01字典树"><a href="#01字典树" class="headerlink" title="01字典树"></a>01字典树</h2><h3 id="预定义-1"><a href="#预定义-1" class="headerlink" title="预定义"></a>预定义</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">1e6</span>+<span class="number">100</span>;</span><br><span class="line"><span class="keyword">int</span> tot = <span class="number">1</span>;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">node</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="keyword">int</span> son[<span class="number">2</span>];</span><br><span class="line">    <span class="keyword">int</span> size;</span><br><span class="line">    node()</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">memset</span>(son,<span class="number">0</span>,<span class="keyword">sizeof</span> son);</span><br><span class="line">        size = <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;trie[<span class="number">32</span>*N];</span><br></pre></td></tr></table></figure>
+<h3 id="插入-1"><a href="#插入-1" class="headerlink" title="插入"></a>插入</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Insert</span><span class="params">(<span class="keyword">int</span> x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> root = <span class="number">1</span>;</span><br><span class="line">    trie[root].size++;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> k = <span class="number">30</span>;k &gt;= <span class="number">0</span>;k--)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">int</span> tmp = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">if</span>(x &amp; (<span class="number">1</span>&lt;&lt;k))</span><br><span class="line">            tmp = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">if</span>(!trie[root].son[tmp])</span><br><span class="line">            trie[root].son[tmp] = ++tot;</span><br><span class="line">        root = trie[root].son[tmp];</span><br><span class="line">        trie[root].size++;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="删除"><a href="#删除" class="headerlink" title="删除"></a>删除</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Delete</span><span class="params">(<span class="keyword">int</span> x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> root = <span class="number">1</span>;</span><br><span class="line">    trie[root].size--;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> k = <span class="number">30</span>;k &gt;= <span class="number">0</span>;k--)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">int</span> tmp = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">if</span>(x &amp; (<span class="number">1</span>&lt;&lt;k))</span><br><span class="line">            tmp = <span class="number">1</span>;</span><br><span class="line">        root = trie[root].son[tmp];</span><br><span class="line">        trie[root].size--;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="查询"><a href="#查询" class="headerlink" title="查询"></a>查询</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">Query</span><span class="params">(<span class="keyword">int</span> x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> root = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> k = <span class="number">30</span>;k &gt;= <span class="number">0</span>;k--)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">int</span> tmp = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">if</span>(x &amp; (<span class="number">1</span>&lt;&lt;k))</span><br><span class="line">            tmp = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">if</span>(tmp)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span>(trie[root].son[<span class="number">0</span>] &amp;&amp; trie[trie[root].son[<span class="number">0</span>]].size)</span><br><span class="line">                root = trie[root].son[<span class="number">0</span>];</span><br><span class="line">            <span class="keyword">else</span> </span><br><span class="line">                root = trie[root].son[<span class="number">1</span>],x ^= (<span class="number">1</span>&lt;&lt;k);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> </span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span>(trie[root].son[<span class="number">1</span>] &amp;&amp; trie[trie[root].son[<span class="number">1</span>]].size)</span><br><span class="line">                root = trie[root].son[<span class="number">1</span>],x ^= (<span class="number">1</span>&lt;&lt;k);</span><br><span class="line">            <span class="keyword">else</span> </span><br><span class="line">                root = trie[root].son[<span class="number">0</span>];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> x;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <blockquote>
-<p><a href="http://wenku.baidu.com/view/8e9ebefb0242a8956bece4b3.html" target="_blank" rel="noopener">刘雅琼PPT讲解</a><br><a href="http://www.cnblogs.com/kuangbin/archive/2012/11/09/2763242.html" target="_blank" rel="noopener">kuangbin的博客</a></p>
-</blockquote>
-<p>给出模板串A和子串B，长度分别为$lenA$和$lenB$，要求在线性时间内，对于每个$A[i]$$(0 &lt;= i &lt; lenA)$</p>
-<p>求出$A[i..lenA-1]$ 与B的最长公共前缀长度，记为$ex[i]$(或者说，$ex[i]$为满足$A[i..i+z-1]==B[0..z-1]$的最大的z值)。</p>
-<p>扩展KMP可以用来解决很多字符串问题，如求一个字符串的最长回文子串和最长重复子串。</p>
-</blockquote>
-<a id="more"></a>
-<h2 id="1-头文件"><a href="#1-头文件" class="headerlink" title="(1)头文件"></a>(1)头文件</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> MAXN = <span class="number">2000010</span>;</span><br><span class="line"><span class="keyword">int</span> Next[MAXN];</span><br><span class="line"><span class="keyword">int</span> extend[MAXN];</span><br></pre></td></tr></table></figure>
-<h2 id="2-EXKMP"><a href="#2-EXKMP" class="headerlink" title="(2)EXKMP"></a>(2)EXKMP</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">EKMP</span><span class="params">(<span class="keyword">char</span> s[],<span class="keyword">char</span> t[])</span><span class="comment">//s为主串，t为模板串</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> i,j,p,L;</span><br><span class="line">    <span class="keyword">int</span> slen = <span class="built_in">strlen</span>(s);</span><br><span class="line">    <span class="keyword">int</span> tlen = <span class="built_in">strlen</span>(t);</span><br><span class="line">    Next[<span class="number">0</span>] = tlen;</span><br><span class="line">    j = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span>(j+<span class="number">1</span> &lt; tlen &amp;&amp; t[j] == t[j+<span class="number">1</span>])</span><br><span class="line">        j++;</span><br><span class="line">    Next[<span class="number">1</span>] = j;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> a = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span>(i = <span class="number">2</span>;i &lt; tlen;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        p = Next[a]+a<span class="number">-1</span>;</span><br><span class="line">        L = Next[i-a];</span><br><span class="line">        <span class="keyword">if</span>(i+L&lt;p+<span class="number">1</span>)</span><br><span class="line">            Next[i]=L;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">        &#123;</span><br><span class="line">            j=max(<span class="number">0</span>,p-i+<span class="number">1</span>);</span><br><span class="line">            <span class="keyword">while</span>(i+j &lt; tlen &amp;&amp; t[i+j] == t[j])</span><br><span class="line">                j++;</span><br><span class="line">            Next[i] = j;</span><br><span class="line">            a = i;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    j = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span>(j &lt; slen &amp;&amp; j &lt; tlen &amp;&amp; s[j] == t[j])j++;</span><br><span class="line">    extend[<span class="number">0</span>] = j;</span><br><span class="line">    a = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(i = <span class="number">1</span>;i &lt; slen;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        p = extend[a]+a<span class="number">-1</span>;</span><br><span class="line">        L = Next[i-a];</span><br><span class="line">        <span class="keyword">if</span>(L+i &lt; p+<span class="number">1</span>)</span><br><span class="line">            extend[i] = L;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">        &#123;</span><br><span class="line">            j = max(<span class="number">0</span>,p-i+<span class="number">1</span>);</span><br><span class="line">            <span class="keyword">while</span>(i+j&lt;slen &amp;&amp; j &lt; tlen &amp;&amp; s[i+j] == t[j])</span><br><span class="line">                j++;</span><br><span class="line">            extend[i] = j;</span><br><span class="line">            a = i;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h2><blockquote>
-<ul>
-<li>$extend[i]$表示原串以第$i$开始与模式串的前缀的最长匹配</li>
-</ul>
-<p>经典题目:</p>
-<p><a href="http://acm.hdu.edu.cn/showproblem.php?pid=3613" target="_blank" rel="noopener">HDU3613</a></p>
-<blockquote>
-<p><a href="https://www.baidu.com/link?url=jH1YXbLjsppGuLX-nPn15VgbP6DnwdMFPpYxleNSK3ndJKRM4TBFtAsqwmR--e57RzYLASUPbzlj2WuoFc3NFFD9tBbWT6IjWl9rU0_rhHu&amp;wd=&amp;eqid=af2212c500012f7f000000035b84afe3" target="_blank" rel="noopener"><em>HDU 3613</em> Best Reward(扩展KMP:回文判断) - CSDN博客</a></p>
-</blockquote>
+<p>习题</p>
+<p><a href="http://codeforces.com/contest/706/problem/D" target="_blank" rel="noopener">CF 706 D. Vasiliy’s Multiset</a></p>
+<p><a href="https://nanti.jisuanke.com/t/30425" target="_blank" rel="noopener">Chip Factory</a>   (<a href="https://nanti.jisuanke.com/?kw=ACM%20Changchun%202015" target="_blank" rel="noopener">ACM Changchun 2015</a>)</p>
+<p><a href="http://acm.hdu.edu.cn/showproblem.php?pid=4825" target="_blank" rel="noopener">HDU 4825 Xor Sum</a></p>
 </blockquote>
 
       
@@ -465,7 +456,7 @@ border-left-color: #1E92FB; /左边框颜色/
           
             <a href="/tags/模板/" <i class="fa fa-tag"></i> 模板</a>
           
-            <a href="/tags/扩展KMP/" <i class="fa fa-tag"></i> 扩展KMP</a>
+            <a href="/tags/Trie/" <i class="fa fa-tag"></i> Trie</a>
           
         </div>
       
@@ -478,8 +469,8 @@ border-left-color: #1E92FB; /左边框颜色/
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/08/05/KMP算法模板/" rel="next" title="KMP算法模板">
-                <i class="fa fa-chevron-left"></i> KMP算法模板
+              <a href="/2018/08/31/HDU5536-Chip-Factory-01字典树/" rel="next" title="HDU5536 Chip Factory(01字典树)">
+                <i class="fa fa-chevron-left"></i> HDU5536 Chip Factory(01字典树)
               </a>
             
           </div>
@@ -487,10 +478,6 @@ border-left-color: #1E92FB; /左边框颜色/
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/08/22/线段树模板-结构体写法-/" rel="prev" title="线段树模板(结构体写法)-待补全">
-                线段树模板(结构体写法)-待补全 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -626,7 +613,7 @@ border-left-color: #1E92FB; /左边框颜色/
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#概述"><span class="nav-number">1.</span> <span class="nav-text">概述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-头文件"><span class="nav-number">2.</span> <span class="nav-text">(1)头文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-EXKMP"><span class="nav-number">3.</span> <span class="nav-text">(2)EXKMP</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#补充"><span class="nav-number">4.</span> <span class="nav-text">补充</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#字典树"><span class="nav-number">1.</span> <span class="nav-text">字典树</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#预定义"><span class="nav-number">1.1.</span> <span class="nav-text">预定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#插入"><span class="nav-number">1.2.</span> <span class="nav-text">插入</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查找"><span class="nav-number">1.3.</span> <span class="nav-text">查找</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#01字典树"><span class="nav-number">2.</span> <span class="nav-text">01字典树</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#预定义-1"><span class="nav-number">2.1.</span> <span class="nav-text">预定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#插入-1"><span class="nav-number">2.2.</span> <span class="nav-text">插入</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#删除"><span class="nav-number">2.3.</span> <span class="nav-text">删除</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查询"><span class="nav-number">2.4.</span> <span class="nav-text">查询</span></a></li></ol></li></ol></div>
             
 
           </div>

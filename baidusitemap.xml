@@ -4,6 +4,95 @@
 
     
   <url>
+    <loc>http://www.duny31030.top/2018/08/31/%E5%AD%97%E5%85%B8%E6%A0%91%E6%A8%A1%E6%9D%BF/</loc>
+    <lastmod>2018-08-31T12:01:17.403Z</lastmod>
+    <data>
+        <display>
+        <title>字典树模板</title>
+        <pubTime>2018-08-31T09:18:37.000Z</pubTime>
+        
+        <tag>模板</tag>
+         
+        <tag>Trie</tag>
+         
+         
+           
+             
+              <breadCrumb title="字符串" url="http://www.duny31030.top/categories/%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.duny31030.top/2018/08/31/HDU5536-Chip-Factory-01%E5%AD%97%E5%85%B8%E6%A0%91/</loc>
+    <lastmod>2018-08-31T11:31:23.658Z</lastmod>
+    <data>
+        <display>
+        <title>HDU5536 Chip Factory(01字典树)</title>
+        <pubTime>2018-08-31T06:27:01.000Z</pubTime>
+        
+        <tag>模板题</tag>
+         
+        <tag>01字典树</tag>
+         
+         
+           
+             
+              <breadCrumb title="HDU" url="http://www.duny31030.top/categories/HDU/"/>
+          
+             
+              <breadCrumb title="字典树" url="http://www.duny31030.top/categories/HDU/%E5%AD%97%E5%85%B8%E6%A0%91/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.duny31030.top/2018/08/28/Manacher%E7%AE%97%E6%B3%95%E6%A8%A1%E6%9D%BF/</loc>
+    <lastmod>2018-08-31T09:19:58.684Z</lastmod>
+    <data>
+        <display>
+        <title>Manacher算法模板</title>
+        <pubTime>2018-08-28T03:04:06.000Z</pubTime>
+        
+        <tag>模板</tag>
+         
+        <tag>Manacher</tag>
+         
+         
+           
+             
+              <breadCrumb title="字符串" url="http://www.duny31030.top/categories/%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.duny31030.top/2018/07/28/2018%E6%9A%91%E5%81%87%E9%81%97%E7%95%99%E9%A2%98%E7%9B%AE/</loc>
+    <lastmod>2018-08-29T16:10:26.928Z</lastmod>
+    <data>
+        <display>
+        <title>2018暑假遗留题目</title>
+        <pubTime>2018-07-28T12:20:16.000Z</pubTime>
+        
+        <tag>补题</tag>
+         
+         
+           
+             
+              <breadCrumb title="2018暑假" url="http://www.duny31030.top/categories/2018%E6%9A%91%E5%81%87/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://www.duny31030.top/2018/08/29/POJ2001-Shortest-Prefixes/</loc>
     <lastmod>2018-08-29T07:18:26.299Z</lastmod>
     <data>
@@ -73,41 +162,6 @@
              
               <breadCrumb title="字符串" url="http://www.duny31030.top/categories/HDU/%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.duny31030.top/2018/07/28/2018%E6%9A%91%E5%81%87%E9%81%97%E7%95%99%E9%A2%98%E7%9B%AE/</loc>
-    <lastmod>2018-08-28T15:29:54.663Z</lastmod>
-    <data>
-        <display>
-        <title>2018暑假遗留题目</title>
-        <pubTime>2018-07-28T12:20:16.000Z</pubTime>
-        
-        <tag>补题</tag>
-         
-         
-           
-             
-              <breadCrumb title="2018暑假" url="http://www.duny31030.top/categories/2018%E6%9A%91%E5%81%87/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.duny31030.top/2018/08/28/Manacher%E7%AE%97%E6%B3%95%E6%A8%A1%E6%9D%BF/</loc>
-    <lastmod>2018-08-28T03:35:42.493Z</lastmod>
-    <data>
-        <display>
-        <title>Manacher算法模板</title>
-        <pubTime>2018-08-28T03:04:06.000Z</pubTime>
-        
-         
-           
         </display>
     </data>
     </url>
