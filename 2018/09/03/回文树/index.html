@@ -117,7 +117,7 @@
 
 
 
-  <meta name="keywords" content="模板,扩展KMP," />
+  <meta name="keywords" content="模板,回文树," />
 
 
 
@@ -128,18 +128,18 @@
 
 
 
-<meta name="description" content="概述 参考资料:  刘雅琼PPT讲解kuangbin的博客  给出模板串A和子串B，长度分别为$lenA$和$lenB$，要求在线性时间内，对于每个$A[i]$$(0 &amp;lt;= i &amp;lt; lenA)$ 求出$A[i..lenA-1]$ 与B的最长公共前缀长度，记为$ex[i]$(或者说，$ex[i]$为满足$A[i..i+z-1]==B[0..z-1]$的最大的z值)。 扩展KMP可以用来解">
-<meta name="keywords" content="模板,扩展KMP">
+<meta name="description" content="应用场景 1.求串S前缀font&amp;gt;0~i内本质不同回文串的个数（两个串长度不同或者长度相同且至少有一个字符不同便是本质不同） 2.求串S内每一个本质不同回文串出现的次数 3.求串S内回文串的个数（其实就是1和2结合起来） 4.求以下标i结尾的回文串的个数  参考资料:Palindromic Tree——回文树【处理一类回文串问题的强力工具】   定义变量 1.len 表示编号为i的节点表示的">
+<meta name="keywords" content="模板,回文树">
 <meta property="og:type" content="article">
-<meta property="og:title" content="扩展KMP模板">
-<meta property="og:url" content="http://www.duny31030.top/2018/08/08/扩展KMP模板/index.html">
+<meta property="og:title" content="回文树">
+<meta property="og:url" content="http://www.duny31030.top/2018/09/03/回文树/index.html">
 <meta property="og:site_name" content="duny31030&#39;Blog">
-<meta property="og:description" content="概述 参考资料:  刘雅琼PPT讲解kuangbin的博客  给出模板串A和子串B，长度分别为$lenA$和$lenB$，要求在线性时间内，对于每个$A[i]$$(0 &amp;lt;= i &amp;lt; lenA)$ 求出$A[i..lenA-1]$ 与B的最长公共前缀长度，记为$ex[i]$(或者说，$ex[i]$为满足$A[i..i+z-1]==B[0..z-1]$的最大的z值)。 扩展KMP可以用来解">
+<meta property="og:description" content="应用场景 1.求串S前缀font&amp;gt;0~i内本质不同回文串的个数（两个串长度不同或者长度相同且至少有一个字符不同便是本质不同） 2.求串S内每一个本质不同回文串出现的次数 3.求串S内回文串的个数（其实就是1和2结合起来） 4.求以下标i结尾的回文串的个数  参考资料:Palindromic Tree——回文树【处理一类回文串问题的强力工具】   定义变量 1.len 表示编号为i的节点表示的">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-09-02T16:29:54.139Z">
+<meta property="og:updated_time" content="2018-09-02T18:11:04.517Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="扩展KMP模板">
-<meta name="twitter:description" content="概述 参考资料:  刘雅琼PPT讲解kuangbin的博客  给出模板串A和子串B，长度分别为$lenA$和$lenB$，要求在线性时间内，对于每个$A[i]$$(0 &amp;lt;= i &amp;lt; lenA)$ 求出$A[i..lenA-1]$ 与B的最长公共前缀长度，记为$ex[i]$(或者说，$ex[i]$为满足$A[i..i+z-1]==B[0..z-1]$的最大的z值)。 扩展KMP可以用来解">
+<meta name="twitter:title" content="回文树">
+<meta name="twitter:description" content="应用场景 1.求串S前缀font&amp;gt;0~i内本质不同回文串的个数（两个串长度不同或者长度相同且至少有一个字符不同便是本质不同） 2.求串S内每一个本质不同回文串出现的次数 3.求串S内回文串的个数（其实就是1和2结合起来） 4.求以下标i结尾的回文串的个数  参考资料:Palindromic Tree——回文树【处理一类回文串问题的强力工具】   定义变量 1.len 表示编号为i的节点表示的">
 
 
 
@@ -169,7 +169,7 @@
 
 
 
-  <link rel="canonical" href="http://www.duny31030.top/2018/08/08/扩展KMP模板/"/>
+  <link rel="canonical" href="http://www.duny31030.top/2018/09/03/回文树/"/>
 
 
 <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
@@ -192,7 +192,7 @@ border-left-color: #1E92FB; /左边框颜色/
 
 
 
-  <title>扩展KMP模板 | duny31030'Blog</title>
+  <title>回文树 | duny31030'Blog</title>
   
 
 
@@ -353,7 +353,7 @@ border-left-color: #1E92FB; /左边框颜色/
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.duny31030.top/2018/08/08/扩展KMP模板/">
+    <link itemprop="mainEntityOfPage" href="http://www.duny31030.top/2018/09/03/回文树/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="杜宁元">
@@ -370,7 +370,7 @@ border-left-color: #1E92FB; /左边框颜色/
 
         
         
-          <h1 class="post-title" itemprop="name headline">扩展KMP模板</h1>
+          <h1 class="post-title" itemprop="name headline">回文树</h1>
         
 
         <div class="post-meta">
@@ -382,8 +382,8 @@ border-left-color: #1E92FB; /左边框颜色/
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-08T14:28:35+08:00">
-                2018-08-08
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-03T01:01:00+08:00">
+                2018-09-03
               </time>
             
 
@@ -416,8 +416,8 @@ border-left-color: #1E92FB; /左边框颜色/
                 
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/字符串/扩展KMP/" itemprop="url" rel="index">
-                    <span itemprop="name">扩展KMP</span>
+                  <a href="/categories/字符串/回文树/" itemprop="url" rel="index">
+                    <span itemprop="name">回文树</span>
                   </a>
                 </span>
 
@@ -433,7 +433,7 @@ border-left-color: #1E92FB; /左边框颜色/
 
           
           
-             <span id="/2018/08/08/扩展KMP模板/" class="leancloud_visitors" data-flag-title="扩展KMP模板">
+             <span id="/2018/09/03/回文树/" class="leancloud_visitors" data-flag-title="回文树">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -469,27 +469,127 @@ border-left-color: #1E92FB; /左边框颜色/
       
 
       
-        <h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><blockquote>
-<p>参考资料:</p>
+        <h2 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景"></a>应用场景</h2><blockquote>
+<p>1.求串S<font color="red">前缀</font>font&gt;0~i内本质不同回文串的个数（两个串长度不同或者长度相同且至少有一个字符不同便是本质不同）</p>
+<p>2.求串S内每一个本质不同回文串出现的次数</p>
+<p>3.求串S内回文串的个数（其实就是1和2结合起来）</p>
+<p>4.求以下标i结尾的回文串的个数</p>
 <blockquote>
-<p><a href="http://wenku.baidu.com/view/8e9ebefb0242a8956bece4b3.html" target="_blank" rel="noopener">刘雅琼PPT讲解</a><br><a href="http://www.cnblogs.com/kuangbin/archive/2012/11/09/2763242.html" target="_blank" rel="noopener">kuangbin的博客</a></p>
+<p>参考资料:<a href="https://blog.csdn.net/u013368721/article/details/42100363" target="_blank" rel="noopener">Palindromic Tree——回文树【处理一类回文串问题的强力工具】</a></p>
 </blockquote>
-<p>给出模板串A和子串B，长度分别为$lenA$和$lenB$，要求在线性时间内，对于每个$A[i]$$(0 &lt;= i &lt; lenA)$</p>
-<p>求出$A[i..lenA-1]$ 与B的最长公共前缀长度，记为$ex[i]$(或者说，$ex[i]$为满足$A[i..i+z-1]==B[0..z-1]$的最大的z值)。</p>
-<p>扩展KMP可以用来解决很多字符串问题，如求一个字符串的最长回文子串和最长重复子串。</p>
 </blockquote>
-<a id="more"></a>
-<h2 id="1-头文件"><a href="#1-头文件" class="headerlink" title="(1)头文件"></a>(1)头文件</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> MAXN = <span class="number">2000010</span>;</span><br><span class="line"><span class="keyword">int</span> Next[MAXN];</span><br><span class="line"><span class="keyword">int</span> extend[MAXN];</span><br></pre></td></tr></table></figure>
-<h2 id="2-EXKMP"><a href="#2-EXKMP" class="headerlink" title="(2)EXKMP"></a>(2)EXKMP</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">EKMP</span><span class="params">(<span class="keyword">char</span> s[],<span class="keyword">char</span> t[])</span><span class="comment">//s为主串，t为模板串</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> i,j,p,L;</span><br><span class="line">    <span class="keyword">int</span> slen = <span class="built_in">strlen</span>(s);</span><br><span class="line">    <span class="keyword">int</span> tlen = <span class="built_in">strlen</span>(t);</span><br><span class="line">    Next[<span class="number">0</span>] = tlen;</span><br><span class="line">    j = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span>(j+<span class="number">1</span> &lt; tlen &amp;&amp; t[j] == t[j+<span class="number">1</span>])</span><br><span class="line">        j++;</span><br><span class="line">    Next[<span class="number">1</span>] = j;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> a = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span>(i = <span class="number">2</span>;i &lt; tlen;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        p = Next[a]+a<span class="number">-1</span>;</span><br><span class="line">        L = Next[i-a];</span><br><span class="line">        <span class="keyword">if</span>(i+L&lt;p+<span class="number">1</span>)</span><br><span class="line">            Next[i]=L;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">        &#123;</span><br><span class="line">            j=max(<span class="number">0</span>,p-i+<span class="number">1</span>);</span><br><span class="line">            <span class="keyword">while</span>(i+j &lt; tlen &amp;&amp; t[i+j] == t[j])</span><br><span class="line">                j++;</span><br><span class="line">            Next[i] = j;</span><br><span class="line">            a = i;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    j = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span>(j &lt; slen &amp;&amp; j &lt; tlen &amp;&amp; s[j] == t[j])j++;</span><br><span class="line">    extend[<span class="number">0</span>] = j;</span><br><span class="line">    a = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(i = <span class="number">1</span>;i &lt; slen;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        p = extend[a]+a<span class="number">-1</span>;</span><br><span class="line">        L = Next[i-a];</span><br><span class="line">        <span class="keyword">if</span>(L+i &lt; p+<span class="number">1</span>)</span><br><span class="line">            extend[i] = L;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">        &#123;</span><br><span class="line">            j = max(<span class="number">0</span>,p-i+<span class="number">1</span>);</span><br><span class="line">            <span class="keyword">while</span>(i+j&lt;slen &amp;&amp; j &lt; tlen &amp;&amp; s[i+j] == t[j])</span><br><span class="line">                j++;</span><br><span class="line">            extend[i] = j;</span><br><span class="line">            a = i;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h2><blockquote>
-<ul>
-<li>$extend[i]$表示原串以第$i$开始与模式串的前缀的最长匹配</li>
-</ul>
-<p>经典题目:</p>
-<p><a href="http://acm.hdu.edu.cn/showproblem.php?pid=3613" target="_blank" rel="noopener">HDU3613</a></p>
+<h2 id="定义变量"><a href="#定义变量" class="headerlink" title="定义变量"></a>定义变量</h2><blockquote>
+<p>1.len 表示编号为i的节点表示的回文串的长度（一个节点表示一个回文串）</p>
+<p>2.next 表示编号为i的节点表示的回文串在两边添加字符c以后变成的回文串的编号（和字典树类似）。</p>
+<p>3.fail 表示节点i失配以后跳转不等于自身的节点i表示的回文串的最长后缀回文串（和AC自动机类似）。</p>
+<p>4.cnt 表示节点i表示的本质不同的串的个数（建树时求出的不是完全的，最后count()函数跑一遍以后才是正确的）</p>
+<p>5.num 表示以节点i表示的最长回文串的最右端点为回文串结尾的回文串个数。</p>
+<p>6.last 指向新添加一个字母后所形成的最长回文串表示的节点。</p>
+<p>7.S 表示第i次添加的字符（一开始设S[0] = -1（可以是任意一个在串S中不会出现的字符））。</p>
+<p>8.p 表示添加的节点个数。</p>
+<p>9.n 表示添加的字符个数。</p>
+</blockquote>
+<div class="note danger"><p>由于代码风格不同</p>
+<p>本文全部代码均由上文博客地址中的代码改写而成</p>
+<font color="red" size="6">**缺点: 速度慢**</font>
+
+<p>例如:  <a href="https://vjudge.net/problem/UESTC-1999" target="_blank" rel="noopener">UESTC-1999</a></p>
 <blockquote>
-<p><a href="https://www.baidu.com/link?url=jH1YXbLjsppGuLX-nPn15VgbP6DnwdMFPpYxleNSK3ndJKRM4TBFtAsqwmR--e57RzYLASUPbzlj2WuoFc3NFFD9tBbWT6IjWl9rU0_rhHu&amp;wd=&amp;eqid=af2212c500012f7f000000035b84afe3" target="_blank" rel="noopener"><em>HDU 3613</em> Best Reward(扩展KMP:回文判断) - CSDN博客</a></p>
+<p>上边的为我的模板的提交结果 TLE<br>下边的为改为原博主的模板后的提交结果,1421ms飘过<br>时限1500ms</p>
 </blockquote>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>Status</th>
+<th>Length</th>
+<th>Lang</th>
+<th>Submitted</th>
+<th>RemoteRunId</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Time Limit Exceeded on test 59</td>
+<td>3139</td>
+<td>C++</td>
+<td>2018-09-03 01:39:57</td>
+<td>432786</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>Status</th>
+<th>Time</th>
+<th>Memory</th>
+<th>Length</th>
+<th>Lang</th>
+<th>Submitted</th>
+<th>RemoteRunId</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Accepted</td>
+<td>1421ms</td>
+<td>1524kB</td>
+<td>2827</td>
+<td>C++</td>
+<td>2018-09-03 01:51:36</td>
+<td>432792</td>
+</tr>
+</tbody>
+</table>
+</div></div>
+<h2 id="预定义"><a href="#预定义" class="headerlink" title="预定义"></a>预定义</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> MAXN = <span class="number">1e5</span>+<span class="number">10</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">26</span>;</span><br><span class="line"><span class="keyword">char</span> s[MAXN];</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">node</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="keyword">int</span> next[N];   <span class="comment">// next指针,next指针和字典树类似,指向的串为</span></span><br><span class="line">                   <span class="comment">// 当前穿两端加上同一个字符构成</span></span><br><span class="line">    <span class="keyword">int</span> fail;      <span class="comment">// fail指针,失配后跳转到fail指针指向的节点</span></span><br><span class="line">    <span class="keyword">int</span> cnt;       <span class="comment">// 表示节点i的本质不同的串的个数</span></span><br><span class="line">                   <span class="comment">// 建树时求出的不是完全的，最后Count()函数跑一遍以后才是正确的</span></span><br><span class="line">    <span class="keyword">int</span> num;       <span class="comment">// 表示以节点i表示的最长回文串的最右端点为回文串结尾的回文个数</span></span><br><span class="line">    <span class="keyword">int</span> len;       <span class="comment">// 表示以当前节点表示的最长回文串长度（一个节点表示一个回文串）</span></span><br><span class="line">    <span class="keyword">int</span> S;         <span class="comment">// 存放添加的字符</span></span><br><span class="line">&#125;pam[MAXN];</span><br><span class="line"><span class="keyword">int</span> last;   <span class="comment">// 指向新添加一个字母后所形成的最长回文串表示的节点</span></span><br><span class="line"><span class="keyword">int</span> n;      <span class="comment">// 表示添加的字符个数</span></span><br><span class="line"><span class="keyword">int</span> p;      <span class="comment">// 表示添加的节点个数</span></span><br></pre></td></tr></table></figure>
+<h2 id="新建节点"><a href="#新建节点" class="headerlink" title="新建节点"></a>新建节点</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">newnode</span><span class="params">(<span class="keyword">int</span> x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>;i &lt; N;i++)</span><br><span class="line">        pam[p].next[i] = <span class="number">0</span>;</span><br><span class="line">    pam[p].cnt = <span class="number">0</span>;</span><br><span class="line">    pam[p].num = <span class="number">0</span>;</span><br><span class="line">    pam[p].len = x;</span><br><span class="line">    <span class="keyword">return</span> p++;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Init</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    p = <span class="number">0</span>;</span><br><span class="line">    newnode(<span class="number">0</span>);</span><br><span class="line">    newnode(<span class="number">-1</span>);</span><br><span class="line">    last = <span class="number">0</span>;</span><br><span class="line">    n = <span class="number">0</span>;</span><br><span class="line">    pam[n].S = <span class="number">-1</span>;   <span class="comment">// 开头存放一个字符集中没有的字符,减少特判</span></span><br><span class="line">    pam[<span class="number">0</span>].fail = <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="构造失配指针"><a href="#构造失配指针" class="headerlink" title="构造失配指针"></a>构造失配指针</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">get_fail</span><span class="params">(<span class="keyword">int</span> x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">while</span>(pam[n-pam[x].len<span class="number">-1</span>].S != pam[n].S)</span><br><span class="line">        x = pam[x].fail;</span><br><span class="line">    <span class="keyword">return</span> x;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="添加字母"><a href="#添加字母" class="headerlink" title="添加字母"></a>添加字母</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Add</span><span class="params">(<span class="keyword">int</span> c)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    c -= <span class="string">'a'</span>;</span><br><span class="line">    pam[++n].S = c;</span><br><span class="line">    <span class="keyword">int</span> cur = get_fail(last);   <span class="comment">// 通过上一个回文串找这个回文串的匹配位置</span></span><br><span class="line">    <span class="keyword">if</span>(!pam[cur].next[c])       <span class="comment">// 如果这个回文串没有出现过，说明出现了</span></span><br><span class="line">                                <span class="comment">// 一个新的本子不同的回文串</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">int</span> now = newnode(pam[cur].len+<span class="number">2</span>);   <span class="comment">// 新建节点</span></span><br><span class="line">        pam[now].fail = pam[get_fail(pam[cur].fail)].next[c];   </span><br><span class="line">        <span class="comment">// 和AC自动机一样建立fil指针,以便失败后回跳</span></span><br><span class="line">        pam[cur].next[c] = now;</span><br><span class="line">        pam[now].num = pam[pam[now].fail].num+<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    last = pam[cur].next[c];</span><br><span class="line">    pam[last].cnt++;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="Count函数"><a href="#Count函数" class="headerlink" title="Count函数"></a>Count函数</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Count</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = p<span class="number">-1</span>;i &gt;= <span class="number">0</span>;--i)</span><br><span class="line">    &#123;</span><br><span class="line">        pam[pam[i].fail].cnt += pam[i].cnt;</span><br><span class="line">        <span class="comment">// 父亲累加儿子才cnt,因为如果fail[v] = u , 则u一定是v的子回文串</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="主函数"><a href="#主函数" class="headerlink" title="主函数"></a>主函数</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%s"</span>,s);   <span class="comment">// 读入字符串</span></span><br><span class="line">    <span class="keyword">int</span> len = <span class="built_in">strlen</span>(s);</span><br><span class="line">    Init();          <span class="comment">// 初始化</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>;i &lt; len;i++)</span><br><span class="line">        Add(s[i]);</span><br><span class="line">    Count();         <span class="comment">// Count()函数跑一遍cnt的值以后才是正确的</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"balabalabala~~~"</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="原文模板"><a href="#原文模板" class="headerlink" title="原文模板"></a>原文模板</h2><blockquote>
+<font color="red" size="6">**速度比我改写的要快**</font>
+
+</blockquote>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> MAXN = <span class="number">100005</span> ;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">26</span> ;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Palindromic_Tree</span> &#123;</span></span><br><span class="line">	<span class="keyword">int</span> next[MAXN][N] ;<span class="comment">//next指针，next指针和字典树类似，指向的串为当前串两端加上同一个字符构成</span></span><br><span class="line">	<span class="keyword">int</span> fail[MAXN] ;<span class="comment">//fail指针，失配后跳转到fail指针指向的节点</span></span><br><span class="line">	<span class="keyword">int</span> cnt[MAXN] ;</span><br><span class="line">	<span class="keyword">int</span> num[MAXN] ;</span><br><span class="line">	<span class="keyword">int</span> len[MAXN] ;<span class="comment">//len[i]表示节点i表示的回文串的长度</span></span><br><span class="line">	<span class="keyword">int</span> S[MAXN] ;<span class="comment">//存放添加的字符</span></span><br><span class="line">	<span class="keyword">int</span> last ;<span class="comment">//指向上一个字符所在的节点，方便下一次add</span></span><br><span class="line">	<span class="keyword">int</span> n ;<span class="comment">//字符数组指针</span></span><br><span class="line">	<span class="keyword">int</span> p ;<span class="comment">//节点指针</span></span><br><span class="line"> </span><br><span class="line">	<span class="function"><span class="keyword">int</span> <span class="title">newnode</span> <span class="params">( <span class="keyword">int</span> l )</span> </span>&#123;<span class="comment">//新建节点</span></span><br><span class="line">		<span class="keyword">for</span> ( <span class="keyword">int</span> i = <span class="number">0</span> ; i &lt; N ; ++ i ) next[p][i] = <span class="number">0</span> ;</span><br><span class="line">		cnt[p] = <span class="number">0</span> ;</span><br><span class="line">		num[p] = <span class="number">0</span> ;</span><br><span class="line">		len[p] = l ;</span><br><span class="line">		<span class="keyword">return</span> p ++ ;</span><br><span class="line">	&#125;</span><br><span class="line"> </span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">init</span> <span class="params">()</span> </span>&#123;<span class="comment">//初始化</span></span><br><span class="line">		p = <span class="number">0</span> ;</span><br><span class="line">		newnode (  <span class="number">0</span> ) ;</span><br><span class="line">		newnode ( <span class="number">-1</span> ) ;</span><br><span class="line">		last = <span class="number">0</span> ;</span><br><span class="line">		n = <span class="number">0</span> ;</span><br><span class="line">		S[n] = <span class="number">-1</span> ;<span class="comment">//开头放一个字符集中没有的字符，减少特判</span></span><br><span class="line">		fail[<span class="number">0</span>] = <span class="number">1</span> ;</span><br><span class="line">	&#125;</span><br><span class="line"> </span><br><span class="line">	<span class="function"><span class="keyword">int</span> <span class="title">get_fail</span> <span class="params">( <span class="keyword">int</span> x )</span> </span>&#123;<span class="comment">//和KMP一样，失配后找一个尽量最长的</span></span><br><span class="line">		<span class="keyword">while</span> ( S[n - len[x] - <span class="number">1</span>] != S[n] ) x = fail[x] ;</span><br><span class="line">		<span class="keyword">return</span> x ;</span><br><span class="line">	&#125;</span><br><span class="line"> </span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">add</span> <span class="params">( <span class="keyword">int</span> c )</span> </span>&#123;</span><br><span class="line">		c -= <span class="string">'a'</span> ;</span><br><span class="line">		S[++ n] = c ;</span><br><span class="line">		<span class="keyword">int</span> cur = get_fail ( last ) ;<span class="comment">//通过上一个回文串找这个回文串的匹配位置</span></span><br><span class="line">		<span class="keyword">if</span> ( !next[cur][c] ) &#123;<span class="comment">//如果这个回文串没有出现过，说明出现了一个新的本质不同的回文串</span></span><br><span class="line">			<span class="keyword">int</span> now = newnode ( len[cur] + <span class="number">2</span> ) ;<span class="comment">//新建节点</span></span><br><span class="line">			fail[now] = next[get_fail ( fail[cur] )][c] ;<span class="comment">//和AC自动机一样建立fail指针，以便失配后跳转</span></span><br><span class="line">			next[cur][c] = now ;</span><br><span class="line">			num[now] = num[fail[now]] + <span class="number">1</span> ;</span><br><span class="line">		&#125;</span><br><span class="line">		last = next[cur][c] ;</span><br><span class="line">		cnt[last] ++ ;</span><br><span class="line">	&#125;</span><br><span class="line"> </span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">count</span> <span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">for</span> ( <span class="keyword">int</span> i = p - <span class="number">1</span> ; i &gt;= <span class="number">0</span> ; -- i ) cnt[fail[i]] += cnt[i] ;</span><br><span class="line">		<span class="comment">//父亲累加儿子的cnt，因为如果fail[v]=u，则u一定是v的子回文串！</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125; ;</span><br></pre></td></tr></table></figure>
+<h2 id="练手习题"><a href="#练手习题" class="headerlink" title="练手习题"></a>练手习题</h2><blockquote>
+<p><a href="http://www.lydsy.com/JudgeOnline/problem.php?id=3676" target="_blank" rel="noopener">BZOJ3676</a> </p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>RunID</th>
+<th>User</th>
+<th>Problem</th>
+<th>Result</th>
+<th>Memory</th>
+<th>Time</th>
+<th>Language</th>
+<th>Code_Length</th>
+<th>Submit_Time</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2937794</td>
+<td><a href="https://www.lydsy.com/JudgeOnline/userinfo.php?user=duny31030" target="_blank" rel="noopener">duny31030</a></td>
+<td><a href="https://www.lydsy.com/JudgeOnline/problem.php?id=3676" target="_blank" rel="noopener">3676</a></td>
+<td>Accepted</td>
+<td>38036 kb</td>
+<td>1252 ms</td>
+<td><a href="https://www.lydsy.com/JudgeOnline/showsource.php?id=2937794" target="_blank" rel="noopener">C++</a>/<a href="https://www.lydsy.com/JudgeOnline/submitpage.php?id=3676&amp;sid=2937794" target="_blank" rel="noopener">Edit</a></td>
+<td>3952 B</td>
+<td>2018-09-03 00:59:48</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><a href="https://vjudge.net/problem/UESTC-1999" target="_blank" rel="noopener">UESTC-1999</a><br>| Status   | Time   | Memory | Length | Lang | Submitted           | RemoteRunId |<br>| ———— | ——— | ——— | ——— | —— | —————————- | —————- |<br>| Accepted | 1421ms | 1524kB | 2827   | C++  | 2018-09-03 01:51:36 | 432792      |</p>
 </blockquote>
 
       
@@ -511,7 +611,7 @@ border-left-color: #1E92FB; /左边框颜色/
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="http://www.duny31030.top/2018/08/08/扩展KMP模板/" title="扩展KMP模板">http://www.duny31030.top/2018/08/08/扩展KMP模板/</a>
+    <a href="http://www.duny31030.top/2018/09/03/回文树/" title="回文树">http://www.duny31030.top/2018/09/03/回文树/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -529,7 +629,7 @@ border-left-color: #1E92FB; /左边框颜色/
           
             <a href="/tags/模板/" <i class="fa fa-tag"></i> 模板</a>
           
-            <a href="/tags/扩展KMP/" <i class="fa fa-tag"></i> 扩展KMP</a>
+            <a href="/tags/回文树/" <i class="fa fa-tag"></i> 回文树</a>
           
         </div>
       
@@ -542,8 +642,8 @@ border-left-color: #1E92FB; /左边框颜色/
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/08/05/KMP算法模板/" rel="next" title="KMP算法模板">
-                <i class="fa fa-chevron-left"></i> KMP算法模板
+              <a href="/2018/09/02/HDU2896-病毒侵袭-AC自动机/" rel="next" title="HDU2896 病毒侵袭(AC自动机)">
+                <i class="fa fa-chevron-left"></i> HDU2896 病毒侵袭(AC自动机)
               </a>
             
           </div>
@@ -551,10 +651,6 @@ border-left-color: #1E92FB; /左边框颜色/
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/08/22/线段树模板-结构体写法-/" rel="prev" title="线段树模板(结构体写法)-待补全">
-                线段树模板(结构体写法)-待补全 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -690,7 +786,7 @@ border-left-color: #1E92FB; /左边框颜色/
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#概述"><span class="nav-number">1.</span> <span class="nav-text">概述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-头文件"><span class="nav-number">2.</span> <span class="nav-text">(1)头文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-EXKMP"><span class="nav-number">3.</span> <span class="nav-text">(2)EXKMP</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#补充"><span class="nav-number">4.</span> <span class="nav-text">补充</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#应用场景"><span class="nav-number">1.</span> <span class="nav-text">应用场景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#定义变量"><span class="nav-number">2.</span> <span class="nav-text">定义变量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#预定义"><span class="nav-number">3.</span> <span class="nav-text">预定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#新建节点"><span class="nav-number">4.</span> <span class="nav-text">新建节点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#初始化"><span class="nav-number">5.</span> <span class="nav-text">初始化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#构造失配指针"><span class="nav-number">6.</span> <span class="nav-text">构造失配指针</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#添加字母"><span class="nav-number">7.</span> <span class="nav-text">添加字母</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Count函数"><span class="nav-number">8.</span> <span class="nav-text">Count函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#主函数"><span class="nav-number">9.</span> <span class="nav-text">主函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#原文模板"><span class="nav-number">10.</span> <span class="nav-text">原文模板</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#练手习题"><span class="nav-number">11.</span> <span class="nav-text">练手习题</span></a></li></ol></div>
             
 
           </div>
