@@ -128,18 +128,18 @@
 
 
 
-<meta name="description" content="应用场景 1.求串S前缀font&amp;gt;0~i内本质不同回文串的个数（两个串长度不同或者长度相同且至少有一个字符不同便是本质不同） 2.求串S内每一个本质不同回文串出现的次数 3.求串S内回文串的个数（其实就是1和2结合起来） 4.求以下标i结尾的回文串的个数  参考资料:Palindromic Tree——回文树【处理一类回文串问题的强力工具】   定义变量 1.len 表示编号为i的节点表示的">
+<meta name="description" content="应用场景 1.求串S前缀font&amp;gt;0~i内本质不同回文串的个数（两个串长度不同或者长度相同且至少有一个字符不同便是本质不同） 2.求串S内每一个本质不同回文串出现的次数 3.求串S内回文串的个数（其实就是1和2结合起来） 4.求以下标i结尾的回文串的个数  参考资料: Palindromic Tree——回文树【处理一类回文串问题的强力工具】 17年国家集训队论文《回文树及其应用》">
 <meta name="keywords" content="模板,回文树">
 <meta property="og:type" content="article">
 <meta property="og:title" content="回文树">
 <meta property="og:url" content="http://www.duny31030.top/2018/09/03/回文树/index.html">
 <meta property="og:site_name" content="duny31030&#39;Blog">
-<meta property="og:description" content="应用场景 1.求串S前缀font&amp;gt;0~i内本质不同回文串的个数（两个串长度不同或者长度相同且至少有一个字符不同便是本质不同） 2.求串S内每一个本质不同回文串出现的次数 3.求串S内回文串的个数（其实就是1和2结合起来） 4.求以下标i结尾的回文串的个数  参考资料:Palindromic Tree——回文树【处理一类回文串问题的强力工具】   定义变量 1.len 表示编号为i的节点表示的">
+<meta property="og:description" content="应用场景 1.求串S前缀font&amp;gt;0~i内本质不同回文串的个数（两个串长度不同或者长度相同且至少有一个字符不同便是本质不同） 2.求串S内每一个本质不同回文串出现的次数 3.求串S内回文串的个数（其实就是1和2结合起来） 4.求以下标i结尾的回文串的个数  参考资料: Palindromic Tree——回文树【处理一类回文串问题的强力工具】 17年国家集训队论文《回文树及其应用》">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-09-02T18:11:04.517Z">
+<meta property="og:updated_time" content="2018-09-02T19:37:38.750Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="回文树">
-<meta name="twitter:description" content="应用场景 1.求串S前缀font&amp;gt;0~i内本质不同回文串的个数（两个串长度不同或者长度相同且至少有一个字符不同便是本质不同） 2.求串S内每一个本质不同回文串出现的次数 3.求串S内回文串的个数（其实就是1和2结合起来） 4.求以下标i结尾的回文串的个数  参考资料:Palindromic Tree——回文树【处理一类回文串问题的强力工具】   定义变量 1.len 表示编号为i的节点表示的">
+<meta name="twitter:description" content="应用场景 1.求串S前缀font&amp;gt;0~i内本质不同回文串的个数（两个串长度不同或者长度相同且至少有一个字符不同便是本质不同） 2.求串S内每一个本质不同回文串出现的次数 3.求串S内回文串的个数（其实就是1和2结合起来） 4.求以下标i结尾的回文串的个数  参考资料: Palindromic Tree——回文树【处理一类回文串问题的强力工具】 17年国家集训队论文《回文树及其应用》">
 
 
 
@@ -475,9 +475,12 @@ border-left-color: #1E92FB; /左边框颜色/
 <p>3.求串S内回文串的个数（其实就是1和2结合起来）</p>
 <p>4.求以下标i结尾的回文串的个数</p>
 <blockquote>
-<p>参考资料:<a href="https://blog.csdn.net/u013368721/article/details/42100363" target="_blank" rel="noopener">Palindromic Tree——回文树【处理一类回文串问题的强力工具】</a></p>
+<p>参考资料:</p>
+<p><a href="https://blog.csdn.net/u013368721/article/details/42100363" target="_blank" rel="noopener">Palindromic Tree——回文树【处理一类回文串问题的强力工具】</a></p>
+<p>17年国家集训队论文《回文树及其应用》</p>
 </blockquote>
 </blockquote>
+<a id="more"></a>
 <h2 id="定义变量"><a href="#定义变量" class="headerlink" title="定义变量"></a>定义变量</h2><blockquote>
 <p>1.len 表示编号为i的节点表示的回文串的长度（一个节点表示一个回文串）</p>
 <p>2.next 表示编号为i的节点表示的回文串在两边添加字符c以后变成的回文串的编号（和字典树类似）。</p>
