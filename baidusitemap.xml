@@ -4,6 +4,56 @@
 
     
   <url>
+    <loc>http://www.duny31030.top/2018/09/02/HDU2896-%E7%97%85%E6%AF%92%E4%BE%B5%E8%A2%AD-AC%E8%87%AA%E5%8A%A8%E6%9C%BA/</loc>
+    <lastmod>2018-09-02T06:41:48.084Z</lastmod>
+    <data>
+        <display>
+        <title>HDU2896 病毒侵袭(AC自动机)</title>
+        <pubTime>2018-09-02T06:30:06.000Z</pubTime>
+        
+        <tag>AC自动机</tag>
+         
+        <tag>HDU</tag>
+         
+         
+           
+             
+              <breadCrumb title="字符串" url="http://www.duny31030.top/categories/%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
+          
+             
+              <breadCrumb title="AC自动机" url="http://www.duny31030.top/categories/%E5%AD%97%E7%AC%A6%E4%B8%B2/AC%E8%87%AA%E5%8A%A8%E6%9C%BA/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.duny31030.top/2018/09/02/AC%E8%87%AA%E5%8A%A8%E6%9C%BA/</loc>
+    <lastmod>2018-09-02T03:12:22.115Z</lastmod>
+    <data>
+        <display>
+        <title>AC自动机</title>
+        <pubTime>2018-09-02T02:29:43.000Z</pubTime>
+        
+        <tag>AC自动机</tag>
+         
+        <tag>模板</tag>
+         
+         
+           
+             
+              <breadCrumb title="字符串" url="http://www.duny31030.top/categories/%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
+          
+             
+              <breadCrumb title="AC自动机" url="http://www.duny31030.top/categories/%E5%AD%97%E7%AC%A6%E4%B8%B2/AC%E8%87%AA%E5%8A%A8%E6%9C%BA/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://www.duny31030.top/2018/08/26/%E8%B4%B9%E9%A9%AC%E5%AE%9A%E7%90%86/</loc>
     <lastmod>2018-09-01T11:43:11.974Z</lastmod>
     <data>
@@ -334,9 +384,9 @@
         <title>KMP算法模板</title>
         <pubTime>2018-08-05T08:04:00.000Z</pubTime>
         
-        <tag>KMP</tag>
-         
         <tag>模板</tag>
+         
+        <tag>KMP</tag>
          
          
            

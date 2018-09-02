@@ -1,3 +1,5 @@
+http://www.duny31030.top/2018/09/02/HDU2896-病毒侵袭-AC自动机/
+http://www.duny31030.top/2018/09/02/AC自动机/
 http://www.duny31030.top/2018/09/01/Lpl-and-Energy-saving-Lamps-二分-线段树/
 http://www.duny31030.top/2018/08/31/字典树模板/
 http://www.duny31030.top/2018/08/31/HDU5536-Chip-Factory-01字典树/
@@ -6,5 +8,3 @@ http://www.duny31030.top/2018/08/29/HDU1251-统计难题/
 http://www.duny31030.top/2018/08/29/CODE-VS-4189-字典-字典树模板题/
 http://www.duny31030.top/2018/08/28/Manacher算法模板/
 http://www.duny31030.top/2018/08/27/字符串匹配-最大最小表示法模板/
-http://www.duny31030.top/2018/08/26/费马定理/
-http://www.duny31030.top/2018/08/24/JAVA大数模板/
