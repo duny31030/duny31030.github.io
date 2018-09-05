@@ -1,3 +1,4 @@
+http://www.duny31030.top/2018/09/05/「ACM-ICPC-2018-南京站网络赛-A-题」An-Olympian-Math-Problem/
 http://www.duny31030.top/2018/09/04/Different-Integers-树状数组/
 http://www.duny31030.top/2018/09/04/树状数组/
 http://www.duny31030.top/2018/09/03/HDU5658-CA-Loves-Palindromic-回文树/
@@ -7,4 +8,3 @@ http://www.duny31030.top/2018/09/02/AC自动机/
 http://www.duny31030.top/2018/09/01/Lpl-and-Energy-saving-Lamps-二分-线段树/
 http://www.duny31030.top/2018/08/31/字典树模板/
 http://www.duny31030.top/2018/08/31/HDU5536-Chip-Factory-01字典树/
-http://www.duny31030.top/2018/08/29/POJ2001-Shortest-Prefixes/
