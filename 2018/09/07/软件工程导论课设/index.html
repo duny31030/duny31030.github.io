@@ -128,20 +128,21 @@
 
 
 
-<meta name="description" content="课程设计题目(三选一)  学生成绩管理系统; 火车订票系统; 校园超市进销管理系统;以小组为单位">
+<meta name="description" content="课程设计题目(三选一)  学生成绩管理系统; 火车订票系统; 校园超市进销管理系统;     以小组为单位">
 <meta name="keywords" content="课程设计">
 <meta property="og:type" content="article">
 <meta property="og:title" content="软件工程导论课设">
 <meta property="og:url" content="http://www.duny31030.top/2018/09/07/软件工程导论课设/index.html">
 <meta property="og:site_name" content="duny31030&#39;Blog">
-<meta property="og:description" content="课程设计题目(三选一)  学生成绩管理系统; 火车订票系统; 校园超市进销管理系统;以小组为单位">
+<meta property="og:description" content="课程设计题目(三选一)  学生成绩管理系统; 火车订票系统; 校园超市进销管理系统;     以小组为单位">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://jiantu-blog.oss-cn-beijing.aliyuncs.com/18-9-7/50248992.jpg">
-<meta property="og:updated_time" content="2018-09-07T11:50:08.794Z">
+<meta property="og:image" content="http://jiantu-blog.oss-cn-beijing.aliyuncs.com/18-9-8/69311477.jpg">
+<meta property="og:image" content="http://jiantu-blog.oss-cn-beijing.aliyuncs.com/18-9-8/88760502.jpg">
+<meta property="og:updated_time" content="2018-09-08T01:43:53.891Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="软件工程导论课设">
-<meta name="twitter:description" content="课程设计题目(三选一)  学生成绩管理系统; 火车订票系统; 校园超市进销管理系统;以小组为单位">
-<meta name="twitter:image" content="http://jiantu-blog.oss-cn-beijing.aliyuncs.com/18-9-7/50248992.jpg">
+<meta name="twitter:description" content="课程设计题目(三选一)  学生成绩管理系统; 火车订票系统; 校园超市进销管理系统;     以小组为单位">
+<meta name="twitter:image" content="http://jiantu-blog.oss-cn-beijing.aliyuncs.com/18-9-8/69311477.jpg">
 
 
 
@@ -475,10 +476,12 @@ border-left-color: #1E92FB; /左边框颜色/
 <ol>
 <li>学生成绩管理系统;</li>
 <li>火车订票系统;</li>
-<li><font color="red">校园超市进销管理系统;</font><div class="note info"><p>以小组为单位</p></div>
+<li><font color="red">校园超市进销管理系统;</font>
+
 </li>
 </ol>
 </blockquote>
+<div class="note info"><p>以小组为单位</p></div>
 <a id="more"></a>
 <h1 id="需求分析阶段"><a href="#需求分析阶段" class="headerlink" title="需求分析阶段"></a>需求分析阶段</h1><h2 id="针对拟设计的系统-画下图"><a href="#针对拟设计的系统-画下图" class="headerlink" title="针对拟设计的系统,画下图"></a>针对拟设计的系统,画下图</h2><blockquote>
 <ol>
@@ -491,10 +494,11 @@ border-left-color: #1E92FB; /左边框颜色/
 <p>实体: 商品类别、供货商、业务员、商品、仓库<br>联系: 所属、供应、管理、库存、入库、出库、转库</p>
 </blockquote>
 <h4 id="2-属性"><a href="#2-属性" class="headerlink" title="2. 属性"></a>2. 属性</h4><blockquote>
-<p>商品类别(商品类别号,商品类别名)<br>供货商(供货商号,供货商名,供货商地址,联系电话)<br>采购员(业务员号,业务员名,性别)<br>仓管员(仓管员号,仓管员名,性别)<br>商品(商品号,商品名,商品类别号,商品单位,商品价格,商品数量)<br>仓库(仓库号,仓库名,仓库地址)<br>库存(商品号,商品名,仓库号,仓库名,入库数量,入库时间)<br>入库(商品号,商品名,仓库号,仓库名,入库数量,入库时间)<br>出库(商品号,商品名,仓库号,仓库名,出库数量,出库时间)<br>转库(商品号,商品名,原仓库号,目标仓库号,转库数量,转库时间)</p>
+<p>商品类别(商品类别号,商品类别名)<br>供货商(供货商号,供货商名,供货商地址,联系电话)<br>员工(员工号,员工名,工作,性别)<br>商品(商品号,商品名,商品类别号,商品单位,商品价格,商品数量)<br>仓库(仓库号,仓库名,仓库地址)<br>库存(商品号,商品名,仓库号,仓库名,入库数量,入库时间)<br>入库(商品号,商品名,仓库号,仓库名,入库数量,入库时间)<br>出库(商品号,商品名,仓库号,仓库名,出库数量,出库时间,商品价格)<br>转库(商品号,商品名,原仓库号,目标仓库号,转库数量,转库时间)</p>
 </blockquote>
-<h4 id="3-E-R图"><a href="#3-E-R图" class="headerlink" title="3. E-R图"></a>3. E-R图</h4><p><img src="http://jiantu-blog.oss-cn-beijing.aliyuncs.com/18-9-7/50248992.jpg" alt="E-R图"></p>
-<h3 id="2-状态转换图"><a href="#2-状态转换图" class="headerlink" title="2. 状态转换图"></a>2. 状态转换图</h3><h3 id="3-层次方框图"><a href="#3-层次方框图" class="headerlink" title="3. 层次方框图"></a>3. 层次方框图</h3>
+<h4 id="3-E-R图"><a href="#3-E-R图" class="headerlink" title="3. E-R图"></a>3. E-R图</h4><p><img src="http://jiantu-blog.oss-cn-beijing.aliyuncs.com/18-9-8/69311477.jpg" alt="E-R图"></p>
+<h3 id="2-状态转换图"><a href="#2-状态转换图" class="headerlink" title="2. 状态转换图"></a>2. 状态转换图</h3><h3 id="3-层次方框图"><a href="#3-层次方框图" class="headerlink" title="3. 层次方框图"></a>3. 层次方框图</h3><p><img src="http://jiantu-blog.oss-cn-beijing.aliyuncs.com/18-9-8/88760502.jpg" alt="层次方框图"></p>
+
       
     </div>
     
