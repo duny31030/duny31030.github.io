@@ -144,7 +144,7 @@
 <meta property="og:image" content="http://jiantu-blog.oss-cn-beijing.aliyuncs.com/18-9-10/56747692.jpg">
 <meta property="og:image" content="http://jiantu-blog.oss-cn-beijing.aliyuncs.com/18-9-10/69047350.jpg">
 <meta property="og:image" content="http://jiantu-blog.oss-cn-beijing.aliyuncs.com/18-9-10/78821173.jpg">
-<meta property="og:updated_time" content="2018-09-10T03:40:02.898Z">
+<meta property="og:updated_time" content="2018-09-10T07:39:19.775Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="操作系统原理与实践(一)">
 <meta name="twitter:description" content="实验1 熟悉实验环境课程地址：操作系统原理与实践-实验楼  初衷是为了任务驱动学习操作系统，同时记录自己学习过程中碰到的问题，日后补坑。 初步目标是能够在学期末之前写出来自己的操作系统。">
@@ -570,20 +570,16 @@ border-left-color: #1E92FB; /左边框颜色/
 <p>新终端窗口中运行的是GDB调试器。关于gdb调试器请查阅GDB使用手册。</p>
 </blockquote>
 <div class="note info"><p>此部分内容会在以后进行详细的记录，现在能力有限先略过</p></div>
-
-
-### 4.Linux 0.11与Ubuntu之间的文件交换
-
-
-> oslab下的hdc-0.11-new.img是0.11内核启动后的根文件系统镜像文件，相当于在bochs虚拟机里装载的硬盘。在Ubuntu上访问其内容的方法是
-
-undefined
-
-> 之后，hdc目录下就是和0.11内核一模一样的文件系统了，可以读写任何文件（可能有些文件要用sudo才能访问）。读写完毕，不要忘了卸载这个文件系统：
-undefined
-
-> 经过sudo ./mount-hdc这样处理以后，我们可以在Ubuntu的hdc目录下创建一个xxx.c文件，然后利用Ubuntu上的编辑工具（如gedit等）实现对xxx.c文件的编辑工作，在编辑保存以后。执行sudo umount hdc后，再进入Linux 0.11（即run启动bochs以后）就会看到这个xxx.c（即如下图所示），这样就避免了在Linux 0.11上进行编辑xxx.c的麻烦，因为Linux 0.11作为一个很小的操作系统，其上的编辑工具只有vi，使用起来非常不便。
-
+<blockquote>
+</blockquote>
+<h3 id="4-Linux-0-11与Ubuntu之间的文件交换"><a href="#4-Linux-0-11与Ubuntu之间的文件交换" class="headerlink" title="4.Linux 0.11与Ubuntu之间的文件交换"></a>4.Linux 0.11与Ubuntu之间的文件交换</h3><blockquote>
+<p>oslab下的hdc-0.11-new.img是0.11内核启动后的根文件系统镜像文件，相当于在bochs虚拟机里装载的硬盘。在Ubuntu上访问其内容的方法是</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo ./mount-hdc</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>之后，hdc目录下就是和0.11内核一模一样的文件系统了，可以读写任何文件（可能有些文件要用sudo才能访问）。读写完毕，不要忘了卸载这个文件系统：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo umount hdc</span><br></pre></td></tr></table></figure></p>
+<p>经过sudo ./mount-hdc这样处理以后，我们可以在Ubuntu的hdc目录下创建一个xxx.c文件，然后利用Ubuntu上的编辑工具（如gedit等）实现对xxx.c文件的编辑工作，在编辑保存以后。执行sudo umount hdc后，再进入Linux 0.11（即run启动bochs以后）就会看到这个xxx.c（即如下图所示），这样就避免了在Linux 0.11上进行编辑xxx.c的麻烦，因为Linux 0.11作为一个很小的操作系统，其上的编辑工具只有vi，使用起来非常不便。</p>
+</blockquote>
 <div class="note info"><p>此部分内容也暂且略过</p></div>
       
     </div>
@@ -784,7 +780,7 @@ undefined
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#实验1-熟悉实验环境"><span class="nav-text">实验1 熟悉实验环境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#一、实验平台"><span class="nav-text">一、实验平台</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、主要工具"><span class="nav-text">二、主要工具</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三、准备工作"><span class="nav-text">三、准备工作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-安装"><span class="nav-text">1.安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-复原"><span class="nav-text">2.复原</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#四、开始试验"><span class="nav-text">四、开始试验</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-编译内核"><span class="nav-text">1.编译内核</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-启动Bochs"><span class="nav-text">2.启动Bochs</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-内核调试"><span class="nav-text">3.内核调试</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#实验1-熟悉实验环境"><span class="nav-text">实验1 熟悉实验环境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#一、实验平台"><span class="nav-text">一、实验平台</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、主要工具"><span class="nav-text">二、主要工具</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三、准备工作"><span class="nav-text">三、准备工作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-安装"><span class="nav-text">1.安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-复原"><span class="nav-text">2.复原</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#四、开始试验"><span class="nav-text">四、开始试验</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-编译内核"><span class="nav-text">1.编译内核</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-启动Bochs"><span class="nav-text">2.启动Bochs</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-内核调试"><span class="nav-text">3.内核调试</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-Linux-0-11与Ubuntu之间的文件交换"><span class="nav-text">4.Linux 0.11与Ubuntu之间的文件交换</span></a></li></ol></li></ol></div>
             
 
           </div>
