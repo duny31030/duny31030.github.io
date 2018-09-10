@@ -1,3 +1,4 @@
+http://www.duny31030.top/2018/09/10/操作系统原理与实践-一/
 http://www.duny31030.top/2018/09/09/主席树模板/
 http://www.duny31030.top/2018/09/07/软件工程导论课设/
 http://www.duny31030.top/2018/09/05/「ACM-ICPC-2018-南京站网络赛-A-题」An-Olympian-Math-Problem/
@@ -7,4 +8,3 @@ http://www.duny31030.top/2018/09/03/HDU5658-CA-Loves-Palindromic-回文树/
 http://www.duny31030.top/2018/09/03/回文树/
 http://www.duny31030.top/2018/09/02/HDU2896-病毒侵袭-AC自动机/
 http://www.duny31030.top/2018/09/02/AC自动机/
-http://www.duny31030.top/2018/09/01/Lpl-and-Energy-saving-Lamps-二分-线段树/
