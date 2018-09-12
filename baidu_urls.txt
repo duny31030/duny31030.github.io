@@ -1,3 +1,4 @@
+http://www.duny31030.top/2018/09/12/Leetcode初级算法-数组/
 http://www.duny31030.top/2018/09/11/操作系统原理与实践-二/
 http://www.duny31030.top/2018/09/10/操作系统原理与实践-一/
 http://www.duny31030.top/2018/09/09/主席树模板/
@@ -7,4 +8,3 @@ http://www.duny31030.top/2018/09/04/「ACM-ICPC-2018-南京站网络赛-G-题」
 http://www.duny31030.top/2018/09/04/树状数组/
 http://www.duny31030.top/2018/09/03/HDU5658-CA-Loves-Palindromic-回文树/
 http://www.duny31030.top/2018/09/03/回文树/
-http://www.duny31030.top/2018/09/02/HDU2896-病毒侵袭-AC自动机/
