@@ -1,3 +1,5 @@
+http://www.duny31030.top/2018/09/17/Codeforces1041/
+http://www.duny31030.top/2018/09/15/HDU1540-Tunnel-Warfare/
 http://www.duny31030.top/2018/09/12/Leetcode-junior-array/
 http://www.duny31030.top/2018/09/11/Operating-System-two/
 http://www.duny31030.top/2018/09/10/Operating-System-one/
@@ -6,5 +8,3 @@ http://www.duny31030.top/2018/09/07/Software-Engineering/
 http://www.duny31030.top/2018/09/05/「ACM-ICPC-2018-Nanjing-Online-A」An-Olympian-Math-Problem/
 http://www.duny31030.top/2018/09/04/「ACM-ICPC-2018-Nanjing-Online-G」An-Different-Integers/
 http://www.duny31030.top/2018/09/04/Binary-Indexed-Tree/
-http://www.duny31030.top/2018/09/03/HDU5658-CA-Loves-Palindromic-回文树/
-http://www.duny31030.top/2018/09/03/Palindromic-Tree/

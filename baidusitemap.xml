@@ -3,6 +3,56 @@
 
 
     
+  <url>
+    <loc>http://www.duny31030.top/2018/09/17/Codeforces1041/</loc>
+    <lastmod>2018-09-16T16:56:03.181Z</lastmod>
+    <data>
+        <display>
+        <title>Codeforces1041C. Coffee Break</title>
+        <pubTime>2018-09-16T16:30:17.000Z</pubTime>
+        
+        <tag>STL</tag>
+         
+        <tag>Codeforces</tag>
+         
+         
+           
+             
+              <breadCrumb title="STL" url="http://www.duny31030.top/categories/STL/"/>
+          
+             
+              <breadCrumb title="set,lower_bound" url="http://www.duny31030.top/categories/STL/set-lower-bound/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.duny31030.top/2018/09/15/HDU1540-Tunnel-Warfare/</loc>
+    <lastmod>2018-09-15T09:26:34.696Z</lastmod>
+    <data>
+        <display>
+        <title>HDU1540 Tunnel Warfare(线段树区间更新)</title>
+        <pubTime>2018-09-15T09:15:06.000Z</pubTime>
+        
+        <tag>线段树</tag>
+         
+        <tag>线段树区间更新</tag>
+         
+         
+           
+             
+              <breadCrumb title="数据结构" url="http://www.duny31030.top/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+          
+             
+              <breadCrumb title="线段树" url="http://www.duny31030.top/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%BA%BF%E6%AE%B5%E6%A0%91/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
     
   <url>
     <loc>http://www.duny31030.top/2018/09/12/Leetcode-junior-array/</loc>
@@ -593,9 +643,9 @@
         
         <tag>模板题</tag>
          
-        <tag>HDU</tag>
-         
         <tag>01字典树</tag>
+         
+        <tag>HDU</tag>
          
          
            
