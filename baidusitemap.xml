@@ -4,8 +4,58 @@
 
     
   <url>
+    <loc>http://www.duny31030.top/2018/09/18/HDU3038-How-Many-Answers-Are-Wrong/</loc>
+    <lastmod>2018-09-18T13:35:14.611Z</lastmod>
+    <data>
+        <display>
+        <title>HDU3038 How Many Answers Are Wrong</title>
+        <pubTime>2018-09-18T13:11:32.000Z</pubTime>
+        
+        <tag>HDU</tag>
+         
+        <tag>并查集</tag>
+         
+         
+           
+             
+              <breadCrumb title="数据结构" url="http://www.duny31030.top/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+          
+             
+              <breadCrumb title="并查集" url="http://www.duny31030.top/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%B9%B6%E6%9F%A5%E9%9B%86/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.duny31030.top/2018/07/23/Segment-Tree-Templet/</loc>
+    <lastmod>2018-09-17T14:15:53.664Z</lastmod>
+    <data>
+        <display>
+        <title>线段树模板(含区间最大(小)值)</title>
+        <pubTime>2018-07-23T15:11:01.000Z</pubTime>
+        
+        <tag>模板</tag>
+         
+        <tag>线段树</tag>
+         
+         
+           
+             
+              <breadCrumb title="数据结构" url="http://www.duny31030.top/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+          
+             
+              <breadCrumb title="线段树" url="http://www.duny31030.top/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%BA%BF%E6%AE%B5%E6%A0%91/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://www.duny31030.top/2018/09/17/Codeforces1041/</loc>
-    <lastmod>2018-09-16T16:56:03.181Z</lastmod>
+    <lastmod>2018-09-17T14:15:11.318Z</lastmod>
     <data>
         <display>
         <title>Codeforces1041C. Coffee Break</title>
@@ -22,6 +72,33 @@
           
              
               <breadCrumb title="set,lower_bound" url="http://www.duny31030.top/categories/STL/set-lower-bound/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.duny31030.top/2018/09/17/HDU3974-Assign-the-task/</loc>
+    <lastmod>2018-09-17T08:03:13.395Z</lastmod>
+    <data>
+        <display>
+        <title>HDU3974 Assign the task</title>
+        <pubTime>2018-09-17T07:55:06.000Z</pubTime>
+        
+        <tag>HDU</tag>
+         
+        <tag>线段树</tag>
+         
+        <tag>DFS</tag>
+         
+         
+           
+             
+              <breadCrumb title="数据结构" url="http://www.duny31030.top/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+          
+             
+              <breadCrumb title="线段树" url="http://www.duny31030.top/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%BA%BF%E6%AE%B5%E6%A0%91/"/>
           
         </display>
     </data>
@@ -440,28 +517,6 @@
 
     
   <url>
-    <loc>http://www.duny31030.top/2018/07/23/Segment-Tree-Templet/</loc>
-    <lastmod>2018-09-02T16:29:41.954Z</lastmod>
-    <data>
-        <display>
-        <title>线段树模板(含区间最大(小)值)</title>
-        <pubTime>2018-07-23T15:11:01.000Z</pubTime>
-        
-        <tag>模板</tag>
-         
-        <tag>线段树</tag>
-         
-         
-           
-             
-              <breadCrumb title="数据结构" url="http://www.duny31030.top/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://www.duny31030.top/2018/08/22/Segment-Tree-Strucr-Templet/</loc>
     <lastmod>2018-09-02T16:29:35.786Z</lastmod>
     <data>
@@ -643,9 +698,9 @@
         
         <tag>模板题</tag>
          
-        <tag>01字典树</tag>
-         
         <tag>HDU</tag>
+         
+        <tag>01字典树</tag>
          
          
            
