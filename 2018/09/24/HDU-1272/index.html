@@ -117,7 +117,7 @@
 
 
 
-  <meta name="keywords" content="模板,Manacher," />
+  <meta name="keywords" content="并查集," />
 
 
 
@@ -128,18 +128,20 @@
 
 
 
-<meta name="description" content="描述 参考资料： Manacher算法 - 经典算法与数据结构 - SegmentFault 思否 hdu3068之manacher算法+详解">
-<meta name="keywords" content="模板,Manacher">
+<meta name="description" content="描述传送门：我是传送门  上次Gardon的迷宫城堡小希玩了很久（见Problem B），现在她也想设计一个迷宫让Gardon来走。但是她设计迷宫的思路不一样，首先她认为所有的通道都应该是双向连通的，就是说如果有一个通道连通了房间A和B，那么既可以通过它从房间A走到房间B，也可以通过它从房间B走到房间A，为了提高难度，小希希望任意两个房间有且仅有一条路径可以相通（除非走了回头路）。小希现在把她的设">
+<meta name="keywords" content="并查集">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Manacher算法模板">
-<meta property="og:url" content="http://www.duny31030.top/2018/08/28/Manacher-Templet/index.html">
+<meta property="og:title" content="HDU 1272 小希的迷宫(简单并查集)">
+<meta property="og:url" content="http://www.duny31030.top/2018/09/24/HDU-1272/index.html">
 <meta property="og:site_name" content="duny31030&#39;Blog">
-<meta property="og:description" content="描述 参考资料： Manacher算法 - 经典算法与数据结构 - SegmentFault 思否 hdu3068之manacher算法+详解">
+<meta property="og:description" content="描述传送门：我是传送门  上次Gardon的迷宫城堡小希玩了很久（见Problem B），现在她也想设计一个迷宫让Gardon来走。但是她设计迷宫的思路不一样，首先她认为所有的通道都应该是双向连通的，就是说如果有一个通道连通了房间A和B，那么既可以通过它从房间A走到房间B，也可以通过它从房间B走到房间A，为了提高难度，小希希望任意两个房间有且仅有一条路径可以相通（除非走了回头路）。小希现在把她的设">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-09-02T16:28:16.690Z">
+<meta property="og:image" content="http://acm.hdu.edu.cn/data/images/C20-1007-1.jpg">
+<meta property="og:updated_time" content="2018-09-23T18:57:45.491Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Manacher算法模板">
-<meta name="twitter:description" content="描述 参考资料： Manacher算法 - 经典算法与数据结构 - SegmentFault 思否 hdu3068之manacher算法+详解">
+<meta name="twitter:title" content="HDU 1272 小希的迷宫(简单并查集)">
+<meta name="twitter:description" content="描述传送门：我是传送门  上次Gardon的迷宫城堡小希玩了很久（见Problem B），现在她也想设计一个迷宫让Gardon来走。但是她设计迷宫的思路不一样，首先她认为所有的通道都应该是双向连通的，就是说如果有一个通道连通了房间A和B，那么既可以通过它从房间A走到房间B，也可以通过它从房间B走到房间A，为了提高难度，小希希望任意两个房间有且仅有一条路径可以相通（除非走了回头路）。小希现在把她的设">
+<meta name="twitter:image" content="http://acm.hdu.edu.cn/data/images/C20-1007-1.jpg">
 
 
 
@@ -169,7 +171,7 @@
 
 
 
-  <link rel="canonical" href="http://www.duny31030.top/2018/08/28/Manacher-Templet/"/>
+  <link rel="canonical" href="http://www.duny31030.top/2018/09/24/HDU-1272/"/>
 
 
 <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
@@ -192,7 +194,7 @@ border-left-color: #1E92FB; /左边框颜色/
 
 
 
-  <title>Manacher算法模板 | duny31030'Blog</title>
+  <title>HDU 1272 小希的迷宫(简单并查集) | duny31030'Blog</title>
   
 
 
@@ -353,7 +355,7 @@ border-left-color: #1E92FB; /左边框颜色/
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.duny31030.top/2018/08/28/Manacher-Templet/">
+    <link itemprop="mainEntityOfPage" href="http://www.duny31030.top/2018/09/24/HDU-1272/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="杜宁元">
@@ -370,7 +372,7 @@ border-left-color: #1E92FB; /左边框颜色/
 
         
         
-          <h1 class="post-title" itemprop="name headline">Manacher算法模板</h1>
+          <h1 class="post-title" itemprop="name headline">HDU 1272 小希的迷宫(简单并查集)</h1>
         
 
         <div class="post-meta">
@@ -382,8 +384,8 @@ border-left-color: #1E92FB; /左边框颜色/
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-28T11:04:06+08:00">
-                2018-08-28
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-24T02:52:38+08:00">
+                2018-09-24
               </time>
             
 
@@ -405,8 +407,8 @@ border-left-color: #1E92FB; /左边框颜色/
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/字符串/" itemprop="url" rel="index">
-                    <span itemprop="name">字符串</span>
+                  <a href="/categories/数据结构/" itemprop="url" rel="index">
+                    <span itemprop="name">数据结构</span>
                   </a>
                 </span>
 
@@ -416,8 +418,8 @@ border-left-color: #1E92FB; /左边框颜色/
                 
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/字符串/Manacher/" itemprop="url" rel="index">
-                    <span itemprop="name">Manacher</span>
+                  <a href="/categories/数据结构/并查集/" itemprop="url" rel="index">
+                    <span itemprop="name">并查集</span>
                   </a>
                 </span>
 
@@ -433,7 +435,7 @@ border-left-color: #1E92FB; /左边框颜色/
 
           
           
-             <span id="/2018/08/28/Manacher-Templet/" class="leancloud_visitors" data-flag-title="Manacher算法模板">
+             <span id="/2018/09/24/HDU-1272/" class="leancloud_visitors" data-flag-title="HDU 1272 小希的迷宫(简单并查集)">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -469,15 +471,34 @@ border-left-color: #1E92FB; /左边框颜色/
       
 
       
-        <h2 id="描述"><a href="#描述" class="headerlink" title="描述"></a>描述</h2><blockquote>
-<p>参考资料：</p>
-<p><a href="http://www.baidu.com/link?url=1wBZiP02qYvx_OTRX_FIzdaub4xVQlmblC3YNPdNEBDMCn1l7wEIxHzRl62o71CoTt3w9zY7l3MEfWD9OG1b3q" target="_blank" rel="noopener"><em>Manacher</em>算法 - 经典算法与数据结构 - SegmentFault 思否</a></p>
-<p><a href="http://blog.csdn.net/xingyeyongheng/article/details/9310555" target="_blank" rel="noopener">hdu3068之manacher算法+详解</a></p>
+        <h2 id="描述"><a href="#描述" class="headerlink" title="描述"></a>描述</h2><p>传送门：<a href="http://acm.hdu.edu.cn/showproblem.php?pid=1272" target="_blank" rel="noopener">我是传送门</a></p>
+<blockquote>
+<p>上次Gardon的迷宫城堡小希玩了很久（见Problem B），现在她也想设计一个迷宫让Gardon来走。但是她设计迷宫的思路不一样，首先她认为所有的通道都应该是双向连通的，就是说如果有一个通道连通了房间A和B，那么既可以通过它从房间A走到房间B，也可以通过它从房间B走到房间A，为了提高难度，小希希望任意两个房间有且仅有一条路径可以相通（除非走了回头路）。小希现在把她的设计图给你，让你帮忙判断她的设计图是否符合她的设计思路。比如下面的例子，前两个是符合条件的，但是最后一个却有两种方法从5到达8。 </p>
+<p><img src="http://acm.hdu.edu.cn/data/images/C20-1007-1.jpg" alt="迷宫"></p>
 </blockquote>
 <a id="more"></a>
-<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><h3 id="头部"><a href="#头部" class="headerlink" title="头部"></a>头部</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">1e5</span>+<span class="number">10</span>;</span><br><span class="line"><span class="keyword">char</span> s[N],s_new[N*<span class="number">2</span>];</span><br><span class="line"><span class="keyword">int</span> p[N*<span class="number">2</span>];</span><br></pre></td></tr></table></figure>
-<h3 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">Init</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> len = <span class="built_in">strlen</span>(s);</span><br><span class="line">    s_new[<span class="number">0</span>] = <span class="string">'$'</span>;</span><br><span class="line">    s_new[<span class="number">1</span>] = <span class="string">'#'</span>;</span><br><span class="line">    <span class="keyword">int</span> j = <span class="number">2</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>;i &lt; len;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        s_new[j++] = s[i];</span><br><span class="line">        s_new[j++] = <span class="string">'#'</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    s_new[j] = <span class="string">'\0'</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> j;   <span class="comment">// 返回 s_new 的长度</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="Manacher"><a href="#Manacher" class="headerlink" title="Manacher"></a>Manacher</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">Manacher</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> len = Init();   <span class="comment">// 取得新字符串长度并完成向 s_new 的转换</span></span><br><span class="line">	<span class="keyword">int</span> max_len = <span class="number">-1</span>;   <span class="comment">// 最长回文长度</span></span><br><span class="line"></span><br><span class="line">	<span class="keyword">int</span> id;</span><br><span class="line">	<span class="keyword">int</span> mx = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>;i &lt; len;i++)</span><br><span class="line">	&#123;</span><br><span class="line">    	<span class="keyword">if</span>(i &lt; mx)</span><br><span class="line">        	p[i] = min(p[<span class="number">2</span>*id-i],mx-i);</span><br><span class="line">    	<span class="keyword">else</span> </span><br><span class="line">        	p[i] = <span class="number">1</span>;</span><br><span class="line">    </span><br><span class="line">    	<span class="keyword">while</span>(s_new[i-p[i]] == s_new[i+p[i]])   <span class="comment">// 不需要边界判断,因为有"$"、"\0"</span></span><br><span class="line">    		p[i]++;</span><br><span class="line">    </span><br><span class="line">    	<span class="comment">// 每走一步都要用i和mx比较</span></span><br><span class="line">    	<span class="keyword">if</span>(mx &lt; i+p[i])</span><br><span class="line">    	&#123;</span><br><span class="line">        	id = i;</span><br><span class="line">        	mx = i+p[i];</span><br><span class="line">    	&#125;</span><br><span class="line">    	max_len = max(max_len,p[i]<span class="number">-1</span>);</span><br><span class="line">	&#125;</span><br><span class="line">    <span class="keyword">return</span> max_len;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="输入"><a href="#输入" class="headerlink" title="输入"></a>输入</h3><blockquote>
+<p>输入包含多组数据，每组数据是一个以0 0结尾的整数对列表，表示了一条通道连接的两个房间的编号。房间的编号至少为1，且不超过100000。每两组数据之间有一个空行。<br>整个文件以两个-1结尾。</p>
+</blockquote>
+<h3 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h3><blockquote>
+<p>对于输入的每一组数据，输出仅包括一行。如果该迷宫符合小希的思路，那么输出”Yes”，否则输出”No”。</p>
+</blockquote>
+<h3 id="样例"><a href="#样例" class="headerlink" title="样例"></a>样例</h3><h4 id="输入-1"><a href="#输入-1" class="headerlink" title="输入"></a>输入</h4><blockquote>
+<p>6 8  5 3  5 2  6 4<br>5 6  0 0</p>
+<p>8 1  7 3  6 2  8 9  7 5<br>7 4  7 8  7 6  0 0</p>
+<p>3 8  6 8  6 4<br>5 3  5 6  5 2  0 0</p>
+<p>-1 -1</p>
+</blockquote>
+<h4 id="输出-1"><a href="#输出-1" class="headerlink" title="输出"></a>输出</h4><blockquote>
+<p>Yes<br>Yes<br>No</p>
+</blockquote>
+<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><blockquote>
+<p>相比前边写的几个题来说这道题简单太多了</p>
+<p>只需要在每次新加入两个点的时候判断这两个点是否是不连通的，如果联通的话说明出现环了，肯定不满足题目要求</p>
+<p>然后在最后再跑一遍是否是只存在一个图(即所有点的父节点在同一集合)</p>
+</blockquote>
+<div class="note danger"><p>一开始用set提交上去TLE了，常数太大了吗？</p></div>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> * ==============================================</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> *       Filename:  M.cpp</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> *           Link:  http://acm.hdu.edu.cn/showproblem.php?pid=1272</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> *        Version:  1.0</span></span><br><span class="line"><span class="comment"> *        Created:  2018/09/24 02时13分45秒</span></span><br><span class="line"><span class="comment"> *       Revision:  none</span></span><br><span class="line"><span class="comment"> *       Compiler:  g++</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> *         Author:  杜宁元 (https://duny31030.top/), duny31030@126.com</span></span><br><span class="line"><span class="comment"> *   Organization:  QLU_浪在ACM</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * ==============================================</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> clr(a, x) memset(a, x, sizeof(a))</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> rep(i,a,n) for(int i=a;i&lt;=n;i++)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> pre(i,a,n) for(int i=n;i&gt;=a;i--)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ll long long</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> max3(a,b,c) fmax(a,fmax(b,c))</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ios ios_base::sync_with_stdio(false);cin.tie(0);cout.tie(0);</span></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">double</span> eps = <span class="number">1e-6</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> INF = <span class="number">0x3f3f3f3f</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> mod = <span class="number">1e9</span> + <span class="number">7</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">100009</span>;</span><br><span class="line"><span class="keyword">int</span> f[N];</span><br><span class="line"><span class="comment">// set&lt;int&gt; s;</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">find</span><span class="params">(<span class="keyword">int</span> x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// int t = f[x];</span></span><br><span class="line">    <span class="keyword">if</span>(f[x] != x)</span><br><span class="line">    &#123;</span><br><span class="line">        f[x] = find(f[x]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> f[x];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">bool</span> vis[N];</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">init</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// s.clear();</span></span><br><span class="line"></span><br><span class="line">    rep(i,<span class="number">0</span>,N<span class="number">-1</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        f[i] = i;</span><br><span class="line">        vis[i] = <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    ios</span><br><span class="line"><span class="meta">#<span class="meta-keyword">ifdef</span> ONLINE_JUDGE </span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">else</span> </span></span><br><span class="line">        freopen(<span class="string">"in.txt"</span>,<span class="string">"r"</span>,<span class="built_in">stdin</span>);</span><br><span class="line">    <span class="comment">// freopen("out.txt","w",stdout); </span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span></span></span><br><span class="line">    <span class="keyword">int</span> x,y;</span><br><span class="line">    init();</span><br><span class="line">    <span class="keyword">int</span> flag = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span>(<span class="built_in">scanf</span>(<span class="string">"%d %d"</span>,&amp;x,&amp;y)!= EOF)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(x == y &amp;&amp; x &lt; <span class="number">1</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span>(x == <span class="number">-1</span>)</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">else</span> </span><br><span class="line">            &#123;   </span><br><span class="line">                <span class="keyword">if</span>(flag)</span><br><span class="line">                &#123;</span><br><span class="line">                    <span class="built_in">printf</span>(<span class="string">"No\n"</span>);</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">else</span> </span><br><span class="line">                &#123;</span><br><span class="line">                    <span class="keyword">int</span> tmp = <span class="number">-1</span>;</span><br><span class="line">                    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>;i &lt; N;i++)</span><br><span class="line">                    &#123;</span><br><span class="line">                        <span class="keyword">if</span>(!vis[i]) <span class="keyword">continue</span>;</span><br><span class="line">                        <span class="keyword">if</span>(tmp == <span class="number">-1</span>)    tmp = find(i);</span><br><span class="line">                        <span class="keyword">if</span>(tmp != find(i))</span><br><span class="line">                        &#123;</span><br><span class="line">                            flag = <span class="number">1</span>;</span><br><span class="line">                            <span class="keyword">break</span>;</span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125;</span><br><span class="line"></span><br><span class="line">                    <span class="keyword">if</span>(flag)</span><br><span class="line">                        <span class="built_in">printf</span>(<span class="string">"No\n"</span>);</span><br><span class="line">                    <span class="keyword">else</span> </span><br><span class="line">                        <span class="built_in">printf</span>(<span class="string">"Yes\n"</span>);</span><br><span class="line">                &#125;</span><br><span class="line">                init();</span><br><span class="line">                flag = <span class="number">0</span>;</span><br><span class="line">                <span class="keyword">continue</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        vis[x] = <span class="number">1</span>;</span><br><span class="line">        vis[y] = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">int</span> fx = find(x);</span><br><span class="line">        <span class="keyword">int</span> fy = find(y);</span><br><span class="line">        <span class="keyword">if</span>(fx == fy)</span><br><span class="line">        &#123;</span><br><span class="line">            flag = <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> </span><br><span class="line">        &#123;</span><br><span class="line">            f[fx] = fy;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    fclose(<span class="built_in">stdin</span>);</span><br><span class="line">    <span class="comment">// fclose(stdout);</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -498,7 +519,7 @@ border-left-color: #1E92FB; /左边框颜色/
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="http://www.duny31030.top/2018/08/28/Manacher-Templet/" title="Manacher算法模板">http://www.duny31030.top/2018/08/28/Manacher-Templet/</a>
+    <a href="http://www.duny31030.top/2018/09/24/HDU-1272/" title="HDU 1272 小希的迷宫(简单并查集)">http://www.duny31030.top/2018/09/24/HDU-1272/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -514,9 +535,7 @@ border-left-color: #1E92FB; /左边框颜色/
       
         <div class="post-tags">
           
-            <a href="/tags/模板/" <i class="fa fa-tag"></i> 模板</a>
-          
-            <a href="/tags/Manacher/" <i class="fa fa-tag"></i> Manacher</a>
+            <a href="/tags/并查集/" <i class="fa fa-tag"></i> 并查集</a>
           
         </div>
       
@@ -529,8 +548,8 @@ border-left-color: #1E92FB; /左边框颜色/
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/08/27/Min-Max-Templet/" rel="next" title="字符串匹配--最大最小表示法模板">
-                <i class="fa fa-chevron-left"></i> 字符串匹配--最大最小表示法模板
+              <a href="/2018/09/24/HDU1733-Parity-game/" rel="next" title="HDU1733 Parity game(带权并查集)">
+                <i class="fa fa-chevron-left"></i> HDU1733 Parity game(带权并查集)
               </a>
             
           </div>
@@ -539,8 +558,8 @@ border-left-color: #1E92FB; /左边框颜色/
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/08/29/CODE-VS-4189/" rel="prev" title="CODE[VS]4189 字典 (字典树模板题)">
-                CODE[VS]4189 字典 (字典树模板题) <i class="fa fa-chevron-right"></i>
+              <a href="/2018/09/24/HDU1308-Is-It-A-Tree/" rel="prev" title="HDU1308 Is It A Tree?(简单并查集)">
+                HDU1308 Is It A Tree?(简单并查集) <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -682,7 +701,7 @@ border-left-color: #1E92FB; /左边框颜色/
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#描述"><span class="nav-number">1.</span> <span class="nav-text">描述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码"><span class="nav-number">2.</span> <span class="nav-text">代码</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#头部"><span class="nav-number">2.1.</span> <span class="nav-text">头部</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#初始化"><span class="nav-number">2.2.</span> <span class="nav-text">初始化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Manacher"><span class="nav-number">2.3.</span> <span class="nav-text">Manacher</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#描述"><span class="nav-number">1.</span> <span class="nav-text">描述</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#输入"><span class="nav-number">1.1.</span> <span class="nav-text">输入</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#输出"><span class="nav-number">1.2.</span> <span class="nav-text">输出</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#样例"><span class="nav-number">1.3.</span> <span class="nav-text">样例</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#输入-1"><span class="nav-number">1.3.1.</span> <span class="nav-text">输入</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#输出-1"><span class="nav-number">1.3.2.</span> <span class="nav-text">输出</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#思路"><span class="nav-number">2.</span> <span class="nav-text">思路</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码"><span class="nav-number">3.</span> <span class="nav-text">代码</span></a></li></ol></div>
             
 
           </div>

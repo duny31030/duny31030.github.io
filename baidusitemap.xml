@@ -4,11 +4,57 @@
 
     
   <url>
-    <loc>http://www.duny31030.top/2018/09/24/HDU1733-Parity-game/</loc>
-    <lastmod>2018-09-23T17:25:05.272Z</lastmod>
+    <loc>http://www.duny31030.top/2018/09/24/HDU1308-Is-It-A-Tree/</loc>
+    <lastmod>2018-09-23T19:47:27.398Z</lastmod>
     <data>
         <display>
-        <title>HDU1733 Parity game</title>
+        <title>HDU1308 Is It A Tree?(简单并查集)</title>
+        <pubTime>2018-09-23T19:38:44.000Z</pubTime>
+        
+        <tag>并查集</tag>
+         
+         
+           
+             
+              <breadCrumb title="数据结构" url="http://www.duny31030.top/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+          
+             
+              <breadCrumb title="并查集" url="http://www.duny31030.top/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%B9%B6%E6%9F%A5%E9%9B%86/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.duny31030.top/2018/09/24/HDU-1272/</loc>
+    <lastmod>2018-09-23T18:57:45.491Z</lastmod>
+    <data>
+        <display>
+        <title>HDU 1272 小希的迷宫(简单并查集)</title>
+        <pubTime>2018-09-23T18:52:38.000Z</pubTime>
+        
+        <tag>并查集</tag>
+         
+         
+           
+             
+              <breadCrumb title="数据结构" url="http://www.duny31030.top/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+          
+             
+              <breadCrumb title="并查集" url="http://www.duny31030.top/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%B9%B6%E6%9F%A5%E9%9B%86/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.duny31030.top/2018/09/24/HDU1733-Parity-game/</loc>
+    <lastmod>2018-09-23T18:52:57.049Z</lastmod>
+    <data>
+        <display>
+        <title>HDU1733 Parity game(带权并查集)</title>
         <pubTime>2018-09-23T17:13:32.000Z</pubTime>
         
         <tag>带权并查集</tag>
@@ -132,9 +178,9 @@
         <title>POJ2236 Wireless Network(并查集)</title>
         <pubTime>2018-09-18T03:15:49.000Z</pubTime>
         
-        <tag>POJ</tag>
-         
         <tag>并查集</tag>
+         
+        <tag>POJ</tag>
          
          
            
@@ -182,9 +228,9 @@
         <title>HDU3974 Assign the task</title>
         <pubTime>2018-09-17T07:55:06.000Z</pubTime>
         
-        <tag>HDU</tag>
-         
         <tag>线段树</tag>
+         
+        <tag>HDU</tag>
          
         <tag>DFS</tag>
          
