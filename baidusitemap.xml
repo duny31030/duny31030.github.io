@@ -4,14 +4,135 @@
 
     
   <url>
-    <loc>http://www.duny31030.top/2018/09/18/HDU3038-How-Many-Answers-Are-Wrong/</loc>
-    <lastmod>2018-09-18T13:35:14.611Z</lastmod>
+    <loc>http://www.duny31030.top/2018/09/24/HDU1733-Parity-game/</loc>
+    <lastmod>2018-09-23T17:25:05.272Z</lastmod>
     <data>
         <display>
-        <title>HDU3038 How Many Answers Are Wrong</title>
-        <pubTime>2018-09-18T13:11:32.000Z</pubTime>
+        <title>HDU1733 Parity game</title>
+        <pubTime>2018-09-23T17:13:32.000Z</pubTime>
         
-        <tag>HDU</tag>
+        <tag>带权并查集</tag>
+         
+        <tag>离散化</tag>
+         
+         
+           
+             
+              <breadCrumb title="数据结构" url="http://www.duny31030.top/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+          
+             
+              <breadCrumb title="并查集" url="http://www.duny31030.top/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%B9%B6%E6%9F%A5%E9%9B%86/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.duny31030.top/2018/08/08/EXKMP-Templet/</loc>
+    <lastmod>2018-09-20T11:44:24.355Z</lastmod>
+    <data>
+        <display>
+        <title>扩展KMP模板</title>
+        <pubTime>2018-08-08T06:28:35.000Z</pubTime>
+        
+        <tag>模板</tag>
+         
+        <tag>扩展KMP</tag>
+         
+         
+           
+             
+              <breadCrumb title="字符串" url="http://www.duny31030.top/categories/%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
+          
+             
+              <breadCrumb title="扩展KMP" url="http://www.duny31030.top/categories/%E5%AD%97%E7%AC%A6%E4%B8%B2/%E6%89%A9%E5%B1%95KMP/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.duny31030.top/2018/09/04/Different%20Integers/</loc>
+    <lastmod>2018-09-20T11:42:33.046Z</lastmod>
+    <data>
+        <display>
+        <title>Different Integers(树状数组)</title>
+        <pubTime>2018-09-04T15:54:34.000Z</pubTime>
+        
+        <tag>树状数组</tag>
+         
+        <tag>牛客网</tag>
+         
+         
+           
+             
+              <breadCrumb title="数据结构" url="http://www.duny31030.top/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+          
+             
+              <breadCrumb title="树状数组" url="http://www.duny31030.top/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%A0%91%E7%8A%B6%E6%95%B0%E7%BB%84/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.duny31030.top/2018/09/19/Operating-System-pratice-01/</loc>
+    <lastmod>2018-09-19T14:37:18.612Z</lastmod>
+    <data>
+        <display>
+        <title>操作系统 实验一 操作系统接口</title>
+        <pubTime>2018-09-19T14:08:12.000Z</pubTime>
+        
+        <tag>操作系统</tag>
+         
+         
+           
+             
+              <breadCrumb title="操作系统" url="http://www.duny31030.top/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
+          
+             
+              <breadCrumb title="上机" url="http://www.duny31030.top/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E4%B8%8A%E6%9C%BA/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.duny31030.top/2018/09/07/Software-Engineering/</loc>
+    <lastmod>2018-09-19T13:58:36.416Z</lastmod>
+    <data>
+        <display>
+        <title>软件工程导论课设</title>
+        <pubTime>2018-09-07T07:55:50.000Z</pubTime>
+        
+        <tag>课程设计</tag>
+         
+         
+           
+             
+              <breadCrumb title="软件工程导论" url="http://www.duny31030.top/categories/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E5%AF%BC%E8%AE%BA/"/>
+          
+             
+              <breadCrumb title="课程设计" url="http://www.duny31030.top/categories/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E5%AF%BC%E8%AE%BA/%E8%AF%BE%E7%A8%8B%E8%AE%BE%E8%AE%A1/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.duny31030.top/2018/09/18/POJ2236-Wireless-Network/</loc>
+    <lastmod>2018-09-19T08:47:09.502Z</lastmod>
+    <data>
+        <display>
+        <title>POJ2236 Wireless Network(并查集)</title>
+        <pubTime>2018-09-18T03:15:49.000Z</pubTime>
+        
+        <tag>POJ</tag>
          
         <tag>并查集</tag>
          
@@ -22,6 +143,58 @@
           
              
               <breadCrumb title="并查集" url="http://www.duny31030.top/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%B9%B6%E6%9F%A5%E9%9B%86/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.duny31030.top/2018/09/18/HDU3038-How-Many-Answers-Are-Wrong/</loc>
+    <lastmod>2018-09-18T15:52:40.354Z</lastmod>
+    <data>
+        <display>
+        <title>HDU3038 How Many Answers Are Wrong</title>
+        <pubTime>2018-09-18T13:11:32.000Z</pubTime>
+        
+        <tag>HDU</tag>
+         
+        <tag>带权并查集</tag>
+         
+         
+           
+             
+              <breadCrumb title="数据结构" url="http://www.duny31030.top/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+          
+             
+              <breadCrumb title="并查集" url="http://www.duny31030.top/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%B9%B6%E6%9F%A5%E9%9B%86/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.duny31030.top/2018/09/17/HDU3974-Assign-the-task/</loc>
+    <lastmod>2018-09-18T15:19:06.303Z</lastmod>
+    <data>
+        <display>
+        <title>HDU3974 Assign the task</title>
+        <pubTime>2018-09-17T07:55:06.000Z</pubTime>
+        
+        <tag>HDU</tag>
+         
+        <tag>线段树</tag>
+         
+        <tag>DFS</tag>
+         
+         
+           
+             
+              <breadCrumb title="数据结构" url="http://www.duny31030.top/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+          
+             
+              <breadCrumb title="线段树" url="http://www.duny31030.top/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%BA%BF%E6%AE%B5%E6%A0%91/"/>
           
         </display>
     </data>
@@ -72,33 +245,6 @@
           
              
               <breadCrumb title="set,lower_bound" url="http://www.duny31030.top/categories/STL/set-lower-bound/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.duny31030.top/2018/09/17/HDU3974-Assign-the-task/</loc>
-    <lastmod>2018-09-17T08:03:13.395Z</lastmod>
-    <data>
-        <display>
-        <title>HDU3974 Assign the task</title>
-        <pubTime>2018-09-17T07:55:06.000Z</pubTime>
-        
-        <tag>HDU</tag>
-         
-        <tag>线段树</tag>
-         
-        <tag>DFS</tag>
-         
-         
-           
-             
-              <breadCrumb title="数据结构" url="http://www.duny31030.top/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-          
-             
-              <breadCrumb title="线段树" url="http://www.duny31030.top/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%BA%BF%E6%AE%B5%E6%A0%91/"/>
           
         </display>
     </data>
@@ -232,29 +378,6 @@
 
     
   <url>
-    <loc>http://www.duny31030.top/2018/09/07/Software-Engineering/</loc>
-    <lastmod>2018-09-08T01:43:53.891Z</lastmod>
-    <data>
-        <display>
-        <title>软件工程导论课设</title>
-        <pubTime>2018-09-07T07:55:50.000Z</pubTime>
-        
-        <tag>课程设计</tag>
-         
-         
-           
-             
-              <breadCrumb title="软件工程导论" url="http://www.duny31030.top/categories/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E5%AF%BC%E8%AE%BA/"/>
-          
-             
-              <breadCrumb title="课程设计" url="http://www.duny31030.top/categories/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E5%AF%BC%E8%AE%BA/%E8%AF%BE%E7%A8%8B%E8%AE%BE%E8%AE%A1/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://www.duny31030.top/2018/07/28/2018-Summer-Vacation/</loc>
     <lastmod>2018-09-06T01:45:26.705Z</lastmod>
     <data>
@@ -275,18 +398,18 @@
 
     
   <url>
-    <loc>http://www.duny31030.top/2018/09/05/%E3%80%8CACM-ICPC-2018-Nanjing-Online-A%E3%80%8DAn-Olympian-Math-Problem/</loc>
+    <loc>http://www.duny31030.top/2018/09/05/An-Olympian-Math-Problem/</loc>
     <lastmod>2018-09-05T11:20:12.328Z</lastmod>
     <data>
         <display>
         <title>「ACM-ICPC 2018 南京站网络赛 A 题」An Olympian Math Problem</title>
         <pubTime>2018-09-05T10:10:27.000Z</pubTime>
         
-        <tag>计蒜客</tag>
-         
         <tag>数论</tag>
          
         <tag>递推</tag>
+         
+        <tag>计蒜客</tag>
          
         <tag>ICPC&amp;&amp;CCPC</tag>
          
@@ -337,31 +460,6 @@
           
              
               <breadCrumb title="费马定理" url="http://www.duny31030.top/categories/%E6%95%B0%E8%AE%BA/%E8%B4%B9%E9%A9%AC%E5%AE%9A%E7%90%86/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.duny31030.top/2018/09/04/%E3%80%8CACM-ICPC-2018-Nanjing-Online-G%E3%80%8DAn-Different-Integers/</loc>
-    <lastmod>2018-09-04T16:37:39.678Z</lastmod>
-    <data>
-        <display>
-        <title>	Different Integers(树状数组)</title>
-        <pubTime>2018-09-04T15:54:34.000Z</pubTime>
-        
-        <tag>树状数组</tag>
-         
-        <tag>牛客网</tag>
-         
-         
-           
-             
-              <breadCrumb title="数据结构" url="http://www.duny31030.top/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-          
-             
-              <breadCrumb title="树状数组" url="http://www.duny31030.top/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%A0%91%E7%8A%B6%E6%95%B0%E7%BB%84/"/>
           
         </display>
     </data>
@@ -485,31 +583,6 @@
           
              
               <breadCrumb title="回文树" url="http://www.duny31030.top/categories/%E5%AD%97%E7%AC%A6%E4%B8%B2/%E5%9B%9E%E6%96%87%E6%A0%91/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.duny31030.top/2018/08/08/EXKMP-Templet/</loc>
-    <lastmod>2018-09-02T16:29:54.139Z</lastmod>
-    <data>
-        <display>
-        <title>扩展KMP模板</title>
-        <pubTime>2018-08-08T06:28:35.000Z</pubTime>
-        
-        <tag>模板</tag>
-         
-        <tag>扩展KMP</tag>
-         
-         
-           
-             
-              <breadCrumb title="字符串" url="http://www.duny31030.top/categories/%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
-          
-             
-              <breadCrumb title="扩展KMP" url="http://www.duny31030.top/categories/%E5%AD%97%E7%AC%A6%E4%B8%B2/%E6%89%A9%E5%B1%95KMP/"/>
           
         </display>
     </data>
@@ -745,11 +818,11 @@
         <title>Lpl and Energy-saving Lamps(二分+线段树)</title>
         <pubTime>2018-09-01T11:08:03.000Z</pubTime>
         
+        <tag>计蒜客</tag>
+         
         <tag>线段树</tag>
          
         <tag>二分</tag>
-         
-        <tag>计蒜客</tag>
          
         <tag>区域赛网络赛</tag>
          
