@@ -4,8 +4,23 @@
 
     
   <url>
+    <loc>http://www.duny31030.top/2018/09/24/QLUOJ-TEST/</loc>
+    <lastmod>2018-09-24T14:42:12.717Z</lastmod>
+    <data>
+        <display>
+        <title></title>
+        <pubTime>2018-09-24T14:05:18.000Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://www.duny31030.top/2018/09/24/HDU1308-Is-It-A-Tree/</loc>
-    <lastmod>2018-09-23T19:47:27.398Z</lastmod>
+    <lastmod>2018-09-23T19:49:37.019Z</lastmod>
     <data>
         <display>
         <title>HDU1308 Is It A Tree?(简单并查集)</title>
@@ -228,9 +243,9 @@
         <title>HDU3974 Assign the task</title>
         <pubTime>2018-09-17T07:55:06.000Z</pubTime>
         
-        <tag>线段树</tag>
-         
         <tag>HDU</tag>
+         
+        <tag>线段树</tag>
          
         <tag>DFS</tag>
          
