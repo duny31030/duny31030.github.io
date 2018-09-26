@@ -4,22 +4,24 @@
 
     
   <url>
-    <loc>http://www.duny31030.top/2018/09/26/POJ1251-Jungle-Roads/</loc>
-    <lastmod>2018-09-26T07:26:10.541Z</lastmod>
+    <loc>http://www.duny31030.top/2018/09/27/HDU3065/</loc>
+    <lastmod>2018-09-26T17:09:36.418Z</lastmod>
     <data>
         <display>
-        <title>POJ1251 Jungle Roads(最小生成树模板题)</title>
-        <pubTime>2018-09-26T04:14:43.000Z</pubTime>
+        <title>HDU3065病毒侵袭持续中(AC自动机)</title>
+        <pubTime>2018-09-26T17:04:15.000Z</pubTime>
         
-        <tag>最小生成树</tag>
+        <tag>AC自动机</tag>
+         
+        <tag>HDU</tag>
          
          
            
              
-              <breadCrumb title="数据结构" url="http://www.duny31030.top/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+              <breadCrumb title="字符串" url="http://www.duny31030.top/categories/%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
           
              
-              <breadCrumb title="最小生成树" url="http://www.duny31030.top/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91/"/>
+              <breadCrumb title="AC自动机" url="http://www.duny31030.top/categories/%E5%AD%97%E7%AC%A6%E4%B8%B2/AC%E8%87%AA%E5%8A%A8%E6%9C%BA/"/>
           
         </display>
     </data>
@@ -27,29 +29,18 @@
 
     
   <url>
-    <loc>http://www.duny31030.top/2018/09/24/QLUOJ-TEST/</loc>
-    <lastmod>2018-09-24T15:23:51.816Z</lastmod>
+    <loc>http://www.duny31030.top/2018/09/24/HDU1733-Parity-game/</loc>
+    <lastmod>2018-09-26T17:05:40.010Z</lastmod>
     <data>
         <display>
-        <title>测试赛题解</title>
-        <pubTime>2018-09-24T14:05:18.000Z</pubTime>
+        <title>HDU1733 Parity game(带权并查集)</title>
+        <pubTime>2018-09-23T17:13:32.000Z</pubTime>
         
+        <tag>HDU</tag>
          
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.duny31030.top/2018/09/24/HDU1308-Is-It-A-Tree/</loc>
-    <lastmod>2018-09-23T19:49:37.019Z</lastmod>
-    <data>
-        <display>
-        <title>HDU1308 Is It A Tree?(简单并查集)</title>
-        <pubTime>2018-09-23T19:38:44.000Z</pubTime>
-        
-        <tag>并查集</tag>
+        <tag>带权并查集</tag>
+         
+        <tag>离散化</tag>
          
          
            
@@ -66,13 +57,15 @@
     
   <url>
     <loc>http://www.duny31030.top/2018/09/24/HDU-1272/</loc>
-    <lastmod>2018-09-23T18:57:45.491Z</lastmod>
+    <lastmod>2018-09-26T17:05:32.578Z</lastmod>
     <data>
         <display>
         <title>HDU 1272 小希的迷宫(简单并查集)</title>
         <pubTime>2018-09-23T18:52:38.000Z</pubTime>
         
         <tag>并查集</tag>
+         
+        <tag>HDU</tag>
          
          
            
@@ -88,16 +81,16 @@
 
     
   <url>
-    <loc>http://www.duny31030.top/2018/09/24/HDU1733-Parity-game/</loc>
-    <lastmod>2018-09-23T18:52:57.049Z</lastmod>
+    <loc>http://www.duny31030.top/2018/09/24/HDU1308-Is-It-A-Tree/</loc>
+    <lastmod>2018-09-26T17:05:24.727Z</lastmod>
     <data>
         <display>
-        <title>HDU1733 Parity game(带权并查集)</title>
-        <pubTime>2018-09-23T17:13:32.000Z</pubTime>
+        <title>HDU1308 Is It A Tree?(简单并查集)</title>
+        <pubTime>2018-09-23T19:38:44.000Z</pubTime>
         
-        <tag>带权并查集</tag>
+        <tag>并查集</tag>
          
-        <tag>离散化</tag>
+        <tag>HUD</tag>
          
          
            
@@ -107,6 +100,119 @@
              
               <breadCrumb title="并查集" url="http://www.duny31030.top/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%B9%B6%E6%9F%A5%E9%9B%86/"/>
           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.duny31030.top/2018/09/26/POJ1251-Jungle-Roads/</loc>
+    <lastmod>2018-09-26T17:05:11.870Z</lastmod>
+    <data>
+        <display>
+        <title>POJ1251 Jungle Roads(最小生成树模板题)</title>
+        <pubTime>2018-09-26T04:14:43.000Z</pubTime>
+        
+        <tag>最小生成树</tag>
+         
+        <tag>POJ</tag>
+         
+         
+           
+             
+              <breadCrumb title="数据结构" url="http://www.duny31030.top/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+          
+             
+              <breadCrumb title="最小生成树" url="http://www.duny31030.top/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.duny31030.top/2018/09/26/POJ-2031-Building-a-Space-Station/</loc>
+    <lastmod>2018-09-26T17:05:05.476Z</lastmod>
+    <data>
+        <display>
+        <title>POJ 2031 Building a Space Station</title>
+        <pubTime>2018-09-26T09:14:59.000Z</pubTime>
+        
+        <tag>最小生成树</tag>
+         
+        <tag>POJ</tag>
+         
+         
+           
+             
+              <breadCrumb title="数据结构" url="http://www.duny31030.top/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+          
+             
+              <breadCrumb title="最小生成树" url="http://www.duny31030.top/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.duny31030.top/2018/09/07/Software-Engineering/</loc>
+    <lastmod>2018-09-26T08:37:58.354Z</lastmod>
+    <data>
+        <display>
+        <title>软件工程导论课设</title>
+        <pubTime>2018-09-07T07:55:50.000Z</pubTime>
+        
+        <tag>课程设计</tag>
+         
+         
+           
+             
+              <breadCrumb title="软件工程导论" url="http://www.duny31030.top/categories/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E5%AF%BC%E8%AE%BA/"/>
+          
+             
+              <breadCrumb title="课程设计" url="http://www.duny31030.top/categories/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E5%AF%BC%E8%AE%BA/%E8%AF%BE%E7%A8%8B%E8%AE%BE%E8%AE%A1/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.duny31030.top/2018/09/18/POJ2236-Wireless-Network/</loc>
+    <lastmod>2018-09-26T07:32:31.122Z</lastmod>
+    <data>
+        <display>
+        <title>POJ2236 Wireless Network(并查集)</title>
+        <pubTime>2018-09-18T03:15:49.000Z</pubTime>
+        
+        <tag>并查集</tag>
+         
+        <tag>POJ</tag>
+         
+         
+           
+             
+              <breadCrumb title="数据结构" url="http://www.duny31030.top/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+          
+             
+              <breadCrumb title="并查集" url="http://www.duny31030.top/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%B9%B6%E6%9F%A5%E9%9B%86/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.duny31030.top/2018/09/24/QLUOJ-TEST/</loc>
+    <lastmod>2018-09-24T15:23:51.816Z</lastmod>
+    <data>
+        <display>
+        <title>测试赛题解</title>
+        <pubTime>2018-09-24T14:05:18.000Z</pubTime>
+        
+         
+           
         </display>
     </data>
     </url>
@@ -179,54 +285,6 @@
           
              
               <breadCrumb title="上机" url="http://www.duny31030.top/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E4%B8%8A%E6%9C%BA/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.duny31030.top/2018/09/07/Software-Engineering/</loc>
-    <lastmod>2018-09-19T13:58:36.416Z</lastmod>
-    <data>
-        <display>
-        <title>软件工程导论课设</title>
-        <pubTime>2018-09-07T07:55:50.000Z</pubTime>
-        
-        <tag>课程设计</tag>
-         
-         
-           
-             
-              <breadCrumb title="软件工程导论" url="http://www.duny31030.top/categories/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E5%AF%BC%E8%AE%BA/"/>
-          
-             
-              <breadCrumb title="课程设计" url="http://www.duny31030.top/categories/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E5%AF%BC%E8%AE%BA/%E8%AF%BE%E7%A8%8B%E8%AE%BE%E8%AE%A1/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.duny31030.top/2018/09/18/POJ2236-Wireless-Network/</loc>
-    <lastmod>2018-09-19T08:47:09.502Z</lastmod>
-    <data>
-        <display>
-        <title>POJ2236 Wireless Network(并查集)</title>
-        <pubTime>2018-09-18T03:15:49.000Z</pubTime>
-        
-        <tag>并查集</tag>
-         
-        <tag>POJ</tag>
-         
-         
-           
-             
-              <breadCrumb title="数据结构" url="http://www.duny31030.top/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-          
-             
-              <breadCrumb title="并查集" url="http://www.duny31030.top/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%B9%B6%E6%9F%A5%E9%9B%86/"/>
           
         </display>
     </data>
