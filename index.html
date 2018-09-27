@@ -511,6 +511,174 @@ border-left-color: #1E92FB; /左边框颜色/
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.duny31030.top/2018/09/27/Test/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="杜宁元">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="duny31030'Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/09/27/Test/" itemprop="url">通选课测试题题解</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-27T18:12:12+08:00">
+                2018-09-27
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2018/09/27/Test/" class="leancloud_visitors" data-flag-title="通选课测试题题解">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <div class="note danger"><p>我的预期是大家能写出三道题来</p>
+<p>这里边可是有原题的呀大胸弟</p>
+<p><img src="http://jiantu-blog.oss-cn-beijing.aliyuncs.com/18-9-27/97143198.jpg" alt="1"></p></div>
+<h1 id="A-最大值"><a href="#A-最大值" class="headerlink" title="A. 最大值"></a>A. 最大值</h1><blockquote>
+<p>我没记错的话应该是山理工原题</p>
+<p>并且这道题的数据很弱很弱</p>
+</blockquote>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> a,b;</span><br><span class="line">    b = <span class="number">-10</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>;i &lt;= <span class="number">3</span>;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;a);</span><br><span class="line">        b &lt; a ? b = a : b = b;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%d\n"</span>,b);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="B-水仙花数"><a href="#B-水仙花数" class="headerlink" title="B. 水仙花数"></a>B. 水仙花数</h1><blockquote>
+<ol>
+<li>先本地打表跑一下，然后输出</li>
+<li>提交程序直接跑</li>
+</ol>
+</blockquote>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> a,b,c;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">100</span>;i &lt;= <span class="number">999</span>;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        a = i/<span class="number">10</span>;</span><br><span class="line">        b = i%<span class="number">10</span>;</span><br><span class="line">        c = i/<span class="number">100</span>%<span class="number">10</span>;</span><br><span class="line">        <span class="keyword">if</span>(i == a*a*a + b*b*b + c*c*c)</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">"%d\n"</span>,i);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="C-猴子吃桃"><a href="#C-猴子吃桃" class="headerlink" title="C.猴子吃桃"></a>C.猴子吃桃</h1><blockquote>
+<p>递归练习题</p>
+<p>上节课有讲递归，不过我讲的太烂了</p>
+<p>现在还不会这道题的话可以去看一下上节课的课件</p>
+<p>然后自己写几道题练习一下</p>
+<p>ps:这道题也可以使用递推的方法来写</p>
+</blockquote>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">monkey</span><span class="params">(<span class="keyword">int</span> n,<span class="keyword">int</span> day)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(n == day)</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">return</span> (monkey(n+<span class="number">1</span>,day)+<span class="number">1</span>)*<span class="number">2</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> n;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;n);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%d\n"</span>,monkey(<span class="number">1</span>,n));</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="D-逆序输出"><a href="#D-逆序输出" class="headerlink" title="D. 逆序输出"></a>D. 逆序输出</h1><blockquote>
+<p>输出就好了</p>
+</blockquote>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> a[<span class="number">15</span>];</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>;i &lt;= <span class="number">10</span>;i++)</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;a[i]);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">10</span>;i &gt;= <span class="number">1</span>;i--)</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%d "</span>,a[i]);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="E-平均分"><a href="#E-平均分" class="headerlink" title="E. 平均分"></a>E. 平均分</h1><blockquote>
+<p>用结构体来存储学生的学号姓名以及成绩</p>
+<p>然后进行排序</p>
+<p>平局成绩的话遍历一遍就可以算出来了</p>
+</blockquote>
+<div class="note danger"><p>由于学号有的会出现英文字母，所以要用char类型的存储</p>
+<p>这一点在样例也可以看出</p></div>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 万能头文件，不用管这个，用你平时用的头文件就好了</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 结构体存储，这个东西还是看课本好一些，讲的比较细致</span></span><br><span class="line"><span class="comment">// 不会用的话就去山理工刷几道题相关的题</span></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">node</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="keyword">char</span> h[<span class="number">10</span>];</span><br><span class="line">    <span class="keyword">char</span> name[<span class="number">20</span>];</span><br><span class="line">    <span class="keyword">int</span> a,b,c,d;</span><br><span class="line">&#125;st[<span class="number">100</span>];</span><br><span class="line"></span><br><span class="line"><span class="comment">// 这个东西就是用来辅助结构体排序的</span></span><br><span class="line"><span class="comment">// 看不懂这个没关系，你可以把这个删掉</span></span><br><span class="line"><span class="comment">// 将下边的sort也删掉，然后自己写一个冒泡排序也可以</span></span><br><span class="line"><span class="comment">// 冒泡排序也不会？那就遍历一遍，用一个变量tmp(随便什么名字都可以)</span></span><br><span class="line"><span class="comment">// 记录一下总成绩最高的那个人的下标</span></span><br><span class="line"><span class="comment">// 输出的时候就输出st[tmp].a~~~~~</span></span><br><span class="line"><span class="comment">// 就搞定了</span></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">cmp</span><span class="params">(node a,node b)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">return</span>  a.d &gt; b.d;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n;</span><br><span class="line">    <span class="keyword">double</span> aa,bb,cc;</span><br><span class="line">    <span class="comment">// aa 第一门成绩</span></span><br><span class="line">    <span class="comment">// bb 第二门成绩</span></span><br><span class="line">    <span class="comment">// cc 第三门成绩</span></span><br><span class="line">    <span class="comment">// 先初始化</span></span><br><span class="line">    aa = <span class="number">0.0</span>;</span><br><span class="line">    bb = <span class="number">0.0</span>;</span><br><span class="line">    cc = <span class="number">0.0</span>;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;n);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>;i &lt;= n;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%s %s %d %d %d"</span>,st[i].h,st[i].name,&amp;st[i].a,&amp;st[i].b,&amp;st[i].c);</span><br><span class="line">        <span class="comment">// 先求和</span></span><br><span class="line">        aa += st[i].a;</span><br><span class="line">        bb += st[i].b;</span><br><span class="line">        cc += st[i].c;</span><br><span class="line">        st[i].d = st[i].a+st[i].b+st[i].c;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 再除一下就出来平均数了</span></span><br><span class="line">    aa /= n;</span><br><span class="line">    bb /= n;</span><br><span class="line">    cc /= n;</span><br><span class="line">    sort(st+<span class="number">1</span>,st+<span class="number">1</span>+n,cmp);</span><br><span class="line">    <span class="comment">// 保留0位小数 .0f</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%.0f %.0f %.0f\n"</span>,aa,bb,cc);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%s %s %d %d %d\n"</span>,st[<span class="number">1</span>].h,st[<span class="number">1</span>].name,st[<span class="number">1</span>].a,st[<span class="number">1</span>].b,st[<span class="number">1</span>].c);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="F-借教室"><a href="#F-借教室" class="headerlink" title="F. 借教室"></a>F. 借教室</h1><blockquote>
+<p>这道题稍微难一些，贪心的策略</p>
+</blockquote>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://www.duny31030.top/2018/09/27/HDU3065/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1950,178 +2118,6 @@ border-left-color: #1E92FB; /左边框颜色/
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.duny31030.top/2018/09/18/HDU3038-How-Many-Answers-Are-Wrong/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="杜宁元">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="duny31030'Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/09/18/HDU3038-How-Many-Answers-Are-Wrong/" itemprop="url">HDU3038 How Many Answers Are Wrong</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-18T21:11:32+08:00">
-                2018-09-18
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/数据结构/" itemprop="url" rel="index">
-                    <span itemprop="name">数据结构</span>
-                  </a>
-                </span>
-
-                
-                
-                  ， 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/数据结构/并查集/" itemprop="url" rel="index">
-                    <span itemprop="name">并查集</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2018/09/18/HDU3038-How-Many-Answers-Are-Wrong/" class="leancloud_visitors" data-flag-title="HDU3038 How Many Answers Are Wrong">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h2 id="描述"><a href="#描述" class="headerlink" title="描述"></a>描述</h2><p>传送门：<a href="http://acm.hdu.edu.cn/showproblem.php?pid=3038" target="_blank" rel="noopener">我是传送门</a></p>
-<blockquote>
-<p>TT and FF are … friends. Uh… very very good friends -<strong><em>__</em></strong>-b</p>
-<p>FF is a bad boy, he is always wooing TT to play the following game with him. This is a very humdrum game. To begin with, TT should write down a sequence of integers-_-!!(bored).</p>
-<p><img src="http://acm.hdu.edu.cn/data/images/exe3038-1.JPG" alt="图"></p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/09/18/HDU3038-How-Many-Answers-Are-Wrong/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2176,7 +2172,7 @@ border-left-color: #1E92FB; /左边框颜色/
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">44</span>
+                  <span class="site-state-item-count">45</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
