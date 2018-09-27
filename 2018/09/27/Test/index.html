@@ -128,19 +128,18 @@
 
 
 
-<meta name="description" content="我的预期是大家能写出三道题来 这里边可是有原题的呀大胸弟  A. 最大值 我没记错的话应该是山理工原题 并且这道题的数据很弱很弱  12345678910111213#include &amp;lt;stdio.h&amp;gt;int main()&amp;#123;    int a,b;    b = -10;    for(int i = 1;i &amp;lt;= 3;i++)    &amp;#123;        sca">
+<meta name="description" content="我的预期是大家能写出三道题来 这里边可是有原题的呀大胸弟">
 <meta property="og:type" content="article">
 <meta property="og:title" content="通选课测试题题解">
 <meta property="og:url" content="http://www.duny31030.top/2018/09/27/Test/index.html">
 <meta property="og:site_name" content="duny31030&#39;Blog">
-<meta property="og:description" content="我的预期是大家能写出三道题来 这里边可是有原题的呀大胸弟  A. 最大值 我没记错的话应该是山理工原题 并且这道题的数据很弱很弱  12345678910111213#include &amp;lt;stdio.h&amp;gt;int main()&amp;#123;    int a,b;    b = -10;    for(int i = 1;i &amp;lt;= 3;i++)    &amp;#123;        sca">
+<meta property="og:description" content="我的预期是大家能写出三道题来 这里边可是有原题的呀大胸弟">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://jiantu-blog.oss-cn-beijing.aliyuncs.com/18-9-27/97143198.jpg">
-<meta property="og:image" content="http://ww1.rs.fanjian.net/c/e7/c3/68/a6e79a5afec31d4e84689381d86d1295.jpg">
-<meta property="og:updated_time" content="2018-09-27T11:29:40.437Z">
+<meta property="og:updated_time" content="2018-09-27T11:38:41.954Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="通选课测试题题解">
-<meta name="twitter:description" content="我的预期是大家能写出三道题来 这里边可是有原题的呀大胸弟  A. 最大值 我没记错的话应该是山理工原题 并且这道题的数据很弱很弱  12345678910111213#include &amp;lt;stdio.h&amp;gt;int main()&amp;#123;    int a,b;    b = -10;    for(int i = 1;i &amp;lt;= 3;i++)    &amp;#123;        sca">
+<meta name="twitter:description" content="我的预期是大家能写出三道题来 这里边可是有原题的呀大胸弟">
 <meta name="twitter:image" content="http://jiantu-blog.oss-cn-beijing.aliyuncs.com/18-9-27/97143198.jpg">
 
 
@@ -441,6 +440,7 @@ border-left-color: #1E92FB; /左边框颜色/
         <div class="note danger"><p>我的预期是大家能写出三道题来</p>
 <p>这里边可是有原题的呀大胸弟</p>
 <p><img src="http://jiantu-blog.oss-cn-beijing.aliyuncs.com/18-9-27/97143198.jpg" alt="1"></p></div>
+<a id="more"></a>
 <h1 id="A-最大值"><a href="#A-最大值" class="headerlink" title="A. 最大值"></a>A. 最大值</h1><blockquote>
 <p>我没记错的话应该是山理工原题</p>
 <p>并且这道题的数据很弱很弱</p>
@@ -477,9 +477,11 @@ border-left-color: #1E92FB; /左边框颜色/
 <p>这道题更难一些</p>
 <p>放在这里也是有些为难大家了</p>
 <p>需要用二分的策略来找，直接模拟的话没有办法通过这道题</p>
-<p><img src="http://ww1.rs.fanjian.net/c/e7/c3/68/a6e79a5afec31d4e84689381d86d1295.jpg" alt="t"></p>
+<p>但是这种力气活。。。我实在不想写这道题了。。。<br>太累人。。。</p>
+<p>与今年一道区域赛网络赛的题目有些相似</p>
+<p><a href="http://duny31030.top/2018/09/01/Lpl-and-Energy-saving-Lamps/" target="_blank" rel="noopener">Lpl and Energy-saving Lamps(二分+线段树)</a></p>
 </blockquote>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<div class="note info"><p><a href="https://www.luogu.org/problemnew/solution/P1083" target="_blank" rel="noopener">这里有一些别人写的题解</a></p></div>
 <h1 id="G-活动安排"><a href="#G-活动安排" class="headerlink" title="G. 活动安排"></a>G. 活动安排</h1><blockquote>
 <p>将活动按照结束时间进行从小到大排序。然后用i代表第i个活动，s[i]代表第i个活动开始时间，f[i]代表第i个活动的结束时间。按照从小到大排序，挑选出结束时间尽量早的活动，并且满足后一个活动的起始时间晚于前一个活动的结束时间，全部找出这些活动就是最大的相容活动子集合。事实上系统一次检查活动i是否与当前已选择的所有活动相容。若相容活动i加入已选择活动的集合中，否则，不选择活动i，而继续下一活动与集合A中活动的相容性。若活动i与之相容，则i成为最近加入集合A的活动，并取代活动j的位置。</p>
 <p>详细分析：<a href="https://www.cnblogs.com/cangT-Tlan/p/6219025.html" target="_blank" rel="noopener">贪心基础入门讲解二——活动安排问题</a></p>
