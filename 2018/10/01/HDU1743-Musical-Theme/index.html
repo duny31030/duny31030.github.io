@@ -117,7 +117,7 @@
 
 
 
-  <meta name="keywords" content="后缀数组," />
+  <meta name="keywords" content="HDU,后缀数组," />
 
 
 
@@ -129,18 +129,18 @@
 
 
 <meta name="description" content="描述传送门：我是传送门  A musical melody is represented as a sequence of N (1&amp;lt;=N&amp;lt;=20000)notes that are integers in the range 1..88, each representing a key on the piano. It is unfortunate but true that thi">
-<meta name="keywords" content="后缀数组">
+<meta name="keywords" content="HDU,后缀数组">
 <meta property="og:type" content="article">
-<meta property="og:title" content="HDU1743 Musical Theme">
+<meta property="og:title" content="HDU1743 Musical Theme(后缀数组求不可重叠最长重复子串)">
 <meta property="og:url" content="http://www.duny31030.top/2018/10/01/HDU1743-Musical-Theme/index.html">
 <meta property="og:site_name" content="duny31030&#39;Blog">
 <meta property="og:description" content="描述传送门：我是传送门  A musical melody is represented as a sequence of N (1&amp;lt;=N&amp;lt;=20000)notes that are integers in the range 1..88, each representing a key on the piano. It is unfortunate but true that thi">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://jiantu-blog.oss-cn-beijing.aliyuncs.com/18-10-1/72573642.jpg">
-<meta property="og:image" content="http://www.duny31030.top/Users/duningyuan/Library/Application%20Support/typora-user-images/image-20181001124225446.png">
-<meta property="og:updated_time" content="2018-10-01T07:41:24.619Z">
+<meta property="og:image" content="http://jiantu-blog.oss-cn-beijing.aliyuncs.com/18-10-1/25413517.jpg">
+<meta property="og:updated_time" content="2018-10-03T15:16:30.755Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="HDU1743 Musical Theme">
+<meta name="twitter:title" content="HDU1743 Musical Theme(后缀数组求不可重叠最长重复子串)">
 <meta name="twitter:description" content="描述传送门：我是传送门  A musical melody is represented as a sequence of N (1&amp;lt;=N&amp;lt;=20000)notes that are integers in the range 1..88, each representing a key on the piano. It is unfortunate but true that thi">
 <meta name="twitter:image" content="http://jiantu-blog.oss-cn-beijing.aliyuncs.com/18-10-1/72573642.jpg">
 
@@ -195,7 +195,7 @@ border-left-color: #1E92FB; /左边框颜色/
 
 
 
-  <title>HDU1743 Musical Theme | duny31030'Blog</title>
+  <title>HDU1743 Musical Theme(后缀数组求不可重叠最长重复子串) | duny31030'Blog</title>
   
 
 
@@ -373,7 +373,7 @@ border-left-color: #1E92FB; /左边框颜色/
 
         
         
-          <h1 class="post-title" itemprop="name headline">HDU1743 Musical Theme</h1>
+          <h1 class="post-title" itemprop="name headline">HDU1743 Musical Theme(后缀数组求不可重叠最长重复子串)</h1>
         
 
         <div class="post-meta">
@@ -436,7 +436,7 @@ border-left-color: #1E92FB; /左边框颜色/
 
           
           
-             <span id="/2018/10/01/HDU1743-Musical-Theme/" class="leancloud_visitors" data-flag-title="HDU1743 Musical Theme">
+             <span id="/2018/10/01/HDU1743-Musical-Theme/" class="leancloud_visitors" data-flag-title="HDU1743 Musical Theme(后缀数组求不可重叠最长重复子串)">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -513,7 +513,7 @@ border-left-color: #1E92FB; /左边框颜色/
 <p>记录一下我对这个题的理解</p>
 <p>首先要清楚sa[]所表达的意思  “排第几的是谁?”</p>
 <p>看图：</p>
-<p><img src="/Users/duningyuan/Library/Application Support/typora-user-images/image-20181001124225446.png" alt="图一"></p>
+<p><img src="http://jiantu-blog.oss-cn-beijing.aliyuncs.com/18-10-1/25413517.jpg" alt="图一"></p>
 <p>height[]是在sa[]的基础上所求出来的</p>
 <p>height[i]表示sa[i]与sa[i-1]<font color="red">所对应的字符串</font>的最长公共前缀</p>
 <p>（这也是在代码中每次进行判断不重叠的原理）</p>
@@ -544,7 +544,7 @@ border-left-color: #1E92FB; /左边框颜色/
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="http://www.duny31030.top/2018/10/01/HDU1743-Musical-Theme/" title="HDU1743 Musical Theme">http://www.duny31030.top/2018/10/01/HDU1743-Musical-Theme/</a>
+    <a href="http://www.duny31030.top/2018/10/01/HDU1743-Musical-Theme/" title="HDU1743 Musical Theme(后缀数组求不可重叠最长重复子串)">http://www.duny31030.top/2018/10/01/HDU1743-Musical-Theme/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -559,6 +559,8 @@ border-left-color: #1E92FB; /左边框颜色/
     <footer class="post-footer">
       
         <div class="post-tags">
+          
+            <a href="/tags/HDU/" <i class="fa fa-tag"></i> HDU</a>
           
             <a href="/tags/后缀数组/" <i class="fa fa-tag"></i> 后缀数组</a>
           
@@ -582,6 +584,10 @@ border-left-color: #1E92FB; /左边框颜色/
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/10/03/POJ2406-Power-Strings/" rel="prev" title="POJ2406 Power Strings (给自己挖个坑先)">
+                POJ2406 Power Strings (给自己挖个坑先) <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -667,7 +673,7 @@ border-left-color: #1E92FB; /左边框颜色/
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">49</span>
+                  <span class="site-state-item-count">51</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -678,7 +684,7 @@ border-left-color: #1E92FB; /左边框颜色/
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">34</span>
+                  <span class="site-state-item-count">35</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -689,7 +695,7 @@ border-left-color: #1E92FB; /左边框颜色/
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">48</span>
+                  <span class="site-state-item-count">50</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>

@@ -4,14 +4,65 @@
 
     
   <url>
-    <loc>http://www.duny31030.top/2018/10/01/HDU1743-Musical-Theme/</loc>
-    <lastmod>2018-10-01T07:41:24.619Z</lastmod>
+    <loc>http://www.duny31030.top/2018/10/03/%E3%80%8CACM-Qingdao-Onsite-2016%E3%80%8DB-Pocket-Cube/</loc>
+    <lastmod>2018-10-03T15:22:23.116Z</lastmod>
     <data>
         <display>
-        <title>HDU1743 Musical Theme</title>
+        <title>「ACM Qingdao Onsite 2016」B.Pocket Cube(暴力 暴力 再暴力)</title>
+        <pubTime>2018-10-03T15:18:17.000Z</pubTime>
+        
+        <tag>HDU</tag>
+         
+        <tag>暴力</tag>
+         
+        <tag>模拟</tag>
+         
+         
+           
+             
+              <breadCrumb title="模拟" url="http://www.duny31030.top/categories/%E6%A8%A1%E6%8B%9F/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.duny31030.top/2018/10/01/HDU1743-Musical-Theme/</loc>
+    <lastmod>2018-10-03T15:16:30.755Z</lastmod>
+    <data>
+        <display>
+        <title>HDU1743 Musical Theme(后缀数组求不可重叠最长重复子串)</title>
         <pubTime>2018-10-01T03:52:18.000Z</pubTime>
         
+        <tag>HDU</tag>
+         
         <tag>后缀数组</tag>
+         
+         
+           
+             
+              <breadCrumb title="字符串" url="http://www.duny31030.top/categories/%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
+          
+             
+              <breadCrumb title="后缀数组" url="http://www.duny31030.top/categories/%E5%AD%97%E7%AC%A6%E4%B8%B2/%E5%90%8E%E7%BC%80%E6%95%B0%E7%BB%84/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.duny31030.top/2018/10/03/POJ2406-Power-Strings/</loc>
+    <lastmod>2018-10-03T15:16:19.547Z</lastmod>
+    <data>
+        <display>
+        <title>POJ2406 Power Strings (给自己挖个坑先)</title>
+        <pubTime>2018-10-03T15:07:33.000Z</pubTime>
+        
+        <tag>后缀数组</tag>
+         
+        <tag>POJ</tag>
          
          
            
