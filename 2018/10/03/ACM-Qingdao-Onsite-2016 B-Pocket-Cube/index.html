@@ -117,7 +117,7 @@
 
 
 
-  <meta name="keywords" content="HDU,暴力,模拟," />
+  <meta name="keywords" content="暴力,模拟,HDU," />
 
 
 
@@ -129,14 +129,14 @@
 
 
 <meta name="description" content="描述传送门：我是传送门  The Pocket Cube, also known as the Mini Cube or the Ice Cube, is the 2 × 2 × 2 equivalence of a Rubik’s Cube.The cube consists of 8 pieces, all corners.Each piece is labeled by a three di">
-<meta name="keywords" content="HDU,暴力,模拟">
+<meta name="keywords" content="暴力,模拟,HDU">
 <meta property="og:type" content="article">
 <meta property="og:title" content="「ACM Qingdao Onsite 2016」B.Pocket Cube(暴力 暴力 再暴力)">
-<meta property="og:url" content="http://www.duny31030.top/2018/10/03/「ACM-Qingdao-Onsite-2016」B-Pocket-Cube/index.html">
+<meta property="og:url" content="http://www.duny31030.top/2018/10/03/ACM-Qingdao-Onsite-2016 B-Pocket-Cube/index.html">
 <meta property="og:site_name" content="duny31030&#39;Blog">
 <meta property="og:description" content="描述传送门：我是传送门  The Pocket Cube, also known as the Mini Cube or the Ice Cube, is the 2 × 2 × 2 equivalence of a Rubik’s Cube.The cube consists of 8 pieces, all corners.Each piece is labeled by a three di">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-10-03T15:22:23.116Z">
+<meta property="og:updated_time" content="2018-10-03T15:34:49.954Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="「ACM Qingdao Onsite 2016」B.Pocket Cube(暴力 暴力 再暴力)">
 <meta name="twitter:description" content="描述传送门：我是传送门  The Pocket Cube, also known as the Mini Cube or the Ice Cube, is the 2 × 2 × 2 equivalence of a Rubik’s Cube.The cube consists of 8 pieces, all corners.Each piece is labeled by a three di">
@@ -169,7 +169,7 @@
 
 
 
-  <link rel="canonical" href="http://www.duny31030.top/2018/10/03/「ACM-Qingdao-Onsite-2016」B-Pocket-Cube/"/>
+  <link rel="canonical" href="http://www.duny31030.top/2018/10/03/ACM-Qingdao-Onsite-2016 B-Pocket-Cube/"/>
 
 
 <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
@@ -353,7 +353,7 @@ border-left-color: #1E92FB; /左边框颜色/
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.duny31030.top/2018/10/03/「ACM-Qingdao-Onsite-2016」B-Pocket-Cube/">
+    <link itemprop="mainEntityOfPage" href="http://www.duny31030.top/2018/10/03/ACM-Qingdao-Onsite-2016 B-Pocket-Cube/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="杜宁元">
@@ -422,7 +422,7 @@ border-left-color: #1E92FB; /左边框颜色/
 
           
           
-             <span id="/2018/10/03/「ACM-Qingdao-Onsite-2016」B-Pocket-Cube/" class="leancloud_visitors" data-flag-title="「ACM Qingdao Onsite 2016」B.Pocket Cube(暴力 暴力 再暴力)">
+             <span id="/2018/10/03/ACM-Qingdao-Onsite-2016 B-Pocket-Cube/" class="leancloud_visitors" data-flag-title="「ACM Qingdao Onsite 2016」B.Pocket Cube(暴力 暴力 再暴力)">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -479,8 +479,8 @@ border-left-color: #1E92FB; /左边框颜色/
 <p>corresponding to the above pieces.</p>
 <p>In other words, each test case contains 24 integers a, b, c to x. You can flat the surface to get the surface development</p>
 <p>as follows.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&gt;+ - + - + - + - + - + - +</span><br><span class="line">&gt;| q | r | a | b | u | v |</span><br><span class="line">&gt;+ - + - + - + - + - + - +</span><br><span class="line">&gt;| s | t | c | d | w | x |</span><br><span class="line">&gt;+ - + - + - + - + - + - +</span><br><span class="line">&gt;        | e | f |</span><br><span class="line">&gt;        + - + - +</span><br><span class="line">&gt;        | g | h |</span><br><span class="line">&gt;        + - + - +</span><br><span class="line">&gt;        | i | j |</span><br><span class="line">&gt;        + - + - +</span><br><span class="line">&gt;        | k | l |</span><br><span class="line">&gt;        + - + - +</span><br><span class="line">&gt;        | m | n |</span><br><span class="line">&gt;        + - + - +</span><br><span class="line">&gt;        | o | p |</span><br><span class="line">&gt;        + - + - +</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
 </blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">+ - + - + - + - + - + - +</span><br><span class="line">| q | r | a | b | u | v |</span><br><span class="line">+ - + - + - + - + - + - +</span><br><span class="line">| s | t | c | d | w | x |</span><br><span class="line">+ - + - + - + - + - + - +</span><br><span class="line">        | e | f |</span><br><span class="line">        + - + - +</span><br><span class="line">        | g | h |</span><br><span class="line">        + - + - +</span><br><span class="line">        | i | j |</span><br><span class="line">        + - + - +</span><br><span class="line">        | k | l |</span><br><span class="line">        + - + - +</span><br><span class="line">        | m | n |</span><br><span class="line">        + - + - +</span><br><span class="line">        | o | p |</span><br><span class="line">        + - + - +</span><br></pre></td></tr></table></figure>
 <h3 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h3><blockquote>
 <p>For each test case, output YES if can be restored in one step, otherwise output NO.</p>
 </blockquote>
@@ -518,7 +518,7 @@ border-left-color: #1E92FB; /左边框颜色/
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="http://www.duny31030.top/2018/10/03/「ACM-Qingdao-Onsite-2016」B-Pocket-Cube/" title="「ACM Qingdao Onsite 2016」B.Pocket Cube(暴力 暴力 再暴力)">http://www.duny31030.top/2018/10/03/「ACM-Qingdao-Onsite-2016」B-Pocket-Cube/</a>
+    <a href="http://www.duny31030.top/2018/10/03/ACM-Qingdao-Onsite-2016 B-Pocket-Cube/" title="「ACM Qingdao Onsite 2016」B.Pocket Cube(暴力 暴力 再暴力)">http://www.duny31030.top/2018/10/03/ACM-Qingdao-Onsite-2016 B-Pocket-Cube/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -534,11 +534,11 @@ border-left-color: #1E92FB; /左边框颜色/
       
         <div class="post-tags">
           
-            <a href="/tags/HDU/" <i class="fa fa-tag"></i> HDU</a>
-          
             <a href="/tags/暴力/" <i class="fa fa-tag"></i> 暴力</a>
           
             <a href="/tags/模拟/" <i class="fa fa-tag"></i> 模拟</a>
+          
+            <a href="/tags/HDU/" <i class="fa fa-tag"></i> HDU</a>
           
         </div>
       
@@ -560,6 +560,10 @@ border-left-color: #1E92FB; /左边框颜色/
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/10/05/ACM-Shenyang-Onsite-2016-E/" rel="prev" title="「ACM Shenyang Onsite 2016」E.Counting Cliques(dfs暴力+优化)">
+                「ACM Shenyang Onsite 2016」E.Counting Cliques(dfs暴力+优化) <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -645,7 +649,7 @@ border-left-color: #1E92FB; /左边框颜色/
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">51</span>
+                  <span class="site-state-item-count">52</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -656,7 +660,7 @@ border-left-color: #1E92FB; /左边框颜色/
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">35</span>
+                  <span class="site-state-item-count">36</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -667,7 +671,7 @@ border-left-color: #1E92FB; /左边框颜色/
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">50</span>
+                  <span class="site-state-item-count">51</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
