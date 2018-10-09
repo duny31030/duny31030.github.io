@@ -28,15 +28,6 @@
     </entry>
     
     <entry>
-      <title>Internal Memory</title>
-      <link href="/2018/10/07/Internal-Memory/"/>
-      <url>/2018/10/07/Internal-Memory/</url>
-      <content type="html"><![CDATA[<blockquote><p>密码：memory</p></blockquote><a id="more"></a><h3 id="1"><a href="#1" class="headerlink" title="1."></a>1.</h3><h4 id="Q1"><a href="#Q1" class="headerlink" title="Q1:"></a>Q1:</h4><blockquote><p>1.内存是缓冲区吗？</p></blockquote><h4 id="A1"><a href="#A1" class="headerlink" title="A1:"></a>A1:</h4><p>&gt;</p><h3 id="2"><a href="#2" class="headerlink" title="2."></a>2.</h3><h4 id="Q2"><a href="#Q2" class="headerlink" title="Q2:"></a>Q2:</h4><blockquote><p>2.如何通过修改内存存储内容，提高开机速度？</p></blockquote><h4 id="A2"><a href="#A2" class="headerlink" title="A2:"></a>A2:</h4><p>&gt;</p><h3 id="3"><a href="#3" class="headerlink" title="3."></a>3.</h3><h4 id="Q3"><a href="#Q3" class="headerlink" title="Q3:"></a>Q3:</h4><blockquote><p>3.DDR的含义是什么？其实质是什么？DDR1-DDR4的区别方法（请说出2~3种）？</p></blockquote><h4 id="A3"><a href="#A3" class="headerlink" title="A3:"></a>A3:</h4><p>&gt;</p><h3 id="4"><a href="#4" class="headerlink" title="4."></a>4.</h3><h4 id="Q4"><a href="#Q4" class="headerlink" title="Q4:"></a>Q4:</h4><blockquote><p>4.DDR1~DDR4是兼容的吗？</p></blockquote><h4 id="A4"><a href="#A4" class="headerlink" title="A4:"></a>A4:</h4><p>&gt;</p><h3 id="5"><a href="#5" class="headerlink" title="5."></a>5.</h3><h4 id="Q5"><a href="#Q5" class="headerlink" title="Q5:"></a>Q5:</h4><blockquote><p>5.现代计算机最高配置中，内存的型号、容量、频率可以达到多少？请举例。</p></blockquote><h4 id="A5"><a href="#A5" class="headerlink" title="A5:"></a>A5:</h4><p>&gt;</p><h3 id="6"><a href="#6" class="headerlink" title="6."></a>6.</h3><h4 id="Q6"><a href="#Q6" class="headerlink" title="Q6:"></a>Q6:</h4><blockquote><p>6.主流的内存品牌有哪些？</p></blockquote><h4 id="A6"><a href="#A6" class="headerlink" title="A6:"></a>A6:</h4><p>&gt;</p><h3 id="7"><a href="#7" class="headerlink" title="7."></a>7.</h3><h4 id="Q7"><a href="#Q7" class="headerlink" title="Q7:"></a>Q7:</h4><blockquote><p>7.2个8G内存条扩充成1个16G内存，和一个单独的16G内存相比，那种方案机器性能高？</p></blockquote><h4 id="A7"><a href="#A7" class="headerlink" title="A7:"></a>A7:</h4><p>&gt;</p><h3 id="8"><a href="#8" class="headerlink" title="8."></a>8.</h3><h4 id="Q8"><a href="#Q8" class="headerlink" title="Q8:"></a>Q8:</h4><blockquote><p>8.影响内存条性能的因素是什么？容量、价格、频率或者其他？</p></blockquote><h4 id="A8"><a href="#A8" class="headerlink" title="A8:"></a>A8:</h4><p>&gt;</p><h3 id="9"><a href="#9" class="headerlink" title="9."></a>9.</h3><h4 id="Q9"><a href="#Q9" class="headerlink" title="Q9:"></a>Q9:</h4><blockquote><p>9.如何查看自己机器的内存信息？</p></blockquote><h4 id="A9"><a href="#A9" class="headerlink" title="A9:"></a>A9:</h4><p>&gt;</p>]]></content>
-      
-      
-    </entry>
-    
-    <entry>
       <title>Codeforces Round #514 (Div. 2) B.Forgery</title>
       <link href="/2018/10/06/Codeforces-Round-514-Div-2-B-Forgery/"/>
       <url>/2018/10/06/Codeforces-Round-514-Div-2-B-Forgery/</url>
@@ -76,9 +67,9 @@
       
         <tags>
             
-            <tag> 暴力 </tag>
-            
             <tag> ICPC&amp;&amp;CCPC </tag>
+            
+            <tag> 暴力 </tag>
             
             <tag> 优化 </tag>
             

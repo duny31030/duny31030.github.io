@@ -131,21 +131,6 @@
 
     
   <url>
-    <loc>http://www.duny31030.top/2018/10/07/Internal-Memory/</loc>
-    <lastmod>2018-10-08T04:21:11.204Z</lastmod>
-    <data>
-        <display>
-        <title>Internal Memory</title>
-        <pubTime>2018-10-07T12:46:23.000Z</pubTime>
-        
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://www.duny31030.top/2018/10/07/ACM-Dalian-Onsite-2016-A/</loc>
     <lastmod>2018-10-07T13:02:25.650Z</lastmod>
     <data>
@@ -178,9 +163,9 @@
         <title>「ACM Shenyang Onsite 2016」E.Counting Cliques(dfs暴力+优化)</title>
         <pubTime>2018-10-05T10:53:01.000Z</pubTime>
         
-        <tag>暴力</tag>
-         
         <tag>ICPC&amp;&amp;CCPC</tag>
+         
+        <tag>暴力</tag>
          
         <tag>优化</tag>
          
