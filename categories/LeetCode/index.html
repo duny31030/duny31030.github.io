@@ -131,7 +131,7 @@
 <meta name="description" content="Just for fun">
 <meta property="og:type" content="website">
 <meta property="og:title" content="duny31030&#39;Blog">
-<meta property="og:url" content="http://www.duny31030.top/categories/Leetcode/index.html">
+<meta property="og:url" content="http://www.duny31030.top/categories/LeetCode/index.html">
 <meta property="og:site_name" content="duny31030&#39;Blog">
 <meta property="og:description" content="Just for fun">
 <meta property="og:locale" content="zh-Hans">
@@ -167,7 +167,7 @@
 
 
 
-  <link rel="canonical" href="http://www.duny31030.top/categories/Leetcode/"/>
+  <link rel="canonical" href="http://www.duny31030.top/categories/LeetCode/"/>
 
 
 <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
@@ -190,7 +190,7 @@ border-left-color: #1E92FB; /左边框颜色/
 
 
 
-  <title>分类: Leetcode | duny31030'Blog</title>
+  <title>分类: LeetCode | duny31030'Blog</title>
   
 
 
@@ -344,7 +344,7 @@ border-left-color: #1E92FB; /左边框颜色/
 
     <div id="posts" class="posts-collapse">
       <div class="collection-title">
-        <h1>Leetcode<small>分类</small>
+        <h1>LeetCode<small>分类</small>
         </h1>
       </div>
 
@@ -356,37 +356,9 @@ border-left-color: #1E92FB; /左边框颜色/
 
       <h2 class="post-title">
         
-            <a class="post-title-link" href="/2018/09/29/Leetcode-junior-string/" itemprop="url">
+            <a class="post-title-link" href="/2018/09/12/Leetcode-junior-array/" itemprop="url">
               
-                <span itemprop="name">Leetcode junior string</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-09-29T04:01:26+08:00"
-              content="2018-09-29" >
-          09-29
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-      
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/09/29/Leetcode-junior-math/" itemprop="url">
-              
-                <span itemprop="name">Leetcode junior math</span>
+                <span itemprop="name">LeetCode初级算法-数组</span>
               
             </a>
         
@@ -394,37 +366,9 @@ border-left-color: #1E92FB; /左边框颜色/
 
       <div class="post-meta">
         <time class="post-time" itemprop="dateCreated"
-              datetime="2018-09-29T03:08:45+08:00"
-              content="2018-09-29" >
-          09-29
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-      
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/09/29/Leetcode-junior-others/" itemprop="url">
-              
-                <span itemprop="name">Leetcode junior others</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-09-29T01:43:02+08:00"
-              content="2018-09-29" >
-          09-29
+              datetime="2018-09-12T14:41:59+08:00"
+              content="2018-09-12" >
+          09-12
         </time>
       </div>
 
@@ -1172,6 +1116,68 @@ border-left-color: #1E92FB; /左边框颜色/
     $(function() {
       var Counter = AV.Object.extend("Counter");
       if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+  
+
+  
+
+</body>
+</html>
+.length == 1) {
         addCount(Counter);
       } else if ($('.post-title-link').length > 1) {
         showTime(Counter);
