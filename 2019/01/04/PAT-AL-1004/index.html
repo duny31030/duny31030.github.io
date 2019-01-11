@@ -138,7 +138,7 @@
 <meta property="og:site_name" content="duny31030&#39;Blog">
 <meta property="og:description" content="描述传送门：我是传送门  A family hierarchy is usually presented by a pedigree tree. Your job is to count those family members who have no child.">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-01-05T13:28:42.982Z">
+<meta property="og:updated_time" content="2019-01-11T14:12:04.165Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="PAT甲级-1004-Counting Leaves（30 分）">
 <meta name="twitter:description" content="描述传送门：我是传送门  A family hierarchy is usually presented by a pedigree tree. Your job is to count those family members who have no child.">
@@ -488,12 +488,8 @@ border-left-color: #1E92FB; /左边框颜色/
 <p>For each test case, you are supposed to count those family members who have no child <strong>for every seniority level</strong>starting from the root. The numbers must be printed in a line, separated by a space, and there must be no extra space at the end of each line.</p>
 <p>The sample case represents a tree with only 2 nodes, where <code>01</code> is the root and <code>02</code> is its only child. Hence on the root <code>01</code> level, there is <code>0</code> leaf node; and on the next level, there is <code>1</code> leaf node. Then we should output <code>0 1</code> in a line.</p>
 </blockquote>
-<h3 id="样例"><a href="#样例" class="headerlink" title="样例"></a>样例</h3><h4 id="输入-1"><a href="#输入-1" class="headerlink" title="输入"></a>输入</h4><blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt;2 1</span><br><span class="line">&gt;01 1 02</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
-</blockquote>
-<h4 id="输出-1"><a href="#输出-1" class="headerlink" title="输出"></a>输出</h4><blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt;0 1</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
-</blockquote>
+<h3 id="样例"><a href="#样例" class="headerlink" title="样例"></a>样例</h3><h4 id="输入-1"><a href="#输入-1" class="headerlink" title="输入"></a>输入</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">2 1</span><br><span class="line">01 1 02</span><br></pre></td></tr></table></figure>
+<h4 id="输出-1"><a href="#输出-1" class="headerlink" title="输出"></a>输出</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">0 1</span><br></pre></td></tr></table></figure>
 <h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><blockquote>
 <p>大意为按照输入建树，输出树的每层叶节点的个数</p>
 <p>一开始就想到了使用并查集来写，但是退役一个月之后菜的非常真实。。。并查集都写错好几次。。。好在后来改了改过了</p>
@@ -560,6 +556,10 @@ border-left-color: #1E92FB; /左边框颜色/
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/01/11/PAT-AL-1007/" rel="prev" title="PAT-AL-1007">
+                PAT-AL-1007 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -645,7 +645,7 @@ border-left-color: #1E92FB; /左边框颜色/
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">68</span>
+                  <span class="site-state-item-count">69</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -667,7 +667,7 @@ border-left-color: #1E92FB; /左边框颜色/
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">68</span>
+                  <span class="site-state-item-count">69</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
