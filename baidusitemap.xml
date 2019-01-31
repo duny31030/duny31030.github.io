@@ -1,1743 +1,217 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-
-
-    
   <url>
     <loc>http://www.duny31030.top/2019/01/21/PAT-AL-1152/</loc>
-    <lastmod>2019-01-21T15:12:29.789Z</lastmod>
-    <data>
-        <display>
-        <title>PAT甲级-1152-Google Recruitment（20 分）</title>
-        <pubTime>2019-01-21T14:33:28.000Z</pubTime>
-        
-        <tag>素数</tag>
-         
-        <tag>字符串</tag>
-         
-         
-           
-             
-              <breadCrumb title="PAT" url="http://www.duny31030.top/categories/PAT/"/>
-          
-             
-              <breadCrumb title="甲级" url="http://www.duny31030.top/categories/PAT/%E7%94%B2%E7%BA%A7/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
+    <lastmod>2019-01-21</lastmod>
+  </url>  <url>
     <loc>http://www.duny31030.top/2019/01/21/macOS-MOjave-pygame-Error/</loc>
-    <lastmod>2019-01-21T07:22:49.981Z</lastmod>
-    <data>
-        <display>
-        <title>macOS MOjave运行pygame不显示图像-解决方案</title>
-        <pubTime>2019-01-21T04:59:35.000Z</pubTime>
-        
-        <tag>python</tag>
-         
-        <tag>pygame</tag>
-         
-         
-           
-             
-              <breadCrumb title="python" url="http://www.duny31030.top/categories/python/"/>
-          
-             
-              <breadCrumb title="pygame" url="http://www.duny31030.top/categories/python/pygame/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
+    <lastmod>2019-01-21</lastmod>
+  </url>  <url>
     <loc>http://www.duny31030.top/2019/01/11/PAT-AL-1007/</loc>
-    <lastmod>2019-01-11T14:59:59.937Z</lastmod>
-    <data>
-        <display>
-        <title>PAT甲级-1007-Maximum Subsequence Sum (25 分)</title>
-        <pubTime>2019-01-11T14:03:02.000Z</pubTime>
-        
-        <tag>DP</tag>
-         
-         
-           
-             
-              <breadCrumb title="PAT" url="http://www.duny31030.top/categories/PAT/"/>
-          
-             
-              <breadCrumb title="甲级" url="http://www.duny31030.top/categories/PAT/%E7%94%B2%E7%BA%A7/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
+    <lastmod>2019-01-11</lastmod>
+  </url>  <url>
     <loc>http://www.duny31030.top/2019/01/04/PAT-AL-1004/</loc>
-    <lastmod>2019-01-11T14:12:04.165Z</lastmod>
-    <data>
-        <display>
-        <title>PAT甲级-1004-Counting Leaves（30 分）</title>
-        <pubTime>2019-01-04T12:56:49.000Z</pubTime>
-        
-        <tag>并查集</tag>
-         
-        <tag>树</tag>
-         
-         
-           
-             
-              <breadCrumb title="PAT" url="http://www.duny31030.top/categories/PAT/"/>
-          
-             
-              <breadCrumb title="甲级" url="http://www.duny31030.top/categories/PAT/%E7%94%B2%E7%BA%A7/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
+    <lastmod>2019-01-11</lastmod>
+  </url>  <url>
     <loc>http://www.duny31030.top/2019/01/04/Python-Numpy/</loc>
-    <lastmod>2019-01-06T08:37:18.246Z</lastmod>
-    <data>
-        <display>
-        <title>Python进阶-Numpy科学计算库(简单入门)</title>
-        <pubTime>2019-01-04T00:00:54.000Z</pubTime>
-        
-        <tag>Python</tag>
-         
-        <tag>Numpy</tag>
-         
-        <tag>学习笔记</tag>
-         
-         
-           
-             
-              <breadCrumb title="Python" url="http://www.duny31030.top/categories/Python/"/>
-          
-             
-              <breadCrumb title="Numpy" url="http://www.duny31030.top/categories/Python/Numpy/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.duny31030.top/2018/09/19/Operating-System-pratice-01/</loc>
-    <lastmod>2018-12-25T15:15:29.000Z</lastmod>
-    <data>
-        <display>
-        <title>操作系统 实验一 操作系统接口</title>
-        <pubTime>2018-09-19T14:08:12.000Z</pubTime>
-        
-        <tag>操作系统</tag>
-         
-         
-           
-             
-              <breadCrumb title="操作系统" url="http://www.duny31030.top/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
-          
-             
-              <breadCrumb title="上机" url="http://www.duny31030.top/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E4%B8%8A%E6%9C%BA/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.duny31030.top/2018/09/02/Aho-Corasick-Automaton-Templet/</loc>
-    <lastmod>2018-12-25T15:15:29.000Z</lastmod>
-    <data>
-        <display>
-        <title>AC自动机</title>
-        <pubTime>2018-09-02T02:29:43.000Z</pubTime>
-        
-        <tag>AC自动机</tag>
-         
-        <tag>模板</tag>
-         
-         
-           
-             
-              <breadCrumb title="字符串" url="http://www.duny31030.top/categories/%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
-          
-             
-              <breadCrumb title="AC自动机" url="http://www.duny31030.top/categories/%E5%AD%97%E7%AC%A6%E4%B8%B2/AC%E8%87%AA%E5%8A%A8%E6%9C%BA/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.duny31030.top/2018/09/05/An-Olympian-Math-Problem/</loc>
-    <lastmod>2018-12-25T15:15:29.000Z</lastmod>
-    <data>
-        <display>
-        <title>「ACM-ICPC 2018 南京站网络赛 A 题」An Olympian Math Problem</title>
-        <pubTime>2018-09-05T10:10:27.000Z</pubTime>
-        
-        <tag>ICPC&amp;&amp;CCPC</tag>
-         
-        <tag>数论</tag>
-         
-        <tag>递推</tag>
-         
-        <tag>计蒜客</tag>
-         
-         
-           
-             
-              <breadCrumb title="数论" url="http://www.duny31030.top/categories/%E6%95%B0%E8%AE%BA/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.duny31030.top/2018/09/04/Binary-Indexed-Tree/</loc>
-    <lastmod>2018-12-25T15:15:29.000Z</lastmod>
-    <data>
-        <display>
-        <title>树状数组</title>
-        <pubTime>2018-09-04T07:36:06.000Z</pubTime>
-        
-        <tag>树状数组</tag>
-         
-         
-           
-             
-              <breadCrumb title="数据结构" url="http://www.duny31030.top/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-          
-             
-              <breadCrumb title="树状数组" url="http://www.duny31030.top/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%A0%91%E7%8A%B6%E6%95%B0%E7%BB%84/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.duny31030.top/2018/08/29/CODE-VS-4189/</loc>
-    <lastmod>2018-12-25T15:15:29.000Z</lastmod>
-    <data>
-        <display>
-        <title>CODE[VS]4189 字典 (字典树模板题)</title>
-        <pubTime>2018-08-29T03:20:44.000Z</pubTime>
-        
-        <tag>字典树</tag>
-         
-        <tag>模板题</tag>
-         
-        <tag>CODE[VS]</tag>
-         
-         
-           
-             
-              <breadCrumb title="字符串" url="http://www.duny31030.top/categories/%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
-          
-             
-              <breadCrumb title="字典树" url="http://www.duny31030.top/categories/%E5%AD%97%E7%AC%A6%E4%B8%B2/%E5%AD%97%E5%85%B8%E6%A0%91/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.duny31030.top/2018/10/06/Codeforces-Round-514-Div-2-B-Forgery/</loc>
-    <lastmod>2018-12-25T15:15:29.000Z</lastmod>
-    <data>
-        <display>
-        <title>Codeforces Round #514 (Div. 2) B.Forgery</title>
-        <pubTime>2018-10-06T12:18:42.000Z</pubTime>
-        
-        <tag>模拟</tag>
-         
-        <tag>Codeforces</tag>
-         
-         
-           
-             
-              <breadCrumb title="暴力" url="http://www.duny31030.top/categories/%E6%9A%B4%E5%8A%9B/"/>
-          
-             
-              <breadCrumb title="模拟" url="http://www.duny31030.top/categories/%E6%9A%B4%E5%8A%9B/%E6%A8%A1%E6%8B%9F/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.duny31030.top/2018/10/25/Codeforces-Round-518-Div-2/</loc>
-    <lastmod>2018-12-25T15:15:29.000Z</lastmod>
-    <data>
-        <display>
-        <title>  Codeforces Round #518 (Div. 2) C. Colored Rooks</title>
-        <pubTime>2018-10-25T03:09:18.000Z</pubTime>
-        
-        <tag>思维</tag>
-         
-        <tag>Codeforces</tag>
-         
-        <tag>构造</tag>
-         
-         
-           
-             
-              <breadCrumb title="思维" url="http://www.duny31030.top/categories/%E6%80%9D%E7%BB%B4/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.duny31030.top/2018/09/17/Codeforces1041/</loc>
-    <lastmod>2018-12-25T15:15:29.000Z</lastmod>
-    <data>
-        <display>
-        <title>Codeforces1041C. Coffee Break</title>
-        <pubTime>2018-09-16T16:30:17.000Z</pubTime>
-        
-        <tag>Codeforces</tag>
-         
-        <tag>STL</tag>
-         
-         
-           
-             
-              <breadCrumb title="STL" url="http://www.duny31030.top/categories/STL/"/>
-          
-             
-              <breadCrumb title="set,lower_bound" url="http://www.duny31030.top/categories/STL/set-lower-bound/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.duny31030.top/2018/09/04/Different%20Integers/</loc>
-    <lastmod>2018-12-25T15:15:29.000Z</lastmod>
-    <data>
-        <display>
-        <title>Different Integers(树状数组)</title>
-        <pubTime>2018-09-04T15:54:34.000Z</pubTime>
-        
-        <tag>树状数组</tag>
-         
-        <tag>牛客网</tag>
-         
-         
-           
-             
-              <breadCrumb title="数据结构" url="http://www.duny31030.top/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-          
-             
-              <breadCrumb title="树状数组" url="http://www.duny31030.top/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%A0%91%E7%8A%B6%E6%95%B0%E7%BB%84/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.duny31030.top/2018/08/08/EXKMP-Templet/</loc>
-    <lastmod>2018-12-25T15:15:29.000Z</lastmod>
-    <data>
-        <display>
-        <title>扩展KMP模板</title>
-        <pubTime>2018-08-08T06:28:35.000Z</pubTime>
-        
-        <tag>模板</tag>
-         
-        <tag>扩展KMP</tag>
-         
-         
-           
-             
-              <breadCrumb title="字符串" url="http://www.duny31030.top/categories/%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
-          
-             
-              <breadCrumb title="扩展KMP" url="http://www.duny31030.top/categories/%E5%AD%97%E7%AC%A6%E4%B8%B2/%E6%89%A9%E5%B1%95KMP/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.duny31030.top/2018/08/26/Fermat-principle/</loc>
-    <lastmod>2018-12-25T15:15:29.000Z</lastmod>
-    <data>
-        <display>
-        <title>费马定理</title>
-        <pubTime>2018-08-26T03:35:50.000Z</pubTime>
-        
-        <tag>费马定理</tag>
-         
-         
-           
-             
-              <breadCrumb title="数论" url="http://www.duny31030.top/categories/%E6%95%B0%E8%AE%BA/"/>
-          
-             
-              <breadCrumb title="费马定理" url="http://www.duny31030.top/categories/%E6%95%B0%E8%AE%BA/%E8%B4%B9%E9%A9%AC%E5%AE%9A%E7%90%86/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.duny31030.top/2018/07/14/German-Collegiate-Programming-Contest-2015-F-Divisions/</loc>
-    <lastmod>2018-12-25T15:15:29.000Z</lastmod>
-    <data>
-        <display>
-        <title>German Collegiate Programming Contest 2015  F. Divisions</title>
-        <pubTime>2018-07-14T13:25:24.000Z</pubTime>
-        
-        <tag>大数</tag>
-         
-        <tag>素数</tag>
-         
-         
-           
-             
-              <breadCrumb title="数论" url="http://www.duny31030.top/categories/%E6%95%B0%E8%AE%BA/"/>
-          
-             
-              <breadCrumb title="素数" url="http://www.duny31030.top/categories/%E6%95%B0%E8%AE%BA/%E7%B4%A0%E6%95%B0/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.duny31030.top/2018/09/24/HDU-1272/</loc>
-    <lastmod>2018-12-25T15:15:29.000Z</lastmod>
-    <data>
-        <display>
-        <title>HDU 1272 小希的迷宫(简单并查集)</title>
-        <pubTime>2018-09-23T18:52:38.000Z</pubTime>
-        
-        <tag>HDU</tag>
-         
-        <tag>并查集</tag>
-         
-         
-           
-             
-              <breadCrumb title="数据结构" url="http://www.duny31030.top/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-          
-             
-              <breadCrumb title="并查集" url="http://www.duny31030.top/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%B9%B6%E6%9F%A5%E9%9B%86/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.duny31030.top/2018/08/29/HDU1251/</loc>
-    <lastmod>2018-12-25T15:15:29.000Z</lastmod>
-    <data>
-        <display>
-        <title>HDU1251 统计难题</title>
-        <pubTime>2018-08-29T04:35:54.000Z</pubTime>
-        
-        <tag>HDU</tag>
-         
-        <tag>字典树</tag>
-         
-        <tag>模板题</tag>
-         
-         
-           
-             
-              <breadCrumb title="字符串" url="http://www.duny31030.top/categories/%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.duny31030.top/2018/09/24/HDU1308-Is-It-A-Tree/</loc>
-    <lastmod>2018-12-25T15:15:29.000Z</lastmod>
-    <data>
-        <display>
-        <title>HDU1308 Is It A Tree?(简单并查集)</title>
-        <pubTime>2018-09-23T19:38:44.000Z</pubTime>
-        
-        <tag>并查集</tag>
-         
-        <tag>HUD</tag>
-         
-         
-           
-             
-              <breadCrumb title="数据结构" url="http://www.duny31030.top/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-          
-             
-              <breadCrumb title="并查集" url="http://www.duny31030.top/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%B9%B6%E6%9F%A5%E9%9B%86/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.duny31030.top/2018/09/15/HDU1540-Tunnel-Warfare/</loc>
-    <lastmod>2018-12-25T15:15:29.000Z</lastmod>
-    <data>
-        <display>
-        <title>HDU1540 Tunnel Warfare(线段树区间更新)</title>
-        <pubTime>2018-09-15T09:15:06.000Z</pubTime>
-        
-        <tag>线段树</tag>
-         
-        <tag>线段树区间更新</tag>
-         
-         
-           
-             
-              <breadCrumb title="数据结构" url="http://www.duny31030.top/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-          
-             
-              <breadCrumb title="线段树" url="http://www.duny31030.top/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%BA%BF%E6%AE%B5%E6%A0%91/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.duny31030.top/2018/09/24/HDU1733-Parity-game/</loc>
-    <lastmod>2018-12-25T15:15:29.000Z</lastmod>
-    <data>
-        <display>
-        <title>HDU1733 Parity game(带权并查集)</title>
-        <pubTime>2018-09-23T17:13:32.000Z</pubTime>
-        
-        <tag>HDU</tag>
-         
-        <tag>带权并查集</tag>
-         
-        <tag>离散化</tag>
-         
-         
-           
-             
-              <breadCrumb title="数据结构" url="http://www.duny31030.top/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-          
-             
-              <breadCrumb title="并查集" url="http://www.duny31030.top/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%B9%B6%E6%9F%A5%E9%9B%86/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.duny31030.top/2018/09/18/HDU3038-How-Many-Answers-Are-Wrong/</loc>
-    <lastmod>2018-12-25T15:15:29.000Z</lastmod>
-    <data>
-        <display>
-        <title>HDU3038 How Many Answers Are Wrong</title>
-        <pubTime>2018-09-18T13:11:32.000Z</pubTime>
-        
-        <tag>HDU</tag>
-         
-        <tag>带权并查集</tag>
-         
-         
-           
-             
-              <breadCrumb title="数据结构" url="http://www.duny31030.top/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-          
-             
-              <breadCrumb title="并查集" url="http://www.duny31030.top/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%B9%B6%E6%9F%A5%E9%9B%86/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.duny31030.top/2018/09/02/HDU2896/</loc>
-    <lastmod>2018-12-25T15:15:29.000Z</lastmod>
-    <data>
-        <display>
-        <title>HDU2896 病毒侵袭(AC自动机)</title>
-        <pubTime>2018-09-02T06:30:06.000Z</pubTime>
-        
-        <tag>HDU</tag>
-         
-        <tag>AC自动机</tag>
-         
-         
-           
-             
-              <breadCrumb title="字符串" url="http://www.duny31030.top/categories/%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
-          
-             
-              <breadCrumb title="AC自动机" url="http://www.duny31030.top/categories/%E5%AD%97%E7%AC%A6%E4%B8%B2/AC%E8%87%AA%E5%8A%A8%E6%9C%BA/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.duny31030.top/2018/09/27/HDU3065/</loc>
-    <lastmod>2018-12-25T15:15:29.000Z</lastmod>
-    <data>
-        <display>
-        <title>HDU3065病毒侵袭持续中(AC自动机)</title>
-        <pubTime>2018-09-26T17:04:15.000Z</pubTime>
-        
-        <tag>HDU</tag>
-         
-        <tag>AC自动机</tag>
-         
-         
-           
-             
-              <breadCrumb title="字符串" url="http://www.duny31030.top/categories/%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
-          
-             
-              <breadCrumb title="AC自动机" url="http://www.duny31030.top/categories/%E5%AD%97%E7%AC%A6%E4%B8%B2/AC%E8%87%AA%E5%8A%A8%E6%9C%BA/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.duny31030.top/2018/09/17/HDU3974-Assign-the-task/</loc>
-    <lastmod>2018-12-25T15:15:29.000Z</lastmod>
-    <data>
-        <display>
-        <title>HDU3974 Assign the task</title>
-        <pubTime>2018-09-17T07:55:06.000Z</pubTime>
-        
-        <tag>HDU</tag>
-         
-        <tag>线段树</tag>
-         
-        <tag>DFS</tag>
-         
-         
-           
-             
-              <breadCrumb title="数据结构" url="http://www.duny31030.top/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-          
-             
-              <breadCrumb title="线段树" url="http://www.duny31030.top/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%BA%BF%E6%AE%B5%E6%A0%91/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.duny31030.top/2018/08/31/HDU5536-Chip-Factory/</loc>
-    <lastmod>2018-12-25T15:15:29.000Z</lastmod>
-    <data>
-        <display>
-        <title>HDU5536 Chip Factory(01字典树)</title>
-        <pubTime>2018-08-31T06:27:01.000Z</pubTime>
-        
-        <tag>HDU</tag>
-         
-        <tag>模板题</tag>
-         
-        <tag>01字典树</tag>
-         
-         
-           
-             
-              <breadCrumb title="字符串" url="http://www.duny31030.top/categories/%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
-          
-             
-              <breadCrumb title="字典树" url="http://www.duny31030.top/categories/%E5%AD%97%E7%AC%A6%E4%B8%B2/%E5%AD%97%E5%85%B8%E6%A0%91/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.duny31030.top/2018/09/03/HDU5658-CA-Loves-Palindromic/</loc>
-    <lastmod>2018-12-25T15:15:29.000Z</lastmod>
-    <data>
-        <display>
-        <title>HDU5658 CA Loves Palindromic(回文树)</title>
-        <pubTime>2018-09-02T20:31:50.000Z</pubTime>
-        
-        <tag>HDU</tag>
-         
-        <tag>回文树</tag>
-         
-         
-           
-             
-              <breadCrumb title="字符串" url="http://www.duny31030.top/categories/%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
-          
-             
-              <breadCrumb title="回文树" url="http://www.duny31030.top/categories/%E5%AD%97%E7%AC%A6%E4%B8%B2/%E5%9B%9E%E6%96%87%E6%A0%91/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.duny31030.top/2018/08/05/KMP-Templet/</loc>
-    <lastmod>2018-12-25T15:15:29.000Z</lastmod>
-    <data>
-        <display>
-        <title>KMP算法模板</title>
-        <pubTime>2018-08-05T08:04:00.000Z</pubTime>
-        
-        <tag>模板</tag>
-         
-        <tag>KMP</tag>
-         
-         
-           
-             
-              <breadCrumb title="字符串" url="http://www.duny31030.top/categories/%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
-          
-             
-              <breadCrumb title="KMP" url="http://www.duny31030.top/categories/%E5%AD%97%E7%AC%A6%E4%B8%B2/KMP/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.duny31030.top/2018/09/29/Leetcode-junior-math/</loc>
-    <lastmod>2018-12-25T15:15:29.000Z</lastmod>
-    <data>
-        <display>
-        <title>Leetcode junior math</title>
-        <pubTime>2018-09-28T19:08:45.000Z</pubTime>
-        
-        <tag>Leetcode</tag>
-         
-        <tag>数学</tag>
-         
-         
-           
-             
-              <breadCrumb title="Leetcode" url="http://www.duny31030.top/categories/Leetcode/"/>
-          
-             
-              <breadCrumb title="初级算法" url="http://www.duny31030.top/categories/Leetcode/%E5%88%9D%E7%BA%A7%E7%AE%97%E6%B3%95/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.duny31030.top/2018/09/29/Leetcode-junior-others/</loc>
-    <lastmod>2018-12-25T15:15:29.000Z</lastmod>
-    <data>
-        <display>
-        <title>Leetcode junior others</title>
-        <pubTime>2018-09-28T17:43:02.000Z</pubTime>
-        
-        <tag>Leetcode</tag>
-         
-        <tag>其他</tag>
-         
-         
-           
-             
-              <breadCrumb title="Leetcode" url="http://www.duny31030.top/categories/Leetcode/"/>
-          
-             
-              <breadCrumb title="初级算法" url="http://www.duny31030.top/categories/Leetcode/%E5%88%9D%E7%BA%A7%E7%AE%97%E6%B3%95/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.duny31030.top/2018/09/12/Leetcode-junior-sort/</loc>
-    <lastmod>2018-12-25T15:15:29.000Z</lastmod>
-    <data>
-        <display>
-        <title>LeetCode初级算法-数组</title>
-        <pubTime>2018-09-12T06:41:59.000Z</pubTime>
-        
-        <tag>Leetcode</tag>
-         
-        <tag>排序和搜索</tag>
-         
-         
-           
-             
-              <breadCrumb title="LeetCode" url="http://www.duny31030.top/categories/LeetCode/"/>
-          
-             
-              <breadCrumb title="初级算法" url="http://www.duny31030.top/categories/LeetCode/%E5%88%9D%E7%BA%A7%E7%AE%97%E6%B3%95/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.duny31030.top/2018/08/28/Manacher-Templet/</loc>
-    <lastmod>2018-12-25T15:15:29.000Z</lastmod>
-    <data>
-        <display>
-        <title>Manacher算法模板</title>
-        <pubTime>2018-08-28T03:04:06.000Z</pubTime>
-        
-        <tag>模板</tag>
-         
-        <tag>Manacher</tag>
-         
-         
-           
-             
-              <breadCrumb title="字符串" url="http://www.duny31030.top/categories/%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
-          
-             
-              <breadCrumb title="Manacher" url="http://www.duny31030.top/categories/%E5%AD%97%E7%AC%A6%E4%B8%B2/Manacher/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.duny31030.top/2018/12/15/Nasm-1/</loc>
-    <lastmod>2018-12-25T15:15:29.000Z</lastmod>
-    <data>
-        <display>
-        <title>在MAC上编写汇编(一)安装环境</title>
-        <pubTime>2018-12-15T03:54:30.000Z</pubTime>
-        
-        <tag>汇编语言</tag>
-         
-         
-           
-             
-              <breadCrumb title="汇编语言" url="http://www.duny31030.top/categories/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80/"/>
-          
-             
-              <breadCrumb title="安装环境" url="http://www.duny31030.top/categories/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80/%E5%AE%89%E8%A3%85%E7%8E%AF%E5%A2%83/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.duny31030.top/2018/10/21/Nowcoder-Summer-J-farm/</loc>
-    <lastmod>2018-12-25T15:15:29.000Z</lastmod>
-    <data>
-        <display>
-        <title>牛客暑期多校第二场 J.farm</title>
-        <pubTime>2018-10-21T12:27:33.000Z</pubTime>
-        
-        <tag>思维</tag>
-         
-        <tag>树状数组</tag>
-         
-        <tag>随机</tag>
-         
-         
-           
-             
-              <breadCrumb title="数据结构" url="http://www.duny31030.top/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-          
-             
-              <breadCrumb title="二维树状数组" url="http://www.duny31030.top/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E4%BA%8C%E7%BB%B4%E6%A0%91%E7%8A%B6%E6%95%B0%E7%BB%84/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.duny31030.top/2018/08/27/Min-Max-Templet/</loc>
-    <lastmod>2018-12-25T15:15:29.000Z</lastmod>
-    <data>
-        <display>
-        <title>字符串匹配--最大最小表示法模板</title>
-        <pubTime>2018-08-27T09:46:46.000Z</pubTime>
-        
-        <tag>最大最小表示法</tag>
-         
-         
-           
-             
-              <breadCrumb title="字符串" url="http://www.duny31030.top/categories/%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
-          
-             
-              <breadCrumb title="最大最小表示法" url="http://www.duny31030.top/categories/%E5%AD%97%E7%AC%A6%E4%B8%B2/%E6%9C%80%E5%A4%A7%E6%9C%80%E5%B0%8F%E8%A1%A8%E7%A4%BA%E6%B3%95/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.duny31030.top/2018/09/10/Operating-System-one/</loc>
-    <lastmod>2018-12-25T15:15:29.000Z</lastmod>
-    <data>
-        <display>
-        <title>操作系统原理与实践(一)</title>
-        <pubTime>2018-09-10T01:54:18.000Z</pubTime>
-        
-        <tag>操作系统</tag>
-         
-        <tag>linux0.11</tag>
-         
-         
-           
-             
-              <breadCrumb title="操作系统" url="http://www.duny31030.top/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
-          
-             
-              <breadCrumb title="操作系统原理与实践" url="http://www.duny31030.top/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86%E4%B8%8E%E5%AE%9E%E8%B7%B5/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.duny31030.top/2018/07/28/2018-Summer-Vacation/</loc>
-    <lastmod>2018-12-25T15:15:29.000Z</lastmod>
-    <data>
-        <display>
-        <title>2018暑假遗留题目</title>
-        <pubTime>2018-07-28T12:20:16.000Z</pubTime>
-        
-        <tag>补题</tag>
-         
-         
-           
-             
-              <breadCrumb title="2018暑假" url="http://www.duny31030.top/categories/2018%E6%9A%91%E5%81%87/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.duny31030.top/2018/10/24/2016-ACM-ICPC-Asia-Regional-Dalian-Online-F/</loc>
-    <lastmod>2018-12-25T15:15:29.000Z</lastmod>
-    <data>
-        <display>
-        <title>「2016 ACM/ICPC Asia Regional Dalian Online」F.Football Games</title>
-        <pubTime>2018-10-24T12:57:07.000Z</pubTime>
-        
-        <tag>思维</tag>
-         
-        <tag>ICPC&amp;&amp;CCPC</tag>
-         
-         
-           
-             
-              <breadCrumb title="思维" url="http://www.duny31030.top/categories/%E6%80%9D%E7%BB%B4/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.duny31030.top/2018/10/09/ACM-Dalian-Online-2016/</loc>
-    <lastmod>2018-12-25T15:15:29.000Z</lastmod>
-    <data>
-        <display>
-        <title>「ACM Dalian Online 2016」H.Function（二分+RMQ）</title>
-        <pubTime>2018-10-09T08:56:29.000Z</pubTime>
-        
-        <tag>ICPC&amp;&amp;CCPC</tag>
-         
-        <tag>RMQ</tag>
-         
-        <tag>二分</tag>
-         
-         
-           
-             
-              <breadCrumb title="数据结构" url="http://www.duny31030.top/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-          
-             
-              <breadCrumb title="RMQ" url="http://www.duny31030.top/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/RMQ/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.duny31030.top/2018/10/07/ACM-Dalian-Onsite-2016-A/</loc>
-    <lastmod>2018-12-25T15:15:29.000Z</lastmod>
-    <data>
-        <display>
-        <title>「ACM Dalian Onsite 2016」A.Wrestling Match(判断二分图)</title>
-        <pubTime>2018-10-07T12:57:44.000Z</pubTime>
-        
-        <tag>ICPC&amp;&amp;CCPC</tag>
-         
-        <tag>二分图</tag>
-         
-         
-           
-             
-              <breadCrumb title="图论" url="http://www.duny31030.top/categories/%E5%9B%BE%E8%AE%BA/"/>
-          
-             
-              <breadCrumb title="二分图" url="http://www.duny31030.top/categories/%E5%9B%BE%E8%AE%BA/%E4%BA%8C%E5%88%86%E5%9B%BE/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
+    <lastmod>2019-01-06</lastmod>
+  </url>  <url>
     <loc>http://www.duny31030.top/2018/09/11/Operating-System-two/</loc>
-    <lastmod>2018-12-25T15:15:29.000Z</lastmod>
-    <data>
-        <display>
-        <title>操作系统原理与实践(二)</title>
-        <pubTime>2018-09-11T14:45:56.000Z</pubTime>
-        
-        <tag>操作系统</tag>
-         
-        <tag>linux0.11</tag>
-         
-         
-           
-             
-              <breadCrumb title="操作系统" url="http://www.duny31030.top/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
-          
-             
-              <breadCrumb title="操作系统原理与实践" url="http://www.duny31030.top/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%8E%9F%E7%90%86%E4%B8%8E%E5%AE%9E%E8%B7%B5/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.duny31030.top/2018/09/26/POJ-2031-Building-a-Space-Station/</loc>
-    <lastmod>2018-12-25T15:15:29.000Z</lastmod>
-    <data>
-        <display>
-        <title>POJ 2031 Building a Space Station</title>
-        <pubTime>2018-09-26T09:14:59.000Z</pubTime>
-        
-        <tag>最小生成树</tag>
-         
-        <tag>POJ</tag>
-         
-         
-           
-             
-              <breadCrumb title="数据结构" url="http://www.duny31030.top/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-          
-             
-              <breadCrumb title="最小生成树" url="http://www.duny31030.top/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.duny31030.top/2018/09/26/POJ1251-Jungle-Roads/</loc>
-    <lastmod>2018-12-25T15:15:29.000Z</lastmod>
-    <data>
-        <display>
-        <title>POJ1251 Jungle Roads(最小生成树模板题)</title>
-        <pubTime>2018-09-26T04:14:43.000Z</pubTime>
-        
-        <tag>最小生成树</tag>
-         
-        <tag>POJ</tag>
-         
-         
-           
-             
-              <breadCrumb title="数据结构" url="http://www.duny31030.top/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-          
-             
-              <breadCrumb title="最小生成树" url="http://www.duny31030.top/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.duny31030.top/2018/08/29/POJ2001-Shortest-Prefixes/</loc>
-    <lastmod>2018-12-25T15:15:29.000Z</lastmod>
-    <data>
-        <display>
-        <title>POJ2001 Shortest Prefixes</title>
-        <pubTime>2018-08-29T06:49:19.000Z</pubTime>
-        
-        <tag>字典树</tag>
-         
-        <tag>模板题</tag>
-         
-        <tag>POJ</tag>
-         
-         
-           
-             
-              <breadCrumb title="字符串" url="http://www.duny31030.top/categories/%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
-          
-             
-              <breadCrumb title="字典树" url="http://www.duny31030.top/categories/%E5%AD%97%E7%AC%A6%E4%B8%B2/%E5%AD%97%E5%85%B8%E6%A0%91/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.duny31030.top/2018/10/01/POJ1743-Musical-Theme/</loc>
-    <lastmod>2018-12-25T15:15:29.000Z</lastmod>
-    <data>
-        <display>
-        <title>POJ1743 Musical Theme(后缀数组求不可重叠最长重复子串)</title>
-        <pubTime>2018-10-01T03:52:18.000Z</pubTime>
-        
-        <tag>POJ</tag>
-         
-        <tag>后缀数组</tag>
-         
-         
-           
-             
-              <breadCrumb title="字符串" url="http://www.duny31030.top/categories/%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
-          
-             
-              <breadCrumb title="后缀数组" url="http://www.duny31030.top/categories/%E5%AD%97%E7%AC%A6%E4%B8%B2/%E5%90%8E%E7%BC%80%E6%95%B0%E7%BB%84/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.duny31030.top/2018/09/18/POJ2236-Wireless-Network/</loc>
-    <lastmod>2018-12-25T15:15:29.000Z</lastmod>
-    <data>
-        <display>
-        <title>POJ2236 Wireless Network(并查集)</title>
-        <pubTime>2018-09-18T03:15:49.000Z</pubTime>
-        
-        <tag>并查集</tag>
-         
-        <tag>POJ</tag>
-         
-         
-           
-             
-              <breadCrumb title="数据结构" url="http://www.duny31030.top/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-          
-             
-              <breadCrumb title="并查集" url="http://www.duny31030.top/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%B9%B6%E6%9F%A5%E9%9B%86/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.duny31030.top/2018/10/03/POJ2406-Power-Strings/</loc>
-    <lastmod>2018-12-25T15:15:29.000Z</lastmod>
-    <data>
-        <display>
-        <title>POJ2406 Power Strings (给自己挖个坑先)</title>
-        <pubTime>2018-10-03T15:07:33.000Z</pubTime>
-        
-        <tag>POJ</tag>
-         
-        <tag>后缀数组</tag>
-         
-         
-           
-             
-              <breadCrumb title="字符串" url="http://www.duny31030.top/categories/%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
-          
-             
-              <breadCrumb title="后缀数组" url="http://www.duny31030.top/categories/%E5%AD%97%E7%AC%A6%E4%B8%B2/%E5%90%8E%E7%BC%80%E6%95%B0%E7%BB%84/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.duny31030.top/2018/09/03/Palindromic-Tree/</loc>
-    <lastmod>2018-12-25T15:15:29.000Z</lastmod>
-    <data>
-        <display>
-        <title>回文树</title>
-        <pubTime>2018-09-02T17:01:00.000Z</pubTime>
-        
-        <tag>模板</tag>
-         
-        <tag>回文树</tag>
-         
-         
-           
-             
-              <breadCrumb title="字符串" url="http://www.duny31030.top/categories/%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
-          
-             
-              <breadCrumb title="回文树" url="http://www.duny31030.top/categories/%E5%AD%97%E7%AC%A6%E4%B8%B2/%E5%9B%9E%E6%96%87%E6%A0%91/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.duny31030.top/2018/07/23/Segment-Tree-Templet/</loc>
-    <lastmod>2018-12-25T15:15:29.000Z</lastmod>
-    <data>
-        <display>
-        <title>线段树模板(含区间最大(小)值)</title>
-        <pubTime>2018-07-23T15:11:01.000Z</pubTime>
-        
-        <tag>模板</tag>
-         
-        <tag>线段树</tag>
-         
-         
-           
-             
-              <breadCrumb title="数据结构" url="http://www.duny31030.top/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-          
-             
-              <breadCrumb title="线段树" url="http://www.duny31030.top/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%BA%BF%E6%AE%B5%E6%A0%91/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.duny31030.top/2018/08/22/Segment-Tree-Strucr-Templet/</loc>
-    <lastmod>2018-12-25T15:15:29.000Z</lastmod>
-    <data>
-        <display>
-        <title>线段树模板(结构体写法)-待补全</title>
-        <pubTime>2018-08-22T04:53:31.000Z</pubTime>
-        
-        <tag>模板</tag>
-         
-        <tag>线段树</tag>
-         
-         
-           
-             
-              <breadCrumb title="数据结构" url="http://www.duny31030.top/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-          
-             
-              <breadCrumb title="线段树" url="http://www.duny31030.top/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%BA%BF%E6%AE%B5%E6%A0%91/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.duny31030.top/2018/09/07/Software-Engineering/</loc>
-    <lastmod>2018-12-25T15:15:29.000Z</lastmod>
-    <data>
-        <display>
-        <title>软件工程导论课设</title>
-        <pubTime>2018-09-07T07:55:50.000Z</pubTime>
-        
-        <tag>课程设计</tag>
-         
-         
-           
-             
-              <breadCrumb title="软件工程导论" url="http://www.duny31030.top/categories/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E5%AF%BC%E8%AE%BA/"/>
-          
-             
-              <breadCrumb title="课程设计" url="http://www.duny31030.top/categories/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E5%AF%BC%E8%AE%BA/%E8%AF%BE%E7%A8%8B%E8%AE%BE%E8%AE%A1/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.duny31030.top/2018/10/24/The%2013th%20Zhejiang%20Provincial-D/</loc>
-    <lastmod>2018-12-25T15:15:29.000Z</lastmod>
-    <data>
-        <display>
-        <title>「The 13th Zhejiang Provincial」 D. The Lucky Week</title>
-        <pubTime>2018-10-24T08:18:26.000Z</pubTime>
-        
-        <tag>思维</tag>
-         
-        <tag>ICPC&amp;&amp;CCPC</tag>
-         
-        <tag>暴力</tag>
-         
-        <tag>循环节</tag>
-         
-         
-           
-             
-              <breadCrumb title="数论" url="http://www.duny31030.top/categories/%E6%95%B0%E8%AE%BA/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.duny31030.top/2018/09/27/Test/</loc>
-    <lastmod>2018-12-25T15:15:29.000Z</lastmod>
-    <data>
-        <display>
-        <title>通选课测试题题解</title>
-        <pubTime>2018-09-27T10:12:12.000Z</pubTime>
-        
-        <tag>题解</tag>
-         
-         
-           
-             
-              <breadCrumb title="题解" url="http://www.duny31030.top/categories/%E9%A2%98%E8%A7%A3/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.duny31030.top/2018/10/23/The%2015th%20Zhejiang%20Provincial-F/</loc>
-    <lastmod>2018-12-25T15:15:29.000Z</lastmod>
-    <data>
-        <display>
-        <title>「The 15th Zhejiang Provincial」F.Now Loading!!!(数论+二分)</title>
-        <pubTime>2018-10-23T10:24:48.000Z</pubTime>
-        
-        <tag>ICPC&amp;&amp;CCPC</tag>
-         
-        <tag>二分</tag>
-         
-        <tag>数论</tag>
-         
-        <tag>预处理</tag>
-         
-         
-           
-             
-              <breadCrumb title="数论" url="http://www.duny31030.top/categories/%E6%95%B0%E8%AE%BA/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.duny31030.top/2018/10/24/The-2016-ACM-ICPC-Asia-Dalian-Regional-Contest-C/</loc>
-    <lastmod>2018-12-25T15:15:29.000Z</lastmod>
-    <data>
-        <display>
-        <title>「The 2016 ACM-ICPC Asia Dalian Regional Contest」C.Game of Taking Stones(博弈论+大数)</title>
-        <pubTime>2018-10-24T11:40:30.000Z</pubTime>
-        
-        <tag>ICPC&amp;&amp;CCPC</tag>
-         
-        <tag>大数</tag>
-         
-        <tag>高精度</tag>
-         
-        <tag>威佐夫博弈</tag>
-         
-         
-           
-             
-              <breadCrumb title="博弈论" url="http://www.duny31030.top/categories/%E5%8D%9A%E5%BC%88%E8%AE%BA/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.duny31030.top/2018/08/31/Trie-Templet/</loc>
-    <lastmod>2018-12-25T15:15:29.000Z</lastmod>
-    <data>
-        <display>
-        <title>字典树模板</title>
-        <pubTime>2018-08-31T09:18:37.000Z</pubTime>
-        
-        <tag>模板</tag>
-         
-        <tag>Trie</tag>
-         
-         
-           
-             
-              <breadCrumb title="字符串" url="http://www.duny31030.top/categories/%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
-          
-             
-              <breadCrumb title="字典树" url="http://www.duny31030.top/categories/%E5%AD%97%E7%AC%A6%E4%B8%B2/%E5%AD%97%E5%85%B8%E6%A0%91/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.duny31030.top/2018/07/14/Two-Prime-Number/</loc>
-    <lastmod>2018-12-25T15:15:29.000Z</lastmod>
-    <data>
-        <display>
-        <title>两个有关素数的算法</title>
-        <pubTime>2018-07-14T08:40:37.000Z</pubTime>
-        
-        <tag>素数</tag>
-         
-         
-           
-             
-              <breadCrumb title="数论" url="http://www.duny31030.top/categories/%E6%95%B0%E8%AE%BA/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.duny31030.top/2018/07/22/USACO18OPEN-Out-of-Sorts-G/</loc>
-    <lastmod>2018-12-25T15:15:29.000Z</lastmod>
-    <data>
-        <display>
-        <title>[USACO18OPEN]Out of Sorts G</title>
-        <pubTime>2018-07-22T13:02:56.000Z</pubTime>
-        
-        <tag>树状数组</tag>
-         
-         
-           
-             
-              <breadCrumb title="思维" url="http://www.duny31030.top/categories/%E6%80%9D%E7%BB%B4/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.duny31030.top/2018/09/09/ZX-Tree-Templet/</loc>
-    <lastmod>2018-12-25T15:15:29.000Z</lastmod>
-    <data>
-        <display>
-        <title>主席树模板</title>
-        <pubTime>2018-09-09T03:45:14.000Z</pubTime>
-        
-        <tag>模板</tag>
-         
-        <tag>主席树</tag>
-         
-         
-           
-             
-              <breadCrumb title="数据结构" url="http://www.duny31030.top/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-          
-             
-              <breadCrumb title="主席树" url="http://www.duny31030.top/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E4%B8%BB%E5%B8%AD%E6%A0%91/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.duny31030.top/2018/10/03/ACM-Qingdao-Onsite-2016%20B-Pocket-Cube/</loc>
-    <lastmod>2018-12-25T15:15:29.000Z</lastmod>
-    <data>
-        <display>
-        <title>「ACM Qingdao Onsite 2016」B.Pocket Cube(暴力 暴力 再暴力)</title>
-        <pubTime>2018-10-03T15:18:17.000Z</pubTime>
-        
-        <tag>暴力</tag>
-         
-        <tag>模拟</tag>
-         
-        <tag>HDU</tag>
-         
-         
-           
-             
-              <breadCrumb title="模拟" url="http://www.duny31030.top/categories/%E6%A8%A1%E6%8B%9F/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.duny31030.top/2018/11/25/reshen/</loc>
-    <lastmod>2018-12-25T15:15:29.000Z</lastmod>
-    <data>
-        <display>
-        <title>热身赛题解</title>
-        <pubTime>2018-11-25T02:23:22.000Z</pubTime>
-        
-        <tag>题解</tag>
-         
-         
-           
-             
-              <breadCrumb title="题解" url="http://www.duny31030.top/categories/%E9%A2%98%E8%A7%A3/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.duny31030.top/2018/08/24/JAVA-BigInteger/</loc>
-    <lastmod>2018-12-25T15:15:29.000Z</lastmod>
-    <data>
-        <display>
-        <title>JAVA大数模板</title>
-        <pubTime>2018-08-23T16:50:04.000Z</pubTime>
-        
-        <tag>大数</tag>
-         
-        <tag>JAVA</tag>
-         
-         
-           
-             
-              <breadCrumb title="大数" url="http://www.duny31030.top/categories/%E5%A4%A7%E6%95%B0/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.duny31030.top/2018/09/12/Leetcode-junior-array/</loc>
-    <lastmod>2018-12-25T15:15:29.000Z</lastmod>
-    <data>
-        <display>
-        <title>LeetCode初级算法-数组</title>
-        <pubTime>2018-09-12T06:41:59.000Z</pubTime>
-        
-        <tag>Leetcode</tag>
-         
-        <tag>数组</tag>
-         
-         
-           
-             
-              <breadCrumb title="LeetCode" url="http://www.duny31030.top/categories/LeetCode/"/>
-          
-             
-              <breadCrumb title="初级算法" url="http://www.duny31030.top/categories/LeetCode/%E5%88%9D%E7%BA%A7%E7%AE%97%E6%B3%95/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.duny31030.top/2018/09/29/Leetcode-junior-string/</loc>
-    <lastmod>2018-12-25T15:15:29.000Z</lastmod>
-    <data>
-        <display>
-        <title>Leetcode junior string</title>
-        <pubTime>2018-09-28T20:01:26.000Z</pubTime>
-        
-        <tag>Leetcode</tag>
-         
-        <tag>字符串</tag>
-         
-         
-           
-             
-              <breadCrumb title="Leetcode" url="http://www.duny31030.top/categories/Leetcode/"/>
-          
-             
-              <breadCrumb title="初级算法" url="http://www.duny31030.top/categories/Leetcode/%E5%88%9D%E7%BA%A7%E7%AE%97%E6%B3%95/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.duny31030.top/2018/09/01/Lpl-and-Energy-saving-Lamps/</loc>
-    <lastmod>2018-12-25T15:15:29.000Z</lastmod>
-    <data>
-        <display>
-        <title>Lpl and Energy-saving Lamps(二分+线段树)</title>
-        <pubTime>2018-09-01T11:08:03.000Z</pubTime>
-        
-        <tag>二分</tag>
-         
-        <tag>计蒜客</tag>
-         
-        <tag>线段树</tag>
-         
-        <tag>区域赛网络赛</tag>
-         
-         
-           
-             
-              <breadCrumb title="数据结构" url="http://www.duny31030.top/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-          
-             
-              <breadCrumb title="线段树" url="http://www.duny31030.top/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%BA%BF%E6%AE%B5%E6%A0%91/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.duny31030.top/2018/09/24/QLUOJ-TEST/</loc>
-    <lastmod>2018-12-25T15:15:29.000Z</lastmod>
-    <data>
-        <display>
-        <title>测试赛题解</title>
-        <pubTime>2018-09-24T14:05:18.000Z</pubTime>
-        
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
+    <lastmod>2018-12-25</lastmod>
+  </url>  <url>
     <loc>http://www.duny31030.top/2018/10/05/ACM-Shenyang-Onsite-2016-E/</loc>
-    <lastmod>2018-12-25T15:15:29.000Z</lastmod>
-    <data>
-        <display>
-        <title>「ACM Shenyang Onsite 2016」E.Counting Cliques(dfs暴力+优化)</title>
-        <pubTime>2018-10-05T10:53:01.000Z</pubTime>
-        
-        <tag>ICPC&amp;&amp;CCPC</tag>
-         
-        <tag>暴力</tag>
-         
-        <tag>优化</tag>
-         
-         
-           
-             
-              <breadCrumb title="搜索" url="http://www.duny31030.top/categories/%E6%90%9C%E7%B4%A2/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
+    <lastmod>2018-12-25</lastmod>
+  </url>  <url>
+    <loc>http://www.duny31030.top/2018/09/05/An-Olympian-Math-Problem/</loc>
+    <lastmod>2018-12-25</lastmod>
+  </url>  <url>
+    <loc>http://www.duny31030.top/2018/09/04/Binary-Indexed-Tree/</loc>
+    <lastmod>2018-12-25</lastmod>
+  </url>  <url>
+    <loc>http://www.duny31030.top/2018/10/06/Codeforces-Round-514-Div-2-B-Forgery/</loc>
+    <lastmod>2018-12-25</lastmod>
+  </url>  <url>
+    <loc>http://www.duny31030.top/2018/10/25/Codeforces-Round-518-Div-2/</loc>
+    <lastmod>2018-12-25</lastmod>
+  </url>  <url>
+    <loc>http://www.duny31030.top/2018/09/17/Codeforces1041/</loc>
+    <lastmod>2018-12-25</lastmod>
+  </url>  <url>
+    <loc>http://www.duny31030.top/2018/09/04/Different%20Integers/</loc>
+    <lastmod>2018-12-25</lastmod>
+  </url>  <url>
+    <loc>http://www.duny31030.top/2018/08/08/EXKMP-Templet/</loc>
+    <lastmod>2018-12-25</lastmod>
+  </url>  <url>
+    <loc>http://www.duny31030.top/2018/08/26/Fermat-principle/</loc>
+    <lastmod>2018-12-25</lastmod>
+  </url>  <url>
+    <loc>http://www.duny31030.top/2018/07/14/German-Collegiate-Programming-Contest-2015-F-Divisions/</loc>
+    <lastmod>2018-12-25</lastmod>
+  </url>  <url>
+    <loc>http://www.duny31030.top/2018/09/24/HDU-1272/</loc>
+    <lastmod>2018-12-25</lastmod>
+  </url>  <url>
+    <loc>http://www.duny31030.top/2018/08/29/HDU1251/</loc>
+    <lastmod>2018-12-25</lastmod>
+  </url>  <url>
+    <loc>http://www.duny31030.top/2018/09/24/HDU1308-Is-It-A-Tree/</loc>
+    <lastmod>2018-12-25</lastmod>
+  </url>  <url>
+    <loc>http://www.duny31030.top/2018/09/15/HDU1540-Tunnel-Warfare/</loc>
+    <lastmod>2018-12-25</lastmod>
+  </url>  <url>
+    <loc>http://www.duny31030.top/2018/09/24/HDU1733-Parity-game/</loc>
+    <lastmod>2018-12-25</lastmod>
+  </url>  <url>
+    <loc>http://www.duny31030.top/2018/09/02/HDU2896/</loc>
+    <lastmod>2018-12-25</lastmod>
+  </url>  <url>
+    <loc>http://www.duny31030.top/2018/09/18/HDU3038-How-Many-Answers-Are-Wrong/</loc>
+    <lastmod>2018-12-25</lastmod>
+  </url>  <url>
+    <loc>http://www.duny31030.top/2018/09/27/HDU3065/</loc>
+    <lastmod>2018-12-25</lastmod>
+  </url>  <url>
+    <loc>http://www.duny31030.top/2018/09/17/HDU3974-Assign-the-task/</loc>
+    <lastmod>2018-12-25</lastmod>
+  </url>  <url>
+    <loc>http://www.duny31030.top/2018/09/03/HDU5658-CA-Loves-Palindromic/</loc>
+    <lastmod>2018-12-25</lastmod>
+  </url>  <url>
+    <loc>http://www.duny31030.top/2018/08/31/HDU5536-Chip-Factory/</loc>
+    <lastmod>2018-12-25</lastmod>
+  </url>  <url>
+    <loc>http://www.duny31030.top/2018/08/05/KMP-Templet/</loc>
+    <lastmod>2018-12-25</lastmod>
+  </url>  <url>
+    <loc>http://www.duny31030.top/2018/09/29/Leetcode-junior-math/</loc>
+    <lastmod>2018-12-25</lastmod>
+  </url>  <url>
+    <loc>http://www.duny31030.top/2018/09/29/Leetcode-junior-others/</loc>
+    <lastmod>2018-12-25</lastmod>
+  </url>  <url>
+    <loc>http://www.duny31030.top/2018/09/12/Leetcode-junior-sort/</loc>
+    <lastmod>2018-12-25</lastmod>
+  </url>  <url>
+    <loc>http://www.duny31030.top/2018/08/28/Manacher-Templet/</loc>
+    <lastmod>2018-12-25</lastmod>
+  </url>  <url>
+    <loc>http://www.duny31030.top/2018/08/27/Min-Max-Templet/</loc>
+    <lastmod>2018-12-25</lastmod>
+  </url>  <url>
+    <loc>http://www.duny31030.top/2018/12/15/Nasm-1/</loc>
+    <lastmod>2018-12-25</lastmod>
+  </url>  <url>
+    <loc>http://www.duny31030.top/2018/10/21/Nowcoder-Summer-J-farm/</loc>
+    <lastmod>2018-12-25</lastmod>
+  </url>  <url>
+    <loc>http://www.duny31030.top/2018/09/10/Operating-System-one/</loc>
+    <lastmod>2018-12-25</lastmod>
+  </url>  <url>
+    <loc>http://www.duny31030.top/2018/09/19/Operating-System-pratice-01/</loc>
+    <lastmod>2018-12-25</lastmod>
+  </url>  <url>
+    <loc>http://www.duny31030.top/2018/07/28/2018-Summer-Vacation/</loc>
+    <lastmod>2018-12-25</lastmod>
+  </url>  <url>
+    <loc>http://www.duny31030.top/2018/10/24/2016-ACM-ICPC-Asia-Regional-Dalian-Online-F/</loc>
+    <lastmod>2018-12-25</lastmod>
+  </url>  <url>
+    <loc>http://www.duny31030.top/2018/09/26/POJ-2031-Building-a-Space-Station/</loc>
+    <lastmod>2018-12-25</lastmod>
+  </url>  <url>
+    <loc>http://www.duny31030.top/2018/10/03/ACM-Qingdao-Onsite-2016%20B-Pocket-Cube/</loc>
+    <lastmod>2018-12-25</lastmod>
+  </url>  <url>
+    <loc>http://www.duny31030.top/2018/10/07/ACM-Dalian-Onsite-2016-A/</loc>
+    <lastmod>2018-12-25</lastmod>
+  </url>  <url>
+    <loc>http://www.duny31030.top/2018/10/01/POJ1743-Musical-Theme/</loc>
+    <lastmod>2018-12-25</lastmod>
+  </url>  <url>
+    <loc>http://www.duny31030.top/2018/10/09/ACM-Dalian-Online-2016/</loc>
+    <lastmod>2018-12-25</lastmod>
+  </url>  <url>
+    <loc>http://www.duny31030.top/2018/09/26/POJ1251-Jungle-Roads/</loc>
+    <lastmod>2018-12-25</lastmod>
+  </url>  <url>
+    <loc>http://www.duny31030.top/2018/08/29/POJ2001-Shortest-Prefixes/</loc>
+    <lastmod>2018-12-25</lastmod>
+  </url>  <url>
+    <loc>http://www.duny31030.top/2018/09/18/POJ2236-Wireless-Network/</loc>
+    <lastmod>2018-12-25</lastmod>
+  </url>  <url>
+    <loc>http://www.duny31030.top/2018/10/03/POJ2406-Power-Strings/</loc>
+    <lastmod>2018-12-25</lastmod>
+  </url>  <url>
+    <loc>http://www.duny31030.top/2018/09/03/Palindromic-Tree/</loc>
+    <lastmod>2018-12-25</lastmod>
+  </url>  <url>
+    <loc>http://www.duny31030.top/2018/08/22/Segment-Tree-Strucr-Templet/</loc>
+    <lastmod>2018-12-25</lastmod>
+  </url>  <url>
+    <loc>http://www.duny31030.top/2018/07/23/Segment-Tree-Templet/</loc>
+    <lastmod>2018-12-25</lastmod>
+  </url>  <url>
+    <loc>http://www.duny31030.top/2018/09/07/Software-Engineering/</loc>
+    <lastmod>2018-12-25</lastmod>
+  </url>  <url>
+    <loc>http://www.duny31030.top/2018/09/27/Test/</loc>
+    <lastmod>2018-12-25</lastmod>
+  </url>  <url>
+    <loc>http://www.duny31030.top/2018/10/24/The%2013th%20Zhejiang%20Provincial-D/</loc>
+    <lastmod>2018-12-25</lastmod>
+  </url>  <url>
+    <loc>http://www.duny31030.top/2018/10/23/The%2015th%20Zhejiang%20Provincial-F/</loc>
+    <lastmod>2018-12-25</lastmod>
+  </url>  <url>
+    <loc>http://www.duny31030.top/2018/10/24/The-2016-ACM-ICPC-Asia-Dalian-Regional-Contest-C/</loc>
+    <lastmod>2018-12-25</lastmod>
+  </url>  <url>
+    <loc>http://www.duny31030.top/2018/08/31/Trie-Templet/</loc>
+    <lastmod>2018-12-25</lastmod>
+  </url>  <url>
+    <loc>http://www.duny31030.top/2018/07/14/Two-Prime-Number/</loc>
+    <lastmod>2018-12-25</lastmod>
+  </url>  <url>
+    <loc>http://www.duny31030.top/2018/07/22/USACO18OPEN-Out-of-Sorts-G/</loc>
+    <lastmod>2018-12-25</lastmod>
+  </url>  <url>
+    <loc>http://www.duny31030.top/2018/09/09/ZX-Tree-Templet/</loc>
+    <lastmod>2018-12-25</lastmod>
+  </url>  <url>
+    <loc>http://www.duny31030.top/2018/09/02/Aho-Corasick-Automaton-Templet/</loc>
+    <lastmod>2018-12-25</lastmod>
+  </url>  <url>
+    <loc>http://www.duny31030.top/2018/11/25/reshen/</loc>
+    <lastmod>2018-12-25</lastmod>
+  </url>  <url>
+    <loc>http://www.duny31030.top/2018/08/24/JAVA-BigInteger/</loc>
+    <lastmod>2018-12-25</lastmod>
+  </url>  <url>
+    <loc>http://www.duny31030.top/2018/09/12/Leetcode-junior-array/</loc>
+    <lastmod>2018-12-25</lastmod>
+  </url>  <url>
+    <loc>http://www.duny31030.top/2018/09/29/Leetcode-junior-string/</loc>
+    <lastmod>2018-12-25</lastmod>
+  </url>  <url>
+    <loc>http://www.duny31030.top/2018/09/01/Lpl-and-Energy-saving-Lamps/</loc>
+    <lastmod>2018-12-25</lastmod>
+  </url>  <url>
+    <loc>http://www.duny31030.top/2018/09/24/QLUOJ-TEST/</loc>
+    <lastmod>2018-12-25</lastmod>
+  </url>  <url>
+    <loc>http://www.duny31030.top/2018/08/29/CODE-VS-4189/</loc>
+    <lastmod>2018-12-25</lastmod>
+  </url>  <url>
     <loc>http://www.duny31030.top/2018/10/21/The-14th-Zhejiang-Provincial-C/</loc>
-    <lastmod>2018-12-25T15:15:29.000Z</lastmod>
-    <data>
-        <display>
-        <title>「The 14th Zhejiang Provincial」 C.What Kind of Friends Are You?</title>
-        <pubTime>2018-10-21T01:56:26.000Z</pubTime>
-        
-        <tag>思维</tag>
-         
-        <tag>ICPC&amp;&amp;CCPC</tag>
-         
-        <tag>暴力</tag>
-         
-         
-           
-             
-              <breadCrumb title="暴力" url="http://www.duny31030.top/categories/%E6%9A%B4%E5%8A%9B/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
+    <lastmod>2018-12-25</lastmod>
+  </url>  <url>
     <loc>http://www.duny31030.top/2018/10/26/qoj1272/</loc>
-    <lastmod>2018-12-25T15:15:29.000Z</lastmod>
-    <data>
-        <display>
-        <title>回文日期</title>
-        <pubTime>2018-10-26T15:33:54.000Z</pubTime>
-        
-        <tag>思维</tag>
-         
-        <tag>NOIP</tag>
-         
-         
-           
-             
-              <breadCrumb title="思维" url="http://www.duny31030.top/categories/%E6%80%9D%E7%BB%B4/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
+    <lastmod>2018-12-25</lastmod>
+  </url>  <url>
     <loc>http://www.duny31030.top/2018/07/15/Backbag/</loc>
-    <lastmod>2018-12-25T15:15:29.000Z</lastmod>
-    <data>
-        <display>
-        <title>重拾背包</title>
-        <pubTime>2018-07-15T09:02:49.000Z</pubTime>
-        
-        <tag>01背包</tag>
-         
-         
-           
-             
-              <breadCrumb title="动态规划" url="http://www.duny31030.top/categories/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/"/>
-          
-             
-              <breadCrumb title="背包" url="http://www.duny31030.top/categories/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/%E8%83%8C%E5%8C%85/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-    
-    
-    
+    <lastmod>2018-12-25</lastmod>
+  </url>
 </urlset>
