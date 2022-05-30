@@ -2,4 +2,31 @@
 联系方式 邮箱：duny31030@126.com
 微信：fd461336274
 QQ：461336274
-博客：yuancode.net</content></entry></search>
+博客：yuancode.net</content></entry><entry><title>C++ 编码风格</title><url>/post/c++codestyle/</url><categories><category>软技能</category></categories><tags><tag>C++</tag><tag>code style</tag><tag>编码风格</tag></tags><content type="html"> “任何人都能写出机器能看懂的代码，但只有优秀的程序员才能写出人能看懂的代码。”
+​ 磨刀不误砍柴工，编码风格我觉得不仅是软件开发行业的共识，更是一种软件开发的文化。之所以讲究编码风格，因为软件的规模越大，协作性要求就越高，软件开发是一件群体性的智力活动，每个人的代码都只有自己懂，每段代码都将成为一个信息孤岛，没法让代码变得可交流、可复用、可维护。一段代码的功能，不仅仅是完成一个任务，也是一种思想的传播，因此注释担当着传递信息的功能，要养成良好的注释习惯和明了易懂注释风格。
+空格与空行 留白的艺术
+代码示例：
+if(!value.contains("xxx")){ LOGIT(WARNING,"value is incomplete.\n") return; } char suffix[16]="xxx"; int data_len = 100; if(!value.empty()&amp;&amp;value.contains("tom")){ const char* name=value.c_str(); for(int i=0;i&lt;MAX_LEN;i++){ ... // do something } int count=0; for(int i=0;i&lt;strlen(name);i++){ ... // do something } } 修改后：
+if (!value.contains("xxx")) { // if后{前有空格 LOGIT(WARNING, "value is incomplete.\n") // 逗号后有空格 return; // 逻辑联系紧密就不用加空行 } // 新增空行分隔段落 char suffix[16] = "xxx"; // 等号两边有空格 int data_len = 100; // 逻辑联系紧密就不用加空行 // 新增空行分隔段落 if (!value.empty() &amp;&amp; value.contains("tom")) { // &amp;&amp;两边有空格 const char* name = value.c_str(); // 等号两边有空格 // 新增空行分隔段落 for(int i = 0; i &lt; MAX_LEN; i++){ // =;&lt;处有空格 ... // do something } // 新增空行分隔段落 int count = 0; // 等号两边有空格 // 新增空行分隔段落 for(int i = 0; i &lt; strlen(name); i++){ // =;&lt;处有空格 ... // do something } } 起个好名字 ​ 其实命名这件事并不难，主要就在于平时的词汇和经验积累，知道在什么情况下用哪个单词最合适，千万不要偷懒用“谜之缩写”和汉语拼音（更有甚者，是汉语拼音的缩写）。
+​ 还可以用一些已经在程序员之间形成了普遍共识的变量名，比如用于循环的 i/j/k、用于计数的 count、表示指针的 p/ptr、表示缓冲区的 buf/buffer、表示变化量的 delta、表示总和的 sum……
+​ 关于命名的风格，应用比较广的有三种。
+第一种风格叫“匈牙利命名法”，在早期的 Windows 上很流行，使用前缀 i/n/sz 等来表示变量的类型，比如 iNum/szName。它把类型信息做了“硬编码”，不适合代码重构和泛型编程，所以目前基本上被淘汰了。
+不过“匈牙利命名法”中也有部分可取之处，比如给成员变量加“m_”前缀（member），给全局变量加“g_”前缀（global），比如 m_count、g_total，这样一看就知道了变量的作用域，在大型程序里还是挺有用的。
+第二种风格叫“CamelCase”，也就是“驼峰式命名法”，在 Java 语言里非常流行，主张单词首字母大写，比如 MyJobClass、tryToLock，但这种风格在 C++ 世界里的接受程度不是太高。
+第三种风格叫“snake_case”，用的是全小写，单词之间用下划线连接。这是 C 和 C++ 主要采用的命名方式，看一下标准库，里面的 vector、unordered_set、shrink_to_fit 都是这样。
+那么究竟应该选用哪种命名风格呢？不如“取百家之长”，混用几种中能让名字辨识度最高的那些优点：
+变量、函数名和名字空间用 snake_case，全局变量加“g_”前缀； 自定义类名用 CamelCase，成员函数用 snake_case，成员变量加“m_”前缀； 宏和常量应当全大写，单词之间用下划线连接； 尽量不要用下划线作为变量的前缀或者后缀（比如 local、name），很难识别。 举例：
+#define MAX_PATH_LEN 256 //常量，全大写 int g_sys_flag; // 全局变量，加g_前缀 namespace linux_sys { // 名字空间，全小写 void get_rlimit_core(); // 函数，全小写 } class FilePath final // 类名，首字母大写 { public: void set_path(const string&amp; str); // 函数，全小写 private: string m_path; // 成员变量，m_前缀 int m_level; // 成员变量，m_前缀 }; ​ 命名另一个相关的问题是“名字的长度”，一个被普遍认可的原则是：变量 / 函数的名字长度与它的作用域成正比，也就是说，局部变量 / 函数名可以短一点，而全局变量 / 函数名应该长一点。
+用好注释 ​ 写出了有好名字的变量、函数和类还不够，要让其他人能“一眼”看懂代码，还需要加上注释。 “注释”在任何编程语言里都是一项非常重要的功能，甚至在编程语言之外，比如配置文件（ini、yml）、标记语言（html、xml），都有注释。一个突出的反例就是 JSON，没有注释功能让许多人都很不适应。
+​ 注释表面上的功能很简单，就是给代码配上额外的文字，起到注解、补充说明的作用。但就像是写文章一样，写些什么、写多写少、写成什么样子，都是大有讲究的。
+​ 一般来说，注释可以用来阐述目的、用途、工作原理、注意事项等代码本身无法“自说明”的那些东西。
+​ 注释必须要正确、清晰、有效，尽量言简意赅、点到为止，不要画蛇添足，更不能写出含糊、错误的注释。
+举例：
+template&lt;typename T> int get_value(const T&amp; v); ​ 代码很简单，但可用的信息太少了，你就可以给它加上作者、功能说明、调用注意事项、可能的返回值，等等，这样看起来就会舒服得多：
+// author : xxx // date : 2020-xx-xx // purpose : get inner counter value of generic T // notice : T must have xxx member // notice : return value maybe -1, means xxx, you should xxx template&lt;typename T> int get_value(const T&amp; v); ​ 写注释最好也要有一些标准的格式，比如用统一的“标签”来标记作者、参数说明什么的。可以参考 Javadoc，它算是一个不错的工程化实践。
+​ 除了给代码、函数、类写注释，我还建议最好在文件的开头写上本文件的注释，里面有文件的版权声明、更新历史、功能描述，等等。
+例如：
+// Copyright (c) 2020 by Chrono // // file : xxx.cpp // since : 2020-xx-xx // desc : ... ​ 另外，注释还有一个很有用的功能就是 todo，作为功能的占位符，提醒将来的代码维护者（也许就是你），比如：
+// TODO: change it to unordered_map // XXX: fixme later ​ 总的来说，要写好注释，你要时刻“换位思考”，设身处地去想别人怎么看你的代码，这样的话，上面的那些细则也就不难实施了。
+重点总结 用好空格和空行，多留白，让写代码就像写诗一样； 给变量、函数、类起个好名字，你的代码就成功了一半； 给变量、函数、类再加上注释，让代码自带文档，就成了“人能够看懂的代码”。 ​ 有了这个基础，还可以更进一步，使用其他高级规则写出更好的代码，比如函数体不能太长、入口参数不宜过多，避免使用 else/switch 导致层次太深（圈复杂度），等等。
+参考资料：指南 &ndash; 章亦春</content></entry></search>
