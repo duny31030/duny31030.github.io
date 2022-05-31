@@ -1,8 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><search><entry><title>关于我</title><url>/about.html</url><categories/><tags/><content type="html"> 这个人很懒，所以这里什么也没有。
-联系方式 邮箱：duny31030@126.com
-微信：fd461336274
-QQ：461336274
-博客：yuancode.net</content></entry><entry><title>C++ 编码风格</title><url>/post/c++codestyle/</url><categories><category>软技能</category></categories><tags><tag>C++</tag><tag>code style</tag><tag>编码风格</tag></tags><content type="html"> “任何人都能写出机器能看懂的代码，但只有优秀的程序员才能写出人能看懂的代码。”
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><search><entry><title>C++ 编码风格</title><url>https://yuancode.net/post/c++codestyle/</url><categories><category>软技能</category><category>C++</category></categories><tags><tag>CPP</tag><tag>code style</tag><tag>编码风格</tag></tags><content type="html"> “任何人都能写出机器能看懂的代码，但只有优秀的程序员才能写出人能看懂的代码。”
 ​ 磨刀不误砍柴工，编码风格我觉得不仅是软件开发行业的共识，更是一种软件开发的文化。之所以讲究编码风格，因为软件的规模越大，协作性要求就越高，软件开发是一件群体性的智力活动，每个人的代码都只有自己懂，每段代码都将成为一个信息孤岛，没法让代码变得可交流、可复用、可维护。一段代码的功能，不仅仅是完成一个任务，也是一种思想的传播，因此注释担当着传递信息的功能，要养成良好的注释习惯和明了易懂注释风格。
 空格与空行 留白的艺术
 代码示例：
@@ -29,4 +25,8 @@ template&lt;typename T> int get_value(const T&amp; v); ​ 代码很简单，但
 // Copyright (c) 2020 by Chrono // // file : xxx.cpp // since : 2020-xx-xx // desc : ... ​ 另外，注释还有一个很有用的功能就是 todo，作为功能的占位符，提醒将来的代码维护者（也许就是你），比如：
 // TODO: change it to unordered_map // XXX: fixme later ​ 总的来说，要写好注释，你要时刻“换位思考”，设身处地去想别人怎么看你的代码，这样的话，上面的那些细则也就不难实施了。
 重点总结 用好空格和空行，多留白，让写代码就像写诗一样； 给变量、函数、类起个好名字，你的代码就成功了一半； 给变量、函数、类再加上注释，让代码自带文档，就成了“人能够看懂的代码”。 ​ 有了这个基础，还可以更进一步，使用其他高级规则写出更好的代码，比如函数体不能太长、入口参数不宜过多，避免使用 else/switch 导致层次太深（圈复杂度），等等。
-参考资料：指南 &ndash; 章亦春</content></entry></search>
+参考资料：指南 &ndash; 章亦春</content></entry><entry><title>关于我</title><url>https://yuancode.net/about.html</url><categories/><tags/><content type="html"> 这个人很懒，所以这里什么也没有。
+联系方式 邮箱：duny31030@126.com
+微信：fd461336274
+QQ：461336274
+博客：yuancode.net</content></entry></search>
