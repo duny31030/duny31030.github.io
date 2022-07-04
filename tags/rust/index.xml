@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on 元代码</title><link>https://yuancode.net/post/</link><description>Recent content in Posts on 元代码</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Mon, 04 Jul 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://yuancode.net/post/index.xml" rel="self" type="application/rss+xml"/><item><title>Rust Quiz #32</title><link>https://yuancode.net/post/rust-quiz-#32/</link><pubDate>Mon, 04 Jul 2022 00:00:00 +0000</pubDate><guid>https://yuancode.net/post/rust-quiz-#32/</guid><description>&lt;h2 id="题目">题目&lt;/h2>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Rust on 元代码</title><link>https://yuancode.net/tags/rust/</link><description>Recent content in Rust on 元代码</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Mon, 04 Jul 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://yuancode.net/tags/rust/index.xml" rel="self" type="application/rss+xml"/><item><title>Rust Quiz #32</title><link>https://yuancode.net/post/rust-quiz-#32/</link><pubDate>Mon, 04 Jul 2022 00:00:00 +0000</pubDate><guid>https://yuancode.net/post/rust-quiz-#32/</guid><description>&lt;h2 id="题目">题目&lt;/h2>
 &lt;p>What is the output of this Rust program?&lt;/p>
 &lt;div class="highlight">&lt;div style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
 &lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
@@ -32,4 +32,4 @@
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">&lt;/span>}&lt;span style="color:#bbb">
 &lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div></description></item><item><title>C++ 编码风格</title><link>https://yuancode.net/post/c++codestyle/</link><pubDate>Mon, 30 May 2022 00:00:00 +0000</pubDate><guid>https://yuancode.net/post/c++codestyle/</guid><description>&lt;p>&lt;em>“任何人都能写出机器能看懂的代码，但只有优秀的程序员才能写出人能看懂的代码。”&lt;/em>&lt;/p></description></item></channel></rss>
+&lt;/div></description></item></channel></rss>
