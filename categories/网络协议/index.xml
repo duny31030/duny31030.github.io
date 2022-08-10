@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>网络协议 on 元代码</title><link>https://yuancode.net/categories/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE/</link><description>Recent content in 网络协议 on 元代码</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Fri, 22 Jul 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://yuancode.net/categories/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE/index.xml" rel="self" type="application/rss+xml"/><item><title>[网络协议] 网络协议是怎样基于OSI体系分层的？</title><link>https://yuancode.net/post/net_osi/</link><pubDate>Fri, 22 Jul 2022 00:00:00 +0000</pubDate><guid>https://yuancode.net/post/net_osi/</guid><description>&lt;p>网络协议是怎样基于OSI体系分层的？&lt;/p></description></item><item><title>[网络协议] 为何TCP连接要经由三次握手才能建立？</title><link>https://yuancode.net/post/net_tcp/</link><pubDate>Fri, 22 Jul 2022 00:00:00 +0000</pubDate><guid>https://yuancode.net/post/net_tcp/</guid><description>&lt;ol>
+&lt;li>TCP三次握手的流程及优化&lt;/li>
+&lt;li>TCP四次挥手的流程及优化&lt;/li>
+&lt;li>TCP引入的队头阻塞问题&lt;/li>
+&lt;li>HTTP3协议帧格式&lt;/li>
+&lt;li>HTTP3连接迁移流程&lt;/li>
+&lt;/ol></description></item><item><title>[网络协议] 在浏览器上输入URL到主页显示，经历了哪些步骤？</title><link>https://yuancode.net/post/net_url_index/</link><pubDate>Fri, 22 Jul 2022 00:00:00 +0000</pubDate><guid>https://yuancode.net/post/net_url_index/</guid><description>&lt;p>在浏览器上输入URL到主页显示，经历了哪些步骤？&lt;/p>
+&lt;ol>
+&lt;li>DNS解析：将域名解析成IP地址；&lt;/li>
+&lt;li>TCP连接：根据IP地址找到服务器连接（三次握手）；&lt;/li>
+&lt;li>发送HTTP请求；&lt;/li>
+&lt;li>服务器处理请求并返回HTTP报文；&lt;/li>
+&lt;li>浏览器解析，渲染页面；&lt;/li>
+&lt;li>断开连接：关闭TCP连接（四次挥手）。&lt;/li>
+&lt;/ol></description></item></channel></rss>

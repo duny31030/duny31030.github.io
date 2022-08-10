@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>IoC on 元代码</title><link>https://yuancode.net/tags/ioc/</link><description>Recent content in IoC on 元代码</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Thu, 04 Aug 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://yuancode.net/tags/ioc/index.xml" rel="self" type="application/rss+xml"/><item><title>[Spring] IoC和AOP</title><link>https://yuancode.net/post/spring_ioc_aop/</link><pubDate>Thu, 04 Aug 2022 00:00:00 +0000</pubDate><guid>https://yuancode.net/post/spring_ioc_aop/</guid><description>&lt;blockquote>
+&lt;p>Spring的AOP和IOC都是为了解决系统代码耦合度过高的问题。&lt;/p>
+&lt;/blockquote>
+&lt;p>&lt;strong>IoC是什么？有什么好处？&lt;/strong>&lt;/p>
+&lt;p>IoC（Inverse of Control，控制反转）是一种&lt;strong>设计思想&lt;/strong>，即将程序中需要手动创建的对象的控制权交由框架来进行管理，用户不需要关心具体的创建细节和依赖关系，只需要提供部分配置信息即可。过程如下：&lt;/p>
+&lt;img src="https://imagebed-1253103817.cos.ap-beijing.myqcloud.com/images/202208041610453.png" style="zoom:40%;" />
+&lt;p>如下图所示，IoC是&lt;strong>依赖倒置原则&lt;/strong>的一种实现思路，而实现IoC的方法可以采用&lt;strong>依赖注入&lt;/strong>（DI），IoC容器就是实现了IoC的一种容器。&lt;/p>
+&lt;img src="https://imagebed-1253103817.cos.ap-beijing.myqcloud.com/images/202208041616493.png" style="zoom:40%;" /></description></item></channel></rss>

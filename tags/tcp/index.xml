@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>TCP on 元代码</title><link>https://yuancode.net/tags/tcp/</link><description>Recent content in TCP on 元代码</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Fri, 22 Jul 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://yuancode.net/tags/tcp/index.xml" rel="self" type="application/rss+xml"/><item><title>[网络协议] 为何TCP连接要经由三次握手才能建立？</title><link>https://yuancode.net/post/net_tcp/</link><pubDate>Fri, 22 Jul 2022 00:00:00 +0000</pubDate><guid>https://yuancode.net/post/net_tcp/</guid><description>&lt;ol>
+&lt;li>TCP三次握手的流程及优化&lt;/li>
+&lt;li>TCP四次挥手的流程及优化&lt;/li>
+&lt;li>TCP引入的队头阻塞问题&lt;/li>
+&lt;li>HTTP3协议帧格式&lt;/li>
+&lt;li>HTTP3连接迁移流程&lt;/li>
+&lt;/ol></description></item></channel></rss>

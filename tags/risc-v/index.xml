@@ -1,4 +1,29 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>RISC-V on 元代码</title><link>https://yuancode.net/tags/risc-v/</link><description>Recent content in RISC-V on 元代码</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Wed, 06 Jul 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://yuancode.net/tags/risc-v/index.xml" rel="self" type="application/rss+xml"/><item><title>rCore Tutorial v3 踩坑笔记 - lab0</title><link>https://yuancode.net/post/rcore-lab0-hint/</link><pubDate>Wed, 06 Jul 2022 00:00:00 +0000</pubDate><guid>https://yuancode.net/post/rcore-lab0-hint/</guid><description>&lt;p>记录在进行实验时踩到的一些坑，方便自己以后解决同样的问题，也可以帮助同行者。&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>RISC-V on 元代码</title><link>https://yuancode.net/tags/risc-v/</link><description>Recent content in RISC-V on 元代码</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Sat, 09 Jul 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://yuancode.net/tags/risc-v/index.xml" rel="self" type="application/rss+xml"/><item><title>[读书笔记]计算机组成与设计（RISC-V）第1章</title><link>https://yuancode.net/post/computer-organization-and-design-risc-v-edition-1/</link><pubDate>Sat, 09 Jul 2022 00:00:00 +0000</pubDate><guid>https://yuancode.net/post/computer-organization-and-design-risc-v-edition-1/</guid><description>&lt;p>第1章主要是为其余章节奠定基础。介绍了基本概念和定义，对软件和硬件的主要组成部分进行了剖析，展示了如何评估性能和功耗，介绍了集成电路（推动计算机革命的基数），并在最后解释了技术向多核转变的原因。&lt;/p>
+&lt;p>以下摘自本书引言部分：&lt;/p>
+&lt;blockquote>
+&lt;p>在你读完这本书的时候，我们相信你能够回答以下问题：&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>用C或Java等高级语言编写的程序如何被翻译成机器语言，以及硬件如何执行最终的程序？这些概念是理解软硬件如何影响程序性能的基础。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>软件和硬件之间的接口是什么？软件如何指导硬件执行所需的功能？这些概念对理解如何编写软件是至关重要的。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>什么因素决定了程序的性能，以及程序员如何改进程序性能？我们将从本书知道，这
+取决于原始程序、将该程序转换成计算机语言的软件以及硬件执行该程序的有效性。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>硬件设计人员可以使用哪些技术来改善能效？程序员可以做些什么来改变能效？&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>串行处理近来发展到并行处理的原因和结果是什么？本书给出了这一发展变化的动机，描述了当前支持并行的硬件机制，并评述了新一代*“多核”微处理器*（见第6章)。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>自1951 年第一台商用计算机以来，计算机架构师提出的哪些伟大思想奠定了现代计算技术的基础？&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/blockquote></description></item><item><title>rCore Tutorial v3 踩坑笔记 - lab0</title><link>https://yuancode.net/post/rcore-lab0-hint/</link><pubDate>Wed, 06 Jul 2022 00:00:00 +0000</pubDate><guid>https://yuancode.net/post/rcore-lab0-hint/</guid><description>&lt;p>记录在进行实验时踩到的一些坑，方便自己以后解决同样的问题，也可以帮助同行者。&lt;/p>
 &lt;p>由于&lt;a href="https://learningos.github.io/rust-based-os-comp2022/" target="_blank" rel="noopener">OS训练营实验指导&lt;/a>
 文档内容非常粗略，因此建议查看&lt;a href="https://rcore-os.github.io/rCore-Tutorial-Book-v3/" target="_blank" rel="noopener">rCore-Tutorial-Book-v3 3.6.0-alpha.1&lt;/a>
 文档。&lt;/p></description></item></channel></rss>

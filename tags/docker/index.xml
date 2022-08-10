@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Docker on 元代码</title><link>https://yuancode.net/tags/docker/</link><description>Recent content in Docker on 元代码</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Mon, 01 Aug 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://yuancode.net/tags/docker/index.xml" rel="self" type="application/rss+xml"/><item><title>[Java] Java程序运行在Docker等容器环境有哪些新问题？</title><link>https://yuancode.net/post/java_run_in_docker/</link><pubDate>Mon, 01 Aug 2022 00:00:00 +0000</pubDate><guid>https://yuancode.net/post/java_run_in_docker/</guid><description>&lt;p>&lt;strong>Java程序运行在Docker等容器环境有哪些新问题？&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>Docker的内存、CPU等资源限制是通过CGroup（Control Group）实现的，早期的JDK版本（8u131之前）并不能识别这些限制，进而会导致一些基础问题：
+&lt;ul>
+&lt;li>如果未配置合适的JVM堆和元数据区、直接内存等参数，Java就有可能试图使用超过容器限制的内存，最终被容器OOM kill，或者自身发生OOM。&lt;/li>
+&lt;li>错误判断了可获取的CPU资源，例如，Docker限制了CPU的核数，JVM就可能设置不合适的GC并行线程数等。&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>从应用打包、发布等角度触发，JDK自身就比较大，生成的镜像就更为臃肿。当打包镜像较多的时候，存储开销就开始明显了。&lt;/li>
+&lt;li>如果考虑到微服务、Serverless等新的架构和场景，Java自身的大小、内存占用、启动速度，都存在一定局限性，因为Java早起的优化大多是针对长时间运行的大兴服务器端应用。&lt;/li>
+&lt;/ul></description></item></channel></rss>
