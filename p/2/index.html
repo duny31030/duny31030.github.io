@@ -12,7 +12,7 @@
 &nbsp;</span></span>
 <span class=post-wordcount><i class="fa fa-file-word-o fa-fw"></i>
 <span class=post-meta-item-text>字数：</span>
-<span class=leancloud-world-count>894 字</span></span>
+<span class=leancloud-world-count>893 字</span></span>
 <span class=post-readtime><i class="fa fa-eye fa-fw"></i>
 <span class=post-meta-item-text>阅读：</span>
 <span class=leancloud-view-count>2分钟</span></span></div></header><div class=post-body itemprop=articleBody><p>在<code>JDK 1.2</code>版本之后，Java对引用的概念进行了扩充，将引用分为强引用（Strongly Re-ference）、软引用（Soft Reference）、弱引用（Weak Reference）和虚引用（Phantom Reference）4种，这4种引用强度依次逐渐减弱。</p><p><strong>强引用、软引用、弱引用、幻象引用有什么区别?具体使用场景是
@@ -25,7 +25,7 @@
 &nbsp;</span></span>
 <span class=post-wordcount><i class="fa fa-file-word-o fa-fw"></i>
 <span class=post-meta-item-text>字数：</span>
-<span class=leancloud-world-count>2152 字</span></span>
+<span class=leancloud-world-count>2151 字</span></span>
 <span class=post-readtime><i class="fa fa-eye fa-fw"></i>
 <span class=post-meta-item-text>阅读：</span>
 <span class=leancloud-view-count>5分钟</span></span></div></header><div class=post-body itemprop=articleBody><p><strong>谈谈<code>final</code>、<code>finally</code>、<code>finalize</code>有什么不同？</strong></p><ul><li><code>final</code>：可以用来修饰类、方法、变量，分别有不同的意义：<ul><li>类（<code>class</code>）：不可以继承扩展</li><li>方法：不可以重写（override）</li><li>变量：不可以修改</li></ul></li><li><code>finally</code>：Java保证重点代码一定会被执行的一种机制。可以使用<code>try-finally</code>或者<code>try-catch-finally</code>来进行类似关闭JDBC连接、保证unlock锁等动作。</li><li><code>finalize</code>：是基础类<code>java.lang.Object</code>的一个方法，它设计目的是保证对象在被垃圾收集前完成特定资源的回收。<code>finalize</code>机制现在已经不推荐使用，并且在JDK 9开始被标记为<code>deprecated</code>。</li></ul></div><div class="post-more-link text-center"><a class=btn href=https://yuancode.net/post/java/java_final_finally_finalize/ rel=contents>阅读全文 &#187;</a></div><footer class=post-footer><div class=post-eof></div></footer></article><article class="post post-type-normal" itemscope itemtype=http://schema.org/Article><header class=post-header><h1 class=post-title itemprop="name headline"><a class=post-title-link href=https://yuancode.net/post/java/java_about_java/ itemprop=url>[Java] 谈谈你对Java平台的理解？</a></h1><div class=post-meta><span class=post-pushdate><i class="fa fa-calendar-o fa-fw"></i>
@@ -49,7 +49,7 @@
 &nbsp;</span></span>
 <span class=post-wordcount><i class="fa fa-file-word-o fa-fw"></i>
 <span class=post-meta-item-text>字数：</span>
-<span class=leancloud-world-count>952 字</span></span>
+<span class=leancloud-world-count>951 字</span></span>
 <span class=post-readtime><i class="fa fa-eye fa-fw"></i>
 <span class=post-meta-item-text>阅读：</span>
 <span class=leancloud-view-count>2分钟</span></span></div></header><div class=post-body itemprop=articleBody><p><strong>int和Integer有什么区别？谈谈Integer的值缓存范围。</strong></p><p>Integer是int对应的包装类，它有一个int类型的字段存储数据，并且提供了基本操作，比如数学运算、int和字符串之间转换等。在<code>Java5</code>中，引入了自动装箱和自动拆箱功能<sup>1</sup>（boxing/unboxing），Java可以根据上下文，自动进行转换，很大程度上简化了相关编程。</p><p>int也就是Java中的整形数字，是Java的8个原始数据类型<sup>2</sup>,<font color=red>Java虽然号称一切都是对象，但是原始数据类型是例外</font>。</p><p>关于Integer的值缓存，涉及Java5中的另一个改进。构建Integer对象的传统方式是直接调用构造器new一个对象。但是大部分数据操作都是集中在有限的、较小的数值范围，因此在<code>Java5</code>中新增了静态工厂方法<sup>3</sup>valueOf，在调用它的时候会利用一个缓存机制，带来明显的性能改进。值默认缓存范围是*-128到127之间*(2^8)。</p></div><div class="post-more-link text-center"><a class=btn href=https://yuancode.net/post/java/java_int_and_integer/ rel=contents>阅读全文 &#187;</a></div><footer class=post-footer><div class=post-eof></div></footer></article><article class="post post-type-normal" itemscope itemtype=http://schema.org/Article><header class=post-header><h1 class=post-title itemprop="name headline"><a class=post-title-link href=https://yuancode.net/post/computer-organization-and-design-risc-v-edition-1/ itemprop=url>[读书笔记]计算机组成与设计（RISC-V）第1章</a></h1><div class=post-meta><span class=post-pushdate><i class="fa fa-calendar-o fa-fw"></i>

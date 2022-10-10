@@ -13,16 +13,13 @@ Spring中的IoC的实现原理是工厂模式加反射机制。
 好处：
 IOC容器可以自动完成对象的初始化，用户不需要编写大量复杂的初始化代码，只需要维护/提供一部分必要的配置信息即可。
 用户在创建实例的时候可以不需要了解各个对象之间的依赖关系和具体的细节。
-+++
 AOP是什么？有什么好处？
 AOP（Aspect-Oriented Programming，面向切面编程）能够将那些与业务无关，却为业务模块所共同调用的逻辑或责任（例如事务处理、日志管理、权限控制、统一全局异常处理等）封装起来，便于减少系统的重复代码，降低模块间的耦合度，并有利于未来的可扩展性和可维护性。
 比如：在编写业务逻辑代码的时候，我们习惯性的都要写：日志记录，事务控制，以及权限控制等，每个子模块都要写这些代码，代码明显存在重复。这时候，我们运用面向切面的编程思想，采用横切技术，将代码中重复的部分，不影响业务逻辑的部分抽取出来，放在某个地方进行集中式的管理，调用。形成日志切面，事务控制切面。这样，我们就只需要关心业务的逻辑处理，既提高了工作的效率，又使得代码变得简洁优雅。它是面向对象编程思想的一种扩展。
 Spring AOP的底层实现原理主要是代理模式，对原来目标对象创建代理对象，并且在不改变原来对象代码的情况下，通过代理对象，调用增强功能的方法，对原有业务进行增强。
 AOP的代理分为动态代理和静态代理，Spring AOP中使用的是动态代理实现的AOP，AspectJ则是使用静态代理实现的AOP。
-当Bean实现接口时，使用JDK动态代理1 当Bean没有实现接口时，使用CGLib动态代理1 +++
-[1] JDK动态代理、CGLib动态代理：</content></entry><entry><title>[Java] Java常见的垃圾收集器有哪些？</title><url>https://yuancode.net/post/java/java_garbage_collector/</url><categories><category>面经</category></categories><tags><tag>Java</tag><tag>JVM</tag><tag>GC</tag></tags><content type="html"> Java（Oracle JDK）常见的垃圾收集器有哪些？
-Serial ParNew CMS Parrallel G1 Serial GC： 最古老的GC； 单线程工作； 会进入“Stop-The-World”状态； Client模式下JVM的默认选项； 老年代实现单独称为Serial Old； 采用标记-整理（Mark-Compact）算法。 ParNew GC： 新生代GC实现； Serial GC的多线程版本； 配合老年代的CMS GC工作。 CMS（Concurrent Mark Sweep）GC： 基于标记-清除（Mark-Sweep）算法； 设计目标为尽量减少停顿时间； 算法原因，存在着内存碎片化的问题； 长时间运行会发生full GC，出现停顿； 由于并发（Concurrent），会占用更多CPU资源，并和用户线程争抢。 Parrallel GC： 早期JDK 8等版本中，是Server模式JVM的默认GC选择； 吞吐量优先的GC； 特点：新生代和老年代GC都是并行进行的。 G1 GC： 兼顾吞吐量和停顿时间的GC实现，Oracle JDK 9以后默认GC选项； 相比CMS，最差情况停顿时间要好很多； 仍然存在年代概念，内存并非条带式划分，是类似棋盘的一个个region； Region之间是复制算法，整体可看作标记-整理（Mark-Compact）算法，可以有效避免内存碎片，Java堆非常大的时候，优势更明显； G1的吞吐量和停顿表现都非常不错，并仍在完善，CMS已经在JDK 9中被标记为废弃（deprecated）。 +++
-扩展：
+当Bean实现接口时，使用JDK动态代理1 当Bean没有实现接口时，使用CGLib动态代理1 [1] JDK动态代理、CGLib动态代理：</content></entry><entry><title>[Java] Java常见的垃圾收集器有哪些？</title><url>https://yuancode.net/post/java/java_garbage_collector/</url><categories><category>面经</category></categories><tags><tag>Java</tag><tag>JVM</tag><tag>GC</tag></tags><content type="html"> Java（Oracle JDK）常见的垃圾收集器有哪些？
+Serial ParNew CMS Parrallel G1 Serial GC： 最古老的GC； 单线程工作； 会进入“Stop-The-World”状态； Client模式下JVM的默认选项； 老年代实现单独称为Serial Old； 采用标记-整理（Mark-Compact）算法。 ParNew GC： 新生代GC实现； Serial GC的多线程版本； 配合老年代的CMS GC工作。 CMS（Concurrent Mark Sweep）GC： 基于标记-清除（Mark-Sweep）算法； 设计目标为尽量减少停顿时间； 算法原因，存在着内存碎片化的问题； 长时间运行会发生full GC，出现停顿； 由于并发（Concurrent），会占用更多CPU资源，并和用户线程争抢。 Parrallel GC： 早期JDK 8等版本中，是Server模式JVM的默认GC选择； 吞吐量优先的GC； 特点：新生代和老年代GC都是并行进行的。 G1 GC： 兼顾吞吐量和停顿时间的GC实现，Oracle JDK 9以后默认GC选项； 相比CMS，最差情况停顿时间要好很多； 仍然存在年代概念，内存并非条带式划分，是类似棋盘的一个个region； Region之间是复制算法，整体可看作标记-整理（Mark-Compact）算法，可以有效避免内存碎片，Java堆非常大的时候，优势更明显； G1的吞吐量和停顿表现都非常不错，并仍在完善，CMS已经在JDK 9中被标记为废弃（deprecated）。 扩展：
 垃圾收集的原理和基础概念
 自动垃圾收集的前提是清楚哪些内存可以被释放。主要是两个方面，最主要部分是对象实例，都是存储在堆上的；还有方法区中的元数据等信息，例如类型不再使用，卸载该Java类。
 对于对象实例收集，主要是两种基本算法，引用计数和可达性分析。
@@ -44,7 +41,6 @@ Exception和Error体现了Java平台设计者对不同异常情况的分类。Ex
 Error是指在正常情况下，不大可能出现的情况，绝大部分的Error都会导致程序（比如JVM自身）处于非正常的、不可恢复状态。既然是非正常情况，所以不便于也不需要捕获，常见的比如OutOfMemoryError之类，都是Error的子类。注意：Error是Throwable不是Exception虽然它不可查。
 Exception又分为受检查(checked)异常和未检查(unchecked)异常，可检查异常在源代码里必须显示地进行捕获处理，这是编译期检查的一部分。
 不检查异常就是所谓的运行时异常，类似NullPointerException（空指针）、ArrayIndexOutOfBoundsException（下标越界）之类，通常是可以编码避免的逻辑错误，具体根据需要来判断是否需要捕获，并不会在编译期强制要求。
-+++
 扩展：
 1. NoClassDefFoundError和ClassNotFoundException有什么区别？
 NoClassDefFoundError:
@@ -74,7 +70,6 @@ Java每实例化一个Exception，都会对当时的栈进行快照，这是一�
 1 Object obj = new Object(); 软引用：描述一些还有用，但非必须的对象。将要发生内存溢出异常之前，会把这些对象列进回收范围之中进行第二次回收，如果此次回收还没有足够的内存，才会抛出内存溢出异常。
 1 2 // SoftReference实例来保存一个对象的软引用。 SoftReference aSoftRef = new SoftReference(aRef); 弱引用：描述那些非必须对象，但是它的强度比软引用更弱一些，只能生存到下一次垃圾收集发生为止。无论内存是否足够，都会回收掉只被弱引用关联的对象。
 虚引用：也称为“幽灵引用”或者“幻影引用”，不会影响对象生存时间。唯一目的：为了能在这个对象被收集器回收时收到一个系统通知。
-+++
 扩展：
 对象可达性状态流转
 可达性级别（reachability level）：
@@ -84,8 +79,7 @@ Java每实例化一个Exception，都会对当时的栈进行快照，这是一�
 幻象可达/虚可达（Phantom Reachable）：没有强、软、弱引用关联，并且finalize过了，只有虚引用指向这个对象的时候。
 不可达（unreachable）：对象可以被清除了。
 判断对象可达性，是JVM垃圾收集器决定如何处理对象的一部分考虑。</content></entry><entry><title>[Java] 谈谈final、finally、finalize有什么不同？</title><url>https://yuancode.net/post/java/java_final_finally_finalize/</url><categories><category>面经</category></categories><tags><tag>Java</tag></tags><content type="html"> 谈谈final、finally、finalize有什么不同？
-final：可以用来修饰类、方法、变量，分别有不同的意义： 类（class）：不可以继承扩展 方法：不可以重写（override） 变量：不可以修改 finally：Java保证重点代码一定会被执行的一种机制。可以使用try-finally或者try-catch-finally来进行类似关闭JDBC连接、保证unlock锁等动作。 finalize：是基础类java.lang.Object的一个方法，它设计目的是保证对象在被垃圾收集前完成特定资源的回收。finalize机制现在已经不推荐使用，并且在JDK 9开始被标记为deprecated。 +++
-final：
+final：可以用来修饰类、方法、变量，分别有不同的意义： 类（class）：不可以继承扩展 方法：不可以重写（override） 变量：不可以修改 finally：Java保证重点代码一定会被执行的一种机制。可以使用try-finally或者try-catch-finally来进行类似关闭JDBC连接、保证unlock锁等动作。 finalize：是基础类java.lang.Object的一个方法，它设计目的是保证对象在被垃圾收集前完成特定资源的回收。finalize机制现在已经不推荐使用，并且在JDK 9开始被标记为deprecated。 final：
 我们可以将方法或者类声明为final，这样可以明确告知别人，这些行为是不许修改的。 有些Java类同样被声明为final，这可以有效避免API使用者更改基础功能，某种程度上，这事保证平台安全的必要手段。 使用final修饰参数或者变量，也可以清楚地避免意外赋值导致的编程错误。 final变量产生了某种程度的不可变（immutable）效果，所以，可以用于保护只读数据，尤其是在并发编程中，因为明确地不能再赋值final变量，有利于减少额外的同步开销，也可以省去一些防御性拷贝的必要。 finally的例外情况：
 1 2 3 4 5 6 try { // do something System.exit(1); } finally { System.out.println("Print from finally"); } 这段代码中的finally并不会被执行，这与上面的保证重点代码一定会被执行矛盾，这种情况属于特例。
 关于finalize：
@@ -120,7 +114,6 @@ Java本身是一种面向对象（继承、封装、多态）的语言，最显�
 Integer是int对应的包装类，它有一个int类型的字段存储数据，并且提供了基本操作，比如数学运算、int和字符串之间转换等。在Java5中，引入了自动装箱和自动拆箱功能1（boxing/unboxing），Java可以根据上下文，自动进行转换，很大程度上简化了相关编程。
 int也就是Java中的整形数字，是Java的8个原始数据类型2,Java虽然号称一切都是对象，但是原始数据类型是例外。
 关于Integer的值缓存，涉及Java5中的另一个改进。构建Integer对象的传统方式是直接调用构造器new一个对象。但是大部分数据操作都是集中在有限的、较小的数值范围，因此在Java5中新增了静态工厂方法3valueOf，在调用它的时候会利用一个缓存机制，带来明显的性能改进。值默认缓存范围是*-128到127之间*(2^8)。
-+++
 扩展：
 Java对象的内存结构
 对象在内存中存储的布局可以分为3块区域：对象头、实例数据和对齐填充。
