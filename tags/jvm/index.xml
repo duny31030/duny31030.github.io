@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>JVM on 元代码</title><link>https://yuancode.net/tags/jvm/</link><description>Recent content in JVM on 元代码</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Sun, 07 Aug 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://yuancode.net/tags/jvm/index.xml" rel="self" type="application/rss+xml"/><item><title>[JVM] Java的类加载机制</title><link>https://yuancode.net/post/jvm_classloader/</link><pubDate>Sun, 07 Aug 2022 00:00:00 +0000</pubDate><guid>https://yuancode.net/post/jvm_classloader/</guid><description>&lt;p>&lt;strong>Java的类加载机制&lt;/strong>&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>JVM on 元代码</title><link>https://yuancode.net/tags/jvm/</link><description>Recent content in JVM on 元代码</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Sun, 07 Aug 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://yuancode.net/tags/jvm/index.xml" rel="self" type="application/rss+xml"/><item><title>[JVM] Java的类加载机制</title><link>https://yuancode.net/post/java/draftjvm_classloader/</link><pubDate>Sun, 07 Aug 2022 00:00:00 +0000</pubDate><guid>https://yuancode.net/post/java/draftjvm_classloader/</guid><description>&lt;p>&lt;strong>Java的类加载机制&lt;/strong>&lt;/p>
 &lt;p>一般，Java的类加载过程分为三个主要步骤：加载、连接、初始化。&lt;/p>
 &lt;ol>
 &lt;li>加载（Loading），将字节码数据从不同的数据源读取到JVM中，并映射为JVM认可的数据结构（Class对象），数据源可能是jar文件、class文件甚至网络数据源。如果输入数据不是ClassFile结构，则会抛出&lt;code>ClassFromatError&lt;/code>。
@@ -16,14 +16,14 @@
 &lt;li>初始化（initialization），真正去执行类初始化的代码逻辑，包括静态字段赋值的动作，以及执行类定义中的静态初始化块内的逻辑，编译器在编译阶段就会把这部分逻辑整理好，父类型的初始化逻辑优先于当前类型的逻辑。&lt;/li>
 &lt;/ol>
 &lt;p>&lt;strong>关于双亲委派模型：&lt;/strong>&lt;/p>
-&lt;p>简单说就是当类加载器（Class-Loader）试图加载某个类型的时候，除非父加载器找不到相应的类型，否则尽量将这个任务代理给当前加载器的父加载器去做。目的是&lt;strong>避免重复加载Java类型&lt;/strong>。&lt;/p></description></item><item><title>[Java] Java常见的垃圾收集器有哪些？</title><link>https://yuancode.net/post/java_garbage_collector/</link><pubDate>Tue, 02 Aug 2022 00:00:00 +0000</pubDate><guid>https://yuancode.net/post/java_garbage_collector/</guid><description>&lt;p>&lt;strong>Java（Oracle JDK）常见的垃圾收集器有哪些？&lt;/strong>&lt;/p>
+&lt;p>简单说就是当类加载器（Class-Loader）试图加载某个类型的时候，除非父加载器找不到相应的类型，否则尽量将这个任务代理给当前加载器的父加载器去做。目的是&lt;strong>避免重复加载Java类型&lt;/strong>。&lt;/p></description></item><item><title>[Java] Java常见的垃圾收集器有哪些？</title><link>https://yuancode.net/post/java/java_garbage_collector/</link><pubDate>Tue, 02 Aug 2022 00:00:00 +0000</pubDate><guid>https://yuancode.net/post/java/java_garbage_collector/</guid><description>&lt;p>&lt;strong>Java（Oracle JDK）常见的垃圾收集器有哪些？&lt;/strong>&lt;/p>
 &lt;ol>
 &lt;li>Serial&lt;/li>
 &lt;li>ParNew&lt;/li>
 &lt;li>CMS&lt;/li>
 &lt;li>Parrallel&lt;/li>
 &lt;li>G1&lt;/li>
-&lt;/ol></description></item><item><title>[Java] 谈谈JVM的内存区域划分，哪些区域可能发生OutOfMemoryError？</title><link>https://yuancode.net/post/java_jvm_memory/</link><pubDate>Tue, 02 Aug 2022 00:00:00 +0000</pubDate><guid>https://yuancode.net/post/java_jvm_memory/</guid><description>&lt;p>&lt;strong>谈谈JVM的内存区域划分，哪些区域可能发生OutOfMemoryError？&lt;/strong>&lt;/p>
+&lt;/ol></description></item><item><title>[Java] 谈谈JVM的内存区域划分，哪些区域可能发生OutOfMemoryError？</title><link>https://yuancode.net/post/java/draftjava_jvm_memory/</link><pubDate>Tue, 02 Aug 2022 00:00:00 +0000</pubDate><guid>https://yuancode.net/post/java/draftjava_jvm_memory/</guid><description>&lt;p>&lt;strong>谈谈JVM的内存区域划分，哪些区域可能发生OutOfMemoryError？&lt;/strong>&lt;/p>
 &lt;p>通常可以把JVM内存区域分为下面几个方面，其中，有的区域是以线程为单位，而有的区域则是整个JVM进程唯一的。&lt;/p>
 &lt;p>首先，&lt;strong>程序计数器&lt;/strong>（PC, Program Counter Register）。在JVM规范中，每个线程都有自己的程序计数器，并且任何时间一个线程都只有一个方法在执行，也就是所谓的当前方法。程序计数器会存储当前线程正在执行的Java方法的JVM指令地址；或者如果是正在执行本地方法，则是未指定值（undefined）。&lt;/p>
 &lt;p>第二，&lt;strong>Java虚拟机栈&lt;/strong>（Java Virtual Machine Stack），早期也叫Java栈。每个线程在创建时都会创建一个虚拟机栈，其内部保存一个个的栈帧（Stack Frame），对应着一次次的Java方法调用。&lt;/p>
@@ -56,6 +56,6 @@
 &lt;li>Java虚拟机栈和本地方法栈也会导致出现OOM问题。比如：无限递归，JVM实际会抛出&lt;code>StackOverFlowError&lt;/code>，如果JVM试图去扩展栈空间失败，则会抛出&lt;code>OutOfMemoryError&lt;/code>。&lt;/li>
 &lt;li>老版本Oracle JDK，永久代的大小有限制，并且JVM对其垃圾回收不积极，所以也会出现&lt;code>OutOfMemoryError&lt;/code>，尤其是存在大量动态类型生成的场合。&lt;strong>但是，随着元数据区的引入，方法区内存已经不再那么窘迫。&lt;/strong>&lt;/li>
 &lt;li>直接内存不足，也会导致OOM。&lt;/li>
-&lt;/ul></description></item><item><title>[Java] 强引用、软引用、弱引用、虚引用</title><link>https://yuancode.net/post/java_reference/</link><pubDate>Thu, 28 Jul 2022 00:00:00 +0000</pubDate><guid>https://yuancode.net/post/java_reference/</guid><description>&lt;p>在&lt;code>JDK 1.2&lt;/code>版本之后，Java对引用的概念进行了扩充，将引用分为强引用（Strongly Re-ference）、软引用（Soft Reference）、弱引用（Weak Reference）和虚引用（Phantom Reference）4种，这4种引用强度依次逐渐减弱。&lt;/p>
+&lt;/ul></description></item><item><title>[Java] 强引用、软引用、弱引用、虚引用</title><link>https://yuancode.net/post/java/java_reference/</link><pubDate>Thu, 28 Jul 2022 00:00:00 +0000</pubDate><guid>https://yuancode.net/post/java/java_reference/</guid><description>&lt;p>在&lt;code>JDK 1.2&lt;/code>版本之后，Java对引用的概念进行了扩充，将引用分为强引用（Strongly Re-ference）、软引用（Soft Reference）、弱引用（Weak Reference）和虚引用（Phantom Reference）4种，这4种引用强度依次逐渐减弱。&lt;/p>
 &lt;p>&lt;strong>强引用、软引用、弱引用、幻象引用有什么区别?具体使用场景是
 什么?&lt;/strong>&lt;/p></description></item></channel></rss>

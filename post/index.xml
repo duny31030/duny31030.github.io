@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on 元代码</title><link>https://yuancode.net/post/</link><description>Recent content in Posts on 元代码</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Sun, 07 Aug 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://yuancode.net/post/index.xml" rel="self" type="application/rss+xml"/><item><title>[JVM] Java的类加载机制</title><link>https://yuancode.net/post/jvm_classloader/</link><pubDate>Sun, 07 Aug 2022 00:00:00 +0000</pubDate><guid>https://yuancode.net/post/jvm_classloader/</guid><description>&lt;p>&lt;strong>Java的类加载机制&lt;/strong>&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on 元代码</title><link>https://yuancode.net/post/</link><description>Recent content in Posts on 元代码</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Sun, 07 Aug 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://yuancode.net/post/index.xml" rel="self" type="application/rss+xml"/><item><title>[JVM] Java的类加载机制</title><link>https://yuancode.net/post/java/draftjvm_classloader/</link><pubDate>Sun, 07 Aug 2022 00:00:00 +0000</pubDate><guid>https://yuancode.net/post/java/draftjvm_classloader/</guid><description>&lt;p>&lt;strong>Java的类加载机制&lt;/strong>&lt;/p>
 &lt;p>一般，Java的类加载过程分为三个主要步骤：加载、连接、初始化。&lt;/p>
 &lt;ol>
 &lt;li>加载（Loading），将字节码数据从不同的数据源读取到JVM中，并映射为JVM认可的数据结构（Class对象），数据源可能是jar文件、class文件甚至网络数据源。如果输入数据不是ClassFile结构，则会抛出&lt;code>ClassFromatError&lt;/code>。
@@ -23,17 +23,17 @@
 &lt;p>IoC（Inverse of Control，控制反转）是一种&lt;strong>设计思想&lt;/strong>，即将程序中需要手动创建的对象的控制权交由框架来进行管理，用户不需要关心具体的创建细节和依赖关系，只需要提供部分配置信息即可。过程如下：&lt;/p>
 &lt;img src="https://imagebed-1253103817.cos.ap-beijing.myqcloud.com/images/202208041610453.png" style="zoom:40%;" />
 &lt;p>如下图所示，IoC是&lt;strong>依赖倒置原则&lt;/strong>的一种实现思路，而实现IoC的方法可以采用&lt;strong>依赖注入&lt;/strong>（DI），IoC容器就是实现了IoC的一种容器。&lt;/p>
-&lt;img src="https://imagebed-1253103817.cos.ap-beijing.myqcloud.com/images/202208041616493.png" style="zoom:40%;" /></description></item><item><title>[Java] String、StringBuffer、StringBuilder有什么区别?</title><link>https://yuancode.net/post/java_string_stringbuffer_stringbuilder/</link><pubDate>Wed, 03 Aug 2022 00:00:00 +0000</pubDate><guid>https://yuancode.net/post/java_string_stringbuffer_stringbuilder/</guid><description>&lt;p>&lt;strong>理解Java的字符串，String、StringBuffer、StringBuilder有什么区别?&lt;/strong>&lt;/p>
+&lt;img src="https://imagebed-1253103817.cos.ap-beijing.myqcloud.com/images/202208041616493.png" style="zoom:40%;" /></description></item><item><title>[Java] String、StringBuffer、StringBuilder有什么区别?</title><link>https://yuancode.net/post/java/draftjava_string_stringbuffer_stringbuilder/</link><pubDate>Wed, 03 Aug 2022 00:00:00 +0000</pubDate><guid>https://yuancode.net/post/java/draftjava_string_stringbuffer_stringbuilder/</guid><description>&lt;p>&lt;strong>理解Java的字符串，String、StringBuffer、StringBuilder有什么区别?&lt;/strong>&lt;/p>
 &lt;p>&lt;strong>String&lt;/strong>：是Java语言非常基础和重要的类，提供了构造和管理字符串的各种基本逻辑。它是典型的&lt;code>Immutable&lt;/code>类，被声明成为&lt;code>final class&lt;/code>，所有属性也都是&lt;code>final&lt;/code>的。也由于它的不可变性，类似拼接、裁剪字符串等动作，都会产生新的String对象。由于字符串操作的普遍性，所以相关操作的效率往往对应用性能有明显影响。&lt;/p>
 &lt;p>&lt;strong>StringBuffer&lt;/strong>：是为了解决上面提到拼接产生太多中间对象的问题而提供的一个类，可以使用&lt;code>append&lt;/code>或者&lt;code>add&lt;/code>方法，把字符串添加到已有序列的末尾或者指定位置。StringBuffer本质是一个线程安全的可修改字符序列，它保证了线程安全，也随之带来了额外的性能开销，所以除非有线程安全的需要，不然还是推荐继续使用StringBuilder。&lt;/p>
-&lt;p>&lt;strong>StringBuilder&lt;/strong>：是Java 1.5中新增的，在能力上和StringBuffer没有本质区别，但是它去掉了线程安全部分，有效减小了开销，是绝大部分情况下进行字符串拼接的首选。&lt;/p></description></item><item><title>[Java] Java常见的垃圾收集器有哪些？</title><link>https://yuancode.net/post/java_garbage_collector/</link><pubDate>Tue, 02 Aug 2022 00:00:00 +0000</pubDate><guid>https://yuancode.net/post/java_garbage_collector/</guid><description>&lt;p>&lt;strong>Java（Oracle JDK）常见的垃圾收集器有哪些？&lt;/strong>&lt;/p>
+&lt;p>&lt;strong>StringBuilder&lt;/strong>：是Java 1.5中新增的，在能力上和StringBuffer没有本质区别，但是它去掉了线程安全部分，有效减小了开销，是绝大部分情况下进行字符串拼接的首选。&lt;/p></description></item><item><title>[Java] Java常见的垃圾收集器有哪些？</title><link>https://yuancode.net/post/java/java_garbage_collector/</link><pubDate>Tue, 02 Aug 2022 00:00:00 +0000</pubDate><guid>https://yuancode.net/post/java/java_garbage_collector/</guid><description>&lt;p>&lt;strong>Java（Oracle JDK）常见的垃圾收集器有哪些？&lt;/strong>&lt;/p>
 &lt;ol>
 &lt;li>Serial&lt;/li>
 &lt;li>ParNew&lt;/li>
 &lt;li>CMS&lt;/li>
 &lt;li>Parrallel&lt;/li>
 &lt;li>G1&lt;/li>
-&lt;/ol></description></item><item><title>[Java] 谈谈JVM的内存区域划分，哪些区域可能发生OutOfMemoryError？</title><link>https://yuancode.net/post/java_jvm_memory/</link><pubDate>Tue, 02 Aug 2022 00:00:00 +0000</pubDate><guid>https://yuancode.net/post/java_jvm_memory/</guid><description>&lt;p>&lt;strong>谈谈JVM的内存区域划分，哪些区域可能发生OutOfMemoryError？&lt;/strong>&lt;/p>
+&lt;/ol></description></item><item><title>[Java] 谈谈JVM的内存区域划分，哪些区域可能发生OutOfMemoryError？</title><link>https://yuancode.net/post/java/draftjava_jvm_memory/</link><pubDate>Tue, 02 Aug 2022 00:00:00 +0000</pubDate><guid>https://yuancode.net/post/java/draftjava_jvm_memory/</guid><description>&lt;p>&lt;strong>谈谈JVM的内存区域划分，哪些区域可能发生OutOfMemoryError？&lt;/strong>&lt;/p>
 &lt;p>通常可以把JVM内存区域分为下面几个方面，其中，有的区域是以线程为单位，而有的区域则是整个JVM进程唯一的。&lt;/p>
 &lt;p>首先，&lt;strong>程序计数器&lt;/strong>（PC, Program Counter Register）。在JVM规范中，每个线程都有自己的程序计数器，并且任何时间一个线程都只有一个方法在执行，也就是所谓的当前方法。程序计数器会存储当前线程正在执行的Java方法的JVM指令地址；或者如果是正在执行本地方法，则是未指定值（undefined）。&lt;/p>
 &lt;p>第二，&lt;strong>Java虚拟机栈&lt;/strong>（Java Virtual Machine Stack），早期也叫Java栈。每个线程在创建时都会创建一个虚拟机栈，其内部保存一个个的栈帧（Stack Frame），对应着一次次的Java方法调用。&lt;/p>
@@ -66,7 +66,7 @@
 &lt;li>Java虚拟机栈和本地方法栈也会导致出现OOM问题。比如：无限递归，JVM实际会抛出&lt;code>StackOverFlowError&lt;/code>，如果JVM试图去扩展栈空间失败，则会抛出&lt;code>OutOfMemoryError&lt;/code>。&lt;/li>
 &lt;li>老版本Oracle JDK，永久代的大小有限制，并且JVM对其垃圾回收不积极，所以也会出现&lt;code>OutOfMemoryError&lt;/code>，尤其是存在大量动态类型生成的场合。&lt;strong>但是，随着元数据区的引入，方法区内存已经不再那么窘迫。&lt;/strong>&lt;/li>
 &lt;li>直接内存不足，也会导致OOM。&lt;/li>
-&lt;/ul></description></item><item><title>[Java] Java程序运行在Docker等容器环境有哪些新问题？</title><link>https://yuancode.net/post/java_run_in_docker/</link><pubDate>Mon, 01 Aug 2022 00:00:00 +0000</pubDate><guid>https://yuancode.net/post/java_run_in_docker/</guid><description>&lt;p>&lt;strong>Java程序运行在Docker等容器环境有哪些新问题？&lt;/strong>&lt;/p>
+&lt;/ul></description></item><item><title>[Java] Java程序运行在Docker等容器环境有哪些新问题？</title><link>https://yuancode.net/post/java/java_run_in_docker/</link><pubDate>Mon, 01 Aug 2022 00:00:00 +0000</pubDate><guid>https://yuancode.net/post/java/java_run_in_docker/</guid><description>&lt;p>&lt;strong>Java程序运行在Docker等容器环境有哪些新问题？&lt;/strong>&lt;/p>
 &lt;ul>
 &lt;li>Docker的内存、CPU等资源限制是通过CGroup（Control Group）实现的，早期的JDK版本（8u131之前）并不能识别这些限制，进而会导致一些基础问题：
 &lt;ul>
@@ -76,7 +76,7 @@
 &lt;/li>
 &lt;li>从应用打包、发布等角度触发，JDK自身就比较大，生成的镜像就更为臃肿。当打包镜像较多的时候，存储开销就开始明显了。&lt;/li>
 &lt;li>如果考虑到微服务、Serverless等新的架构和场景，Java自身的大小、内存占用、启动速度，都存在一定局限性，因为Java早起的优化大多是针对长时间运行的大兴服务器端应用。&lt;/li>
-&lt;/ul></description></item><item><title>[Java] Java有几种文件拷贝方式？</title><link>https://yuancode.net/post/java_copy/</link><pubDate>Mon, 01 Aug 2022 00:00:00 +0000</pubDate><guid>https://yuancode.net/post/java_copy/</guid><description>&lt;p>&lt;strong>Java有几种文件拷贝方式？哪一种最高效？&lt;/strong>&lt;/p>
+&lt;/ul></description></item><item><title>[Java] Java有几种文件拷贝方式？</title><link>https://yuancode.net/post/java/java_copy/</link><pubDate>Mon, 01 Aug 2022 00:00:00 +0000</pubDate><guid>https://yuancode.net/post/java/java_copy/</guid><description>&lt;p>&lt;strong>Java有几种文件拷贝方式？哪一种最高效？&lt;/strong>&lt;/p>
 &lt;ol>
 &lt;li>
 &lt;p>利用&lt;code>java.io&lt;/code>类库，直接为源文件构建一个&lt;code>FileInputStream&lt;/code>读取，然后再为目标文件构建一个&lt;code>FileOutputStream&lt;/code>，完成写入工作。&lt;/p>
@@ -138,17 +138,17 @@
 &lt;p>利用Java标准库本身提供的几种&lt;code>File.copy&lt;/code>实现。&lt;/p>
 &lt;/li>
 &lt;/ol>
-&lt;p>一般来说，NIO的&lt;code>transferTo/transferFrom&lt;/code>的方式更快，因为它&lt;strong>更能利用好现代操作系统的底层机制，避免不必要的拷贝和上下文切换&lt;/strong>。&lt;/p></description></item><item><title>[Java] 谈谈 Java 反射机制，动态代理是基于什么原理?</title><link>https://yuancode.net/post/java_reflect/</link><pubDate>Mon, 01 Aug 2022 00:00:00 +0000</pubDate><guid>https://yuancode.net/post/java_reflect/</guid><description>&lt;p>&lt;strong>谈谈 Java 反射机制，动态代理是基于什么原理?&lt;/strong>&lt;/p>
+&lt;p>一般来说，NIO的&lt;code>transferTo/transferFrom&lt;/code>的方式更快，因为它&lt;strong>更能利用好现代操作系统的底层机制，避免不必要的拷贝和上下文切换&lt;/strong>。&lt;/p></description></item><item><title>[Java] 谈谈 Java 反射机制，动态代理是基于什么原理?</title><link>https://yuancode.net/post/java/draftjava_reflect/</link><pubDate>Mon, 01 Aug 2022 00:00:00 +0000</pubDate><guid>https://yuancode.net/post/java/draftjava_reflect/</guid><description>&lt;p>&lt;strong>谈谈 Java 反射机制，动态代理是基于什么原理?&lt;/strong>&lt;/p>
 &lt;p>反射机制是Java提供的一种基础功能，赋予程序在运行时&lt;strong>自省&lt;/strong>（introspect）的能力。通过反射我们可以直接操作类或者对象，比如获取某个对象的类定义，获取类声明的属性和方法，调用方法或者构造对象，甚至可以运行时修改类定义。&lt;/p>
 &lt;p>动态代理是一种&lt;strong>方便运行时动态构建代理、动态处理代理方法调用的机制&lt;/strong>，很多场景都是利用类似机制做到的，比如用来包装RPC调用、面向切面的编程（AOP）。&lt;/p>
-&lt;p>实现动态代理的方式很多，比如JDK自身提供的动态代理，就是主要利用了上面提到的反射机制。还有其他的实现方式，比如利用传说中更高性能的字节码操作机制，类似ASM、cglib（基于ASM）、Javassist等。&lt;/p></description></item><item><title>[Java] Exception和Error有什么区别？</title><link>https://yuancode.net/post/java_exception_and_error/</link><pubDate>Thu, 28 Jul 2022 00:00:00 +0000</pubDate><guid>https://yuancode.net/post/java_exception_and_error/</guid><description>&lt;p>&lt;strong>请对比 Exception 和 Error，另外，运行时异常与一般异常有什么区别?&lt;/strong>&lt;/p>
+&lt;p>实现动态代理的方式很多，比如JDK自身提供的动态代理，就是主要利用了上面提到的反射机制。还有其他的实现方式，比如利用传说中更高性能的字节码操作机制，类似ASM、cglib（基于ASM）、Javassist等。&lt;/p></description></item><item><title>[Java] Exception和Error有什么区别？</title><link>https://yuancode.net/post/java/java_exception_and_error/</link><pubDate>Thu, 28 Jul 2022 00:00:00 +0000</pubDate><guid>https://yuancode.net/post/java/java_exception_and_error/</guid><description>&lt;p>&lt;strong>请对比 Exception 和 Error，另外，运行时异常与一般异常有什么区别?&lt;/strong>&lt;/p>
 &lt;p>&lt;code>Exception&lt;/code>和&lt;code>Error&lt;/code>都是继承了&lt;code>Throwable&lt;/code>类，在Java中只有Throwable类型的实例才可以被抛出(throw)或者捕获(catch)，它是异常处理机制的基本组成类型。&lt;/p>
 &lt;p>&lt;code>Exception&lt;/code>和&lt;code>Error&lt;/code>体现了Java平台设计者对不同异常情况的分类。&lt;code>Exception&lt;/code>是程序正常运行中，可以预料的意外情况，可能并且应该被捕获，进行相应处理。&lt;/p>
 &lt;p>&lt;code>Error&lt;/code>是指在正常情况下，不大可能出现的情况，绝大部分的Error都会导致程序（比如JVM自身）处于非正常的、不可恢复状态。既然是非正常情况，所以不便于也不需要捕获，常见的比如&lt;code>OutOfMemoryError&lt;/code>之类，都是&lt;code>Error&lt;/code>的子类。&lt;strong>注意：&lt;code>Error&lt;/code>是&lt;code>Throwable&lt;/code>不是&lt;code>Exception&lt;/code>虽然它不可查。&lt;/strong>&lt;/p>
 &lt;p>&lt;code>Exception&lt;/code>又分为&lt;strong>受检查&lt;/strong>(checked)异常和&lt;strong>未检查&lt;/strong>(unchecked)异常，&lt;strong>可检查&lt;/strong>异常在源代码里必须显示地进行捕获处理，这是编译期检查的一部分。&lt;/p>
-&lt;p>不检查异常就是所谓的&lt;strong>运行时异常&lt;/strong>，类似&lt;code>NullPointerException&lt;/code>（空指针）、&lt;code>ArrayIndexOutOfBoundsException&lt;/code>（下标越界）之类，通常是可以编码避免的逻辑错误，具体根据需要来判断是否需要捕获，并不会在编译期强制要求。&lt;/p></description></item><item><title>[Java] 强引用、软引用、弱引用、虚引用</title><link>https://yuancode.net/post/java_reference/</link><pubDate>Thu, 28 Jul 2022 00:00:00 +0000</pubDate><guid>https://yuancode.net/post/java_reference/</guid><description>&lt;p>在&lt;code>JDK 1.2&lt;/code>版本之后，Java对引用的概念进行了扩充，将引用分为强引用（Strongly Re-ference）、软引用（Soft Reference）、弱引用（Weak Reference）和虚引用（Phantom Reference）4种，这4种引用强度依次逐渐减弱。&lt;/p>
+&lt;p>不检查异常就是所谓的&lt;strong>运行时异常&lt;/strong>，类似&lt;code>NullPointerException&lt;/code>（空指针）、&lt;code>ArrayIndexOutOfBoundsException&lt;/code>（下标越界）之类，通常是可以编码避免的逻辑错误，具体根据需要来判断是否需要捕获，并不会在编译期强制要求。&lt;/p></description></item><item><title>[Java] 强引用、软引用、弱引用、虚引用</title><link>https://yuancode.net/post/java/java_reference/</link><pubDate>Thu, 28 Jul 2022 00:00:00 +0000</pubDate><guid>https://yuancode.net/post/java/java_reference/</guid><description>&lt;p>在&lt;code>JDK 1.2&lt;/code>版本之后，Java对引用的概念进行了扩充，将引用分为强引用（Strongly Re-ference）、软引用（Soft Reference）、弱引用（Weak Reference）和虚引用（Phantom Reference）4种，这4种引用强度依次逐渐减弱。&lt;/p>
 &lt;p>&lt;strong>强引用、软引用、弱引用、幻象引用有什么区别?具体使用场景是
-什么?&lt;/strong>&lt;/p></description></item><item><title>[Java] 谈谈final、finally、finalize有什么不同？</title><link>https://yuancode.net/post/java_final_finally_finalize/</link><pubDate>Thu, 28 Jul 2022 00:00:00 +0000</pubDate><guid>https://yuancode.net/post/java_final_finally_finalize/</guid><description>&lt;p>&lt;strong>谈谈&lt;code>final&lt;/code>、&lt;code>finally&lt;/code>、&lt;code>finalize&lt;/code>有什么不同？&lt;/strong>&lt;/p>
+什么?&lt;/strong>&lt;/p></description></item><item><title>[Java] 谈谈final、finally、finalize有什么不同？</title><link>https://yuancode.net/post/java/java_final_finally_finalize/</link><pubDate>Thu, 28 Jul 2022 00:00:00 +0000</pubDate><guid>https://yuancode.net/post/java/java_final_finally_finalize/</guid><description>&lt;p>&lt;strong>谈谈&lt;code>final&lt;/code>、&lt;code>finally&lt;/code>、&lt;code>finalize&lt;/code>有什么不同？&lt;/strong>&lt;/p>
 &lt;ul>
 &lt;li>&lt;code>final&lt;/code>：可以用来修饰类、方法、变量，分别有不同的意义：
 &lt;ul>
@@ -159,13 +159,13 @@
 &lt;/li>
 &lt;li>&lt;code>finally&lt;/code>：Java保证重点代码一定会被执行的一种机制。可以使用&lt;code>try-finally&lt;/code>或者&lt;code>try-catch-finally&lt;/code>来进行类似关闭JDBC连接、保证unlock锁等动作。&lt;/li>
 &lt;li>&lt;code>finalize&lt;/code>：是基础类&lt;code>java.lang.Object&lt;/code>的一个方法，它设计目的是保证对象在被垃圾收集前完成特定资源的回收。&lt;code>finalize&lt;/code>机制现在已经不推荐使用，并且在JDK 9开始被标记为&lt;code>deprecated&lt;/code>。&lt;/li>
-&lt;/ul></description></item><item><title>[网络协议] 网络协议是怎样基于OSI体系分层的？</title><link>https://yuancode.net/post/net_osi/</link><pubDate>Fri, 22 Jul 2022 00:00:00 +0000</pubDate><guid>https://yuancode.net/post/net_osi/</guid><description>&lt;p>网络协议是怎样基于OSI体系分层的？&lt;/p></description></item><item><title>[网络协议] 为何TCP连接要经由三次握手才能建立？</title><link>https://yuancode.net/post/net_tcp/</link><pubDate>Fri, 22 Jul 2022 00:00:00 +0000</pubDate><guid>https://yuancode.net/post/net_tcp/</guid><description>&lt;ol>
+&lt;/ul></description></item><item><title>[网络协议] 网络协议是怎样基于OSI体系分层的？</title><link>https://yuancode.net/post/draftnet_osi/</link><pubDate>Fri, 22 Jul 2022 00:00:00 +0000</pubDate><guid>https://yuancode.net/post/draftnet_osi/</guid><description>&lt;p>网络协议是怎样基于OSI体系分层的？&lt;/p></description></item><item><title>[网络协议] 为何TCP连接要经由三次握手才能建立？</title><link>https://yuancode.net/post/draftnet_tcp/</link><pubDate>Fri, 22 Jul 2022 00:00:00 +0000</pubDate><guid>https://yuancode.net/post/draftnet_tcp/</guid><description>&lt;ol>
 &lt;li>TCP三次握手的流程及优化&lt;/li>
 &lt;li>TCP四次挥手的流程及优化&lt;/li>
 &lt;li>TCP引入的队头阻塞问题&lt;/li>
 &lt;li>HTTP3协议帧格式&lt;/li>
 &lt;li>HTTP3连接迁移流程&lt;/li>
-&lt;/ol></description></item><item><title>[网络协议] 在浏览器上输入URL到主页显示，经历了哪些步骤？</title><link>https://yuancode.net/post/net_url_index/</link><pubDate>Fri, 22 Jul 2022 00:00:00 +0000</pubDate><guid>https://yuancode.net/post/net_url_index/</guid><description>&lt;p>在浏览器上输入URL到主页显示，经历了哪些步骤？&lt;/p>
+&lt;/ol></description></item><item><title>[网络协议] 在浏览器上输入URL到主页显示，经历了哪些步骤？</title><link>https://yuancode.net/post/draftnet_url_index/</link><pubDate>Fri, 22 Jul 2022 00:00:00 +0000</pubDate><guid>https://yuancode.net/post/draftnet_url_index/</guid><description>&lt;p>在浏览器上输入URL到主页显示，经历了哪些步骤？&lt;/p>
 &lt;ol>
 &lt;li>DNS解析：将域名解析成IP地址；&lt;/li>
 &lt;li>TCP连接：根据IP地址找到服务器连接（三次握手）；&lt;/li>
@@ -173,8 +173,8 @@
 &lt;li>服务器处理请求并返回HTTP报文；&lt;/li>
 &lt;li>浏览器解析，渲染页面；&lt;/li>
 &lt;li>断开连接：关闭TCP连接（四次挥手）。&lt;/li>
-&lt;/ol></description></item><item><title>[Mysql] 谈谈Mysql支持的事务隔离级别，以及悲观锁和乐观锁。</title><link>https://yuancode.net/post/mysql_isolation_level_and_lock/</link><pubDate>Wed, 20 Jul 2022 00:00:00 +0000</pubDate><guid>https://yuancode.net/post/mysql_isolation_level_and_lock/</guid><description>&lt;p>谈谈 MySQL 支持的事务隔离级别，以及悲观锁和乐观锁的原理和应用场景?&lt;/p>
-&lt;p>隔离级别（Isolation Level），就是在数据库事务中，为保证并发数据读写的正确性而提出的定义，它并不是Mysql专有的概念。&lt;strong>事务的隔离级别受到数据库的限制，不同的数据库支持的隔离级别不一定相同&lt;/strong>&lt;/p></description></item><item><title>[Java] Java 提供了哪些 IO 方式? NIO 如何实现多路复用?</title><link>https://yuancode.net/post/java_io_nio/</link><pubDate>Sun, 17 Jul 2022 00:00:00 +0000</pubDate><guid>https://yuancode.net/post/java_io_nio/</guid><description>&lt;p>Java 提供了哪些 IO 方式? NIO 如何实现多路复用?&lt;/p>
+&lt;/ol></description></item><item><title>[Mysql] 谈谈Mysql支持的事务隔离级别，以及悲观锁和乐观锁。</title><link>https://yuancode.net/post/draftmysql_isolation_level_and_lock/</link><pubDate>Wed, 20 Jul 2022 00:00:00 +0000</pubDate><guid>https://yuancode.net/post/draftmysql_isolation_level_and_lock/</guid><description>&lt;p>谈谈 MySQL 支持的事务隔离级别，以及悲观锁和乐观锁的原理和应用场景?&lt;/p>
+&lt;p>隔离级别（Isolation Level），就是在数据库事务中，为保证并发数据读写的正确性而提出的定义，它并不是Mysql专有的概念。&lt;strong>事务的隔离级别受到数据库的限制，不同的数据库支持的隔离级别不一定相同&lt;/strong>&lt;/p></description></item><item><title>[Java] Java 提供了哪些 IO 方式? NIO 如何实现多路复用?</title><link>https://yuancode.net/post/java/draftjava_io_nio/</link><pubDate>Sun, 17 Jul 2022 00:00:00 +0000</pubDate><guid>https://yuancode.net/post/java/draftjava_io_nio/</guid><description>&lt;p>Java 提供了哪些 IO 方式? NIO 如何实现多路复用?&lt;/p>
 &lt;img src="https://imagebed-1253103817.cos.ap-beijing.myqcloud.com/images/202207271750077.png" style="zoom:50%;" />
 &lt;ol>
 &lt;li>
@@ -192,18 +192,18 @@
 &lt;p>java.nio的改进版，异步IO模型，也被称为AIO(Asynchronous IO)。&lt;/p>
 &lt;p>异步IO操作基于时间和回调机制，应用操作直接返回，而不会阻塞在那里，当后台处理完成，操作系统会通知相应线程进行后续工作。&lt;/p>
 &lt;/li>
-&lt;/ol></description></item><item><title>[Java] 对比 Hashtable、HashMap、TreeMap 有什么不同?</title><link>https://yuancode.net/post/java_hashtable_hashmap_treemap/</link><pubDate>Sun, 17 Jul 2022 00:00:00 +0000</pubDate><guid>https://yuancode.net/post/java_hashtable_hashmap_treemap/</guid><description>&lt;p>&lt;strong>对比 &lt;code>Hashtable&lt;/code>、&lt;code>HashMap&lt;/code>、&lt;code>TreeMap&lt;/code> 有什么不同?谈谈你对 HashMap 的掌握。&lt;/strong>&lt;/p>
+&lt;/ol></description></item><item><title>[Java] 对比 Hashtable、HashMap、TreeMap 有什么不同?</title><link>https://yuancode.net/post/java/draftjava_hashtable_hashmap_treemap/</link><pubDate>Sun, 17 Jul 2022 00:00:00 +0000</pubDate><guid>https://yuancode.net/post/java/draftjava_hashtable_hashmap_treemap/</guid><description>&lt;p>&lt;strong>对比 &lt;code>Hashtable&lt;/code>、&lt;code>HashMap&lt;/code>、&lt;code>TreeMap&lt;/code> 有什么不同?谈谈你对 HashMap 的掌握。&lt;/strong>&lt;/p>
 &lt;p>&lt;code>Hashtable&lt;/code>、&lt;code>HashMap&lt;/code>、&lt;code>TreeMap&lt;/code>都是最常见的一些Map实现，是以&lt;em>键值对&lt;/em>的形式存储和操作数据的容器类型。&lt;/p>
 &lt;p>&lt;code>Hashtable&lt;/code>是早期Java类库提供的哈希表实现，本身是同步的，不支持&lt;code>null&lt;/code>的&lt;code>key&lt;/code>和&lt;code>value&lt;/code>。&lt;/p>
 &lt;p>&lt;code>HashMap&lt;/code>是应用更加广泛的哈希表实现，基于哈希表的&lt;code>Map&lt;/code>接口实现，行为上大致与&lt;code>HashTable&lt;/code>一致，是非线程安全的，可以存储&lt;code>null&lt;/code>的&lt;code>key&lt;/code>和&lt;code>value&lt;/code>。&lt;/p>
-&lt;p>&lt;code>TreeMap&lt;/code>是基于红黑树的一种提供顺序访问的Map，和&lt;code>HashMap&lt;/code>不同，它的&lt;code>get&lt;/code>、&lt;code>put&lt;/code>、&lt;code>remove&lt;/code>之类操作的时间复杂度都是&lt;code>O(logn)&lt;/code>，可以通过手写&lt;code>Comparator&lt;/code>函数来决定键的具体顺序。&lt;/p></description></item><item><title>[Java] 谈谈你对Java平台的理解？</title><link>https://yuancode.net/post/java_about_java/</link><pubDate>Sun, 17 Jul 2022 00:00:00 +0000</pubDate><guid>https://yuancode.net/post/java_about_java/</guid><description>&lt;p>&lt;strong>谈谈你对 Java 平台的理解?“Java 是解释执行”，这句话正确吗?&lt;/strong>&lt;/p>
+&lt;p>&lt;code>TreeMap&lt;/code>是基于红黑树的一种提供顺序访问的Map，和&lt;code>HashMap&lt;/code>不同，它的&lt;code>get&lt;/code>、&lt;code>put&lt;/code>、&lt;code>remove&lt;/code>之类操作的时间复杂度都是&lt;code>O(logn)&lt;/code>，可以通过手写&lt;code>Comparator&lt;/code>函数来决定键的具体顺序。&lt;/p></description></item><item><title>[Java] 谈谈你对Java平台的理解？</title><link>https://yuancode.net/post/java/java_about_java/</link><pubDate>Sun, 17 Jul 2022 00:00:00 +0000</pubDate><guid>https://yuancode.net/post/java/java_about_java/</guid><description>&lt;p>&lt;strong>谈谈你对 Java 平台的理解?“Java 是解释执行”，这句话正确吗?&lt;/strong>&lt;/p>
 &lt;p>Java本身是一种面向对象（继承、封装、多态）的语言，最显著的特性有两个方面：一是“编写一次，处处运行”(Write once, run anywhere)（JVM运行&lt;code>.class&lt;/code>文件），能够非常容易地获得跨平台能力；二是垃圾收集(GC, Garbage Collection)，Java通过垃圾收集器回收分配内存，大部分情况下，程序员不需要自己操心内存的分配和回收。&lt;/p>
-&lt;p>“Java 是解释执行”这句话并不准确，Java源代码经过javac编译成.class字节码文件，.class字节码文件经过JVM解释或编译运行。JDK中提供了JIT(Just-In-Time)编译器，也就是通常所说的动态编译器，JIT能够在运行时将热点代码编译成与本地平台相关的机器码，这种情况下部分热点代码就属于==编译执行==，而不是解释执行。同时，Java9提供了AOT编译器，可以直接将所有代码编译成机器码执行。&lt;/p></description></item><item><title>[Java]Vector、ArrayList、LinkedList的区别</title><link>https://yuancode.net/post/java_vector_arraylist_linkedlist/</link><pubDate>Sun, 17 Jul 2022 00:00:00 +0000</pubDate><guid>https://yuancode.net/post/java_vector_arraylist_linkedlist/</guid><description>&lt;p>对比 Vector、ArrayList、LinkedList 有何区别?&lt;/p>
+&lt;p>“Java 是解释执行”这句话并不准确，Java源代码经过javac编译成.class字节码文件，.class字节码文件经过JVM解释或编译运行。JDK中提供了JIT(Just-In-Time)编译器，也就是通常所说的动态编译器，JIT能够在运行时将热点代码编译成与本地平台相关的机器码，这种情况下部分热点代码就属于==编译执行==，而不是解释执行。同时，Java9提供了AOT编译器，可以直接将所有代码编译成机器码执行。&lt;/p></description></item><item><title>[Java]Vector、ArrayList、LinkedList的区别</title><link>https://yuancode.net/post/java/draftjava_vector_arraylist_linkedlist/</link><pubDate>Sun, 17 Jul 2022 00:00:00 +0000</pubDate><guid>https://yuancode.net/post/java/draftjava_vector_arraylist_linkedlist/</guid><description>&lt;p>对比 Vector、ArrayList、LinkedList 有何区别?&lt;/p>
 &lt;p>Vector：线程安全的动态数组，扩容时增加1倍。&lt;/p>
 &lt;p>ArrayList：动态数组，扩容时增加50%。&lt;/p>
 &lt;p>LinkedList：双向链表，不需要像上面两种一样调整容量。&lt;/p>
 &lt;p>Vector和ArrayList内部元素以数组形式存储，适合随机访问的场合。&lt;/p>
-&lt;p>LinkedList进行节点的插入、删除时比较高效。&lt;/p></description></item><item><title>[Java基础]int和Integer的区别</title><link>https://yuancode.net/post/java_int_and_integer/</link><pubDate>Sun, 17 Jul 2022 00:00:00 +0000</pubDate><guid>https://yuancode.net/post/java_int_and_integer/</guid><description>&lt;p>&lt;strong>int和Integer有什么区别？谈谈Integer的值缓存范围。&lt;/strong>&lt;/p>
+&lt;p>LinkedList进行节点的插入、删除时比较高效。&lt;/p></description></item><item><title>[Java基础]int和Integer的区别</title><link>https://yuancode.net/post/java/java_int_and_integer/</link><pubDate>Sun, 17 Jul 2022 00:00:00 +0000</pubDate><guid>https://yuancode.net/post/java/java_int_and_integer/</guid><description>&lt;p>&lt;strong>int和Integer有什么区别？谈谈Integer的值缓存范围。&lt;/strong>&lt;/p>
 &lt;p>Integer是int对应的包装类，它有一个int类型的字段存储数据，并且提供了基本操作，比如数学运算、int和字符串之间转换等。在&lt;code>Java5&lt;/code>中，引入了自动装箱和自动拆箱功能&lt;sup>1&lt;/sup>（boxing/unboxing），Java可以根据上下文，自动进行转换，很大程度上简化了相关编程。&lt;/p>
 &lt;p>int也就是Java中的整形数字，是Java的8个原始数据类型&lt;sup>2&lt;/sup>,&lt;font color="red">Java虽然号称一切都是对象，但是原始数据类型是例外&lt;/font>。&lt;/p>
 &lt;p>关于Integer的值缓存，涉及Java5中的另一个改进。构建Integer对象的传统方式是直接调用构造器new一个对象。但是大部分数据操作都是集中在有限的、较小的数值范围，因此在&lt;code>Java5&lt;/code>中新增了静态工厂方法&lt;sup>3&lt;/sup>valueOf，在调用它的时候会利用一个缓存机制，带来明显的性能改进。值默认缓存范围是*-128到127之间*(2^8)。&lt;/p></description></item><item><title>[读书笔记]计算机组成与设计（RISC-V）第1章</title><link>https://yuancode.net/post/computer-organization-and-design-risc-v-edition-1/</link><pubDate>Sat, 09 Jul 2022 00:00:00 +0000</pubDate><guid>https://yuancode.net/post/computer-organization-and-design-risc-v-edition-1/</guid><description>&lt;p>第1章主要是为其余章节奠定基础。介绍了基本概念和定义，对软件和硬件的主要组成部分进行了剖析，展示了如何评估性能和功耗，介绍了集成电路（推动计算机革命的基数），并在最后解释了技术向多核转变的原因。&lt;/p>
