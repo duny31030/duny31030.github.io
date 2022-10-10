@@ -1,7 +1,7 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><search><entry><title>[JVM] Java的类加载机制</title><url>https://yuancode.net/post/java/draftjvm_classloader/</url><categories><category>面经</category></categories><tags><tag>JVM</tag><tag>Java</tag></tags><content type="html"> Java的类加载机制
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><search><entry><title>[JVM] Java的类加载机制</title><url>https://yuancode.net/post/java/jvm/draftjvm_classloader/</url><categories><category>面经</category></categories><tags><tag>JVM</tag><tag>Java</tag></tags><content type="html"> Java的类加载机制
 一般，Java的类加载过程分为三个主要步骤：加载、连接、初始化。
 加载（Loading），将字节码数据从不同的数据源读取到JVM中，并映射为JVM认可的数据结构（Class对象），数据源可能是jar文件、class文件甚至网络数据源。如果输入数据不是ClassFile结构，则会抛出ClassFromatError。 加载阶段是用户参与的阶段，我们可以自定义类加载器，实现自己的类加载过程。 连接（Linking），是核心步骤，把原始的类定义信息平滑的转化到JVM运行的过程中。可以进一步分为三个步骤： 验证（Verification），虚拟机安全的重要保障，验证字节信息是否符合Java虚拟机规范，否则被认为是VerifyError，防止恶意信息或不合规的信息危害JVM的运行。 准备（Preparation），创建类或接口中的静态变量，并初始化静态变量的初始值。==侧重点在于分配所需的内存空间，不会执行进一步的JVM指令。== 解析（Resolution），将常量池中的符号引用（symbolic reference）替换为直接引用。 初始化（initialization），真正去执行类初始化的代码逻辑，包括静态字段赋值的动作，以及执行类定义中的静态初始化块内的逻辑，编译器在编译阶段就会把这部分逻辑整理好，父类型的初始化逻辑优先于当前类型的逻辑。 关于双亲委派模型：
-简单说就是当类加载器（Class-Loader）试图加载某个类型的时候，除非父加载器找不到相应的类型，否则尽量将这个任务代理给当前加载器的父加载器去做。目的是避免重复加载Java类型。</content></entry><entry><title>[Spring] IoC和AOP</title><url>https://yuancode.net/post/spring_ioc_aop/</url><categories><category>面经</category></categories><tags><tag>Spring</tag><tag>IoC</tag><tag>AOP</tag></tags><content type="html"> Spring的AOP和IOC都是为了解决系统代码耦合度过高的问题。
+简单说就是当类加载器（Class-Loader）试图加载某个类型的时候，除非父加载器找不到相应的类型，否则尽量将这个任务代理给当前加载器的父加载器去做。目的是避免重复加载Java类型。</content></entry><entry><title>[Spring] IoC和AOP</title><url>https://yuancode.net/post/java/spring/spring_ioc_aop/</url><categories><category>面经</category></categories><tags><tag>Spring</tag><tag>IoC</tag><tag>AOP</tag></tags><content type="html"> Spring的AOP和IOC都是为了解决系统代码耦合度过高的问题。
 IoC是什么？有什么好处？
 IoC（Inverse of Control，控制反转）是一种设计思想，即将程序中需要手动创建的对象的控制权交由框架来进行管理，用户不需要关心具体的创建细节和依赖关系，只需要提供部分配置信息即可。过程如下：
 如下图所示，IoC是依赖倒置原则的一种实现思路，而实现IoC的方法可以采用依赖注入（DI），IoC容器就是实现了IoC的一种容器。
@@ -194,8 +194,8 @@ Java目前正在逐步使用java.lang.ref.Cleaner来替换掉原有的finalize�
 每个Cleaner的操作都是独立的，它有自己的运行线程，可以避免意外死锁。不过改善程度仍然有限，还是只适合作为一种最后的保证手段。
 +++
 [1] ：深入理解Java虚拟机：JVM高级特性与最佳实践（第3版）第3章
-[2] System.runFinalization()：System.gc()和System.runFinalization()</content></entry><entry><title>[网络协议] 网络协议是怎样基于OSI体系分层的？</title><url>https://yuancode.net/post/draftnet_osi/</url><categories><category>网络协议</category></categories><tags><tag>Web</tag><tag>Network</tag><tag>OSI</tag></tags><content type="html"> 网络协议是怎样基于OSI体系分层的？
-1. OSI协议分层体系 1.1 协议分层与软件分层 1.2 代理服务器与OSI七层协议</content></entry><entry><title>[网络协议] 为何TCP连接要经由三次握手才能建立？</title><url>https://yuancode.net/post/draftnet_tcp/</url><categories><category>网络协议</category></categories><tags><tag>Web</tag><tag>Network</tag><tag>TCP</tag></tags><content type="html"> TCP三次握手的流程及优化 TCP四次挥手的流程及优化 TCP引入的队头阻塞问题 HTTP3协议帧格式 HTTP3连接迁移流程 0. 问题 0.1 为什么TCP建立连接要经过三次握手？多一次少一次行不行？ SYN（Synchronize Sequence Numbers），同步序列编号；
+[2] System.runFinalization()：System.gc()和System.runFinalization()</content></entry><entry><title>[网络协议] 网络协议是怎样基于OSI体系分层的？</title><url>https://yuancode.net/post/net/draftnet_osi/</url><categories><category>网络协议</category></categories><tags><tag>Web</tag><tag>Network</tag><tag>OSI</tag></tags><content type="html"> 网络协议是怎样基于OSI体系分层的？
+1. OSI协议分层体系 1.1 协议分层与软件分层 1.2 代理服务器与OSI七层协议</content></entry><entry><title>[网络协议] 为何TCP连接要经由三次握手才能建立？</title><url>https://yuancode.net/post/net/draftnet_tcp/</url><categories><category>网络协议</category></categories><tags><tag>Web</tag><tag>Network</tag><tag>TCP</tag></tags><content type="html"> TCP三次握手的流程及优化 TCP四次挥手的流程及优化 TCP引入的队头阻塞问题 HTTP3协议帧格式 HTTP3连接迁移流程 0. 问题 0.1 为什么TCP建立连接要经过三次握手？多一次少一次行不行？ SYN（Synchronize Sequence Numbers），同步序列编号；
 ACK（Acknowledge Character），确认字符；
 SEQ（Sequence Number），序列号。
 三次握手的过程：
@@ -243,7 +243,7 @@ HTTP Message含义不变。
 5.3 QUIC Stream Frame头部 TCP中有序字节流靠Sequence实现，HTTP3依赖Offset解决有序字节流。
 Stream ID 和 Length对应TCP中的相应内容。
 5.4 HTTP3 Frame头部 6. 总结 TCP连接是由客户端IP地址与端口、服务器IP地址与端口4元素确定的。 由于IPv4地址长度是32位，端口长度是16位，故IP、端口都确定的服务器上能够支持的最大连接数是232+16。 TCP建立三次握手时，除了同步Sequence序列号外，还可以确定MSS、窗口扩大、时间戳等功能的开启。 在TCP的三次握手过程中，客户端会经历SYN_SENT状态，而服务器会经历SYNC_RCV状态。 在TCP的四次挥手流程中，主动端会经历FIND_WAIT1、FIND_WAIT2和TIME_WAIT状态，被动端则会经历CLOSE_WAIT、LAST_ACK状态。 在TCP上实现的多路复用，必然面临队头阻塞问题。 HTTP3基于UDP后，没有了队头阻塞，但必须在QUIC Stream层重新实现有序字符流(Offset)。 HTTP3的连接迁移功能通过Packet Header中的Connection ID实现。 +++
-[1] 三次握手动态示意图：图片来自“三次握手，四次挥手”这么讲，保证你忘不了</content></entry><entry><title>[网络协议] 在浏览器上输入URL到主页显示，经历了哪些步骤？</title><url>https://yuancode.net/post/draftnet_url_index/</url><categories><category>网络协议</category></categories><tags><tag>Web</tag><tag>Network</tag></tags><content type="html"> 在浏览器上输入URL到主页显示，经历了哪些步骤？
+[1] 三次握手动态示意图：图片来自“三次握手，四次挥手”这么讲，保证你忘不了</content></entry><entry><title>[网络协议] 在浏览器上输入URL到主页显示，经历了哪些步骤？</title><url>https://yuancode.net/post/net/draftnet_url_index/</url><categories><category>网络协议</category></categories><tags><tag>Web</tag><tag>Network</tag></tags><content type="html"> 在浏览器上输入URL到主页显示，经历了哪些步骤？
 DNS解析：将域名解析成IP地址； TCP连接：根据IP地址找到服务器连接（三次握手）； 发送HTTP请求； 服务器处理请求并返回HTTP报文； 浏览器解析，渲染页面； 断开连接：关闭TCP连接（四次挥手）。 1. 浏览器发起HTTP请求的逻辑是什么？ 1.1 HTML DOM树 首先考虑我们的浏览器在为我们展示出一个页面之前发生了什么？
 前提应该是浏览器可以知道页面的布局，比如我们的页面大小，不同div所占位置及大小，其次是布局之中的内容，这一过程来自渲染树1。布局来自CSS树1，而内容来自DOM树1。
 不过在浏览器“画”出了布局和其中的内容以后，我们可以发现可能还有一些视频、图片暂时无法查看。这是由于浏览器在渲染页面时分为了两部分：关键路径2和非关键路径2。
