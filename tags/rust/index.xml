@@ -1,38 +1,32 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Rust on 元代码</title><link>https://yuancode.net/tags/rust/</link><description>Recent content in Rust on 元代码</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Wed, 06 Jul 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://yuancode.net/tags/rust/index.xml" rel="self" type="application/rss+xml"/><item><title>rCore Tutorial v3 踩坑笔记 - lab0</title><link>https://yuancode.net/post/rcore-lab0-hint/</link><pubDate>Wed, 06 Jul 2022 00:00:00 +0000</pubDate><guid>https://yuancode.net/post/rcore-lab0-hint/</guid><description>&lt;p>记录在进行实验时踩到的一些坑，方便自己以后解决同样的问题，也可以帮助同行者。&lt;/p>
-&lt;p>由于&lt;a href="https://learningos.github.io/rust-based-os-comp2022/" target="_blank" rel="noopener">OS训练营实验指导&lt;/a>
-文档内容非常粗略，因此建议查看&lt;a href="https://rcore-os.github.io/rCore-Tutorial-Book-v3/" target="_blank" rel="noopener">rCore-Tutorial-Book-v3 3.6.0-alpha.1&lt;/a>
-文档。&lt;/p></description></item><item><title>Rust Quiz #32</title><link>https://yuancode.net/post/rust-quiz-32/</link><pubDate>Mon, 04 Jul 2022 00:00:00 +0000</pubDate><guid>https://yuancode.net/post/rust-quiz-32/</guid><description>&lt;h2 id="题目">题目&lt;/h2>
-&lt;p>What is the output of this Rust program?&lt;/p>
-&lt;div class="highlight">&lt;div style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-&lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
-&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-Rust" data-lang="Rust">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a2f;font-weight:bold">fn&lt;/span> &lt;span style="color:#00a000">check&lt;/span>(x: &lt;span style="color:#0b0;font-weight:bold">i32&lt;/span>)&lt;span style="color:#bbb"> &lt;/span>-&amp;gt; &lt;span style="color:#0b0;font-weight:bold">bool&lt;/span> {&lt;span style="color:#bbb">
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>print!(&lt;span style="color:#b44">&amp;#34;{}&amp;#34;&lt;/span>,&lt;span style="color:#bbb"> &lt;/span>x);&lt;span style="color:#bbb">
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#a2f;font-weight:bold">false&lt;/span>&lt;span style="color:#bbb">
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">&lt;/span>}&lt;span style="color:#bbb">
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">&lt;/span>&lt;span style="color:#a2f;font-weight:bold">fn&lt;/span> &lt;span style="color:#00a000">main&lt;/span>()&lt;span style="color:#bbb"> &lt;/span>{&lt;span style="color:#bbb">
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#a2f;font-weight:bold">match&lt;/span>&lt;span style="color:#bbb"> &lt;/span>(&lt;span style="color:#666">1&lt;/span>,&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#666">2&lt;/span>)&lt;span style="color:#bbb"> &lt;/span>{&lt;span style="color:#bbb">
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>(x,&lt;span style="color:#bbb"> &lt;/span>_)&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#666">|&lt;/span>&lt;span style="color:#bbb"> &lt;/span>(_,&lt;span style="color:#bbb"> &lt;/span>x)&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#a2f;font-weight:bold">if&lt;/span>&lt;span style="color:#bbb"> &lt;/span>check(x)&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#666">=&amp;gt;&lt;/span>&lt;span style="color:#bbb"> &lt;/span>{&lt;span style="color:#bbb">
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>print!(&lt;span style="color:#b44">&amp;#34;3&amp;#34;&lt;/span>)&lt;span style="color:#bbb">
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>}&lt;span style="color:#bbb">
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>_&lt;span style="color:#bbb"> &lt;/span>&lt;span style="color:#666">=&amp;gt;&lt;/span>&lt;span style="color:#bbb"> &lt;/span>print!(&lt;span style="color:#b44">&amp;#34;4&amp;#34;&lt;/span>),&lt;span style="color:#bbb">
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb"> &lt;/span>}&lt;span style="color:#bbb">
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#bbb">&lt;/span>}&lt;span style="color:#bbb">
-&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div></description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Rust on 💻元代码</title>
+    <link>https://yuancode.net/tags/rust/</link>
+    <description>Recent content in Rust on 💻元代码</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>2022 ♾️ 杜宁元的Blog</copyright>
+    <lastBuildDate>Wed, 06 Jul 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://yuancode.net/tags/rust/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>rCore Tutorial v3 踩坑笔记 - lab0</title>
+      <link>https://yuancode.net/posts/rcore-lab0-hint/</link>
+      <pubDate>Wed, 06 Jul 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://yuancode.net/posts/rcore-lab0-hint/</guid>
+      <description>&lt;p&gt;记录在进行实验时踩到的一些坑，方便自己以后解决同样的问题，也可以帮助同行者。&lt;/p&gt;
+&lt;p&gt;由于&lt;a href=&#34;https://learningos.github.io/rust-based-os-comp2022/&#34;&gt;OS训练营实验指导&lt;/a&gt;文档内容非常粗略，因此建议查看&lt;a href=&#34;https://rcore-os.github.io/rCore-Tutorial-Book-v3/&#34;&gt;rCore-Tutorial-Book-v3 3.6.0-alpha.1&lt;/a&gt; 文档。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Rust Quiz #32</title>
+      <link>https://yuancode.net/posts/rust-quiz-32/</link>
+      <pubDate>Mon, 04 Jul 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://yuancode.net/posts/rust-quiz-32/</guid>
+      <description>&lt;h2 id=&#34;题目&#34;&gt;题目&lt;/h2&gt;
+&lt;p&gt;What is the output of this Rust program?&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

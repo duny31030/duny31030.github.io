@@ -1,1 +1,174 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Tags on 元代码</title><link>https://yuancode.net/tags/</link><description>Recent content in Tags on 元代码</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Sun, 07 Aug 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://yuancode.net/tags/index.xml" rel="self" type="application/rss+xml"/><item><title>Java</title><link>https://yuancode.net/tags/java/</link><pubDate>Sun, 07 Aug 2022 00:00:00 +0000</pubDate><guid>https://yuancode.net/tags/java/</guid><description/></item><item><title>JVM</title><link>https://yuancode.net/tags/jvm/</link><pubDate>Sun, 07 Aug 2022 00:00:00 +0000</pubDate><guid>https://yuancode.net/tags/jvm/</guid><description/></item><item><title>AOP</title><link>https://yuancode.net/tags/aop/</link><pubDate>Thu, 04 Aug 2022 00:00:00 +0000</pubDate><guid>https://yuancode.net/tags/aop/</guid><description/></item><item><title>IoC</title><link>https://yuancode.net/tags/ioc/</link><pubDate>Thu, 04 Aug 2022 00:00:00 +0000</pubDate><guid>https://yuancode.net/tags/ioc/</guid><description/></item><item><title>Spring</title><link>https://yuancode.net/tags/spring/</link><pubDate>Thu, 04 Aug 2022 00:00:00 +0000</pubDate><guid>https://yuancode.net/tags/spring/</guid><description/></item><item><title>GC</title><link>https://yuancode.net/tags/gc/</link><pubDate>Tue, 02 Aug 2022 00:00:00 +0000</pubDate><guid>https://yuancode.net/tags/gc/</guid><description/></item><item><title>IO</title><link>https://yuancode.net/tags/io/</link><pubDate>Mon, 01 Aug 2022 00:00:00 +0000</pubDate><guid>https://yuancode.net/tags/io/</guid><description/></item><item><title>Error</title><link>https://yuancode.net/tags/error/</link><pubDate>Thu, 28 Jul 2022 00:00:00 +0000</pubDate><guid>https://yuancode.net/tags/error/</guid><description/></item><item><title>Exception</title><link>https://yuancode.net/tags/exception/</link><pubDate>Thu, 28 Jul 2022 00:00:00 +0000</pubDate><guid>https://yuancode.net/tags/exception/</guid><description/></item><item><title>Reference</title><link>https://yuancode.net/tags/reference/</link><pubDate>Thu, 28 Jul 2022 00:00:00 +0000</pubDate><guid>https://yuancode.net/tags/reference/</guid><description/></item><item><title>RISC-V</title><link>https://yuancode.net/tags/risc-v/</link><pubDate>Sat, 09 Jul 2022 00:00:00 +0000</pubDate><guid>https://yuancode.net/tags/risc-v/</guid><description/></item><item><title>计算机组成与设计</title><link>https://yuancode.net/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E4%B8%8E%E8%AE%BE%E8%AE%A1/</link><pubDate>Sat, 09 Jul 2022 00:00:00 +0000</pubDate><guid>https://yuancode.net/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E4%B8%8E%E8%AE%BE%E8%AE%A1/</guid><description/></item><item><title>rCore</title><link>https://yuancode.net/tags/rcore/</link><pubDate>Wed, 06 Jul 2022 00:00:00 +0000</pubDate><guid>https://yuancode.net/tags/rcore/</guid><description/></item><item><title>Rust</title><link>https://yuancode.net/tags/rust/</link><pubDate>Wed, 06 Jul 2022 00:00:00 +0000</pubDate><guid>https://yuancode.net/tags/rust/</guid><description/></item><item><title>踩坑笔记</title><link>https://yuancode.net/tags/%E8%B8%A9%E5%9D%91%E7%AC%94%E8%AE%B0/</link><pubDate>Wed, 06 Jul 2022 00:00:00 +0000</pubDate><guid>https://yuancode.net/tags/%E8%B8%A9%E5%9D%91%E7%AC%94%E8%AE%B0/</guid><description/></item><item><title>code style</title><link>https://yuancode.net/tags/code-style/</link><pubDate>Mon, 30 May 2022 00:00:00 +0000</pubDate><guid>https://yuancode.net/tags/code-style/</guid><description/></item><item><title>CPP</title><link>https://yuancode.net/tags/cpp/</link><pubDate>Mon, 30 May 2022 00:00:00 +0000</pubDate><guid>https://yuancode.net/tags/cpp/</guid><description/></item><item><title>编码风格</title><link>https://yuancode.net/tags/%E7%BC%96%E7%A0%81%E9%A3%8E%E6%A0%BC/</link><pubDate>Mon, 30 May 2022 00:00:00 +0000</pubDate><guid>https://yuancode.net/tags/%E7%BC%96%E7%A0%81%E9%A3%8E%E6%A0%BC/</guid><description/></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on 💻元代码</title>
+    <link>https://yuancode.net/tags/</link>
+    <description>Recent content in Tags on 💻元代码</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>2022 ♾️ 杜宁元的Blog</copyright>
+    <lastBuildDate>Sun, 07 Aug 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://yuancode.net/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Java</title>
+      <link>https://yuancode.net/tags/java/</link>
+      <pubDate>Sun, 07 Aug 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://yuancode.net/tags/java/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>JVM</title>
+      <link>https://yuancode.net/tags/jvm/</link>
+      <pubDate>Sun, 07 Aug 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://yuancode.net/tags/jvm/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>AOP</title>
+      <link>https://yuancode.net/tags/aop/</link>
+      <pubDate>Thu, 04 Aug 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://yuancode.net/tags/aop/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>IoC</title>
+      <link>https://yuancode.net/tags/ioc/</link>
+      <pubDate>Thu, 04 Aug 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://yuancode.net/tags/ioc/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Spring</title>
+      <link>https://yuancode.net/tags/spring/</link>
+      <pubDate>Thu, 04 Aug 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://yuancode.net/tags/spring/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>GC</title>
+      <link>https://yuancode.net/tags/gc/</link>
+      <pubDate>Tue, 02 Aug 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://yuancode.net/tags/gc/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>IO</title>
+      <link>https://yuancode.net/tags/io/</link>
+      <pubDate>Mon, 01 Aug 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://yuancode.net/tags/io/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Error</title>
+      <link>https://yuancode.net/tags/error/</link>
+      <pubDate>Thu, 28 Jul 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://yuancode.net/tags/error/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Exception</title>
+      <link>https://yuancode.net/tags/exception/</link>
+      <pubDate>Thu, 28 Jul 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://yuancode.net/tags/exception/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Reference</title>
+      <link>https://yuancode.net/tags/reference/</link>
+      <pubDate>Thu, 28 Jul 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://yuancode.net/tags/reference/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>RISC-V</title>
+      <link>https://yuancode.net/tags/risc-v/</link>
+      <pubDate>Sat, 09 Jul 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://yuancode.net/tags/risc-v/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>计算机组成与设计</title>
+      <link>https://yuancode.net/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E4%B8%8E%E8%AE%BE%E8%AE%A1/</link>
+      <pubDate>Sat, 09 Jul 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://yuancode.net/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E4%B8%8E%E8%AE%BE%E8%AE%A1/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>rCore</title>
+      <link>https://yuancode.net/tags/rcore/</link>
+      <pubDate>Wed, 06 Jul 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://yuancode.net/tags/rcore/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Rust</title>
+      <link>https://yuancode.net/tags/rust/</link>
+      <pubDate>Wed, 06 Jul 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://yuancode.net/tags/rust/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>踩坑笔记</title>
+      <link>https://yuancode.net/tags/%E8%B8%A9%E5%9D%91%E7%AC%94%E8%AE%B0/</link>
+      <pubDate>Wed, 06 Jul 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://yuancode.net/tags/%E8%B8%A9%E5%9D%91%E7%AC%94%E8%AE%B0/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>code style</title>
+      <link>https://yuancode.net/tags/code-style/</link>
+      <pubDate>Mon, 30 May 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://yuancode.net/tags/code-style/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>CPP</title>
+      <link>https://yuancode.net/tags/cpp/</link>
+      <pubDate>Mon, 30 May 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://yuancode.net/tags/cpp/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>编码风格</title>
+      <link>https://yuancode.net/tags/%E7%BC%96%E7%A0%81%E9%A3%8E%E6%A0%BC/</link>
+      <pubDate>Mon, 30 May 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://yuancode.net/tags/%E7%BC%96%E7%A0%81%E9%A3%8E%E6%A0%BC/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,118 +1,106 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>面经 on 元代码</title><link>https://yuancode.net/categories/%E9%9D%A2%E7%BB%8F/</link><description>Recent content in 面经 on 元代码</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Sun, 07 Aug 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://yuancode.net/categories/%E9%9D%A2%E7%BB%8F/index.xml" rel="self" type="application/rss+xml"/><item><title>[JVM] Java的类加载机制</title><link>https://yuancode.net/post/java/jvm/draftjvm_classloader/</link><pubDate>Sun, 07 Aug 2022 00:00:00 +0000</pubDate><guid>https://yuancode.net/post/java/jvm/draftjvm_classloader/</guid><description>&lt;p>&lt;strong>Java的类加载机制&lt;/strong>&lt;/p>
-&lt;p>一般，Java的类加载过程分为三个主要步骤：加载、连接、初始化。&lt;/p>
-&lt;ol>
-&lt;li>加载（Loading），将字节码数据从不同的数据源读取到JVM中，并映射为JVM认可的数据结构（Class对象），数据源可能是jar文件、class文件甚至网络数据源。如果输入数据不是ClassFile结构，则会抛出&lt;code>ClassFromatError&lt;/code>。
-&lt;ul>
-&lt;li>加载阶段是用户参与的阶段，我们可以自定义类加载器，实现自己的类加载过程。&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;li>连接（Linking），是核心步骤，把原始的类定义信息平滑的转化到JVM运行的过程中。可以进一步分为三个步骤：
-&lt;ol>
-&lt;li>验证（Verification），虚拟机安全的重要保障，验证字节信息是否符合Java虚拟机规范，否则被认为是&lt;code>VerifyError&lt;/code>，防止恶意信息或不合规的信息危害JVM的运行。&lt;/li>
-&lt;li>准备（Preparation），创建类或接口中的静态变量，并初始化静态变量的初始值。==侧重点在于分配所需的内存空间，不会执行进一步的JVM指令。==&lt;/li>
-&lt;li>解析（Resolution），将常量池中的符号引用（symbolic reference）替换为直接引用。&lt;/li>
-&lt;/ol>
-&lt;/li>
-&lt;li>初始化（initialization），真正去执行类初始化的代码逻辑，包括静态字段赋值的动作，以及执行类定义中的静态初始化块内的逻辑，编译器在编译阶段就会把这部分逻辑整理好，父类型的初始化逻辑优先于当前类型的逻辑。&lt;/li>
-&lt;/ol>
-&lt;p>&lt;strong>关于双亲委派模型：&lt;/strong>&lt;/p>
-&lt;p>简单说就是当类加载器（Class-Loader）试图加载某个类型的时候，除非父加载器找不到相应的类型，否则尽量将这个任务代理给当前加载器的父加载器去做。目的是&lt;strong>避免重复加载Java类型&lt;/strong>。&lt;/p></description></item><item><title>[Spring] IoC和AOP</title><link>https://yuancode.net/post/java/spring/spring_ioc_aop/</link><pubDate>Thu, 04 Aug 2022 00:00:00 +0000</pubDate><guid>https://yuancode.net/post/java/spring/spring_ioc_aop/</guid><description>&lt;blockquote>
-&lt;p>Spring的AOP和IOC都是为了解决系统代码耦合度过高的问题。&lt;/p>
-&lt;/blockquote>
-&lt;p>&lt;strong>IoC是什么？有什么好处？&lt;/strong>&lt;/p>
-&lt;p>IoC（Inverse of Control，控制反转）是一种&lt;strong>设计思想&lt;/strong>，即将程序中需要手动创建的对象的控制权交由框架来进行管理，用户不需要关心具体的创建细节和依赖关系，只需要提供部分配置信息即可。过程如下：&lt;/p>
-&lt;img src="https://imagebed-1253103817.cos.ap-beijing.myqcloud.com/images/202208041610453.png" style="zoom:40%;" />
-&lt;p>如下图所示，IoC是&lt;strong>依赖倒置原则&lt;/strong>的一种实现思路，而实现IoC的方法可以采用&lt;strong>依赖注入&lt;/strong>（DI），IoC容器就是实现了IoC的一种容器。&lt;/p>
-&lt;img src="https://imagebed-1253103817.cos.ap-beijing.myqcloud.com/images/202208041616493.png" style="zoom:40%;" /></description></item><item><title>[Java] Java常见的垃圾收集器有哪些？</title><link>https://yuancode.net/post/java/java_garbage_collector/</link><pubDate>Tue, 02 Aug 2022 00:00:00 +0000</pubDate><guid>https://yuancode.net/post/java/java_garbage_collector/</guid><description>&lt;p>&lt;strong>Java（Oracle JDK）常见的垃圾收集器有哪些？&lt;/strong>&lt;/p>
-&lt;ol>
-&lt;li>Serial&lt;/li>
-&lt;li>ParNew&lt;/li>
-&lt;li>CMS&lt;/li>
-&lt;li>Parrallel&lt;/li>
-&lt;li>G1&lt;/li>
-&lt;/ol></description></item><item><title>[Java] Java有几种文件拷贝方式？</title><link>https://yuancode.net/post/java/java_copy/</link><pubDate>Mon, 01 Aug 2022 00:00:00 +0000</pubDate><guid>https://yuancode.net/post/java/java_copy/</guid><description>&lt;p>&lt;strong>Java有几种文件拷贝方式？哪一种最高效？&lt;/strong>&lt;/p>
-&lt;ol>
-&lt;li>
-&lt;p>利用&lt;code>java.io&lt;/code>类库，直接为源文件构建一个&lt;code>FileInputStream&lt;/code>读取，然后再为目标文件构建一个&lt;code>FileOutputStream&lt;/code>，完成写入工作。&lt;/p>
-&lt;div class="highlight">&lt;div style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-&lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
-&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a2f;font-weight:bold">public&lt;/span> &lt;span style="color:#a2f;font-weight:bold">static&lt;/span> &lt;span style="color:#0b0;font-weight:bold">void&lt;/span> &lt;span style="color:#00a000">copyFileByStream&lt;/span>&lt;span style="color:#666">(&lt;/span>File source&lt;span style="color:#666">,&lt;/span> File dest&lt;span style="color:#666">)&lt;/span> &lt;span style="color:#a2f;font-weight:bold">throws&lt;/span> IOException &lt;span style="color:#666">{&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a2f;font-weight:bold">try&lt;/span>&lt;span style="color:#666">(&lt;/span>InputStream is &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#a2f;font-weight:bold">new&lt;/span> FileInputStream&lt;span style="color:#666">(&lt;/span>source&lt;span style="color:#666">);&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> OutputStream os &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#a2f;font-weight:bold">new&lt;/span> FileOutputStream&lt;span style="color:#666">(&lt;/span>dest&lt;span style="color:#666">);)&lt;/span> &lt;span style="color:#666">{&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#0b0;font-weight:bold">byte&lt;/span>&lt;span style="color:#666">[]&lt;/span> buffer &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#a2f;font-weight:bold">new&lt;/span> &lt;span style="color:#0b0;font-weight:bold">byte&lt;/span>&lt;span style="color:#666">[&lt;/span>1024&lt;span style="color:#666">];&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#0b0;font-weight:bold">int&lt;/span> length&lt;span style="color:#666">;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a2f;font-weight:bold">while&lt;/span>&lt;span style="color:#666">((&lt;/span>length &lt;span style="color:#666">=&lt;/span> is&lt;span style="color:#666">.&lt;/span>&lt;span style="color:#b44">read&lt;/span>&lt;span style="color:#666">(&lt;/span>buffer&lt;span style="color:#666">))&lt;/span> &lt;span style="color:#666">&amp;gt;&lt;/span> 0&lt;span style="color:#666">)&lt;/span> &lt;span style="color:#666">{&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> os&lt;span style="color:#666">.&lt;/span>&lt;span style="color:#b44">write&lt;/span>&lt;span style="color:#666">(&lt;/span>buffer&lt;span style="color:#666">,&lt;/span> 0&lt;span style="color:#666">,&lt;/span> length&lt;span style="color:#666">);&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#666">}&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#666">}&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#666">}&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;/li>
-&lt;li>
-&lt;p>利用&lt;code>java.nio&lt;/code>类库提供的&lt;code>transferTo&lt;/code>或&lt;code>transferFrom&lt;/code>方法实现。&lt;/p>
-&lt;div class="highlight">&lt;div style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-&lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
-&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">9
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a2f;font-weight:bold">public&lt;/span> &lt;span style="color:#a2f;font-weight:bold">static&lt;/span> &lt;span style="color:#0b0;font-weight:bold">void&lt;/span> &lt;span style="color:#00a000">copyFileByChannel&lt;/span>&lt;span style="color:#666">(&lt;/span>File source&lt;span style="color:#666">,&lt;/span> Filr dest&lt;span style="color:#666">)&lt;/span> &lt;span style="color:#a2f;font-weight:bold">throws&lt;/span> IOException &lt;span style="color:#666">{&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a2f;font-weight:bold">try&lt;/span>&lt;span style="color:#666">(&lt;/span>FileChannel sourceChannel &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#a2f;font-weight:bold">new&lt;/span> FileInputStream&lt;span style="color:#666">(&lt;/span>source&lt;span style="color:#666">).&lt;/span>&lt;span style="color:#b44">getChannel&lt;/span>&lt;span style="color:#666">();&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> FileChannel targetChannel &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#a2f;font-weight:bold">new&lt;/span> FileOutputStream&lt;span style="color:#666">(&lt;/span>dest&lt;span style="color:#666">).&lt;/span>&lt;span style="color:#b44">getChannel&lt;/span>&lt;span style="color:#666">();)&lt;/span> &lt;span style="color:#666">{&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a2f;font-weight:bold">for&lt;/span>&lt;span style="color:#666">(&lt;/span>&lt;span style="color:#0b0;font-weight:bold">long&lt;/span> count &lt;span style="color:#666">=&lt;/span> sourceChannel&lt;span style="color:#666">.&lt;/span>&lt;span style="color:#b44">size&lt;/span>&lt;span style="color:#666">();&lt;/span> count &lt;span style="color:#666">&amp;gt;&lt;/span> 0&lt;span style="color:#666">;&lt;/span> &lt;span style="color:#666">)&lt;/span> &lt;span style="color:#666">{&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#0b0;font-weight:bold">long&lt;/span> transferred &lt;span style="color:#666">=&lt;/span> sourceChannel&lt;span style="color:#666">.&lt;/span>&lt;span style="color:#b44">transferTo&lt;/span>&lt;span style="color:#666">(&lt;/span>sourceChannel&lt;span style="color:#666">.&lt;/span>&lt;span style="color:#b44">position&lt;/span>&lt;span style="color:#666">(),&lt;/span> count&lt;span style="color:#666">,&lt;/span> targetChannel&lt;span style="color:#666">);&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> count &lt;span style="color:#666">-=&lt;/span> transferred&lt;span style="color:#666">;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#666">}&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#666">}&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#666">}&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;/li>
-&lt;li>
-&lt;p>利用Java标准库本身提供的几种&lt;code>File.copy&lt;/code>实现。&lt;/p>
-&lt;/li>
-&lt;/ol>
-&lt;p>一般来说，NIO的&lt;code>transferTo/transferFrom&lt;/code>的方式更快，因为它&lt;strong>更能利用好现代操作系统的底层机制，避免不必要的拷贝和上下文切换&lt;/strong>。&lt;/p></description></item><item><title>[Java] Exception和Error有什么区别？</title><link>https://yuancode.net/post/java/java_exception_and_error/</link><pubDate>Thu, 28 Jul 2022 00:00:00 +0000</pubDate><guid>https://yuancode.net/post/java/java_exception_and_error/</guid><description>&lt;p>&lt;strong>请对比 Exception 和 Error，另外，运行时异常与一般异常有什么区别?&lt;/strong>&lt;/p>
-&lt;p>&lt;code>Exception&lt;/code>和&lt;code>Error&lt;/code>都是继承了&lt;code>Throwable&lt;/code>类，在Java中只有Throwable类型的实例才可以被抛出(throw)或者捕获(catch)，它是异常处理机制的基本组成类型。&lt;/p>
-&lt;p>&lt;code>Exception&lt;/code>和&lt;code>Error&lt;/code>体现了Java平台设计者对不同异常情况的分类。&lt;code>Exception&lt;/code>是程序正常运行中，可以预料的意外情况，可能并且应该被捕获，进行相应处理。&lt;/p>
-&lt;p>&lt;code>Error&lt;/code>是指在正常情况下，不大可能出现的情况，绝大部分的Error都会导致程序（比如JVM自身）处于非正常的、不可恢复状态。既然是非正常情况，所以不便于也不需要捕获，常见的比如&lt;code>OutOfMemoryError&lt;/code>之类，都是&lt;code>Error&lt;/code>的子类。&lt;strong>注意：&lt;code>Error&lt;/code>是&lt;code>Throwable&lt;/code>不是&lt;code>Exception&lt;/code>虽然它不可查。&lt;/strong>&lt;/p>
-&lt;p>&lt;code>Exception&lt;/code>又分为&lt;strong>受检查&lt;/strong>(checked)异常和&lt;strong>未检查&lt;/strong>(unchecked)异常，&lt;strong>可检查&lt;/strong>异常在源代码里必须显示地进行捕获处理，这是编译期检查的一部分。&lt;/p>
-&lt;p>不检查异常就是所谓的&lt;strong>运行时异常&lt;/strong>，类似&lt;code>NullPointerException&lt;/code>（空指针）、&lt;code>ArrayIndexOutOfBoundsException&lt;/code>（下标越界）之类，通常是可以编码避免的逻辑错误，具体根据需要来判断是否需要捕获，并不会在编译期强制要求。&lt;/p></description></item><item><title>[Java] 强引用、软引用、弱引用、虚引用</title><link>https://yuancode.net/post/java/java_reference/</link><pubDate>Thu, 28 Jul 2022 00:00:00 +0000</pubDate><guid>https://yuancode.net/post/java/java_reference/</guid><description>&lt;p>在&lt;code>JDK 1.2&lt;/code>版本之后，Java对引用的概念进行了扩充，将引用分为强引用（Strongly Re-ference）、软引用（Soft Reference）、弱引用（Weak Reference）和虚引用（Phantom Reference）4种，这4种引用强度依次逐渐减弱。&lt;/p>
-&lt;p>&lt;strong>强引用、软引用、弱引用、幻象引用有什么区别?具体使用场景是
-什么?&lt;/strong>&lt;/p></description></item><item><title>[Java] 谈谈final、finally、finalize有什么不同？</title><link>https://yuancode.net/post/java/java_final_finally_finalize/</link><pubDate>Thu, 28 Jul 2022 00:00:00 +0000</pubDate><guid>https://yuancode.net/post/java/java_final_finally_finalize/</guid><description>&lt;p>&lt;strong>谈谈&lt;code>final&lt;/code>、&lt;code>finally&lt;/code>、&lt;code>finalize&lt;/code>有什么不同？&lt;/strong>&lt;/p>
-&lt;ul>
-&lt;li>&lt;code>final&lt;/code>：可以用来修饰类、方法、变量，分别有不同的意义：
-&lt;ul>
-&lt;li>类（&lt;code>class&lt;/code>）：不可以继承扩展&lt;/li>
-&lt;li>方法：不可以重写（override）&lt;/li>
-&lt;li>变量：不可以修改&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;li>&lt;code>finally&lt;/code>：Java保证重点代码一定会被执行的一种机制。可以使用&lt;code>try-finally&lt;/code>或者&lt;code>try-catch-finally&lt;/code>来进行类似关闭JDBC连接、保证unlock锁等动作。&lt;/li>
-&lt;li>&lt;code>finalize&lt;/code>：是基础类&lt;code>java.lang.Object&lt;/code>的一个方法，它设计目的是保证对象在被垃圾收集前完成特定资源的回收。&lt;code>finalize&lt;/code>机制现在已经不推荐使用，并且在JDK 9开始被标记为&lt;code>deprecated&lt;/code>。&lt;/li>
-&lt;/ul></description></item><item><title>[Java] 谈谈你对Java平台的理解？</title><link>https://yuancode.net/post/java/java_about_java/</link><pubDate>Sun, 17 Jul 2022 00:00:00 +0000</pubDate><guid>https://yuancode.net/post/java/java_about_java/</guid><description>&lt;p>&lt;strong>谈谈你对 Java 平台的理解?“Java 是解释执行”，这句话正确吗?&lt;/strong>&lt;/p>
-&lt;p>Java本身是一种面向对象（继承、封装、多态）的语言，最显著的特性有两个方面：一是“编写一次，处处运行”(Write once, run anywhere)（JVM运行&lt;code>.class&lt;/code>文件），能够非常容易地获得跨平台能力；二是垃圾收集(GC, Garbage Collection)，Java通过垃圾收集器回收分配内存，大部分情况下，程序员不需要自己操心内存的分配和回收。&lt;/p>
-&lt;p>“Java 是解释执行”这句话并不准确，Java源代码经过javac编译成.class字节码文件，.class字节码文件经过JVM解释或编译运行。JDK中提供了JIT(Just-In-Time)编译器，也就是通常所说的动态编译器，JIT能够在运行时将热点代码编译成与本地平台相关的机器码，这种情况下部分热点代码就属于==编译执行==，而不是解释执行。同时，Java9提供了AOT编译器，可以直接将所有代码编译成机器码执行。&lt;/p></description></item><item><title>[Java基础]int和Integer的区别</title><link>https://yuancode.net/post/java/java_int_and_integer/</link><pubDate>Sun, 17 Jul 2022 00:00:00 +0000</pubDate><guid>https://yuancode.net/post/java/java_int_and_integer/</guid><description>&lt;p>&lt;strong>int和Integer有什么区别？谈谈Integer的值缓存范围。&lt;/strong>&lt;/p>
-&lt;p>Integer是int对应的包装类，它有一个int类型的字段存储数据，并且提供了基本操作，比如数学运算、int和字符串之间转换等。在&lt;code>Java5&lt;/code>中，引入了自动装箱和自动拆箱功能&lt;sup>1&lt;/sup>（boxing/unboxing），Java可以根据上下文，自动进行转换，很大程度上简化了相关编程。&lt;/p>
-&lt;p>int也就是Java中的整形数字，是Java的8个原始数据类型&lt;sup>2&lt;/sup>,&lt;font color="red">Java虽然号称一切都是对象，但是原始数据类型是例外&lt;/font>。&lt;/p>
-&lt;p>关于Integer的值缓存，涉及Java5中的另一个改进。构建Integer对象的传统方式是直接调用构造器new一个对象。但是大部分数据操作都是集中在有限的、较小的数值范围，因此在&lt;code>Java5&lt;/code>中新增了静态工厂方法&lt;sup>3&lt;/sup>valueOf，在调用它的时候会利用一个缓存机制，带来明显的性能改进。值默认缓存范围是*-128到127之间*(2^8)。&lt;/p></description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>面经 on 💻元代码</title>
+    <link>https://yuancode.net/categories/%E9%9D%A2%E7%BB%8F/</link>
+    <description>Recent content in 面经 on 💻元代码</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>2022 ♾️ 杜宁元的Blog</copyright>
+    <lastBuildDate>Sun, 07 Aug 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://yuancode.net/categories/%E9%9D%A2%E7%BB%8F/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[JVM] Java的类加载机制</title>
+      <link>https://yuancode.net/posts/java/jvm/draftjvm_classloader/</link>
+      <pubDate>Sun, 07 Aug 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://yuancode.net/posts/java/jvm/draftjvm_classloader/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Java的类加载机制&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;一般，Java的类加载过程分为三个主要步骤：加载、连接、初始化。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>[Spring] IoC和AOP</title>
+      <link>https://yuancode.net/posts/java/spring/spring_ioc_aop/</link>
+      <pubDate>Thu, 04 Aug 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://yuancode.net/posts/java/spring/spring_ioc_aop/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;Spring的AOP和IOC都是为了解决系统代码耦合度过高的问题。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;IoC是什么？有什么好处？&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>[Java] Java常见的垃圾收集器有哪些？</title>
+      <link>https://yuancode.net/posts/java/java_garbage_collector/</link>
+      <pubDate>Tue, 02 Aug 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://yuancode.net/posts/java/java_garbage_collector/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Java（Oracle JDK）常见的垃圾收集器有哪些？&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Serial&lt;/li&gt;
+&lt;li&gt;ParNew&lt;/li&gt;
+&lt;li&gt;CMS&lt;/li&gt;
+&lt;li&gt;Parrallel&lt;/li&gt;
+&lt;li&gt;G1&lt;/li&gt;
+&lt;/ol&gt;</description>
+    </item>
+    
+    <item>
+      <title>[Java] Java有几种文件拷贝方式？</title>
+      <link>https://yuancode.net/posts/java/java_copy/</link>
+      <pubDate>Mon, 01 Aug 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://yuancode.net/posts/java/java_copy/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Java有几种文件拷贝方式？哪一种最高效？&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>[Java] Exception和Error有什么区别？</title>
+      <link>https://yuancode.net/posts/java/java_exception_and_error/</link>
+      <pubDate>Thu, 28 Jul 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://yuancode.net/posts/java/java_exception_and_error/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;请对比 Exception 和 Error，另外，运行时异常与一般异常有什么区别?&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>[Java] 强引用、软引用、弱引用、虚引用</title>
+      <link>https://yuancode.net/posts/java/java_reference/</link>
+      <pubDate>Thu, 28 Jul 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://yuancode.net/posts/java/java_reference/</guid>
+      <description>&lt;p&gt;在&lt;code&gt;JDK 1.2&lt;/code&gt;版本之后，Java对引用的概念进行了扩充，将引用分为强引用（Strongly Re-ference）、软引用（Soft Reference）、弱引用（Weak Reference）和虚引用（Phantom Reference）4种，这4种引用强度依次逐渐减弱。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;强引用、软引用、弱引用、幻象引用有什么区别?具体使用场景是
+什么?&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>[Java] 谈谈final、finally、finalize有什么不同？</title>
+      <link>https://yuancode.net/posts/java/java_final_finally_finalize/</link>
+      <pubDate>Thu, 28 Jul 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://yuancode.net/posts/java/java_final_finally_finalize/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;谈谈&lt;code&gt;final&lt;/code&gt;、&lt;code&gt;finally&lt;/code&gt;、&lt;code&gt;finalize&lt;/code&gt;有什么不同？&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>[Java] 谈谈你对Java平台的理解？</title>
+      <link>https://yuancode.net/posts/java/java_about_java/</link>
+      <pubDate>Sun, 17 Jul 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://yuancode.net/posts/java/java_about_java/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;谈谈你对 Java 平台的理解?“Java 是解释执行”，这句话正确吗?&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>[Java基础]int和Integer的区别</title>
+      <link>https://yuancode.net/posts/java/java_int_and_integer/</link>
+      <pubDate>Sun, 17 Jul 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://yuancode.net/posts/java/java_int_and_integer/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;int和Integer有什么区别？谈谈Integer的值缓存范围。&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,8 +1,28 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>GC on 元代码</title><link>https://yuancode.net/tags/gc/</link><description>Recent content in GC on 元代码</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Tue, 02 Aug 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://yuancode.net/tags/gc/index.xml" rel="self" type="application/rss+xml"/><item><title>[Java] Java常见的垃圾收集器有哪些？</title><link>https://yuancode.net/post/java/java_garbage_collector/</link><pubDate>Tue, 02 Aug 2022 00:00:00 +0000</pubDate><guid>https://yuancode.net/post/java/java_garbage_collector/</guid><description>&lt;p>&lt;strong>Java（Oracle JDK）常见的垃圾收集器有哪些？&lt;/strong>&lt;/p>
-&lt;ol>
-&lt;li>Serial&lt;/li>
-&lt;li>ParNew&lt;/li>
-&lt;li>CMS&lt;/li>
-&lt;li>Parrallel&lt;/li>
-&lt;li>G1&lt;/li>
-&lt;/ol></description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>GC on 💻元代码</title>
+    <link>https://yuancode.net/tags/gc/</link>
+    <description>Recent content in GC on 💻元代码</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>2022 ♾️ 杜宁元的Blog</copyright>
+    <lastBuildDate>Tue, 02 Aug 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://yuancode.net/tags/gc/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[Java] Java常见的垃圾收集器有哪些？</title>
+      <link>https://yuancode.net/posts/java/java_garbage_collector/</link>
+      <pubDate>Tue, 02 Aug 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://yuancode.net/posts/java/java_garbage_collector/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Java（Oracle JDK）常见的垃圾收集器有哪些？&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Serial&lt;/li&gt;
+&lt;li&gt;ParNew&lt;/li&gt;
+&lt;li&gt;CMS&lt;/li&gt;
+&lt;li&gt;Parrallel&lt;/li&gt;
+&lt;li&gt;G1&lt;/li&gt;
+&lt;/ol&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

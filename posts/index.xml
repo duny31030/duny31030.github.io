@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on 💻元代码</title>
+    <link>https://yuancode.net/posts/</link>
+    <description>Recent content in Posts on 💻元代码</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>2022 ♾️ 杜宁元的Blog</copyright>
+    <lastBuildDate>Sun, 07 Aug 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://yuancode.net/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[JVM] Java的类加载机制</title>
+      <link>https://yuancode.net/posts/java/jvm/draftjvm_classloader/</link>
+      <pubDate>Sun, 07 Aug 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://yuancode.net/posts/java/jvm/draftjvm_classloader/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Java的类加载机制&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;一般，Java的类加载过程分为三个主要步骤：加载、连接、初始化。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>[Spring] IoC和AOP</title>
+      <link>https://yuancode.net/posts/java/spring/spring_ioc_aop/</link>
+      <pubDate>Thu, 04 Aug 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://yuancode.net/posts/java/spring/spring_ioc_aop/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;Spring的AOP和IOC都是为了解决系统代码耦合度过高的问题。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;IoC是什么？有什么好处？&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>[Java] Java常见的垃圾收集器有哪些？</title>
+      <link>https://yuancode.net/posts/java/java_garbage_collector/</link>
+      <pubDate>Tue, 02 Aug 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://yuancode.net/posts/java/java_garbage_collector/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Java（Oracle JDK）常见的垃圾收集器有哪些？&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Serial&lt;/li&gt;
+&lt;li&gt;ParNew&lt;/li&gt;
+&lt;li&gt;CMS&lt;/li&gt;
+&lt;li&gt;Parrallel&lt;/li&gt;
+&lt;li&gt;G1&lt;/li&gt;
+&lt;/ol&gt;</description>
+    </item>
+    
+    <item>
+      <title>[Java] Java有几种文件拷贝方式？</title>
+      <link>https://yuancode.net/posts/java/java_copy/</link>
+      <pubDate>Mon, 01 Aug 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://yuancode.net/posts/java/java_copy/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Java有几种文件拷贝方式？哪一种最高效？&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>[Java] Exception和Error有什么区别？</title>
+      <link>https://yuancode.net/posts/java/java_exception_and_error/</link>
+      <pubDate>Thu, 28 Jul 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://yuancode.net/posts/java/java_exception_and_error/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;请对比 Exception 和 Error，另外，运行时异常与一般异常有什么区别?&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>[Java] 强引用、软引用、弱引用、虚引用</title>
+      <link>https://yuancode.net/posts/java/java_reference/</link>
+      <pubDate>Thu, 28 Jul 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://yuancode.net/posts/java/java_reference/</guid>
+      <description>&lt;p&gt;在&lt;code&gt;JDK 1.2&lt;/code&gt;版本之后，Java对引用的概念进行了扩充，将引用分为强引用（Strongly Re-ference）、软引用（Soft Reference）、弱引用（Weak Reference）和虚引用（Phantom Reference）4种，这4种引用强度依次逐渐减弱。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;强引用、软引用、弱引用、幻象引用有什么区别?具体使用场景是
+什么?&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>[Java] 谈谈final、finally、finalize有什么不同？</title>
+      <link>https://yuancode.net/posts/java/java_final_finally_finalize/</link>
+      <pubDate>Thu, 28 Jul 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://yuancode.net/posts/java/java_final_finally_finalize/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;谈谈&lt;code&gt;final&lt;/code&gt;、&lt;code&gt;finally&lt;/code&gt;、&lt;code&gt;finalize&lt;/code&gt;有什么不同？&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>[Java] 谈谈你对Java平台的理解？</title>
+      <link>https://yuancode.net/posts/java/java_about_java/</link>
+      <pubDate>Sun, 17 Jul 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://yuancode.net/posts/java/java_about_java/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;谈谈你对 Java 平台的理解?“Java 是解释执行”，这句话正确吗?&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>[Java基础]int和Integer的区别</title>
+      <link>https://yuancode.net/posts/java/java_int_and_integer/</link>
+      <pubDate>Sun, 17 Jul 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://yuancode.net/posts/java/java_int_and_integer/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;int和Integer有什么区别？谈谈Integer的值缓存范围。&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>[读书笔记]计算机组成与设计（RISC-V）第1章</title>
+      <link>https://yuancode.net/posts/computer-organization-and-design-risc-v-edition-1/</link>
+      <pubDate>Sat, 09 Jul 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://yuancode.net/posts/computer-organization-and-design-risc-v-edition-1/</guid>
+      <description>&lt;p&gt;第1章主要是为其余章节奠定基础。介绍了基本概念和定义，对软件和硬件的主要组成部分进行了剖析，展示了如何评估性能和功耗，介绍了集成电路（推动计算机革命的基数），并在最后解释了技术向多核转变的原因。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>rCore Tutorial v3 踩坑笔记 - lab0</title>
+      <link>https://yuancode.net/posts/rcore-lab0-hint/</link>
+      <pubDate>Wed, 06 Jul 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://yuancode.net/posts/rcore-lab0-hint/</guid>
+      <description>&lt;p&gt;记录在进行实验时踩到的一些坑，方便自己以后解决同样的问题，也可以帮助同行者。&lt;/p&gt;
+&lt;p&gt;由于&lt;a href=&#34;https://learningos.github.io/rust-based-os-comp2022/&#34;&gt;OS训练营实验指导&lt;/a&gt;文档内容非常粗略，因此建议查看&lt;a href=&#34;https://rcore-os.github.io/rCore-Tutorial-Book-v3/&#34;&gt;rCore-Tutorial-Book-v3 3.6.0-alpha.1&lt;/a&gt; 文档。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Rust Quiz #32</title>
+      <link>https://yuancode.net/posts/rust-quiz-32/</link>
+      <pubDate>Mon, 04 Jul 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://yuancode.net/posts/rust-quiz-32/</guid>
+      <description>&lt;h2 id=&#34;题目&#34;&gt;题目&lt;/h2&gt;
+&lt;p&gt;What is the output of this Rust program?&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>C&#43;&#43; 编码风格</title>
+      <link>https://yuancode.net/posts/c&#43;&#43;codestyle/</link>
+      <pubDate>Mon, 30 May 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://yuancode.net/posts/c&#43;&#43;codestyle/</guid>
+      <description>&lt;p&gt;&lt;em&gt;“任何人都能写出机器能看懂的代码，但只有优秀的程序员才能写出人能看懂的代码。”&lt;/em&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,63 +1,21 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>IO on 元代码</title><link>https://yuancode.net/tags/io/</link><description>Recent content in IO on 元代码</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Mon, 01 Aug 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://yuancode.net/tags/io/index.xml" rel="self" type="application/rss+xml"/><item><title>[Java] Java有几种文件拷贝方式？</title><link>https://yuancode.net/post/java/java_copy/</link><pubDate>Mon, 01 Aug 2022 00:00:00 +0000</pubDate><guid>https://yuancode.net/post/java/java_copy/</guid><description>&lt;p>&lt;strong>Java有几种文件拷贝方式？哪一种最高效？&lt;/strong>&lt;/p>
-&lt;ol>
-&lt;li>
-&lt;p>利用&lt;code>java.io&lt;/code>类库，直接为源文件构建一个&lt;code>FileInputStream&lt;/code>读取，然后再为目标文件构建一个&lt;code>FileOutputStream&lt;/code>，完成写入工作。&lt;/p>
-&lt;div class="highlight">&lt;div style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-&lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
-&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a2f;font-weight:bold">public&lt;/span> &lt;span style="color:#a2f;font-weight:bold">static&lt;/span> &lt;span style="color:#0b0;font-weight:bold">void&lt;/span> &lt;span style="color:#00a000">copyFileByStream&lt;/span>&lt;span style="color:#666">(&lt;/span>File source&lt;span style="color:#666">,&lt;/span> File dest&lt;span style="color:#666">)&lt;/span> &lt;span style="color:#a2f;font-weight:bold">throws&lt;/span> IOException &lt;span style="color:#666">{&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a2f;font-weight:bold">try&lt;/span>&lt;span style="color:#666">(&lt;/span>InputStream is &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#a2f;font-weight:bold">new&lt;/span> FileInputStream&lt;span style="color:#666">(&lt;/span>source&lt;span style="color:#666">);&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> OutputStream os &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#a2f;font-weight:bold">new&lt;/span> FileOutputStream&lt;span style="color:#666">(&lt;/span>dest&lt;span style="color:#666">);)&lt;/span> &lt;span style="color:#666">{&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#0b0;font-weight:bold">byte&lt;/span>&lt;span style="color:#666">[]&lt;/span> buffer &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#a2f;font-weight:bold">new&lt;/span> &lt;span style="color:#0b0;font-weight:bold">byte&lt;/span>&lt;span style="color:#666">[&lt;/span>1024&lt;span style="color:#666">];&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#0b0;font-weight:bold">int&lt;/span> length&lt;span style="color:#666">;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a2f;font-weight:bold">while&lt;/span>&lt;span style="color:#666">((&lt;/span>length &lt;span style="color:#666">=&lt;/span> is&lt;span style="color:#666">.&lt;/span>&lt;span style="color:#b44">read&lt;/span>&lt;span style="color:#666">(&lt;/span>buffer&lt;span style="color:#666">))&lt;/span> &lt;span style="color:#666">&amp;gt;&lt;/span> 0&lt;span style="color:#666">)&lt;/span> &lt;span style="color:#666">{&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> os&lt;span style="color:#666">.&lt;/span>&lt;span style="color:#b44">write&lt;/span>&lt;span style="color:#666">(&lt;/span>buffer&lt;span style="color:#666">,&lt;/span> 0&lt;span style="color:#666">,&lt;/span> length&lt;span style="color:#666">);&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#666">}&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#666">}&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#666">}&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;/li>
-&lt;li>
-&lt;p>利用&lt;code>java.nio&lt;/code>类库提供的&lt;code>transferTo&lt;/code>或&lt;code>transferFrom&lt;/code>方法实现。&lt;/p>
-&lt;div class="highlight">&lt;div style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-&lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
-&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
-&lt;/span>&lt;span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">9
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a2f;font-weight:bold">public&lt;/span> &lt;span style="color:#a2f;font-weight:bold">static&lt;/span> &lt;span style="color:#0b0;font-weight:bold">void&lt;/span> &lt;span style="color:#00a000">copyFileByChannel&lt;/span>&lt;span style="color:#666">(&lt;/span>File source&lt;span style="color:#666">,&lt;/span> Filr dest&lt;span style="color:#666">)&lt;/span> &lt;span style="color:#a2f;font-weight:bold">throws&lt;/span> IOException &lt;span style="color:#666">{&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a2f;font-weight:bold">try&lt;/span>&lt;span style="color:#666">(&lt;/span>FileChannel sourceChannel &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#a2f;font-weight:bold">new&lt;/span> FileInputStream&lt;span style="color:#666">(&lt;/span>source&lt;span style="color:#666">).&lt;/span>&lt;span style="color:#b44">getChannel&lt;/span>&lt;span style="color:#666">();&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> FileChannel targetChannel &lt;span style="color:#666">=&lt;/span> &lt;span style="color:#a2f;font-weight:bold">new&lt;/span> FileOutputStream&lt;span style="color:#666">(&lt;/span>dest&lt;span style="color:#666">).&lt;/span>&lt;span style="color:#b44">getChannel&lt;/span>&lt;span style="color:#666">();)&lt;/span> &lt;span style="color:#666">{&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a2f;font-weight:bold">for&lt;/span>&lt;span style="color:#666">(&lt;/span>&lt;span style="color:#0b0;font-weight:bold">long&lt;/span> count &lt;span style="color:#666">=&lt;/span> sourceChannel&lt;span style="color:#666">.&lt;/span>&lt;span style="color:#b44">size&lt;/span>&lt;span style="color:#666">();&lt;/span> count &lt;span style="color:#666">&amp;gt;&lt;/span> 0&lt;span style="color:#666">;&lt;/span> &lt;span style="color:#666">)&lt;/span> &lt;span style="color:#666">{&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#0b0;font-weight:bold">long&lt;/span> transferred &lt;span style="color:#666">=&lt;/span> sourceChannel&lt;span style="color:#666">.&lt;/span>&lt;span style="color:#b44">transferTo&lt;/span>&lt;span style="color:#666">(&lt;/span>sourceChannel&lt;span style="color:#666">.&lt;/span>&lt;span style="color:#b44">position&lt;/span>&lt;span style="color:#666">(),&lt;/span> count&lt;span style="color:#666">,&lt;/span> targetChannel&lt;span style="color:#666">);&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> count &lt;span style="color:#666">-=&lt;/span> transferred&lt;span style="color:#666">;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#666">}&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#666">}&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#666">}&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;/li>
-&lt;li>
-&lt;p>利用Java标准库本身提供的几种&lt;code>File.copy&lt;/code>实现。&lt;/p>
-&lt;/li>
-&lt;/ol>
-&lt;p>一般来说，NIO的&lt;code>transferTo/transferFrom&lt;/code>的方式更快，因为它&lt;strong>更能利用好现代操作系统的底层机制，避免不必要的拷贝和上下文切换&lt;/strong>。&lt;/p></description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>IO on 💻元代码</title>
+    <link>https://yuancode.net/tags/io/</link>
+    <description>Recent content in IO on 💻元代码</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>2022 ♾️ 杜宁元的Blog</copyright>
+    <lastBuildDate>Mon, 01 Aug 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://yuancode.net/tags/io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[Java] Java有几种文件拷贝方式？</title>
+      <link>https://yuancode.net/posts/java/java_copy/</link>
+      <pubDate>Mon, 01 Aug 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://yuancode.net/posts/java/java_copy/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Java有几种文件拷贝方式？哪一种最高效？&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

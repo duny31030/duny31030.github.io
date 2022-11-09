@@ -1,0 +1,342 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>💻元代码</title>
+    <link>https://yuancode.net/</link>
+    <description>Recent content on 💻元代码</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>2022 ♾️ 杜宁元的Blog</copyright>
+    <lastBuildDate>Sun, 07 Aug 2022 00:00:00 +0000</lastBuildDate>
+    
+        <atom:link href="https://yuancode.net/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    
+        <item>
+        <title>rCore Tutorial v3 踩坑笔记 - lab0</title>
+        <link>https://yuancode.net/posts/rcore-lab0-hint/</link>
+        <pubDate>Wed, 06 Jul 2022 00:00:00 +0000</pubDate>
+        
+        <guid>https://yuancode.net/posts/rcore-lab0-hint/</guid>
+        <description>💻元代码 https://yuancode.net/posts/rcore-lab0-hint/ -&lt;p&gt;记录在进行实验时踩到的一些坑，方便自己以后解决同样的问题，也可以帮助同行者。&lt;/p&gt;
+&lt;p&gt;由于&lt;a href=&#34;https://learningos.github.io/rust-based-os-comp2022/&#34;&gt;OS训练营实验指导&lt;/a&gt;文档内容非常粗略，因此建议查看&lt;a href=&#34;https://rcore-os.github.io/rCore-Tutorial-Book-v3/&#34;&gt;rCore-Tutorial-Book-v3 3.6.0-alpha.1&lt;/a&gt; 文档。&lt;/p&gt;
+&lt;h2 id=&#34;踩坑&#34;&gt;踩坑&lt;/h2&gt;
+&lt;h3 id=&#34;1-errore0463-cant-find-crate-for-core&#34;&gt;1. error[E0463]: can&amp;rsquo;t find crate for &lt;code&gt;core&lt;/code&gt;&lt;/h3&gt;
+&lt;p&gt;通常状况下，&lt;code&gt;core&lt;/code&gt;库以&lt;strong&gt;预编译库&lt;/strong&gt;（precompiled library）的形式与Rust编译器一同发布——这时，&lt;code&gt;core&lt;/code&gt;库只对支持的宿主系统有效，而我们自定义的目标系统无效。如果我们想为其它系统编译代码，我们需要为这些系统重新编译整个&lt;code&gt;core&lt;/code&gt;库。&lt;/p&gt;
+&lt;p&gt;解决方案：&lt;/p&gt;
+&lt;p&gt;使用&lt;code&gt;cargo&lt;/code&gt;安装&lt;code&gt;cargo-xbuild&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ cargo install cargo-xbuild
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;# 等待安装完成以后&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;# 其中 riscv64gc-unknown-none-elf 是此次实验中给出的目标平台&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ cargo xbuild --target riscv64gc-unknown-none-elf
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;2-the-riscv64gc-unknown-none-elf-target-may-not-be-installed&#34;&gt;2. the &lt;code&gt;riscv64gc-unknown-none-elf&lt;/code&gt; target may not be installed&lt;/h3&gt;
+&lt;p&gt;我们只需要下载&lt;code&gt;riscv64gc-unknown-none-elf&lt;/code&gt;即可，同时提示信息已经给出了解决方案。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ rustup target add riscv64gc-unknown-none-elf
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;3-use-of-undeclared-crate-or-module-fmt--writenot-found-in-this-scope&#34;&gt;3. use of undeclared crate or module &lt;code&gt;fmt&lt;/code&gt; &amp;amp;&amp;amp; &lt;code&gt;Write&lt;/code&gt;not found in this scope&lt;/h3&gt;
+&lt;p&gt;其实编译器已经告诉了我们如何改正错误。&lt;/p&gt;
+&lt;p&gt;我们使用了&lt;code&gt;fmt&lt;/code&gt;这个create以及&lt;code&gt;Write&lt;/code&gt;这个trait，但是我们并没有在代码中使用&lt;code&gt;use&lt;/code&gt;引入。&lt;/p&gt;
+&lt;p&gt;我们可以在&lt;code&gt;main.rs&lt;/code&gt;的上方添加&lt;code&gt;use core::fmt::{self, Write};&lt;/code&gt;，然后代码便可以正常进行编译。&lt;/p&gt;
+&lt;h3 id=&#34;4-最后如何运行我们的代码&#34;&gt;4. 最后如何运行我们的代码&lt;/h3&gt;
+&lt;p&gt;在文档的最后，文档告诉我们可以使用&lt;code&gt;make run LOG=TRACE&lt;/code&gt;来运行我们的代码，但是直接运行的话肯定是行不通的，因为我们的&lt;code&gt;os&lt;/code&gt;文件夹中并没有&lt;code&gt;Makefile&lt;/code&gt;文件。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;解决方案1&lt;/p&gt;
+&lt;p&gt;拷贝&lt;code&gt;os1&lt;/code&gt;项目下的&lt;code&gt;Makefile&lt;/code&gt;文件到当前目录:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ cp ../os1/Makefile .
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;# 然后执行make run&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ make run
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;代码在qemu中正常运行：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;(rustup target list | grep &lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;riscv64gc-unknown-none-elf (installed)&amp;#34;&lt;/span&gt;) || rustup target add riscv64gc-unknown-none-elf
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;riscv64gc-unknown-none-elf (installed)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;cargo install cargo-binutils --vers ~0.2
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    Updating crates.io index
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;     Ignored package &lt;span style=&#34;color:#cd5555&#34;&gt;`&lt;/span&gt;cargo-binutils v0.2.0&lt;span style=&#34;color:#cd5555&#34;&gt;`&lt;/span&gt; is already installed, use --force to override
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;rustup component add rust-src
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;info: component &lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#39;rust-src&amp;#39;&lt;/span&gt; is up to date
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;rustup component add llvm-tools-preview
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;info: component &lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#39;llvm-tools-preview&amp;#39;&lt;/span&gt; &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;for&lt;/span&gt; target &lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#39;aarch64-unknown-linux-gnu&amp;#39;&lt;/span&gt; is up to date
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    Finished release [optimized] target(s) in 0.04s
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;[rustsbi] RustSBI version 0.2.2, adapting to RISC-V SBI v1.0.0
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;.______       __    __      _______.___________.  _______..______   __
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;|   _  &lt;span style=&#34;color:#cd5555&#34;&gt;\ &lt;/span&gt;    |  |  |  |    /       |           | /       ||   _  &lt;span style=&#34;color:#cd5555&#34;&gt;\ &lt;/span&gt;|  |
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;|  |_)  |    |  |  |  |   |   (----&lt;span style=&#34;color:#cd5555&#34;&gt;`&lt;/span&gt;---|  |----&lt;span style=&#34;color:#cd5555&#34;&gt;`&lt;/span&gt;|   (----&lt;span style=&#34;color:#cd5555&#34;&gt;`&lt;/span&gt;|  |_)  ||  |
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;|      /     |  |  |  |    &lt;span style=&#34;color:#cd5555&#34;&gt;\ &lt;/span&gt;  &lt;span style=&#34;color:#cd5555&#34;&gt;\ &lt;/span&gt;      |  |      &lt;span style=&#34;color:#cd5555&#34;&gt;\ &lt;/span&gt;  &lt;span style=&#34;color:#cd5555&#34;&gt;\ &lt;/span&gt;   |   _  &amp;lt; |  |
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;|  |&lt;span style=&#34;color:#cd5555&#34;&gt;\ &lt;/span&gt; &lt;span style=&#34;color:#cd5555&#34;&gt;\-&lt;/span&gt;---.|  &lt;span style=&#34;color:#cd5555&#34;&gt;`&lt;/span&gt;--&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;&amp;#39;&lt;/span&gt;  |.----)   |      |  |  .----)   |   |  |_)  ||  |
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;| _| &lt;span style=&#34;color:#cd5555&#34;&gt;`&lt;/span&gt;._____| &lt;span style=&#34;color:#cd5555&#34;&gt;\_&lt;/span&gt;_____/ |_______/       |__|  |_______/    |______/ |__|
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;[rustsbi] Implementation     : RustSBI-QEMU Version 0.1.1
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;[rustsbi] Platform Name      : riscv-virtio,qemu
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;[rustsbi] Platform SMP       : &lt;span style=&#34;color:#b452cd&#34;&gt;1&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;[rustsbi] Platform Memory    : 0x80000000..0x88000000
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;[rustsbi] Boot HART          : &lt;span style=&#34;color:#b452cd&#34;&gt;0&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;[rustsbi] Device Tree Region : 0x87000000..0x87000ef2
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;[rustsbi] Firmware Address   : 0x80000000
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;[rustsbi] Supervisor Address : 0x80200000
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;[rustsbi] pmp01: 0x00000000..0x80000000 (-wr)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;[rustsbi] pmp02: 0x80000000..0x80200000 (---)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;[rustsbi] pmp03: 0x80200000..0x88000000 (xwr)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Hello, world!
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Panicked at src/main.rs:29 Shutdown machine!
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;解决方案2&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ cargo build --release
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ qemu-system-riscv64 &lt;span style=&#34;color:#cd5555&#34;&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#cd5555&#34;&gt;&lt;/span&gt;    -machine virt &lt;span style=&#34;color:#cd5555&#34;&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#cd5555&#34;&gt;&lt;/span&gt;    -nographic &lt;span style=&#34;color:#cd5555&#34;&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#cd5555&#34;&gt;&lt;/span&gt;    -bios ../bootloader/rustsbi-qemu.bin &lt;span style=&#34;color:#cd5555&#34;&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#cd5555&#34;&gt;&lt;/span&gt;    -device loader,file=target/riscv64gc-unknown-none-elf/release/os.bin,addr=0x80200000
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;执行以上两条命令，可以看到我们的代码已经在qemu中正常运行：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;[rustsbi] RustSBI version 0.2.2, adapting to RISC-V SBI v1.0.0
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;.______       __    __      _______.___________.  _______..______   __
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;|   _  &lt;span style=&#34;color:#cd5555&#34;&gt;\ &lt;/span&gt;    |  |  |  |    /       |           | /       ||   _  &lt;span style=&#34;color:#cd5555&#34;&gt;\ &lt;/span&gt;|  |
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;|  |_)  |    |  |  |  |   |   (----&lt;span style=&#34;color:#cd5555&#34;&gt;`&lt;/span&gt;---|  |----&lt;span style=&#34;color:#cd5555&#34;&gt;`&lt;/span&gt;|   (----&lt;span style=&#34;color:#cd5555&#34;&gt;`&lt;/span&gt;|  |_)  ||  |
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;|      /     |  |  |  |    &lt;span style=&#34;color:#cd5555&#34;&gt;\ &lt;/span&gt;  &lt;span style=&#34;color:#cd5555&#34;&gt;\ &lt;/span&gt;      |  |      &lt;span style=&#34;color:#cd5555&#34;&gt;\ &lt;/span&gt;  &lt;span style=&#34;color:#cd5555&#34;&gt;\ &lt;/span&gt;   |   _  &amp;lt; |  |
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;|  |&lt;span style=&#34;color:#cd5555&#34;&gt;\ &lt;/span&gt; &lt;span style=&#34;color:#cd5555&#34;&gt;\-&lt;/span&gt;---.|  &lt;span style=&#34;color:#cd5555&#34;&gt;`&lt;/span&gt;--&lt;span style=&#34;color:#a61717;background-color:#e3d2d2&#34;&gt;&amp;#39;&lt;/span&gt;  |.----)   |      |  |  .----)   |   |  |_)  ||  |
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;| _| &lt;span style=&#34;color:#cd5555&#34;&gt;`&lt;/span&gt;._____| &lt;span style=&#34;color:#cd5555&#34;&gt;\_&lt;/span&gt;_____/ |_______/       |__|  |_______/    |______/ |__|
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;[rustsbi] Implementation     : RustSBI-QEMU Version 0.1.1
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;[rustsbi] Platform Name      : riscv-virtio,qemu
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;[rustsbi] Platform SMP       : &lt;span style=&#34;color:#b452cd&#34;&gt;1&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;[rustsbi] Platform Memory    : 0x80000000..0x88000000
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;[rustsbi] Boot HART          : &lt;span style=&#34;color:#b452cd&#34;&gt;0&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;[rustsbi] Device Tree Region : 0x87000000..0x87000ef2
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;[rustsbi] Firmware Address   : 0x80000000
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;[rustsbi] Supervisor Address : 0x80200000
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;[rustsbi] pmp01: 0x00000000..0x80000000 (-wr)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;[rustsbi] pmp02: 0x80000000..0x80200000 (---)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;[rustsbi] pmp03: 0x80200000..0x88000000 (xwr)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Hello, world!
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Panicked at src/main.rs:29 Shutdown machine!
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;想达到文档截图中的效果，需要使用第三方库&lt;code&gt;log&lt;/code&gt;，具体代码可以参见&lt;code&gt;os1/src/logging.rs&lt;/code&gt;和&lt;code&gt;os1/Cargo.toml&lt;/code&gt;(引入&lt;code&gt;log&lt;/code&gt;库)。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://learningos.github.io/rust-based-os-comp2022/_images/color-demo.png&#34; alt=&#34;文档截图&#34;&gt;&lt;/p&gt;- https://yuancode.net/posts/rcore-lab0-hint/ - 2022 ♾️ 杜宁元的Blog</description>
+        </item>
+    
+    
+    
+        <item>
+        <title>Rust Quiz #32</title>
+        <link>https://yuancode.net/posts/rust-quiz-32/</link>
+        <pubDate>Mon, 04 Jul 2022 00:00:00 +0000</pubDate>
+        
+        <guid>https://yuancode.net/posts/rust-quiz-32/</guid>
+        <description>💻元代码 https://yuancode.net/posts/rust-quiz-32/ -&lt;h2 id=&#34;题目&#34;&gt;题目&lt;/h2&gt;
+&lt;p&gt;What is the output of this Rust program?&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-Rust&#34; data-lang=&#34;Rust&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;fn&lt;/span&gt; &lt;span style=&#34;color:#008b45&#34;&gt;check&lt;/span&gt;(x: &lt;span style=&#34;color:#00688b;font-weight:bold&#34;&gt;i32&lt;/span&gt;)&lt;span style=&#34;color:#bbb&#34;&gt; &lt;/span&gt;-&amp;gt; &lt;span style=&#34;color:#00688b;font-weight:bold&#34;&gt;bool&lt;/span&gt; {&lt;span style=&#34;color:#bbb&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#bbb&#34;&gt;    &lt;/span&gt;print!(&lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;{}&amp;#34;&lt;/span&gt;,&lt;span style=&#34;color:#bbb&#34;&gt; &lt;/span&gt;x);&lt;span style=&#34;color:#bbb&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#bbb&#34;&gt;    &lt;/span&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;false&lt;/span&gt;&lt;span style=&#34;color:#bbb&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#bbb&#34;&gt;&lt;/span&gt;}&lt;span style=&#34;color:#bbb&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#bbb&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#bbb&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;fn&lt;/span&gt; &lt;span style=&#34;color:#008b45&#34;&gt;main&lt;/span&gt;()&lt;span style=&#34;color:#bbb&#34;&gt; &lt;/span&gt;{&lt;span style=&#34;color:#bbb&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#bbb&#34;&gt;    &lt;/span&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;match&lt;/span&gt;&lt;span style=&#34;color:#bbb&#34;&gt; &lt;/span&gt;(&lt;span style=&#34;color:#b452cd&#34;&gt;1&lt;/span&gt;,&lt;span style=&#34;color:#bbb&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#b452cd&#34;&gt;2&lt;/span&gt;)&lt;span style=&#34;color:#bbb&#34;&gt; &lt;/span&gt;{&lt;span style=&#34;color:#bbb&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#bbb&#34;&gt;        &lt;/span&gt;(x,&lt;span style=&#34;color:#bbb&#34;&gt; &lt;/span&gt;_)&lt;span style=&#34;color:#bbb&#34;&gt; &lt;/span&gt;|&lt;span style=&#34;color:#bbb&#34;&gt; &lt;/span&gt;(_,&lt;span style=&#34;color:#bbb&#34;&gt; &lt;/span&gt;x)&lt;span style=&#34;color:#bbb&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;if&lt;/span&gt;&lt;span style=&#34;color:#bbb&#34;&gt; &lt;/span&gt;check(x)&lt;span style=&#34;color:#bbb&#34;&gt; &lt;/span&gt;=&amp;gt;&lt;span style=&#34;color:#bbb&#34;&gt; &lt;/span&gt;{&lt;span style=&#34;color:#bbb&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#bbb&#34;&gt;            &lt;/span&gt;print!(&lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;3&amp;#34;&lt;/span&gt;)&lt;span style=&#34;color:#bbb&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#bbb&#34;&gt;        &lt;/span&gt;}&lt;span style=&#34;color:#bbb&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#bbb&#34;&gt;        &lt;/span&gt;_&lt;span style=&#34;color:#bbb&#34;&gt; &lt;/span&gt;=&amp;gt;&lt;span style=&#34;color:#bbb&#34;&gt; &lt;/span&gt;print!(&lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;4&amp;#34;&lt;/span&gt;),&lt;span style=&#34;color:#bbb&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#bbb&#34;&gt;    &lt;/span&gt;}&lt;span style=&#34;color:#bbb&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#bbb&#34;&gt;&lt;/span&gt;}&lt;span style=&#34;color:#bbb&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;代码中的 &lt;code&gt;match&lt;/code&gt; 可以被转换为：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-rust&#34; data-lang=&#34;rust&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;if&lt;/span&gt;&lt;span style=&#34;color:#bbb&#34;&gt; &lt;/span&gt;check(&lt;span style=&#34;color:#b452cd&#34;&gt;1&lt;/span&gt;)&lt;span style=&#34;color:#bbb&#34;&gt; &lt;/span&gt;{&lt;span style=&#34;color:#bbb&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#bbb&#34;&gt;    &lt;/span&gt;print!(&lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;3&amp;#34;&lt;/span&gt;);&lt;span style=&#34;color:#bbb&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#bbb&#34;&gt;&lt;/span&gt;}&lt;span style=&#34;color:#bbb&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;else&lt;/span&gt;&lt;span style=&#34;color:#bbb&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;if&lt;/span&gt;&lt;span style=&#34;color:#bbb&#34;&gt; &lt;/span&gt;check(&lt;span style=&#34;color:#b452cd&#34;&gt;2&lt;/span&gt;)&lt;span style=&#34;color:#bbb&#34;&gt; &lt;/span&gt;{&lt;span style=&#34;color:#bbb&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#bbb&#34;&gt;    &lt;/span&gt;print!(&lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;3&amp;#34;&lt;/span&gt;);&lt;span style=&#34;color:#bbb&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#bbb&#34;&gt;&lt;/span&gt;}&lt;span style=&#34;color:#bbb&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;else&lt;/span&gt;&lt;span style=&#34;color:#bbb&#34;&gt; &lt;/span&gt;{&lt;span style=&#34;color:#bbb&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#bbb&#34;&gt;  &lt;/span&gt;print!(&lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;4&amp;#34;&lt;/span&gt;);&lt;span style=&#34;color:#bbb&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#bbb&#34;&gt;&lt;/span&gt;}&lt;span style=&#34;color:#bbb&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;因为 &lt;code&gt;check(x)&lt;/code&gt;会打印出&lt;code&gt;x&lt;/code&gt;，并且总&lt;code&gt;return false&lt;/code&gt; 因此结果应该为 &lt;code&gt;124&lt;/code&gt;。&lt;/p&gt;
+&lt;h2 id=&#34;题目变形&#34;&gt;题目变形&lt;/h2&gt;
+&lt;h3 id=&#34;变形1&#34;&gt;变形1&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-rust&#34; data-lang=&#34;rust&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;fn&lt;/span&gt; &lt;span style=&#34;color:#008b45&#34;&gt;check&lt;/span&gt;(x: &lt;span style=&#34;color:#00688b;font-weight:bold&#34;&gt;i32&lt;/span&gt;)&lt;span style=&#34;color:#bbb&#34;&gt; &lt;/span&gt;-&amp;gt; &lt;span style=&#34;color:#00688b;font-weight:bold&#34;&gt;bool&lt;/span&gt; {&lt;span style=&#34;color:#bbb&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#bbb&#34;&gt;    &lt;/span&gt;print!(&lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;{}&amp;#34;&lt;/span&gt;,&lt;span style=&#34;color:#bbb&#34;&gt; &lt;/span&gt;x);&lt;span style=&#34;color:#bbb&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#bbb&#34;&gt;    &lt;/span&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;true&lt;/span&gt;&lt;span style=&#34;color:#bbb&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#bbb&#34;&gt;&lt;/span&gt;}&lt;span style=&#34;color:#bbb&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#bbb&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#bbb&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;fn&lt;/span&gt; &lt;span style=&#34;color:#008b45&#34;&gt;main&lt;/span&gt;()&lt;span style=&#34;color:#bbb&#34;&gt; &lt;/span&gt;{&lt;span style=&#34;color:#bbb&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#bbb&#34;&gt;    &lt;/span&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;match&lt;/span&gt;&lt;span style=&#34;color:#bbb&#34;&gt; &lt;/span&gt;(&lt;span style=&#34;color:#b452cd&#34;&gt;1&lt;/span&gt;,&lt;span style=&#34;color:#bbb&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#b452cd&#34;&gt;2&lt;/span&gt;)&lt;span style=&#34;color:#bbb&#34;&gt; &lt;/span&gt;{&lt;span style=&#34;color:#bbb&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#bbb&#34;&gt;        &lt;/span&gt;(x,&lt;span style=&#34;color:#bbb&#34;&gt; &lt;/span&gt;_)&lt;span style=&#34;color:#bbb&#34;&gt; &lt;/span&gt;|&lt;span style=&#34;color:#bbb&#34;&gt; &lt;/span&gt;(_,&lt;span style=&#34;color:#bbb&#34;&gt; &lt;/span&gt;x)&lt;span style=&#34;color:#bbb&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;if&lt;/span&gt;&lt;span style=&#34;color:#bbb&#34;&gt; &lt;/span&gt;check(x)&lt;span style=&#34;color:#bbb&#34;&gt; &lt;/span&gt;=&amp;gt;&lt;span style=&#34;color:#bbb&#34;&gt; &lt;/span&gt;{&lt;span style=&#34;color:#bbb&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#bbb&#34;&gt;            &lt;/span&gt;print!(&lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;3&amp;#34;&lt;/span&gt;)&lt;span style=&#34;color:#bbb&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#bbb&#34;&gt;        &lt;/span&gt;}&lt;span style=&#34;color:#bbb&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#bbb&#34;&gt;        &lt;/span&gt;_&lt;span style=&#34;color:#bbb&#34;&gt; &lt;/span&gt;=&amp;gt;&lt;span style=&#34;color:#bbb&#34;&gt; &lt;/span&gt;print!(&lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;4&amp;#34;&lt;/span&gt;),&lt;span style=&#34;color:#bbb&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#bbb&#34;&gt;    &lt;/span&gt;}&lt;span style=&#34;color:#bbb&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#bbb&#34;&gt;&lt;/span&gt;}&lt;span style=&#34;color:#bbb&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;blockquote&gt;
+&lt;p&gt;输出：13&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;变形2&#34;&gt;变形2&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-rust&#34; data-lang=&#34;rust&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;fn&lt;/span&gt; &lt;span style=&#34;color:#008b45&#34;&gt;check&lt;/span&gt;(x: &lt;span style=&#34;color:#00688b;font-weight:bold&#34;&gt;i32&lt;/span&gt;)&lt;span style=&#34;color:#bbb&#34;&gt; &lt;/span&gt;-&amp;gt; &lt;span style=&#34;color:#00688b;font-weight:bold&#34;&gt;bool&lt;/span&gt; {&lt;span style=&#34;color:#bbb&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#bbb&#34;&gt;    &lt;/span&gt;print!(&lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;{}&amp;#34;&lt;/span&gt;,&lt;span style=&#34;color:#bbb&#34;&gt; &lt;/span&gt;x);&lt;span style=&#34;color:#bbb&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#bbb&#34;&gt;    &lt;/span&gt;x%&lt;span style=&#34;color:#b452cd&#34;&gt;2&lt;/span&gt;&lt;span style=&#34;color:#bbb&#34;&gt; &lt;/span&gt;==&lt;span style=&#34;color:#bbb&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#b452cd&#34;&gt;0&lt;/span&gt;&lt;span style=&#34;color:#bbb&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#bbb&#34;&gt;&lt;/span&gt;}&lt;span style=&#34;color:#bbb&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#bbb&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#bbb&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;fn&lt;/span&gt; &lt;span style=&#34;color:#008b45&#34;&gt;main&lt;/span&gt;()&lt;span style=&#34;color:#bbb&#34;&gt; &lt;/span&gt;{&lt;span style=&#34;color:#bbb&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#bbb&#34;&gt;    &lt;/span&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;match&lt;/span&gt;&lt;span style=&#34;color:#bbb&#34;&gt; &lt;/span&gt;(&lt;span style=&#34;color:#b452cd&#34;&gt;1&lt;/span&gt;,&lt;span style=&#34;color:#bbb&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#b452cd&#34;&gt;2&lt;/span&gt;)&lt;span style=&#34;color:#bbb&#34;&gt; &lt;/span&gt;{&lt;span style=&#34;color:#bbb&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#bbb&#34;&gt;        &lt;/span&gt;(x,&lt;span style=&#34;color:#bbb&#34;&gt; &lt;/span&gt;_)&lt;span style=&#34;color:#bbb&#34;&gt; &lt;/span&gt;|&lt;span style=&#34;color:#bbb&#34;&gt; &lt;/span&gt;(_,&lt;span style=&#34;color:#bbb&#34;&gt; &lt;/span&gt;x)&lt;span style=&#34;color:#bbb&#34;&gt; &lt;/span&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;if&lt;/span&gt;&lt;span style=&#34;color:#bbb&#34;&gt; &lt;/span&gt;check(x)&lt;span style=&#34;color:#bbb&#34;&gt; &lt;/span&gt;=&amp;gt;&lt;span style=&#34;color:#bbb&#34;&gt; &lt;/span&gt;{&lt;span style=&#34;color:#bbb&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#bbb&#34;&gt;            &lt;/span&gt;print!(&lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;3&amp;#34;&lt;/span&gt;)&lt;span style=&#34;color:#bbb&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#bbb&#34;&gt;        &lt;/span&gt;}&lt;span style=&#34;color:#bbb&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#bbb&#34;&gt;        &lt;/span&gt;_&lt;span style=&#34;color:#bbb&#34;&gt; &lt;/span&gt;=&amp;gt;&lt;span style=&#34;color:#bbb&#34;&gt; &lt;/span&gt;print!(&lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;4&amp;#34;&lt;/span&gt;),&lt;span style=&#34;color:#bbb&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#bbb&#34;&gt;    &lt;/span&gt;}&lt;span style=&#34;color:#bbb&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#bbb&#34;&gt;&lt;/span&gt;}&lt;span style=&#34;color:#bbb&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;blockquote&gt;
+&lt;p&gt;输出：123&lt;/p&gt;
+&lt;/blockquote&gt;- https://yuancode.net/posts/rust-quiz-32/ - 2022 ♾️ 杜宁元的Blog</description>
+        </item>
+    
+    
+    
+        <item>
+        <title>C&#43;&#43; 编码风格</title>
+        <link>https://yuancode.net/posts/c&#43;&#43;codestyle/</link>
+        <pubDate>Mon, 30 May 2022 00:00:00 +0000</pubDate>
+        
+        <guid>https://yuancode.net/posts/c&#43;&#43;codestyle/</guid>
+        <description>💻元代码 https://yuancode.net/posts/c&#43;&#43;codestyle/ -&lt;p&gt;&lt;em&gt;“任何人都能写出机器能看懂的代码，但只有优秀的程序员才能写出人能看懂的代码。”&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;​	磨刀不误砍柴工，编码风格我觉得不仅是软件开发行业的共识，更是一种软件开发的文化。之所以讲究编码风格，因为软件的规模越大，协作性要求就越高，软件开发是一件群体性的智力活动，每个人的代码都只有自己懂，每段代码都将成为一个信息孤岛，没法让代码变得可交流、可复用、可维护。一段代码的功能，不仅仅是完成一个任务，也是一种思想的传播，因此注释担当着传递信息的功能，要养成良好的注释习惯和明了易懂注释风格。&lt;/p&gt;
+&lt;h1 id=&#34;空格与空行&#34;&gt;空格与空行&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;留白的艺术&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;代码示例：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-cpp&#34; data-lang=&#34;cpp&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;if&lt;/span&gt;(!value.contains(&lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;xxx&amp;#34;&lt;/span&gt;)){
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  LOGIT(WARNING,&lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;value is incomplete.&lt;/span&gt;&lt;span style=&#34;color:#cd5555&#34;&gt;\n&lt;/span&gt;&lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;return&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#00688b;font-weight:bold&#34;&gt;char&lt;/span&gt; suffix[&lt;span style=&#34;color:#b452cd&#34;&gt;16&lt;/span&gt;]=&lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;xxx&amp;#34;&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#00688b;font-weight:bold&#34;&gt;int&lt;/span&gt;  data_len = &lt;span style=&#34;color:#b452cd&#34;&gt;100&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;if&lt;/span&gt;(!value.empty()&amp;amp;&amp;amp;value.contains(&lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;tom&amp;#34;&lt;/span&gt;)){
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;const&lt;/span&gt; &lt;span style=&#34;color:#00688b;font-weight:bold&#34;&gt;char&lt;/span&gt;* name=value.c_str();
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;for&lt;/span&gt;(&lt;span style=&#34;color:#00688b;font-weight:bold&#34;&gt;int&lt;/span&gt; i=&lt;span style=&#34;color:#b452cd&#34;&gt;0&lt;/span&gt;;i&amp;lt;MAX_LEN;i++){
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    ...  &lt;span style=&#34;color:#228b22&#34;&gt;// do something
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;&lt;/span&gt;  }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#00688b;font-weight:bold&#34;&gt;int&lt;/span&gt; count=&lt;span style=&#34;color:#b452cd&#34;&gt;0&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;for&lt;/span&gt;(&lt;span style=&#34;color:#00688b;font-weight:bold&#34;&gt;int&lt;/span&gt; i=&lt;span style=&#34;color:#b452cd&#34;&gt;0&lt;/span&gt;;i&amp;lt;strlen(name);i++){
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    ... &lt;span style=&#34;color:#228b22&#34;&gt;// do something  
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;&lt;/span&gt;  }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;修改后：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-cpp&#34; data-lang=&#34;cpp&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;if&lt;/span&gt; (!value.contains(&lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;xxx&amp;#34;&lt;/span&gt;)) {                    &lt;span style=&#34;color:#228b22&#34;&gt;// if后{前有空格
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;&lt;/span&gt;  LOGIT(WARNING, &lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;value is incomplete.&lt;/span&gt;&lt;span style=&#34;color:#cd5555&#34;&gt;\n&lt;/span&gt;&lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;&lt;/span&gt;)        &lt;span style=&#34;color:#228b22&#34;&gt;// 逗号后有空格
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;&lt;/span&gt;  &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;return&lt;/span&gt;;                                      &lt;span style=&#34;color:#228b22&#34;&gt;// 逻辑联系紧密就不用加空行
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;&lt;/span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                                                  &lt;span style=&#34;color:#228b22&#34;&gt;// 新增空行分隔段落
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#00688b;font-weight:bold&#34;&gt;char&lt;/span&gt; suffix[&lt;span style=&#34;color:#b452cd&#34;&gt;16&lt;/span&gt;] = &lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;xxx&amp;#34;&lt;/span&gt;;                          &lt;span style=&#34;color:#228b22&#34;&gt;// 等号两边有空格
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#00688b;font-weight:bold&#34;&gt;int&lt;/span&gt; data_len = &lt;span style=&#34;color:#b452cd&#34;&gt;100&lt;/span&gt;;                            &lt;span style=&#34;color:#228b22&#34;&gt;// 逻辑联系紧密就不用加空行
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;&lt;/span&gt;                                                  &lt;span style=&#34;color:#228b22&#34;&gt;// 新增空行分隔段落
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;if&lt;/span&gt; (!value.empty() &amp;amp;&amp;amp; value.contains(&lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;tom&amp;#34;&lt;/span&gt;)) {   &lt;span style=&#34;color:#228b22&#34;&gt;// &amp;amp;&amp;amp;两边有空格
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;&lt;/span&gt;  &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;const&lt;/span&gt; &lt;span style=&#34;color:#00688b;font-weight:bold&#34;&gt;char&lt;/span&gt;* name = value.c_str();              &lt;span style=&#34;color:#228b22&#34;&gt;// 等号两边有空格
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;&lt;/span&gt;                                                  &lt;span style=&#34;color:#228b22&#34;&gt;// 新增空行分隔段落
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;&lt;/span&gt;  &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;for&lt;/span&gt;(&lt;span style=&#34;color:#00688b;font-weight:bold&#34;&gt;int&lt;/span&gt; i = &lt;span style=&#34;color:#b452cd&#34;&gt;0&lt;/span&gt;; i &amp;lt; MAX_LEN; i++){              &lt;span style=&#34;color:#228b22&#34;&gt;// =;&amp;lt;处有空格
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;&lt;/span&gt;    ...  &lt;span style=&#34;color:#228b22&#34;&gt;// do something
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;&lt;/span&gt;  }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                                                  &lt;span style=&#34;color:#228b22&#34;&gt;// 新增空行分隔段落
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;&lt;/span&gt;  &lt;span style=&#34;color:#00688b;font-weight:bold&#34;&gt;int&lt;/span&gt; count = &lt;span style=&#34;color:#b452cd&#34;&gt;0&lt;/span&gt;;                                  &lt;span style=&#34;color:#228b22&#34;&gt;// 等号两边有空格
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;&lt;/span&gt;                                                  &lt;span style=&#34;color:#228b22&#34;&gt;// 新增空行分隔段落
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;&lt;/span&gt;  &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;for&lt;/span&gt;(&lt;span style=&#34;color:#00688b;font-weight:bold&#34;&gt;int&lt;/span&gt; i = &lt;span style=&#34;color:#b452cd&#34;&gt;0&lt;/span&gt;; i &amp;lt; strlen(name); i++){          &lt;span style=&#34;color:#228b22&#34;&gt;// =;&amp;lt;处有空格
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;&lt;/span&gt;    ... &lt;span style=&#34;color:#228b22&#34;&gt;// do something  
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;&lt;/span&gt;  }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h1 id=&#34;起个好名字&#34;&gt;起个好名字&lt;/h1&gt;
+&lt;p&gt;​	其实命名这件事并不难，主要就在于平时的词汇和经验积累，知道在什么情况下用哪个单词最合适，千万不要偷懒用“谜之缩写”和汉语拼音（更有甚者，是汉语拼音的缩写）。&lt;/p&gt;
+&lt;p&gt;​	还可以用一些已经在程序员之间形成了普遍共识的变量名，比如用于循环的 i/j/k、用于计数的 count、表示指针的 p/ptr、表示缓冲区的 buf/buffer、表示变化量的 delta、表示总和的 sum……&lt;/p&gt;
+&lt;p&gt;​	关于命名的风格，应用比较广的有三种。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;第一种风格叫“匈牙利命名法”，在早期的 Windows 上很流行，使用前缀 i/n/sz 等来表示变量的类型，比如 iNum/szName。它把类型信息做了“硬编码”，不适合代码重构和泛型编程，所以目前基本上&lt;!-- raw HTML omitted --&gt;被淘汰&lt;!-- raw HTML omitted --&gt;了。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;不过“匈牙利命名法”中也有部分可取之处，比如给成员变量加“m_”前缀（member），给全局变量加“g_”前缀（global），比如 m_count、g_total，这样一看就知道了变量的作用域，在大型程序里还是挺有用的。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;第二种风格叫“CamelCase”，也就是“驼峰式命名法”，在 Java 语言里非常流行，主张单词首字母大写，比如 MyJobClass、tryToLock，但这种风格在 C++ 世界里的接受程度不是太高。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;第三种风格叫“snake_case”，用的是全小写，单词之间用下划线连接。这是 C 和 C++ 主要采用的命名方式，看一下标准库，里面的 vector、unordered_set、shrink_to_fit 都是这样。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;那么究竟应该选用哪种命名风格呢？不如“取百家之长”，混用几种中能让名字辨识度最高的那些优点：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;变量、函数名和名字空间用 snake_case，全局变量加“g_”前缀；&lt;/li&gt;
+&lt;li&gt;自定义类名用 CamelCase，成员函数用 snake_case，成员变量加“m_”前缀；&lt;/li&gt;
+&lt;li&gt;宏和常量应当全大写，单词之间用下划线连接；&lt;/li&gt;
+&lt;li&gt;尽量不要用下划线作为变量的前缀或者后缀（比如 &lt;em&gt;local、name&lt;/em&gt;），很难识别。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;举例：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-cpp&#34; data-lang=&#34;cpp&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#1e889b&#34;&gt;#define  MAX_PATH_LEN  256             &lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;//常量，全大写
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#00688b;font-weight:bold&#34;&gt;int&lt;/span&gt; g_sys_flag;                        &lt;span style=&#34;color:#228b22&#34;&gt;// 全局变量，加g_前缀
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;namespace&lt;/span&gt; linux_sys {                &lt;span style=&#34;color:#228b22&#34;&gt;// 名字空间，全小写
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;&lt;/span&gt;  &lt;span style=&#34;color:#00688b;font-weight:bold&#34;&gt;void&lt;/span&gt; &lt;span style=&#34;color:#008b45&#34;&gt;get_rlimit_core&lt;/span&gt;();               &lt;span style=&#34;color:#228b22&#34;&gt;// 函数，全小写
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;&lt;/span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color:#008b45;font-weight:bold&#34;&gt;FilePath&lt;/span&gt; &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;final&lt;/span&gt;                 &lt;span style=&#34;color:#228b22&#34;&gt;// 类名，首字母大写
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;&lt;/span&gt;{
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;public&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#00688b;font-weight:bold&#34;&gt;void&lt;/span&gt; set_path(&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;const&lt;/span&gt; string&amp;amp; str);    &lt;span style=&#34;color:#228b22&#34;&gt;// 函数，全小写
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;private&lt;/span&gt;:  
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  string m_path;                      &lt;span style=&#34;color:#228b22&#34;&gt;// 成员变量，m_前缀 
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;&lt;/span&gt;  &lt;span style=&#34;color:#00688b;font-weight:bold&#34;&gt;int&lt;/span&gt;    m_level;                     &lt;span style=&#34;color:#228b22&#34;&gt;// 成员变量，m_前缀
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;&lt;/span&gt;};
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;​	命名另一个相关的问题是“名字的长度”，一个被普遍认可的原则是：变量 / 函数的名字长度与它的作用域成正比，也就是说，局部变量 / 函数名可以短一点，而全局变量 / 函数名应该长一点。&lt;/p&gt;
+&lt;h1 id=&#34;用好注释&#34;&gt;用好注释&lt;/h1&gt;
+&lt;p&gt;​	写出了有好名字的变量、函数和类还不够，要让其他人能“一眼”看懂代码，还需要加上注释。	“注释”在任何编程语言里都是一项非常重要的功能，甚至在编程语言之外，比如配置文件（ini、yml）、标记语言（html、xml），都有注释。一个突出的反例就是 JSON，没有注释功能让许多人都很不适应。&lt;/p&gt;
+&lt;p&gt;​	注释表面上的功能很简单，就是给代码配上额外的文字，起到注解、补充说明的作用。但就像是写文章一样，写些什么、写多写少、写成什么样子，都是大有讲究的。&lt;/p&gt;
+&lt;p&gt;​	一般来说，注释可以用来阐述目的、用途、工作原理、注意事项等代码本身无法“自说明”的那些东西。&lt;/p&gt;
+&lt;p&gt;​	注释必须要&lt;em&gt;正确、清晰、有效，尽量言简意赅、点到为止，不要画蛇添足，更不能写出含糊、错误的注释&lt;/em&gt;。&lt;/p&gt;
+&lt;p&gt;举例：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-cpp&#34; data-lang=&#34;cpp&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;template&lt;/span&gt;&amp;lt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;typename&lt;/span&gt; T&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#00688b;font-weight:bold&#34;&gt;int&lt;/span&gt; get_value(&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;const&lt;/span&gt; T&amp;amp; v);
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;​	代码很简单，但可用的信息太少了，你就可以给它加上作者、功能说明、调用注意事项、可能的返回值，等等，这样看起来就会舒服得多：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-cpp&#34; data-lang=&#34;cpp&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;// author  : xxx
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;// date    : 2020-xx-xx
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;// purpose : get inner counter value of generic T
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;// notice  : T must have xxx member
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;// notice  : return value maybe -1, means xxx, you should xxx
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;template&lt;/span&gt;&amp;lt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;typename&lt;/span&gt; T&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#00688b;font-weight:bold&#34;&gt;int&lt;/span&gt; get_value(&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;const&lt;/span&gt; T&amp;amp; v);
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;​	写注释最好也要有一些标准的格式，比如用统一的“标签”来标记作者、参数说明什么的。可以参考 Javadoc，它算是一个不错的工程化实践。&lt;/p&gt;
+&lt;p&gt;​	除了给代码、函数、类写注释，我还建议最好在文件的开头写上本文件的注释，里面有文件的版权声明、更新历史、功能描述，等等。&lt;/p&gt;
+&lt;p&gt;例如：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-cpp&#34; data-lang=&#34;cpp&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;// Copyright (c) 2020 by Chrono
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;//
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;// file  : xxx.cpp
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;// since : 2020-xx-xx
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;// desc  : ...
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;​	另外，注释还有一个很有用的功能就是 todo，作为功能的占位符，提醒将来的代码维护者（也许就是你），比如：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-cpp&#34; data-lang=&#34;cpp&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;// TODO: change it to unordered_map
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;// XXX: fixme later
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;​	总的来说，要写好注释，你要时刻“换位思考”，设身处地去想别人怎么看你的代码，这样的话，上面的那些细则也就不难实施了。&lt;/p&gt;
+&lt;h1 id=&#34;重点总结&#34;&gt;重点总结&lt;/h1&gt;
+&lt;ol&gt;
+&lt;li&gt;用好空格和空行，多留白，让写代码就像写诗一样；&lt;/li&gt;
+&lt;li&gt;给变量、函数、类起个好名字，你的代码就成功了一半；&lt;/li&gt;
+&lt;li&gt;给变量、函数、类再加上注释，让代码自带文档，就成了“人能够看懂的代码”。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;​	有了这个基础，还可以更进一步，使用其他高级规则写出更好的代码，比如函数体不能太长、入口参数不宜过多，避免使用 else/switch 导致层次太深（圈复杂度），等等。&lt;/p&gt;
+&lt;p&gt;参考资料：&lt;a href=&#34;http://openresty.org/cn/c-coding-style-guide.html&#34;&gt;指南&lt;/a&gt; &amp;ndash; 章亦春&lt;/p&gt;- https://yuancode.net/posts/c&#43;&#43;codestyle/ - 2022 ♾️ 杜宁元的Blog</description>
+        </item>
+    
+    
+    
+        <item>
+        <title>关于我</title>
+        <link>https://yuancode.net/about/</link>
+        <pubDate>Wed, 10 Oct 2018 10:10:00 +0000</pubDate>
+        
+        <guid>https://yuancode.net/about/</guid>
+        <description>💻元代码 https://yuancode.net/about/ -- https://yuancode.net/about/ - 2022 ♾️ 杜宁元的Blog</description>
+        </item>
+    
+    
+    
+    
+    
+    
+    
+    
+  </channel>
+</rss> 

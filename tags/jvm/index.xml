@@ -1,28 +1,49 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>JVM on 元代码</title><link>https://yuancode.net/tags/jvm/</link><description>Recent content in JVM on 元代码</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Sun, 07 Aug 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://yuancode.net/tags/jvm/index.xml" rel="self" type="application/rss+xml"/><item><title>[JVM] Java的类加载机制</title><link>https://yuancode.net/post/java/jvm/draftjvm_classloader/</link><pubDate>Sun, 07 Aug 2022 00:00:00 +0000</pubDate><guid>https://yuancode.net/post/java/jvm/draftjvm_classloader/</guid><description>&lt;p>&lt;strong>Java的类加载机制&lt;/strong>&lt;/p>
-&lt;p>一般，Java的类加载过程分为三个主要步骤：加载、连接、初始化。&lt;/p>
-&lt;ol>
-&lt;li>加载（Loading），将字节码数据从不同的数据源读取到JVM中，并映射为JVM认可的数据结构（Class对象），数据源可能是jar文件、class文件甚至网络数据源。如果输入数据不是ClassFile结构，则会抛出&lt;code>ClassFromatError&lt;/code>。
-&lt;ul>
-&lt;li>加载阶段是用户参与的阶段，我们可以自定义类加载器，实现自己的类加载过程。&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;li>连接（Linking），是核心步骤，把原始的类定义信息平滑的转化到JVM运行的过程中。可以进一步分为三个步骤：
-&lt;ol>
-&lt;li>验证（Verification），虚拟机安全的重要保障，验证字节信息是否符合Java虚拟机规范，否则被认为是&lt;code>VerifyError&lt;/code>，防止恶意信息或不合规的信息危害JVM的运行。&lt;/li>
-&lt;li>准备（Preparation），创建类或接口中的静态变量，并初始化静态变量的初始值。==侧重点在于分配所需的内存空间，不会执行进一步的JVM指令。==&lt;/li>
-&lt;li>解析（Resolution），将常量池中的符号引用（symbolic reference）替换为直接引用。&lt;/li>
-&lt;/ol>
-&lt;/li>
-&lt;li>初始化（initialization），真正去执行类初始化的代码逻辑，包括静态字段赋值的动作，以及执行类定义中的静态初始化块内的逻辑，编译器在编译阶段就会把这部分逻辑整理好，父类型的初始化逻辑优先于当前类型的逻辑。&lt;/li>
-&lt;/ol>
-&lt;p>&lt;strong>关于双亲委派模型：&lt;/strong>&lt;/p>
-&lt;p>简单说就是当类加载器（Class-Loader）试图加载某个类型的时候，除非父加载器找不到相应的类型，否则尽量将这个任务代理给当前加载器的父加载器去做。目的是&lt;strong>避免重复加载Java类型&lt;/strong>。&lt;/p></description></item><item><title>[Java] Java常见的垃圾收集器有哪些？</title><link>https://yuancode.net/post/java/java_garbage_collector/</link><pubDate>Tue, 02 Aug 2022 00:00:00 +0000</pubDate><guid>https://yuancode.net/post/java/java_garbage_collector/</guid><description>&lt;p>&lt;strong>Java（Oracle JDK）常见的垃圾收集器有哪些？&lt;/strong>&lt;/p>
-&lt;ol>
-&lt;li>Serial&lt;/li>
-&lt;li>ParNew&lt;/li>
-&lt;li>CMS&lt;/li>
-&lt;li>Parrallel&lt;/li>
-&lt;li>G1&lt;/li>
-&lt;/ol></description></item><item><title>[Java] 强引用、软引用、弱引用、虚引用</title><link>https://yuancode.net/post/java/java_reference/</link><pubDate>Thu, 28 Jul 2022 00:00:00 +0000</pubDate><guid>https://yuancode.net/post/java/java_reference/</guid><description>&lt;p>在&lt;code>JDK 1.2&lt;/code>版本之后，Java对引用的概念进行了扩充，将引用分为强引用（Strongly Re-ference）、软引用（Soft Reference）、弱引用（Weak Reference）和虚引用（Phantom Reference）4种，这4种引用强度依次逐渐减弱。&lt;/p>
-&lt;p>&lt;strong>强引用、软引用、弱引用、幻象引用有什么区别?具体使用场景是
-什么?&lt;/strong>&lt;/p></description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>JVM on 💻元代码</title>
+    <link>https://yuancode.net/tags/jvm/</link>
+    <description>Recent content in JVM on 💻元代码</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>2022 ♾️ 杜宁元的Blog</copyright>
+    <lastBuildDate>Sun, 07 Aug 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://yuancode.net/tags/jvm/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[JVM] Java的类加载机制</title>
+      <link>https://yuancode.net/posts/java/jvm/draftjvm_classloader/</link>
+      <pubDate>Sun, 07 Aug 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://yuancode.net/posts/java/jvm/draftjvm_classloader/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Java的类加载机制&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;一般，Java的类加载过程分为三个主要步骤：加载、连接、初始化。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>[Java] Java常见的垃圾收集器有哪些？</title>
+      <link>https://yuancode.net/posts/java/java_garbage_collector/</link>
+      <pubDate>Tue, 02 Aug 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://yuancode.net/posts/java/java_garbage_collector/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Java（Oracle JDK）常见的垃圾收集器有哪些？&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Serial&lt;/li&gt;
+&lt;li&gt;ParNew&lt;/li&gt;
+&lt;li&gt;CMS&lt;/li&gt;
+&lt;li&gt;Parrallel&lt;/li&gt;
+&lt;li&gt;G1&lt;/li&gt;
+&lt;/ol&gt;</description>
+    </item>
+    
+    <item>
+      <title>[Java] 强引用、软引用、弱引用、虚引用</title>
+      <link>https://yuancode.net/posts/java/java_reference/</link>
+      <pubDate>Thu, 28 Jul 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://yuancode.net/posts/java/java_reference/</guid>
+      <description>&lt;p&gt;在&lt;code&gt;JDK 1.2&lt;/code&gt;版本之后，Java对引用的概念进行了扩充，将引用分为强引用（Strongly Re-ference）、软引用（Soft Reference）、弱引用（Weak Reference）和虚引用（Phantom Reference）4种，这4种引用强度依次逐渐减弱。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;强引用、软引用、弱引用、幻象引用有什么区别?具体使用场景是
+什么?&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

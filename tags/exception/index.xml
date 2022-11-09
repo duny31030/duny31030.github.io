@@ -1,6 +1,21 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Exception on 元代码</title><link>https://yuancode.net/tags/exception/</link><description>Recent content in Exception on 元代码</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Thu, 28 Jul 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://yuancode.net/tags/exception/index.xml" rel="self" type="application/rss+xml"/><item><title>[Java] Exception和Error有什么区别？</title><link>https://yuancode.net/post/java/java_exception_and_error/</link><pubDate>Thu, 28 Jul 2022 00:00:00 +0000</pubDate><guid>https://yuancode.net/post/java/java_exception_and_error/</guid><description>&lt;p>&lt;strong>请对比 Exception 和 Error，另外，运行时异常与一般异常有什么区别?&lt;/strong>&lt;/p>
-&lt;p>&lt;code>Exception&lt;/code>和&lt;code>Error&lt;/code>都是继承了&lt;code>Throwable&lt;/code>类，在Java中只有Throwable类型的实例才可以被抛出(throw)或者捕获(catch)，它是异常处理机制的基本组成类型。&lt;/p>
-&lt;p>&lt;code>Exception&lt;/code>和&lt;code>Error&lt;/code>体现了Java平台设计者对不同异常情况的分类。&lt;code>Exception&lt;/code>是程序正常运行中，可以预料的意外情况，可能并且应该被捕获，进行相应处理。&lt;/p>
-&lt;p>&lt;code>Error&lt;/code>是指在正常情况下，不大可能出现的情况，绝大部分的Error都会导致程序（比如JVM自身）处于非正常的、不可恢复状态。既然是非正常情况，所以不便于也不需要捕获，常见的比如&lt;code>OutOfMemoryError&lt;/code>之类，都是&lt;code>Error&lt;/code>的子类。&lt;strong>注意：&lt;code>Error&lt;/code>是&lt;code>Throwable&lt;/code>不是&lt;code>Exception&lt;/code>虽然它不可查。&lt;/strong>&lt;/p>
-&lt;p>&lt;code>Exception&lt;/code>又分为&lt;strong>受检查&lt;/strong>(checked)异常和&lt;strong>未检查&lt;/strong>(unchecked)异常，&lt;strong>可检查&lt;/strong>异常在源代码里必须显示地进行捕获处理，这是编译期检查的一部分。&lt;/p>
-&lt;p>不检查异常就是所谓的&lt;strong>运行时异常&lt;/strong>，类似&lt;code>NullPointerException&lt;/code>（空指针）、&lt;code>ArrayIndexOutOfBoundsException&lt;/code>（下标越界）之类，通常是可以编码避免的逻辑错误，具体根据需要来判断是否需要捕获，并不会在编译期强制要求。&lt;/p></description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Exception on 💻元代码</title>
+    <link>https://yuancode.net/tags/exception/</link>
+    <description>Recent content in Exception on 💻元代码</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>2022 ♾️ 杜宁元的Blog</copyright>
+    <lastBuildDate>Thu, 28 Jul 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://yuancode.net/tags/exception/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[Java] Exception和Error有什么区别？</title>
+      <link>https://yuancode.net/posts/java/java_exception_and_error/</link>
+      <pubDate>Thu, 28 Jul 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://yuancode.net/posts/java/java_exception_and_error/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;请对比 Exception 和 Error，另外，运行时异常与一般异常有什么区别?&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

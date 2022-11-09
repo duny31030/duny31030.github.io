@@ -1,3 +1,23 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Reference on 元代码</title><link>https://yuancode.net/tags/reference/</link><description>Recent content in Reference on 元代码</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Thu, 28 Jul 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://yuancode.net/tags/reference/index.xml" rel="self" type="application/rss+xml"/><item><title>[Java] 强引用、软引用、弱引用、虚引用</title><link>https://yuancode.net/post/java/java_reference/</link><pubDate>Thu, 28 Jul 2022 00:00:00 +0000</pubDate><guid>https://yuancode.net/post/java/java_reference/</guid><description>&lt;p>在&lt;code>JDK 1.2&lt;/code>版本之后，Java对引用的概念进行了扩充，将引用分为强引用（Strongly Re-ference）、软引用（Soft Reference）、弱引用（Weak Reference）和虚引用（Phantom Reference）4种，这4种引用强度依次逐渐减弱。&lt;/p>
-&lt;p>&lt;strong>强引用、软引用、弱引用、幻象引用有什么区别?具体使用场景是
-什么?&lt;/strong>&lt;/p></description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Reference on 💻元代码</title>
+    <link>https://yuancode.net/tags/reference/</link>
+    <description>Recent content in Reference on 💻元代码</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>2022 ♾️ 杜宁元的Blog</copyright>
+    <lastBuildDate>Thu, 28 Jul 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://yuancode.net/tags/reference/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[Java] 强引用、软引用、弱引用、虚引用</title>
+      <link>https://yuancode.net/posts/java/java_reference/</link>
+      <pubDate>Thu, 28 Jul 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://yuancode.net/posts/java/java_reference/</guid>
+      <description>&lt;p&gt;在&lt;code&gt;JDK 1.2&lt;/code&gt;版本之后，Java对引用的概念进行了扩充，将引用分为强引用（Strongly Re-ference）、软引用（Soft Reference）、弱引用（Weak Reference）和虚引用（Phantom Reference）4种，这4种引用强度依次逐渐减弱。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;强引用、软引用、弱引用、幻象引用有什么区别?具体使用场景是
+什么?&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

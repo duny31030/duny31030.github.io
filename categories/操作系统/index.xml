@@ -1,4 +1,22 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>操作系统 on 元代码</title><link>https://yuancode.net/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/</link><description>Recent content in 操作系统 on 元代码</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Wed, 06 Jul 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://yuancode.net/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/index.xml" rel="self" type="application/rss+xml"/><item><title>rCore Tutorial v3 踩坑笔记 - lab0</title><link>https://yuancode.net/post/rcore-lab0-hint/</link><pubDate>Wed, 06 Jul 2022 00:00:00 +0000</pubDate><guid>https://yuancode.net/post/rcore-lab0-hint/</guid><description>&lt;p>记录在进行实验时踩到的一些坑，方便自己以后解决同样的问题，也可以帮助同行者。&lt;/p>
-&lt;p>由于&lt;a href="https://learningos.github.io/rust-based-os-comp2022/" target="_blank" rel="noopener">OS训练营实验指导&lt;/a>
-文档内容非常粗略，因此建议查看&lt;a href="https://rcore-os.github.io/rCore-Tutorial-Book-v3/" target="_blank" rel="noopener">rCore-Tutorial-Book-v3 3.6.0-alpha.1&lt;/a>
-文档。&lt;/p></description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>操作系统 on 💻元代码</title>
+    <link>https://yuancode.net/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/</link>
+    <description>Recent content in 操作系统 on 💻元代码</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>2022 ♾️ 杜宁元的Blog</copyright>
+    <lastBuildDate>Wed, 06 Jul 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://yuancode.net/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>rCore Tutorial v3 踩坑笔记 - lab0</title>
+      <link>https://yuancode.net/posts/rcore-lab0-hint/</link>
+      <pubDate>Wed, 06 Jul 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://yuancode.net/posts/rcore-lab0-hint/</guid>
+      <description>&lt;p&gt;记录在进行实验时踩到的一些坑，方便自己以后解决同样的问题，也可以帮助同行者。&lt;/p&gt;
+&lt;p&gt;由于&lt;a href=&#34;https://learningos.github.io/rust-based-os-comp2022/&#34;&gt;OS训练营实验指导&lt;/a&gt;文档内容非常粗略，因此建议查看&lt;a href=&#34;https://rcore-os.github.io/rCore-Tutorial-Book-v3/&#34;&gt;rCore-Tutorial-Book-v3 3.6.0-alpha.1&lt;/a&gt; 文档。&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
