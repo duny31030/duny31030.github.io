@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html><head>
-<title>软技能</title>
+<title>[Java] Java程序运行在Docker等容器环境有哪些新问题？</title>
 
 
 
@@ -10,16 +10,18 @@
 <meta name="google-site-verification" content="">
 <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
 <meta content="telephone=no" name="format-detection">
-<meta name="description" content="">
+<meta name="description" content="Java面经，Java程序运行在Docker等容器环境有哪些新问题？">
 <meta name="renderer" content="webkit">
 <meta name="theme-color" content="#ffffff">
 
 
 
-<meta property="og:title" content="软技能" />
-<meta property="og:description" content="My HomePage Description" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://yuancode.net/categories/%E8%BD%AF%E6%8A%80%E8%83%BD/" /><meta property="og:site_name" content="My Blog" />
+<meta property="og:title" content="[Java] Java程序运行在Docker等容器环境有哪些新问题？" />
+<meta property="og:description" content="Java面经，Java程序运行在Docker等容器环境有哪些新问题？" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://yuancode.net/posts/java/java_run_in_docker/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-08-01T00:00:00+00:00" />
+<meta property="article:modified_time" content="2022-08-01T00:00:00+00:00" /><meta property="og:site_name" content="My Blog" />
 
 
 
@@ -27,8 +29,8 @@
 
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="软技能"/>
-<meta name="twitter:description" content="My HomePage Description"/>
+<meta name="twitter:title" content="[Java] Java程序运行在Docker等容器环境有哪些新问题？"/>
+<meta name="twitter:description" content="Java面经，Java程序运行在Docker等容器环境有哪些新问题？"/>
 
 
 
@@ -62,7 +64,29 @@
 
 
 
+  
+    <script src="/js/toc.js"></script>
+  
 
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script src="/vendor/js/md5.min.js"></script>
+<script>
+  var gitalk = new Gitalk({
+  clientID: 'your client id',
+  clientSecret: 'your client secret',
+  repo: 'repo name',
+  owner: 'user',
+  admin: ['user'],
+  id: md5(location.pathname),
+  distractionFreeMode: 'false'
+  });
+  window.onload = function () {
+        gitalk.render('gitalk-container')
+  }
+</script>
 
 
 
@@ -97,9 +121,11 @@
             
             
             
+                
             
             
-            <a class="a-block nav-link-item false" href="/posts">
+            
+            <a class="a-block nav-link-item active" href="/posts">
                 文章 📖
             </a>
             
@@ -107,11 +133,9 @@
             
             
             
-                
             
             
-            
-            <a class="a-block nav-link-item active" href="/categories">
+            <a class="a-block nav-link-item false" href="/categories">
                 分类 🗂️
             </a>
             
@@ -167,6 +191,11 @@ Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> b
 </div><div ref="extraContainer" class="extra-container">
     
     
+    <div class="toc animated-visibility" :class="{ invisible: scrollY <= 140 }">
+
+
+</div>
+    
     <div class="pagination">
         <a id="globalBackToTop" class="pagination-action animated-visibility" href="#top" :class="{ invisible: scrollY == 0 }">
             <i class="material-icons pagination-action-icon">
@@ -184,8 +213,6 @@ Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> b
         </a>
         
         
-        
-        
     </div>
 </div>
 <div class="single-column-drawer-container" ref="drawer"
@@ -198,9 +225,11 @@ Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> b
                 
                 
                 
+                    
                 
                 
-                <a class="a-block drawer-menu-item false" href="/posts">
+                
+                <a class="a-block drawer-menu-item active" href="/posts">
                     文章 📖
                 </a>
                 
@@ -208,11 +237,9 @@ Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> b
                 
                 
                 
-                    
                 
                 
-                
-                <a class="a-block drawer-menu-item active" href="/categories">
+                <a class="a-block drawer-menu-item false" href="/categories">
                     分类 🗂️
                 </a>
                 
@@ -247,6 +274,11 @@ Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> b
                 </a>
                 
             
+            
+            <div class="toc">
+
+
+</div>
             
         </div>
     </div>
@@ -291,52 +323,217 @@ Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> b
             <div id="content">
 <div ref="streamContainer" class="stream-container">
     <div class="post-list-container post-list-container-shadow">
-        <div class="post-item-wrapper post-item-wrapper-no-hover">
-            <div class="post-item post-item-no-gaps">
-                <div class="post-item-info-wrapper">
-                    <div class="post-item-title  post-item-title-small">
-                        <a href="https://yuancode.net/">💻元代码</a> / 软技能
+        <div class="post">
+            
+            
+            
+
+            <div class="post-head-wrapper-text-only"
+                
+            >
+                <div class="post-title">
+                    [Java] Java程序运行在Docker等容器环境有哪些新问题？
+                    
+                    <div class="post-subtitle">
+                        Java面经，Java程序运行在Docker等容器环境有哪些新问题？
+                    </div>
+                    
+                    <div class="post-meta">
+                        
+                        <time itemprop="datePublished">
+                            2022-08-01 00:00
+                        </time>
+                        
+
+                        
+                            <i class="material-icons" style="">folder</i>
+                                <a href="/categories/">[面经]</a>
+                                &nbsp;
+                        
+
+                        
+                            <i class="material-icons" style="">label</i>
+                            
+                                <a href="/tags/docker">Docker</a>
+                                &nbsp;
+                            
+                                <a href="/tags/java">Java</a>
+                                &nbsp;
+                            
+                        
+                        
+                            <i class="material-icons" style="">schedule</i>
+                            
+
+                            
+                            
+
+                            
+                            8 min
+                            
+                            32 s.
+                        
                     </div>
                 </div>
             </div>
-        </div><a href="/posts/c&#43;&#43;codestyle/" class="a-block">
-            <div class="post-item-wrapper">
-                <div class="post-item post-item-no-gaps">
-                    <div class="post-item-info-wrapper">
-                        <div class="post-item-title">
-                            C&#43;&#43; 编码风格
-                        </div>
-                        <div class="post-item-meta">
-    2022-05-30
-    &emsp;
-    
-    
-    <i class="material-icons" style="font-size:10px">schedule</i>
-    
-
-    
-    
-
-    
-    10 分钟
-    
-    58 秒
-    
-    
-    &emsp;
-    
+            
+            <div class="post-body-wrapper">
+                
+                <div class="post-body" v-pre>
+                
+                    <p><strong>Java程序运行在Docker等容器环境有哪些新问题？</strong></p>
+<ul>
+<li>Docker的内存、CPU等资源限制是通过CGroup（Control Group）实现的，早期的JDK版本（8u131之前）并不能识别这些限制，进而会导致一些基础问题：
+<ul>
+<li>如果未配置合适的JVM堆和元数据区、直接内存等参数，Java就有可能试图使用超过容器限制的内存，最终被容器OOM kill，或者自身发生OOM。</li>
+<li>错误判断了可获取的CPU资源，例如，Docker限制了CPU的核数，JVM就可能设置不合适的GC并行线程数等。</li>
+</ul>
+</li>
+<li>从应用打包、发布等角度触发，JDK自身就比较大，生成的镜像就更为臃肿。当打包镜像较多的时候，存储开销就开始明显了。</li>
+<li>如果考虑到微服务、Serverless等新的架构和场景，Java自身的大小、内存占用、启动速度，都存在一定局限性，因为Java早起的优化大多是针对长时间运行的大兴服务器端应用。</li>
+</ul>
+<!-- raw HTML omitted -->
+<p><strong>扩展：</strong></p>
+<p><strong>Docker到底有什么特别？</strong></p>
+<p>Docker虽然看起来和虚拟机非常相似，比如，它也有自己的<code>shell</code>，能独立安装软件包，运行时与其他容器互不干扰。但是Docker并不是一种完全的虚拟化技术，而是一种轻量级的隔离技术。</p>
+<!-- raw HTML omitted -->
+<p>基于<code>namespace</code>，Docker为每个容器提供了单独的命名空间，对网络、PID、用户、IPC通信、文件系统挂载点等实现了隔离。对于CPU、内存、磁盘IO等计算资源通过CGroup进行管理。</p>
+<p>Docker仅在类似Linux内核之上实现了有限的隔离和虚拟化，并不是独立运行一个新的操作系统，同时Docker并未完全隐藏底层信息。</p>
+<ul>
+<li>容器环境对于计算资源的管理方式是全新的，CGroup作为相对比较新的技术，历史版本的Java在不做改动的情况下，无法自然地理解相应的资源限制。</li>
+<li><code>namespace</code>对于容器内的应用细节增加了一些微妙的差异，比如<code>jcmd</code>、<code>jstack</code>等工具会依赖于“/proc”下面提供的部分信息，但是Docker的设计改变了这部分信息的原有结构，我们需要对原有工具进行修改才能使用这种变化。</li>
+</ul>
+<p><strong>从JVM运行机制的角度，为什么这些“沟通障碍”会导致OOM问题？</strong></p>
+<p>这个问题实际反映了JVM如何根据系统资源（内存、CPU等）情况，在启动时设置默认参数。</p>
+<p>Ergonomics机制<!-- raw HTML omitted -->1<!-- raw HTML omitted -->：</p>
+<blockquote>
+<p>系统内存大小：X</p>
+<p>堆大小设置为X的1/64，堆最大值为X的1/4。</p>
+<p>JVM检测到的系统CPU核数，直接影响到Parallel GC的并行线程数目和JIT complier线程数目，甚至是应用中ForkJoinPool<!-- raw HTML omitted -->2<!-- raw HTML omitted -->等机制的并行等级。</p>
+</blockquote>
+<p>这些默认参数，是根据通用场景选择的初始值。但是由于容器环境的差异，Java的判断很可能是基于错误信息做出的。</p>
+<p>并且，JVM的一些原有诊断或者备用机制也会收到影响。为了保证服务的可用性，一种常见的选择是依赖“-XX:OnOutOfMemoryError”功能，通过调用处理脚本的形式来做一些补救措施，比如自动重启服务等。但是这种机制是基于fork实现的，当Java进程已经过度提交内存时，fork新的进程往往已经不可能正常运行了。</p>
+<p><strong>那么如何解决这些问题？</strong></p>
+<p>如果能够将JDK升级到新的版本，问题也就迎刃而解了。</p>
+<blockquote>
+<p>针对这种情况，JDK9引入了一些实验性参数，方便Docker和Java“沟通”：</p>
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>-XX:+UnlockExperimentalVMOptions
+</span></span><span style="display:flex;"><span>-XX:+UseCGroupMemoryLimitForHeap
+</span></span></code></pre></td></tr></table>
 </div>
-
-                    </div>
+</div><p><!-- raw HTML omitted -->注意：这两个参数顺序敏感，且仅支持Linux环境。<!-- raw HTML omitted --></p>
+<p>如果升级到JDK10或者更新的版本，问题就更简单了。Java对Docker的支持已经比较完善，默认自适应各种资源限制和实现差异。<code>UseCGroupMemoryLimitForHeap</code>已被标记为废弃。</p>
+<p>新增了参数用于明确指定CPU核心的数目。</p>
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>-XX:ActiveProcessorCount=N
+</span></span></code></pre></td></tr></table>
+</div>
+</div></blockquote>
+<p>如果暂时只能使用老版本的JDK，那么需要<strong>明确设置堆、元数据区等内存区域大小，保证Java进程的总大小可控。</strong></p>
+<p>例如：</p>
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>$ docker run -it --rm --name yourcontainer -p 8080:8080 -m 800m rope/your-java-container:openjdk
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>额外配置一下环境变量，指定JVM堆的大小：</p>
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>-e <span style="color:#00688b">JAVA_OPTIONS</span>=<span style="color:#cd5555">&#39;-Xmx300m&#39;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>明确配置GC和JIT并行线程数目，以避免二者占用过多计算资源。</p>
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>-XX:ParallelGCThreads
+</span></span><span style="display:flex;"><span>-XX:CICpmpilerCount
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>另外，在很多场景中还会发现JAVA在Docker环境中会意外使用Swap，可以配置以下参数：</p>
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>-XX:MaxRAM=<span style="color:#cd5555">`</span>cat /sys/fs/cgroup/memory/memory.limit_in_bytes<span style="color:#cd5555">`</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>也可以指定Docker运行参数，例如：</p>
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>--memory-swappiness=<span style="color:#b452cd">0</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>这是受操作系统Swappiness机制<!-- raw HTML omitted -->3<!-- raw HTML omitted -->影响，当内存小号达到一定门限，OS会试图将不活跃的进程换出（Swap out），上面的参数有显式关闭Swap的作用。</p>
+<!-- raw HTML omitted -->
+<p>[1] Ergonomics机制：<a href="https://blog.csdn.net/hchaoh/article/details/103907777">【Java 8 GC 调优】Ergonomics</a></p>
+<p>[2] ForkJoinPool：<a href="https://blog.csdn.net/shadow_zed/article/details/125038849">Java-ForkJoinPool详解</a></p>
+<p>[3] Swappiness机制：https://en.wikipedia.org/wiki/Swappiness</p>
+                    
+                    <HR width="100%" id="EOF">
+		    <p style="color:#777;">最后修改于 2022-08-01</p>
+                    
                 </div>
             </div>
-        </a></div>
-</div>
+            
+            
+            <nav class="post-pagination">
+
+                
+                <a class="newer-posts" href="https://yuancode.net/posts/java/java_copy/">
+			下回<br>[Java] Java有几种文件拷贝方式？
+                </a>
+                
+                
+                
+                <a class="older-posts" href="https://yuancode.net/posts/java/java_reference/">
+			上回<br>[Java] 强引用、软引用、弱引用、虚引用
+                </a>
+                
+            </nav>
+            <div class="post-comment-wrapper">
+                
+
+
+<div id="gitalk-container"></div>
+
+
+
+
+
+
+
+
 
             </div>
+        </div>
+    </div>
+</div>
 
-
-<div id="single-column-footer">
+            </div><div id="single-column-footer">
 Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> by <a href="https://amazingrise.net">Rise</a>
 <br>
 
@@ -603,6 +800,9 @@ app = new Vue({
             elem.classList.add("table-hover");
         })
 
+        
+        spy();
+        window.addEventListener('scroll', this.debounce(spy, 250, { 'maxWait': 250 }), false);
         
         
     },

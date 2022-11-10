@@ -10,10 +10,10 @@
     <lastBuildDate>Sun, 07 Aug 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://yuancode.net/tags/java/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>[JVM] Java的类加载机制</title>
-      <link>https://yuancode.net/posts/java/jvm/draftjvm_classloader/</link>
+      <link>https://yuancode.net/posts/java/jvm/jvm_classloader/</link>
       <pubDate>Sun, 07 Aug 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://yuancode.net/posts/java/jvm/draftjvm_classloader/</guid>
+      <guid>https://yuancode.net/posts/java/jvm/jvm_classloader/</guid>
       <description>&lt;p&gt;&lt;strong&gt;Java的类加载机制&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;一般，Java的类加载过程分为三个主要步骤：加载、连接、初始化。&lt;/p&gt;</description>
     </item>
@@ -44,12 +44,12 @@
     </item>
     
     <item>
-      <title>[Java] Exception和Error有什么区别？</title>
-      <link>https://yuancode.net/posts/java/java_exception_and_error/</link>
-      <pubDate>Thu, 28 Jul 2022 00:00:00 +0000</pubDate>
+      <title>[Java] Java程序运行在Docker等容器环境有哪些新问题？</title>
+      <link>https://yuancode.net/posts/java/java_run_in_docker/</link>
+      <pubDate>Mon, 01 Aug 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://yuancode.net/posts/java/java_exception_and_error/</guid>
-      <description>&lt;p&gt;&lt;strong&gt;请对比 Exception 和 Error，另外，运行时异常与一般异常有什么区别?&lt;/strong&gt;&lt;/p&gt;</description>
+      <guid>https://yuancode.net/posts/java/java_run_in_docker/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Java程序运行在Docker等容器环境有哪些新问题？&lt;/strong&gt;&lt;/p&gt;</description>
     </item>
     
     <item>

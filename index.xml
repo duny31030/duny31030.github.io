@@ -14,11 +14,11 @@
     
         <item>
         <title>[JVM] Java的类加载机制</title>
-        <link>https://yuancode.net/posts/java/jvm/draftjvm_classloader/</link>
+        <link>https://yuancode.net/posts/java/jvm/jvm_classloader/</link>
         <pubDate>Sun, 07 Aug 2022 00:00:00 +0000</pubDate>
         
-        <guid>https://yuancode.net/posts/java/jvm/draftjvm_classloader/</guid>
-        <description>💻元代码 https://yuancode.net/posts/java/jvm/draftjvm_classloader/ -&lt;p&gt;&lt;strong&gt;Java的类加载机制&lt;/strong&gt;&lt;/p&gt;
+        <guid>https://yuancode.net/posts/java/jvm/jvm_classloader/</guid>
+        <description>💻元代码 https://yuancode.net/posts/java/jvm/jvm_classloader/ -&lt;p&gt;&lt;strong&gt;Java的类加载机制&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;一般，Java的类加载过程分为三个主要步骤：加载、连接、初始化。&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;加载（Loading），将字节码数据从不同的数据源读取到JVM中，并映射为JVM认可的数据结构（Class对象），数据源可能是jar文件、class文件甚至网络数据源。如果输入数据不是ClassFile结构，则会抛出&lt;code&gt;ClassFromatError&lt;/code&gt;。
@@ -36,7 +36,7 @@
 &lt;li&gt;初始化（initialization），真正去执行类初始化的代码逻辑，包括静态字段赋值的动作，以及执行类定义中的静态初始化块内的逻辑，编译器在编译阶段就会把这部分逻辑整理好，父类型的初始化逻辑优先于当前类型的逻辑。&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;&lt;strong&gt;关于双亲委派模型：&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;简单说就是当类加载器（Class-Loader）试图加载某个类型的时候，除非父加载器找不到相应的类型，否则尽量将这个任务代理给当前加载器的父加载器去做。目的是&lt;strong&gt;避免重复加载Java类型&lt;/strong&gt;。&lt;/p&gt;- https://yuancode.net/posts/java/jvm/draftjvm_classloader/ - 2022 ♾️ 杜宁元的Blog</description>
+&lt;p&gt;简单说就是当类加载器（Class-Loader）试图加载某个类型的时候，除非父加载器找不到相应的类型，否则尽量将这个任务代理给当前加载器的父加载器去做。目的是&lt;strong&gt;避免重复加载Java类型&lt;/strong&gt;。&lt;/p&gt;- https://yuancode.net/posts/java/jvm/jvm_classloader/ - 2022 ♾️ 杜宁元的Blog</description>
         </item>
     
     
@@ -199,7 +199,21 @@
 &lt;ol&gt;
 &lt;li&gt;
 &lt;p&gt;利用&lt;code&gt;java.io&lt;/code&gt;类库，直接为源文件构建一个&lt;code&gt;FileInputStream&lt;/code&gt;读取，然后再为目标文件构建一个&lt;code&gt;FileOutputStream&lt;/code&gt;，完成写入工作。&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;static&lt;/span&gt; &lt;span style=&#34;color:#00688b;font-weight:bold&#34;&gt;void&lt;/span&gt; &lt;span style=&#34;color:#008b45&#34;&gt;copyFileByStream&lt;/span&gt;(File source, File dest) &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;throws&lt;/span&gt; IOException {
+&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;
+&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code&gt;&lt;span style=&#34;white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 1
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 2
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 3
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 4
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 5
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 6
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 7
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 8
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 9
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;10
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;static&lt;/span&gt; &lt;span style=&#34;color:#00688b;font-weight:bold&#34;&gt;void&lt;/span&gt; &lt;span style=&#34;color:#008b45&#34;&gt;copyFileByStream&lt;/span&gt;(File source, File dest) &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;throws&lt;/span&gt; IOException {
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;try&lt;/span&gt;(InputStream is = &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;new&lt;/span&gt; FileInputStream(source);
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;     OutputStream os = &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;new&lt;/span&gt; FileOutputStream(dest);) {
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#00688b;font-weight:bold&#34;&gt;byte&lt;/span&gt;[] buffer = &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;new&lt;/span&gt; &lt;span style=&#34;color:#00688b;font-weight:bold&#34;&gt;byte&lt;/span&gt;[1024];
@@ -209,10 +223,25 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  }
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;利用&lt;code&gt;java.nio&lt;/code&gt;类库提供的&lt;code&gt;transferTo&lt;/code&gt;或&lt;code&gt;transferFrom&lt;/code&gt;方法实现。&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;static&lt;/span&gt; &lt;span style=&#34;color:#00688b;font-weight:bold&#34;&gt;void&lt;/span&gt; &lt;span style=&#34;color:#008b45&#34;&gt;copyFileByChannel&lt;/span&gt;(File source, Filr dest) &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;throws&lt;/span&gt; IOException {
+&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;
+&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code&gt;&lt;span style=&#34;white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;1
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;2
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;3
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;4
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;5
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;6
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;7
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;8
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;9
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;static&lt;/span&gt; &lt;span style=&#34;color:#00688b;font-weight:bold&#34;&gt;void&lt;/span&gt; &lt;span style=&#34;color:#008b45&#34;&gt;copyFileByChannel&lt;/span&gt;(File source, Filr dest) &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;throws&lt;/span&gt; IOException {
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;try&lt;/span&gt;(FileChannel sourceChannel = &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;new&lt;/span&gt; FileInputStream(source).&lt;span style=&#34;color:#658b00&#34;&gt;getChannel&lt;/span&gt;();
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      FileChannel targetChannel = &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;new&lt;/span&gt; FileOutputStream(dest).&lt;span style=&#34;color:#658b00&#34;&gt;getChannel&lt;/span&gt;();) {
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;for&lt;/span&gt;(&lt;span style=&#34;color:#00688b;font-weight:bold&#34;&gt;long&lt;/span&gt; count = sourceChannel.&lt;span style=&#34;color:#658b00&#34;&gt;size&lt;/span&gt;(); count &amp;gt; 0; ) {
@@ -221,7 +250,9 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  }
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;利用Java标准库本身提供的几种&lt;code&gt;File.copy&lt;/code&gt;实现。&lt;/p&gt;
 &lt;/li&gt;
@@ -232,78 +263,122 @@
     
     
         <item>
-        <title>[Java] Exception和Error有什么区别？</title>
-        <link>https://yuancode.net/posts/java/java_exception_and_error/</link>
-        <pubDate>Thu, 28 Jul 2022 00:00:00 +0000</pubDate>
+        <title>[Java] Java程序运行在Docker等容器环境有哪些新问题？</title>
+        <link>https://yuancode.net/posts/java/java_run_in_docker/</link>
+        <pubDate>Mon, 01 Aug 2022 00:00:00 +0000</pubDate>
         
-        <guid>https://yuancode.net/posts/java/java_exception_and_error/</guid>
-        <description>💻元代码 https://yuancode.net/posts/java/java_exception_and_error/ -&lt;p&gt;&lt;strong&gt;请对比 Exception 和 Error，另外，运行时异常与一般异常有什么区别?&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;Exception&lt;/code&gt;和&lt;code&gt;Error&lt;/code&gt;都是继承了&lt;code&gt;Throwable&lt;/code&gt;类，在Java中只有Throwable类型的实例才可以被抛出(throw)或者捕获(catch)，它是异常处理机制的基本组成类型。&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;Exception&lt;/code&gt;和&lt;code&gt;Error&lt;/code&gt;体现了Java平台设计者对不同异常情况的分类。&lt;code&gt;Exception&lt;/code&gt;是程序正常运行中，可以预料的意外情况，可能并且应该被捕获，进行相应处理。&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;Error&lt;/code&gt;是指在正常情况下，不大可能出现的情况，绝大部分的Error都会导致程序（比如JVM自身）处于非正常的、不可恢复状态。既然是非正常情况，所以不便于也不需要捕获，常见的比如&lt;code&gt;OutOfMemoryError&lt;/code&gt;之类，都是&lt;code&gt;Error&lt;/code&gt;的子类。&lt;strong&gt;注意：&lt;code&gt;Error&lt;/code&gt;是&lt;code&gt;Throwable&lt;/code&gt;不是&lt;code&gt;Exception&lt;/code&gt;虽然它不可查。&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;Exception&lt;/code&gt;又分为&lt;strong&gt;受检查&lt;/strong&gt;(checked)异常和&lt;strong&gt;未检查&lt;/strong&gt;(unchecked)异常，&lt;strong&gt;可检查&lt;/strong&gt;异常在源代码里必须显示地进行捕获处理，这是编译期检查的一部分。&lt;/p&gt;
-&lt;p&gt;不检查异常就是所谓的&lt;strong&gt;运行时异常&lt;/strong&gt;，类似&lt;code&gt;NullPointerException&lt;/code&gt;（空指针）、&lt;code&gt;ArrayIndexOutOfBoundsException&lt;/code&gt;（下标越界）之类，通常是可以编码避免的逻辑错误，具体根据需要来判断是否需要捕获，并不会在编译期强制要求。&lt;/p&gt;
+        <guid>https://yuancode.net/posts/java/java_run_in_docker/</guid>
+        <description>💻元代码 https://yuancode.net/posts/java/java_run_in_docker/ -&lt;p&gt;&lt;strong&gt;Java程序运行在Docker等容器环境有哪些新问题？&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Docker的内存、CPU等资源限制是通过CGroup（Control Group）实现的，早期的JDK版本（8u131之前）并不能识别这些限制，进而会导致一些基础问题：
+&lt;ul&gt;
+&lt;li&gt;如果未配置合适的JVM堆和元数据区、直接内存等参数，Java就有可能试图使用超过容器限制的内存，最终被容器OOM kill，或者自身发生OOM。&lt;/li&gt;
+&lt;li&gt;错误判断了可获取的CPU资源，例如，Docker限制了CPU的核数，JVM就可能设置不合适的GC并行线程数等。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;从应用打包、发布等角度触发，JDK自身就比较大，生成的镜像就更为臃肿。当打包镜像较多的时候，存储开销就开始明显了。&lt;/li&gt;
+&lt;li&gt;如果考虑到微服务、Serverless等新的架构和场景，Java自身的大小、内存占用、启动速度，都存在一定局限性，因为Java早起的优化大多是针对长时间运行的大兴服务器端应用。&lt;/li&gt;
+&lt;/ul&gt;
 &lt;!-- raw HTML omitted --&gt;
 &lt;p&gt;&lt;strong&gt;扩展：&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Docker到底有什么特别？&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Docker虽然看起来和虚拟机非常相似，比如，它也有自己的&lt;code&gt;shell&lt;/code&gt;，能独立安装软件包，运行时与其他容器互不干扰。但是Docker并不是一种完全的虚拟化技术，而是一种轻量级的隔离技术。&lt;/p&gt;
 &lt;!-- raw HTML omitted --&gt;
-&lt;p&gt;&lt;strong&gt;1. &lt;code&gt;NoClassDefFoundError&lt;/code&gt;和&lt;code&gt;ClassNotFoundException&lt;/code&gt;有什么区别？&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;NoClassDefFoundError&lt;/code&gt;:&lt;/p&gt;
+&lt;p&gt;基于&lt;code&gt;namespace&lt;/code&gt;，Docker为每个容器提供了单独的命名空间，对网络、PID、用户、IPC通信、文件系统挂载点等实现了隔离。对于CPU、内存、磁盘IO等计算资源通过CGroup进行管理。&lt;/p&gt;
+&lt;p&gt;Docker仅在类似Linux内核之上实现了有限的隔离和虚拟化，并不是独立运行一个新的操作系统，同时Docker并未完全隐藏底层信息。&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;code&gt;NoClassDefFoundError&lt;/code&gt;错误的发生是因为Java虚拟机在编译时能找到合适的类，而在运行时不能找到合适的类导致的错误。（类加载过程中没有办法找到对应的class文件。）比如编译通过后，手动删除引用的某个class文件、修改引用的jar包名称。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;code&gt;NoClassDefFoundError&lt;/code&gt;是&lt;code&gt;Error&lt;/code&gt;，是&lt;strong&gt;未检查&lt;/strong&gt;（unchecked）异常，因此不需要使用&lt;code&gt;try-catch&lt;/code&gt;或者&lt;code&gt;finally&lt;/code&gt;语句块包裹。&lt;/p&gt;
-&lt;/li&gt;
+&lt;li&gt;容器环境对于计算资源的管理方式是全新的，CGroup作为相对比较新的技术，历史版本的Java在不做改动的情况下，无法自然地理解相应的资源限制。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;namespace&lt;/code&gt;对于容器内的应用细节增加了一些微妙的差异，比如&lt;code&gt;jcmd&lt;/code&gt;、&lt;code&gt;jstack&lt;/code&gt;等工具会依赖于“/proc”下面提供的部分信息，但是Docker的设计改变了这部分信息的原有结构，我们需要对原有工具进行修改才能使用这种变化。&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;code&gt;ClassNotFoundException&lt;/code&gt;：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;和编译期无关，当在代码中显示加载类（使用&lt;code&gt;Class.forName()&lt;/code&gt;&lt;!-- raw HTML omitted --&gt;1&lt;!-- raw HTML omitted --&gt;）时没有找到对应的类，则会抛出&lt;code&gt;ClassNotFoundException&lt;/code&gt;。例如加载SQL驱动时，对应的类加载器找不到驱动类。&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;ClassNotFoundException&lt;/code&gt;是&lt;strong&gt;受检查&lt;/strong&gt;（checked）异常，因此需要使用&lt;code&gt;try-catch&lt;/code&gt;或者&lt;code&gt;finally&lt;/code&gt;语句块包裹。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;2. 这段代码反映了异常处理中哪些不当之处？&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;第一段代码：&lt;/strong&gt;&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;try&lt;/span&gt; {
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#228b22&#34;&gt;// 业务代码
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;&lt;/span&gt;  &lt;span style=&#34;color:#228b22&#34;&gt;// ...
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;&lt;/span&gt;  Thread.&lt;span style=&#34;color:#658b00&#34;&gt;sleep&lt;/span&gt;(1000L);
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;} &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;catch&lt;/span&gt; (Exception e) {
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#228b22&#34;&gt;// Ignore it
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;&lt;/span&gt;}
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;第一，&lt;strong&gt;尽量不要捕获类似&lt;code&gt;Exception&lt;/code&gt;这样的通用异常，而是应该捕获特定异常&lt;/strong&gt;，&lt;code&gt;Thread.sleep()&lt;/code&gt;抛出的是&lt;code&gt;InterruptedException&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;从JVM运行机制的角度，为什么这些“沟通障碍”会导致OOM问题？&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;这个问题实际反映了JVM如何根据系统资源（内存、CPU等）情况，在启动时设置默认参数。&lt;/p&gt;
+&lt;p&gt;Ergonomics机制&lt;!-- raw HTML omitted --&gt;1&lt;!-- raw HTML omitted --&gt;：&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;日常开发和合作中，我们读代码的机会往往超过写代码，软件工程是门协作的艺术，所以我们有义务&lt;strong&gt;让自己的代码能够直观地体现出尽量多的信息&lt;/strong&gt;，而泛泛的&lt;code&gt;Exception&lt;/code&gt;之类，恰恰隐藏了我们的目的。另外，我们也要&lt;strong&gt;保证程序不会捕获到我们不希望捕获的异常&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;系统内存大小：X&lt;/p&gt;
+&lt;p&gt;堆大小设置为X的1/64，堆最大值为X的1/4。&lt;/p&gt;
+&lt;p&gt;JVM检测到的系统CPU核数，直接影响到Parallel GC的并行线程数目和JIT complier线程数目，甚至是应用中ForkJoinPool&lt;!-- raw HTML omitted --&gt;2&lt;!-- raw HTML omitted --&gt;等机制的并行等级。&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;第二，&lt;strong&gt;不要生吞（swallow）异常&lt;/strong&gt;。这是处理异常中要特别注意的事情，因为很可能会导致非常难以诊断的诡异情况。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;第二段代码：&lt;/strong&gt;&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;try&lt;/span&gt; {
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#228b22&#34;&gt;// 业务代码
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;&lt;/span&gt;  &lt;span style=&#34;color:#228b22&#34;&gt;// ...
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;&lt;/span&gt;} &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;catch&lt;/span&gt; (IOException e) {
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  e.&lt;span style=&#34;color:#658b00&#34;&gt;printStackTrace&lt;/span&gt;();
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;这段代码作为一段实验代码，是没有任何问题的，但是在产品代码中，&lt;strong&gt;通常都不允许这样处理&lt;/strong&gt;。&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://docs.oracle.com/javase/9/docs/api/java/lang/Throwable.html#printStackTrace--&#34;&gt;printStackTrace()&lt;/a&gt;的文档开头写到“Prints this throwable and its backtrace to the standard error stream”。在稍微复杂一些的生产系统中，标准出错（STERR）不是个合适的输出选项，因为很难判断出到底输出到了哪里。&lt;/p&gt;
-&lt;p&gt;尤其是对于&lt;strong&gt;分布式系统&lt;/strong&gt;，如果发生异常，但是无法找到堆栈轨迹（stacktrace），相当于为诊断设置障碍。因此，最好使用&lt;strong&gt;产品日志&lt;/strong&gt;，详细地输出到日志系统里。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Throw early, catch late原则：&lt;/strong&gt;&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color:#00688b;font-weight:bold&#34;&gt;void&lt;/span&gt; &lt;span style=&#34;color:#008b45&#34;&gt;readPreferences&lt;/span&gt;(String fileName) {
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#228b22&#34;&gt;// ...perform operations
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;&lt;/span&gt;  InputStream in = &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;new&lt;/span&gt; FileInputStream(fileName);
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#228b22&#34;&gt;// ...read the preferences file...
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;&lt;/span&gt;}
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;如果&lt;code&gt;fullName&lt;/code&gt;是&lt;code&gt;null&lt;/code&gt;，那么程序会抛出&lt;code&gt;NullPointerException&lt;/code&gt;，但是没有第一时间暴露问题，堆栈信息可能让人费解。&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color:#00688b;font-weight:bold&#34;&gt;void&lt;/span&gt; &lt;span style=&#34;color:#008b45&#34;&gt;readPreferences&lt;/span&gt;(String fileName) {
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  Objects.&lt;span style=&#34;color:#658b00&#34;&gt;requireNonNull&lt;/span&gt;(fileName);
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#228b22&#34;&gt;// ...perform operations
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;&lt;/span&gt;  InputStream in = &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;new&lt;/span&gt; FileInputStream(fileName);
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#228b22&#34;&gt;// ...read the preferences file...
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;&lt;/span&gt;}
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;经过修改，问题便可以&amp;quot;&lt;code&gt;throw early&lt;/code&gt;&amp;quot;，对应的异常信息便非常直观了。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;&lt;code&gt;try-catch&lt;/code&gt;带来的开销：&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;try-catch&lt;/code&gt;代码段会产生额外的性能开销，往往会影响JVM对代码进行优化，所以建议仅捕获有必要的代码段，尽量不要一个大的&lt;code&gt;try&lt;/code&gt;包住整段的代码；&lt;/p&gt;
-&lt;p&gt;Java每实例化一个&lt;code&gt;Exception&lt;/code&gt;，都会对当时的栈进行快照，这是一个相对比较重的操作。如果发生的非常频繁，这个开销就不能被忽略了&lt;/p&gt;
-&lt;p&gt;+++&lt;/p&gt;
-&lt;p&gt;[1] Class.forName()：&lt;a href=&#34;https://blog.csdn.net/z13662788373/article/details/79457552&#34;&gt;Class.forName()用法详解&lt;/a&gt;&lt;/p&gt;- https://yuancode.net/posts/java/java_exception_and_error/ - 2022 ♾️ 杜宁元的Blog</description>
+&lt;p&gt;这些默认参数，是根据通用场景选择的初始值。但是由于容器环境的差异，Java的判断很可能是基于错误信息做出的。&lt;/p&gt;
+&lt;p&gt;并且，JVM的一些原有诊断或者备用机制也会收到影响。为了保证服务的可用性，一种常见的选择是依赖“-XX:OnOutOfMemoryError”功能，通过调用处理脚本的形式来做一些补救措施，比如自动重启服务等。但是这种机制是基于fork实现的，当Java进程已经过度提交内存时，fork新的进程往往已经不可能正常运行了。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;那么如何解决这些问题？&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;如果能够将JDK升级到新的版本，问题也就迎刃而解了。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;针对这种情况，JDK9引入了一些实验性参数，方便Docker和Java“沟通”：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;
+&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code&gt;&lt;span style=&#34;white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;1
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;-XX:+UnlockExperimentalVMOptions
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;-XX:+UseCGroupMemoryLimitForHeap
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;&lt;!-- raw HTML omitted --&gt;注意：这两个参数顺序敏感，且仅支持Linux环境。&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;如果升级到JDK10或者更新的版本，问题就更简单了。Java对Docker的支持已经比较完善，默认自适应各种资源限制和实现差异。&lt;code&gt;UseCGroupMemoryLimitForHeap&lt;/code&gt;已被标记为废弃。&lt;/p&gt;
+&lt;p&gt;新增了参数用于明确指定CPU核心的数目。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;
+&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code&gt;&lt;span style=&#34;white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;-XX:ActiveProcessorCount=N
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;/blockquote&gt;
+&lt;p&gt;如果暂时只能使用老版本的JDK，那么需要&lt;strong&gt;明确设置堆、元数据区等内存区域大小，保证Java进程的总大小可控。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;例如：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;
+&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code&gt;&lt;span style=&#34;white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ docker run -it --rm --name yourcontainer -p 8080:8080 -m 800m rope/your-java-container:openjdk
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;额外配置一下环境变量，指定JVM堆的大小：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;
+&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code&gt;&lt;span style=&#34;white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;-e &lt;span style=&#34;color:#00688b&#34;&gt;JAVA_OPTIONS&lt;/span&gt;=&lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#39;-Xmx300m&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;明确配置GC和JIT并行线程数目，以避免二者占用过多计算资源。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;
+&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code&gt;&lt;span style=&#34;white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;1
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;-XX:ParallelGCThreads
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;-XX:CICpmpilerCount
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;另外，在很多场景中还会发现JAVA在Docker环境中会意外使用Swap，可以配置以下参数：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;
+&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code&gt;&lt;span style=&#34;white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;-XX:MaxRAM=&lt;span style=&#34;color:#cd5555&#34;&gt;`&lt;/span&gt;cat /sys/fs/cgroup/memory/memory.limit_in_bytes&lt;span style=&#34;color:#cd5555&#34;&gt;`&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;也可以指定Docker运行参数，例如：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;
+&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code&gt;&lt;span style=&#34;white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;--memory-swappiness=&lt;span style=&#34;color:#b452cd&#34;&gt;0&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;这是受操作系统Swappiness机制&lt;!-- raw HTML omitted --&gt;3&lt;!-- raw HTML omitted --&gt;影响，当内存小号达到一定门限，OS会试图将不活跃的进程换出（Swap out），上面的参数有显式关闭Swap的作用。&lt;/p&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;p&gt;[1] Ergonomics机制：&lt;a href=&#34;https://blog.csdn.net/hchaoh/article/details/103907777&#34;&gt;【Java 8 GC 调优】Ergonomics&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;[2] ForkJoinPool：&lt;a href=&#34;https://blog.csdn.net/shadow_zed/article/details/125038849&#34;&gt;Java-ForkJoinPool详解&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;[3] Swappiness机制：https://en.wikipedia.org/wiki/Swappiness&lt;/p&gt;- https://yuancode.net/posts/java/java_run_in_docker/ - 2022 ♾️ 杜宁元的Blog</description>
         </item>
     
     
@@ -319,11 +394,26 @@
 什么?&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;不同的引用类型，主要体现的是**对象不同的可达性（reachable）**状态和对垃圾收集的影响。&lt;/p&gt;
 &lt;p&gt;强引用：最传统的“引用”的定义，是指在程序代码之中普遍存在的引用赋值。只要强引用关系还在，GC（垃圾收集器）就永远不会回收掉被引用的对象。&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-Java&#34; data-lang=&#34;Java&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Object obj = &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;new&lt;/span&gt; Object();
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;软引用：描述一些&lt;strong&gt;还有用，但非必须的对象&lt;/strong&gt;。将要发生内存溢出异常之前，会把这些对象列进回收范围之中进行第二次回收，如果此次回收还没有足够的内存，才会抛出内存溢出异常。&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-Java&#34; data-lang=&#34;Java&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;// SoftReference实例来保存一个对象的软引用。
+&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;
+&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code&gt;&lt;span style=&#34;white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-Java&#34; data-lang=&#34;Java&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Object obj = &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;new&lt;/span&gt; Object();
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;软引用：描述一些&lt;strong&gt;还有用，但非必须的对象&lt;/strong&gt;。将要发生内存溢出异常之前，会把这些对象列进回收范围之中进行第二次回收，如果此次回收还没有足够的内存，才会抛出内存溢出异常。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;
+&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code&gt;&lt;span style=&#34;white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;1
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-Java&#34; data-lang=&#34;Java&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;// SoftReference实例来保存一个对象的软引用。
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;&lt;/span&gt;SoftReference aSoftRef = &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;new&lt;/span&gt; SoftReference(aRef);  
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;弱引用：描述那些非必须对象，但是它的强度&lt;strong&gt;比软引用更弱一些&lt;/strong&gt;，只能生存到下一次垃圾收集发生为止。无论内存是否足够，都会回收掉只被弱引用关联的对象。&lt;/p&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;弱引用：描述那些非必须对象，但是它的强度&lt;strong&gt;比软引用更弱一些&lt;/strong&gt;，只能生存到下一次垃圾收集发生为止。无论内存是否足够，都会回收掉只被弱引用关联的对象。&lt;/p&gt;
 &lt;p&gt;虚引用：也称为“&lt;strong&gt;幽灵引用&lt;/strong&gt;”或者“&lt;strong&gt;幻影引用&lt;/strong&gt;”，不会影响对象生存时间。唯一目的：为了能在这个对象被收集器回收时收到一个系统通知。&lt;/p&gt;
 &lt;!-- raw HTML omitted --&gt;
 &lt;p&gt;&lt;strong&gt;扩展：&lt;/strong&gt;&lt;/p&gt;
@@ -374,13 +464,25 @@
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;&lt;strong&gt;&lt;code&gt;finally&lt;/code&gt;的例外情况：&lt;/strong&gt;&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;try&lt;/span&gt; {
+&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;
+&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code&gt;&lt;span style=&#34;white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;1
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;2
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;3
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;4
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;5
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;6
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;try&lt;/span&gt; {
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#228b22&#34;&gt;// do something
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;&lt;/span&gt;  System.&lt;span style=&#34;color:#658b00&#34;&gt;exit&lt;/span&gt;(1);
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;} &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;finally&lt;/span&gt; {
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  System.&lt;span style=&#34;color:#658b00&#34;&gt;out&lt;/span&gt;.&lt;span style=&#34;color:#658b00&#34;&gt;println&lt;/span&gt;(&lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;Print from finally&amp;#34;&lt;/span&gt;);
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;这段代码中的&lt;code&gt;finally&lt;/code&gt;并不会被执行，这与上面的&lt;em&gt;保证重点代码一定会被执行&lt;/em&gt;矛盾，这种情况属于特例。&lt;/p&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;这段代码中的&lt;code&gt;finally&lt;/code&gt;并不会被执行，这与上面的&lt;em&gt;保证重点代码一定会被执行&lt;/em&gt;矛盾，这种情况属于特例。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;关于&lt;code&gt;finalize&lt;/code&gt;：&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;已不推荐使用。
@@ -395,12 +497,23 @@
 &lt;li&gt;
 &lt;p&gt;&lt;code&gt;final&lt;/code&gt;不是&lt;code&gt;immutable&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;&lt;code&gt;final&lt;/code&gt;并不等同于&lt;code&gt;immutable&lt;/code&gt;&lt;/strong&gt;，比如：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;final&lt;/span&gt; List&amp;lt;String&amp;gt; strLsit = &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;new&lt;/span&gt; ArrayList&amp;lt;&amp;gt;();
+&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;
+&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code&gt;&lt;span style=&#34;white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;1
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;2
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;3
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;4
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;5
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;final&lt;/span&gt; List&amp;lt;String&amp;gt; strLsit = &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;new&lt;/span&gt; ArrayList&amp;lt;&amp;gt;();
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;strList.&lt;span style=&#34;color:#658b00&#34;&gt;add&lt;/span&gt;(&lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;Hello&amp;#34;&lt;/span&gt;);
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;strList.&lt;span style=&#34;color:#658b00&#34;&gt;add&lt;/span&gt;(&lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;World&amp;#34;&lt;/span&gt;);
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;List&amp;lt;String&amp;gt; unmodifiableStrList = List.&lt;span style=&#34;color:#658b00&#34;&gt;of&lt;/span&gt;(&lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;hello&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;world&amp;#34;&lt;/span&gt;);
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;unmodifiableStrList.&lt;span style=&#34;color:#658b00&#34;&gt;add&lt;/span&gt;(&lt;span style=&#34;color:#cd5555&#34;&gt;&amp;#34;again&amp;#34;&lt;/span&gt;);
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;code&gt;final&lt;/code&gt;只能约束&lt;code&gt;strList&lt;/code&gt;这个引用不可以被赋值，但是&lt;code&gt;strList&lt;/code&gt;对象行为不被&lt;code&gt;final&lt;/code&gt;影响，添加元素等操作是完全正常的。如果我们真的希望对象本身是不可变的，那么需要相应的类支持不可变的行为。&lt;/p&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;&lt;code&gt;final&lt;/code&gt;只能约束&lt;code&gt;strList&lt;/code&gt;这个引用不可以被赋值，但是&lt;code&gt;strList&lt;/code&gt;对象行为不被&lt;code&gt;final&lt;/code&gt;影响，添加元素等操作是完全正常的。如果我们真的希望对象本身是不可变的，那么需要相应的类支持不可变的行为。&lt;/p&gt;
 &lt;p&gt;上面的例子中，&lt;a href=&#34;https://openjdk.org/jeps/269&#34;&gt;List.of方法&lt;/a&gt;创建的本身就是不可变的List，第5行代码会导致在运行时抛出异常。&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;某种意义上说，Java目前没有原生的不可变支持，如果要实现&lt;code&gt;immutable&lt;/code&gt;类，需要做到：&lt;/p&gt;
@@ -419,7 +532,24 @@
 &lt;p&gt;即使我们使用&lt;code&gt;System.runFinalization()&lt;/code&gt;&lt;!-- raw HTML omitted --&gt;2&lt;!-- raw HTML omitted --&gt;主动告诉JVM积极一些，但是这种方式只能起到部分效果，&lt;code&gt;finalize&lt;/code&gt;仍然是不可预测、不能保证的。实践中，因为&lt;code&gt;finalize&lt;/code&gt;拖慢GC，导致大量对象堆积，也是一种典型的导致OOM的原因。&lt;/p&gt;
 &lt;p&gt;从另一个角度，我们要确保回收资源就是因为资源是有限的，GC时间的不可预测，可能会极大加剧资源占用。这意味着对于消耗非常高频的资源，不可以期望&lt;code&gt;finalize&lt;/code&gt;来承担释放资源的主要职责，只能让其作为“守门员”。&lt;/p&gt;
 &lt;p&gt;同时，&lt;code&gt;finalize&lt;/code&gt;海货掩盖资源回收出错时的出错信息：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;private&lt;/span&gt; &lt;span style=&#34;color:#00688b;font-weight:bold&#34;&gt;void&lt;/span&gt; &lt;span style=&#34;color:#008b45&#34;&gt;runFinalizer&lt;/span&gt;(JavaLangAccess jla) {
+&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;
+&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code&gt;&lt;span style=&#34;white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 1
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 2
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 3
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 4
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 5
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 6
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 7
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 8
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 9
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;10
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;11
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;12
+&lt;/span&gt;&lt;span style=&#34;white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;13
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;private&lt;/span&gt; &lt;span style=&#34;color:#00688b;font-weight:bold&#34;&gt;void&lt;/span&gt; &lt;span style=&#34;color:#008b45&#34;&gt;runFinalizer&lt;/span&gt;(JavaLangAccess jla) {
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	&lt;span style=&#34;color:#228b22&#34;&gt;// ... 省略部分代码
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;&lt;/span&gt;  &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;try&lt;/span&gt; {
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    Object finalizee = &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;this&lt;/span&gt;.&lt;span style=&#34;color:#658b00&#34;&gt;get&lt;/span&gt;();
@@ -432,7 +562,9 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;} &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;catch&lt;/span&gt; (Throwable x) { }
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;super&lt;/span&gt;.&lt;span style=&#34;color:#658b00&#34;&gt;clear&lt;/span&gt;();
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;**Throwable被生吞（swallow）了。**这意味着一旦出现异常或者出错，将得不到任何有效信息。&lt;/p&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;**Throwable被生吞（swallow）了。**这意味着一旦出现异常或者出错，将得不到任何有效信息。&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;有没有什么机制可以替代&lt;code&gt;finalize&lt;/code&gt;？&lt;/p&gt;

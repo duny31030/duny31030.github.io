@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://yuancode.net/posts/java/jvm/draftjvm_classloader/</loc>
+    <loc>https://yuancode.net/posts/java/jvm/jvm_classloader/</loc>
     <lastmod>2022-08-07T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://yuancode.net/categories/</loc>
@@ -47,22 +47,19 @@
     <loc>https://yuancode.net/posts/java/java_copy/</loc>
     <lastmod>2022-08-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://yuancode.net/tags/io/</loc>
+    <loc>https://yuancode.net/posts/java/java_run_in_docker/</loc>
     <lastmod>2022-08-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://yuancode.net/posts/java/java_exception_and_error/</loc>
-    <lastmod>2022-07-28T00:00:00+00:00</lastmod>
+    <loc>https://yuancode.net/tags/docker/</loc>
+    <lastmod>2022-08-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://yuancode.net/tags/io/</loc>
+    <lastmod>2022-08-01T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://yuancode.net/posts/java/java_reference/</loc>
     <lastmod>2022-07-28T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://yuancode.net/posts/java/java_final_finally_finalize/</loc>
-    <lastmod>2022-07-28T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://yuancode.net/tags/error/</loc>
-    <lastmod>2022-07-28T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://yuancode.net/tags/exception/</loc>
     <lastmod>2022-07-28T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://yuancode.net/tags/reference/</loc>
@@ -104,6 +101,9 @@
     <loc>https://yuancode.net/categories/rust/</loc>
     <lastmod>2022-07-04T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>https://yuancode.net/tags/rust-quiz/</loc>
+    <lastmod>2022-07-04T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://yuancode.net/posts/rust-quiz-32/</loc>
     <lastmod>2022-07-04T00:00:00+00:00</lastmod>
   </url><url>
@@ -125,7 +125,7 @@
     <loc>https://yuancode.net/categories/%E8%BD%AF%E6%8A%80%E8%83%BD/</loc>
     <lastmod>2022-05-30T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://yuancode.net/aboutme/</loc>
+    <loc>https://yuancode.net/about/</loc>
     <lastmod>2018-10-10T10:10:00+00:00</lastmod>
   </url><url>
     <loc>https://yuancode.net/archive/</loc>

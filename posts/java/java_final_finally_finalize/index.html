@@ -155,7 +155,7 @@
             
             
             
-            <a class="a-block nav-link-item false" href="/aboutme">
+            <a class="a-block nav-link-item false" href="/about">
                 关于 🤦
             </a>
             
@@ -259,7 +259,7 @@ Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> b
                 
                 
                 
-                <a class="a-block drawer-menu-item false" href="/aboutme">
+                <a class="a-block drawer-menu-item false" href="/about">
                     关于 🤦
                 </a>
                 
@@ -359,6 +359,17 @@ Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> b
                             
                         
                         
+                            <i class="material-icons" style="">schedule</i>
+                            
+
+                            
+                            
+
+                            
+                            9 min
+                            
+                            46 s.
+                        
                     </div>
                 </div>
             </div>
@@ -391,13 +402,25 @@ Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> b
 </li>
 </ul>
 <p><strong><code>finally</code>的例外情况：</strong></p>
-<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">try</span> {
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">try</span> {
 </span></span><span style="display:flex;"><span>  <span style="color:#228b22">// do something
 </span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span>  System.<span style="color:#658b00">exit</span>(1);
 </span></span><span style="display:flex;"><span>} <span style="color:#8b008b;font-weight:bold">finally</span> {
 </span></span><span style="display:flex;"><span>  System.<span style="color:#658b00">out</span>.<span style="color:#658b00">println</span>(<span style="color:#cd5555">&#34;Print from finally&#34;</span>);
 </span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p>这段代码中的<code>finally</code>并不会被执行，这与上面的<em>保证重点代码一定会被执行</em>矛盾，这种情况属于特例。</p>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>这段代码中的<code>finally</code>并不会被执行，这与上面的<em>保证重点代码一定会被执行</em>矛盾，这种情况属于特例。</p>
 <p><strong>关于<code>finalize</code>：</strong></p>
 <ul>
 <li>已不推荐使用。
@@ -412,12 +435,23 @@ Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> b
 <li>
 <p><code>final</code>不是<code>immutable</code></p>
 <p><strong><code>final</code>并不等同于<code>immutable</code></strong>，比如：</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">final</span> List&lt;String&gt; strLsit = <span style="color:#8b008b;font-weight:bold">new</span> ArrayList&lt;&gt;();
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">final</span> List&lt;String&gt; strLsit = <span style="color:#8b008b;font-weight:bold">new</span> ArrayList&lt;&gt;();
 </span></span><span style="display:flex;"><span>strList.<span style="color:#658b00">add</span>(<span style="color:#cd5555">&#34;Hello&#34;</span>);
 </span></span><span style="display:flex;"><span>strList.<span style="color:#658b00">add</span>(<span style="color:#cd5555">&#34;World&#34;</span>);
 </span></span><span style="display:flex;"><span>List&lt;String&gt; unmodifiableStrList = List.<span style="color:#658b00">of</span>(<span style="color:#cd5555">&#34;hello&#34;</span>, <span style="color:#cd5555">&#34;world&#34;</span>);
 </span></span><span style="display:flex;"><span>unmodifiableStrList.<span style="color:#658b00">add</span>(<span style="color:#cd5555">&#34;again&#34;</span>);
-</span></span></code></pre></div><p><code>final</code>只能约束<code>strList</code>这个引用不可以被赋值，但是<code>strList</code>对象行为不被<code>final</code>影响，添加元素等操作是完全正常的。如果我们真的希望对象本身是不可变的，那么需要相应的类支持不可变的行为。</p>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><code>final</code>只能约束<code>strList</code>这个引用不可以被赋值，但是<code>strList</code>对象行为不被<code>final</code>影响，添加元素等操作是完全正常的。如果我们真的希望对象本身是不可变的，那么需要相应的类支持不可变的行为。</p>
 <p>上面的例子中，<a href="https://openjdk.org/jeps/269">List.of方法</a>创建的本身就是不可变的List，第5行代码会导致在运行时抛出异常。</p>
 <blockquote>
 <p>某种意义上说，Java目前没有原生的不可变支持，如果要实现<code>immutable</code>类，需要做到：</p>
@@ -436,7 +470,24 @@ Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> b
 <p>即使我们使用<code>System.runFinalization()</code><!-- raw HTML omitted -->2<!-- raw HTML omitted -->主动告诉JVM积极一些，但是这种方式只能起到部分效果，<code>finalize</code>仍然是不可预测、不能保证的。实践中，因为<code>finalize</code>拖慢GC，导致大量对象堆积，也是一种典型的导致OOM的原因。</p>
 <p>从另一个角度，我们要确保回收资源就是因为资源是有限的，GC时间的不可预测，可能会极大加剧资源占用。这意味着对于消耗非常高频的资源，不可以期望<code>finalize</code>来承担释放资源的主要职责，只能让其作为“守门员”。</p>
 <p>同时，<code>finalize</code>海货掩盖资源回收出错时的出错信息：</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">private</span> <span style="color:#00688b;font-weight:bold">void</span> <span style="color:#008b45">runFinalizer</span>(JavaLangAccess jla) {
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#8b008b;font-weight:bold">private</span> <span style="color:#00688b;font-weight:bold">void</span> <span style="color:#008b45">runFinalizer</span>(JavaLangAccess jla) {
 </span></span><span style="display:flex;"><span>	<span style="color:#228b22">// ... 省略部分代码
 </span></span></span><span style="display:flex;"><span><span style="color:#228b22"></span>  <span style="color:#8b008b;font-weight:bold">try</span> {
 </span></span><span style="display:flex;"><span>    Object finalizee = <span style="color:#8b008b;font-weight:bold">this</span>.<span style="color:#658b00">get</span>();
@@ -449,7 +500,9 @@ Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> b
 </span></span><span style="display:flex;"><span>} <span style="color:#8b008b;font-weight:bold">catch</span> (Throwable x) { }
 </span></span><span style="display:flex;"><span>  <span style="color:#8b008b;font-weight:bold">super</span>.<span style="color:#658b00">clear</span>();
 </span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p>**Throwable被生吞（swallow）了。**这意味着一旦出现异常或者出错，将得不到任何有效信息。</p>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>**Throwable被生吞（swallow）了。**这意味着一旦出现异常或者出错，将得不到任何有效信息。</p>
 </li>
 <li>
 <p>有没有什么机制可以替代<code>finalize</code>？</p>

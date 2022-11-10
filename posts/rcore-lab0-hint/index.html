@@ -155,7 +155,7 @@
             
             
             
-            <a class="a-block nav-link-item false" href="/aboutme">
+            <a class="a-block nav-link-item false" href="/about">
                 关于 🤦
             </a>
             
@@ -374,7 +374,7 @@ Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> b
                 
                 
                 
-                <a class="a-block drawer-menu-item false" href="/aboutme">
+                <a class="a-block drawer-menu-item false" href="/about">
                     关于 🤦
                 </a>
                 
@@ -598,6 +598,17 @@ Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> b
                             
                         
                         
+                            <i class="material-icons" style="">schedule</i>
+                            
+
+                            
+                            
+
+                            
+                            5 min
+                            
+                            20 s.
+                        
                     </div>
                 </div>
             </div>
@@ -613,14 +624,31 @@ Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> b
 <p>通常状况下，<code>core</code>库以<strong>预编译库</strong>（precompiled library）的形式与Rust编译器一同发布——这时，<code>core</code>库只对支持的宿主系统有效，而我们自定义的目标系统无效。如果我们想为其它系统编译代码，我们需要为这些系统重新编译整个<code>core</code>库。</p>
 <p>解决方案：</p>
 <p>使用<code>cargo</code>安装<code>cargo-xbuild</code></p>
-<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>$ cargo install cargo-xbuild
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>$ cargo install cargo-xbuild
 </span></span><span style="display:flex;"><span><span style="color:#228b22"># 等待安装完成以后</span>
 </span></span><span style="display:flex;"><span><span style="color:#228b22"># 其中 riscv64gc-unknown-none-elf 是此次实验中给出的目标平台</span>
 </span></span><span style="display:flex;"><span>$ cargo xbuild --target riscv64gc-unknown-none-elf
-</span></span></code></pre></div><h3 id="2-the-riscv64gc-unknown-none-elf-target-may-not-be-installed">2. the <code>riscv64gc-unknown-none-elf</code> target may not be installed</h3>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="2-the-riscv64gc-unknown-none-elf-target-may-not-be-installed">2. the <code>riscv64gc-unknown-none-elf</code> target may not be installed</h3>
 <p>我们只需要下载<code>riscv64gc-unknown-none-elf</code>即可，同时提示信息已经给出了解决方案。</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>$ rustup target add riscv64gc-unknown-none-elf
-</span></span></code></pre></div><h3 id="3-use-of-undeclared-crate-or-module-fmt--writenot-found-in-this-scope">3. use of undeclared crate or module <code>fmt</code> &amp;&amp; <code>Write</code>not found in this scope</h3>
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>$ rustup target add riscv64gc-unknown-none-elf
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="3-use-of-undeclared-crate-or-module-fmt--writenot-found-in-this-scope">3. use of undeclared crate or module <code>fmt</code> &amp;&amp; <code>Write</code>not found in this scope</h3>
 <p>其实编译器已经告诉了我们如何改正错误。</p>
 <p>我们使用了<code>fmt</code>这个create以及<code>Write</code>这个trait，但是我们并没有在代码中使用<code>use</code>引入。</p>
 <p>我们可以在<code>main.rs</code>的上方添加<code>use core::fmt::{self, Write};</code>，然后代码便可以正常进行编译。</p>
@@ -630,11 +658,54 @@ Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> b
 <li>
 <p>解决方案1</p>
 <p>拷贝<code>os1</code>项目下的<code>Makefile</code>文件到当前目录:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>$ cp ../os1/Makefile .
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>$ cp ../os1/Makefile .
 </span></span><span style="display:flex;"><span><span style="color:#228b22"># 然后执行make run</span>
 </span></span><span style="display:flex;"><span>$ make run
-</span></span></code></pre></div><p>代码在qemu中正常运行：</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>(rustup target list | grep <span style="color:#cd5555">&#34;riscv64gc-unknown-none-elf (installed)&#34;</span>) || rustup target add riscv64gc-unknown-none-elf
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>代码在qemu中正常运行：</p>
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>(rustup target list | grep <span style="color:#cd5555">&#34;riscv64gc-unknown-none-elf (installed)&#34;</span>) || rustup target add riscv64gc-unknown-none-elf
 </span></span><span style="display:flex;"><span>riscv64gc-unknown-none-elf (installed)
 </span></span><span style="display:flex;"><span>cargo install cargo-binutils --vers ~0.2
 </span></span><span style="display:flex;"><span>    Updating crates.io index
@@ -664,17 +735,55 @@ Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> b
 </span></span><span style="display:flex;"><span>[rustsbi] pmp03: 0x80200000..0x88000000 (xwr)
 </span></span><span style="display:flex;"><span>Hello, world!
 </span></span><span style="display:flex;"><span>Panicked at src/main.rs:29 Shutdown machine!
-</span></span></code></pre></div></li>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
 <li>
 <p>解决方案2</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>$ cargo build --release
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>$ cargo build --release
 </span></span><span style="display:flex;"><span>$ qemu-system-riscv64 <span style="color:#cd5555">\
 </span></span></span><span style="display:flex;"><span><span style="color:#cd5555"></span>    -machine virt <span style="color:#cd5555">\
 </span></span></span><span style="display:flex;"><span><span style="color:#cd5555"></span>    -nographic <span style="color:#cd5555">\
 </span></span></span><span style="display:flex;"><span><span style="color:#cd5555"></span>    -bios ../bootloader/rustsbi-qemu.bin <span style="color:#cd5555">\
 </span></span></span><span style="display:flex;"><span><span style="color:#cd5555"></span>    -device loader,file=target/riscv64gc-unknown-none-elf/release/os.bin,addr=0x80200000
-</span></span></code></pre></div><p>执行以上两条命令，可以看到我们的代码已经在qemu中正常运行：</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>[rustsbi] RustSBI version 0.2.2, adapting to RISC-V SBI v1.0.0
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>执行以上两条命令，可以看到我们的代码已经在qemu中正常运行：</p>
+<div class="highlight"><div style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>[rustsbi] RustSBI version 0.2.2, adapting to RISC-V SBI v1.0.0
 </span></span><span style="display:flex;"><span>.______       __    __      _______.___________.  _______..______   __
 </span></span><span style="display:flex;"><span>|   _  <span style="color:#cd5555">\ </span>    |  |  |  |    /       |           | /       ||   _  <span style="color:#cd5555">\ </span>|  |
 </span></span><span style="display:flex;"><span>|  |_)  |    |  |  |  |   |   (----<span style="color:#cd5555">`</span>---|  |----<span style="color:#cd5555">`</span>|   (----<span style="color:#cd5555">`</span>|  |_)  ||  |
@@ -694,7 +803,9 @@ Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a> b
 </span></span><span style="display:flex;"><span>[rustsbi] pmp03: 0x80200000..0x88000000 (xwr)
 </span></span><span style="display:flex;"><span>Hello, world!
 </span></span><span style="display:flex;"><span>Panicked at src/main.rs:29 Shutdown machine!
-</span></span></code></pre></div></li>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
 </ol>
 <p>想达到文档截图中的效果，需要使用第三方库<code>log</code>，具体代码可以参见<code>os1/src/logging.rs</code>和<code>os1/Cargo.toml</code>(引入<code>log</code>库)。</p>
 <p><img src="https://learningos.github.io/rust-based-os-comp2022/_images/color-demo.png" alt="文档截图"></p>
